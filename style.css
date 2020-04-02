@@ -84,7 +84,7 @@ h2 + h2 {
     height: 25px;
     padding: 10px;
     color: black;
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: 15px;
 }
 
@@ -110,6 +110,7 @@ h2 + h2 {
 
 .unready {
     background: #e4e4e4;
+    color: #888 !important;
 }
 
 a + a {
