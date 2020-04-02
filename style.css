@@ -25,27 +25,32 @@ h2 {
     line-height: 5vh;
     vertical-align: middle;
     line-height: 5vh;
+    transition: all ;
 }
 
 #red {
-    background: linear-gradient(to top, #ffd3d3 40%, transparent 40%);
+    color: #000;
 }
 #red:hover {
     background: linear-gradient(to top, #ff7f7f 40%, transparent 40%);
 }
 
 #green {
-    background: linear-gradient(to top, #d2ffd4 40%, transparent 40%);
+    color: #000;
 }
 #green:hover {
     background: linear-gradient(to top, #62ff6a 40%, transparent 40%);
 }
 
 #blue {
-    background: linear-gradient(to top, #d5e6ff 40%, transparent 40%);
+    color: #000;
 }
 #blue:hover {
     background: linear-gradient(to top, #80b3ff 40%, transparent 40%);
+}
+
+#grey {
+    color: #d4d4d4;
 }
 
 h2 + h2 {
@@ -61,13 +66,52 @@ h2 + h2 {
 }
 
 #top {
-    margin-top: 5vh;
-    height: 5vh;
-    margin-bottom: 4vh;
+    margin-top: 50px;
+    height: 50px;
+    margin-bottom: 35px;
 }
 
 #wrapper {
-    width: 45vw;
+    width: 600px;
     height: 100%;
     margin: 0 auto;
+}
+
+.card {
+    display: inline-block;
+    border-radius: 5px;
+    width: 88px;
+    height: 25px;
+    padding: 10px;
+    color: black;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.ai {
+    background: #ffe0e0;
+    transition-duration: 400ms;
+}
+.ai:hover {
+    background: #ffc2c2;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.025), 0 6px 6px rgba(0,0,0,0.025);
+    transition-duration: 100ms;
+}
+
+.ux {
+    background: #e0f3ff;
+    transition-duration: 400ms;
+}
+.ux:hover {
+    background: #bee5ff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.025), 0 6px 6px rgba(0,0,0,0.025);
+    transition-duration: 100ms;
+}
+
+.unready {
+    background: #e4e4e4;
+}
+
+a + a {
+    margin-left: 10px;
 }
