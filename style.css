@@ -101,38 +101,42 @@ h2 + h2 {
     font-weight: 500;
     margin: 0 5px 10px 5px;
     padding: 10px 15px 10px 15px;
+    transition-duration: 200ms;
+}
+.card:hover {
+    margin: -2px 3px 8px 3px;
+    padding: 12px 17px 12px 17px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.025), 0 6px 6px rgba(0,0,0,0.025);
+    transition-duration: 50ms;
 }
 
 .ai {
     background: #ffe0e0;
-    transition-duration: 200ms;
 }
 .ai:hover {
     background: #ffc2c2;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.025), 0 6px 6px rgba(0,0,0,0.025);
-    transition-duration: 50ms;
 }
 
 .ux {
     background: #e0f3ff;
-    transition-duration: 200ms;
 }
 .ux:hover {
     background: #bee5ff;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.025), 0 6px 6px rgba(0,0,0,0.025);
-    transition-duration: 50ms;
 }
 
 .unready {
     background-image: linear-gradient(45deg,
-        #e4e4e4 12.5%, #f0f0f0 12.5%,
-        #f0f0f0 25%, #e4e4e4 25%,
-        #e4e4e4 37.5%, #f0f0f0 37.5%,
-        #f0f0f0 50%, #e4e4e4 50%,
-        #e4e4e4 62.5%, #f0f0f0 62.5%,
-        #f0f0f0 75%, #e4e4e4 75%,
-        #e4e4e4 87.5%, #f0f0f0 87.5%,
+        transparent 12.5%, #f0f0f0 12.5%,
+        #f0f0f0 25%, transparent 25%,
+        transparent 37.5%, #f0f0f0 37.5%,
+        #f0f0f0 50%, transparent 50%,
+        transparent 62.5%, #f0f0f0 62.5%,
+        #f0f0f0 75%, transparent 75%,
+        transparent 87.5%, #f0f0f0 87.5%,
         #f0f0f0);
     background-size: 50px 50px;
     color: #555 !important;
+    margin: 0 5px 10px 5px !important;
+    padding: 10px 15px 10px 15px !important;
+    box-shadow: none !important;
 }
