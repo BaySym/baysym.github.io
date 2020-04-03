@@ -15,18 +15,19 @@ a {
 }
 
 h1 {
+    width: 45%;
     font-size: 1.5em;
     font-weight: 700;
-    display: inline;
     line-height: 5vh;
+    vertical-align: middle;
 }
 
 h2 {
+    background: #eeeeee;
+    border-radius: 5px;
+    padding: 0px 7px 0 7px;
     font-size: 1em;
     font-weight: 500;
-    display: inline;
-    line-height: 5vh;
-    vertical-align: middle;
     line-height: 5vh;
 }
 
@@ -35,50 +36,25 @@ h3 {
     text-align: center;
 }
 
-#red {
-    color: #000;
-}
-#red:hover {
-    background: linear-gradient(to top, #ff7f7f 40%, transparent 40%);
-}
-
-#green {
-    color: #000;
-}
-#green:hover {
-    background: linear-gradient(to top, #62ff6a 40%, transparent 40%);
-}
-
-#blue {
-    color: #000;
-}
-#blue:hover {
-    background: linear-gradient(to top, #80b3ff 40%, transparent 40%);
-}
-
-#grey {
-    color: #d4d4d4;
-}
-
-h2 + h2 {
-    margin-left: 2vw;
-}
-
-#title, #nav {
-    display: inline;
-}
-
 #nav {
-    float: right;
+    width: 55%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 #top {
     margin-top: 50px;
-    height: 50px;
     margin-bottom: 35px;
+    display: none;  /*    debug     */
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 #wrapper {
+    padding-top: 25px;  /*    debug     */
     width: 600px;
     height: 100%;
     margin: 0 auto;
@@ -102,6 +78,7 @@ h2 + h2 {
     margin: 0 5px 10px 5px;
     padding: 10px 15px 10px 15px;
     transition-duration: 200ms;
+    text-align: center;
 }
 .card:hover {
     margin: -2px 3px 8px 3px;
@@ -139,4 +116,47 @@ h2 + h2 {
     margin: 0 5px 10px 5px !important;
     padding: 10px 15px 10px 15px !important;
     box-shadow: none !important;
+}
+
+@media only screen and (max-width: 700px) {
+    #wrapper, #top {
+        width: 80vw;
+    }
+
+    .card {
+        min-width: 30vw;
+        height: 4vh;
+        font-size: 1em;
+        line-height: 4vh;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #wrapper, #top, .nav {
+        width: 85vw;
+    }
+
+    #content {
+        margin-top: 15px;
+    }
+
+    .card {
+        width: 80vw;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    h1 {
+        width: 85vw;
+        text-align: center;
+        display: flex;
+    }
+
+    #content {
+        margin-top: 5px;
+    }
+
+    h2 {
+        display: flex;
+    }
 }
