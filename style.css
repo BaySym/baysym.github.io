@@ -15,7 +15,7 @@ a {
 }
 
 h1 {
-    width: 45%;
+    width: 60%;
     font-size: 1.5em;
     font-weight: 700;
     line-height: 5vh;
@@ -23,12 +23,19 @@ h1 {
 }
 
 h2 {
-    background: #eeeeee;
-    border-radius: 5px;
-    padding: 0px 7px 0 7px;
     font-size: 1em;
     font-weight: 500;
     line-height: 5vh;
+    color: #888;
+    transition-duration: 200ms;
+}
+h2 a {
+    color: #888;
+    transition-duration: 200ms;
+}
+h2:hover, h2 a:hover {
+    color: #000;
+    transition-duration: 50ms;
 }
 
 h3 {
@@ -36,25 +43,21 @@ h3 {
     text-align: center;
 }
 
-#nav {
-    width: 55%;
+#top {
+    margin-top: 25px;
+    margin-bottom: 35px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-
-#top {
-    margin-top: 50px;
-    margin-bottom: 35px;
-    display: none;  /*    debug     */
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+#top img {
+    border-radius: 50%;
+    height: 5vh;
+    display: inline-flex;
 }
 
 #wrapper {
-    padding-top: 25px;  /*    debug     */
     width: 600px;
     height: 100%;
     margin: 0 auto;
@@ -68,6 +71,7 @@ h3 {
 }
 
 .card {
+    background: white;
     height: 2.5vh;
     font-size: 0.8em;
     line-height: 2.5vh;
@@ -119,6 +123,30 @@ h3 {
     box-shadow: none !important;
 }
 
+.footer {
+    padding: 5px 10px 5px 10px;
+    margin: 10px 5px 10px 5px;
+}
+.footer:hover {
+    padding: 7px 12px 7px 12px;
+    margin: 8px 3px 8px 3px;
+    color: white;
+}
+
+.email:hover { background: #b32121; }
+.linkedin:hover { background: #0e76a8; }
+.twitter:hover { background: #1DA1F3; }
+
+footer {
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    width: 100vw;
+    background: #f0f0f0;
+    position: absolute;
+    bottom: 0;
+}
+
 @media only screen and (max-width: 700px) {
     #wrapper, #top {
         width: 80vw;
@@ -133,7 +161,7 @@ h3 {
 }
 
 @media only screen and (max-width: 600px) {
-    #wrapper, #top, .nav {
+    #wrapper, #top {
         width: 85vw;
     }
 
@@ -150,14 +178,13 @@ h3 {
     h1 {
         width: 85vw;
         text-align: center;
-        display: flex;
     }
 
     #content {
         margin-top: 5px;
     }
 
-    h2 {
-        display: flex;
+    #top {
+        justify-content: space-around;
     }
 }
