@@ -14,6 +14,7 @@
         </div>
         <div id="content">
             <h3>Artificial Intelligence</h3>
+            <h4 id="aidays">X days until exam on 5 May</h4>
             <div class="card-wrapper">
                 <a href="ai23.pdf" target="_blank">
                     <span class="ai card">
@@ -42,7 +43,7 @@
                 </a>
                 <a href="aiall.pdf" target="_blank">
                     <span class="ai card">
-                        All weeks so far
+                        All topics
                     </span>
                 </a>
             </div>
@@ -50,6 +51,7 @@
             <br>
 
             <h3>User Experience Design</h3>
+            <h4 id="uxdays">X days until exam on 7 May</h4>
             <div class="card-wrapper">
                 <a href="uxd1.pdf" target="_blank">
                     <span class="ux card">
@@ -83,7 +85,38 @@
                 </a>
                 <a href="uxdall.pdf" target="_blank">
                     <span class="ux card">
-                        All weeks so far
+                        All topics
+                    </span>
+                </a>
+            </div>
+
+            <br>
+
+            <h3>Azure Fundamentals</h3>
+            <div class="card-wrapper">
+                <a href="af1.pdf" target="_blank">
+                    <span class="af card">
+                        Cloud Concepts
+                    </span>
+                </a>
+                <a href="" target="">
+                    <span class="unready card">
+                        Core Azure Services
+                    </span>
+                </a>
+                <a href="" target="">
+                    <span class="unready card">
+                        Security, Privacy, Compliance, and Trust
+                    </span>
+                </a>
+                <a href="" target="">
+                    <span class="unready card">
+                        Azure Pricing and Support
+                    </span>
+                </a>
+                <a href="" target="">
+                    <span class="unready card">
+                        All modules
                     </span>
                 </a>
             </div>
@@ -104,3 +137,12 @@
     </footer>
 </body>
 </html>
+
+<script>
+    function daysBetween(today, exam){
+        return Math.ceil((exam.getTime() - today.getTime()) / (1000 * 3600 * 24)); 
+    }
+    
+    document.getElementById("aidays").innerHTML = `${daysBetween(new Date(), new Date("05/05/2020"))} days until exam on 5 May`;
+    document.getElementById("uxdays").innerHTML = `${daysBetween(new Date(), new Date("05/07/2020"))} days until exam on 7 May`;
+</script>
