@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="shortcut icon" href="me.png"/>
+    <link rel="shortcut icon" href="img/me.png"/>
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Bailey Symonds</title>
 </head>
@@ -14,24 +14,24 @@
         </div>
         <div id="content">
             <h3>Artificial Intelligence</h3>
-            <h4 id="aidays">X days until exam on 5 May</h4>
+            <h4 id="aicountdown">X days until exam on 5 May</h4>
             <div class="card-wrapper">
-                <a href="ai23.pdf" target="_blank">
+                <a href="PDF/AI/Logic Programming.pdf" target="_blank">
                     <span class="ai card">
                         Logic Programming
                     </span>
                 </a>
-                <a href="ai45.pdf" target="_blank">
+                <a href="PDF/AI/Artificial Neural Networks.pdf" target="_blank">
                     <span class="ai card">
                         Artificial Neural Networks
                     </span>
                 </a>
-                <a href="ai678.pdf" target="_blank">
+                <a href="PDF/AI/Pathfinding.pdf" target="_blank">
                     <span class="ai card">
                         Pathfinding
                     </span>
                 </a>
-                <a href="ai910.pdf" target="_blank">
+                <a href="PDF/AI/AI Planning.pdf" target="_blank">
                     <span class="ai card">
                         AI Planning
                     </span>
@@ -41,7 +41,7 @@
                         Bayesian Reasoning
                     </span>
                 </a>
-                <a href="aiall.pdf" target="_blank">
+                <a href="PDF/AI/All topics.pdf" target="_blank">
                     <span class="ai card">
                         All topics
                     </span>
@@ -51,29 +51,29 @@
             <br>
 
             <h3>User Experience Design</h3>
-            <h4 id="uxdays">X days until exam on 7 May</h4>
+            <h4 id="uxdcountdown">X days until exam on 7 May</h4>
             <div class="card-wrapper">
-                <a href="uxd1.pdf" target="_blank">
+                <a href="PDF/UXD/Introduction.pdf" target="_blank">
                     <span class="ux card">
                         Introduction
                     </span>
                 </a>
-                <a href="uxd2.pdf" target="_blank">
+                <a href="PDF/UXD/Cognition.pdf" target="_blank">
                     <span class="ux card">
                         Cognition
                     </span>
                 </a>
-                <a href="uxd3.pdf" target="_blank">
+                <a href="PDF/UXD/Usability and Accessibility.pdf" target="_blank">
                     <span class="ux card">
                         Usability and Accessibility
                     </span>
                 </a>         
-                <a href="uxd9.pdf" target="_blank">
+                <a href="PDF/UXD/Quantitative Data.pdf" target="_blank">
                     <span class="ux card">
                         Quantitative Data
                     </span>
                 </a>
-                <a href="uxd1011.pdf" target="_blank">
+                <a href="PDF/UXD/Data Analysis.pdf" target="_blank">
                     <span class="ux card">
                         Data Analysis
                     </span>
@@ -83,7 +83,7 @@
                         Ethics of Human Research
                     </span>
                 </a>
-                <a href="uxdall.pdf" target="_blank">
+                <a href="PDF/UXD/All topics.pdf" target="_blank">
                     <span class="ux card">
                         All topics
                     </span>
@@ -94,7 +94,7 @@
 
             <h3>Azure Fundamentals</h3>
             <div class="card-wrapper">
-                <a href="af1.pdf" target="_blank">
+                <a href="PDF/AF/Cloud Concepts.pdf" target="_blank">
                     <span class="af card">
                         Cloud Concepts
                     </span>
@@ -140,9 +140,9 @@
 
 <script>
     function daysBetween(today, exam){
-        return Math.ceil((exam.getTime() - today.getTime()) / (1000 * 3600 * 24)); 
+        return Math.ceil((exam.getTime() - today.getTime()) / 86400000);
     }
     
-    document.getElementById("aidays").innerHTML = `${daysBetween(new Date(), new Date("05/05/2020"))} days until exam on 5 May`;
-    document.getElementById("uxdays").innerHTML = `${daysBetween(new Date(), new Date("05/07/2020"))} days until exam on 7 May`;
+    document.getElementById("aicountdown").innerHTML = `${daysBetween(new Date(), new Date("05/05/2020"))} days until exam on 5 May`;
+    document.getElementById("uxdcountdown").innerHTML = `${daysBetween(new Date(), new Date("05/07/2020"))} days until exam on 7 May`;
 </script>
