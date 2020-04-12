@@ -110,13 +110,9 @@ h4 {
 .ai:hover { background: #ffc2c2; }
 .ai:active { background: #ffeeee; }
 
-.ux { background: #e3ffdd; }
-.ux:hover { background: #c1ffb9; }
-.ux:active { background: #e8ffe8; }
-
-.af { background: #e0f3ff; }
-.af:hover { background: #beedff; }
-.af:active { background: #ecf8ff; }
+.ux { background: #e0f3ff; }
+.ux:hover { background: #bee2ff; }
+.ux:active { background: #ecf8ff; }
 
 .unready {
     background-image: linear-gradient(45deg,
