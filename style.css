@@ -200,7 +200,7 @@ footer {
 
 @media only screen and (max-width: 550px) {
     h1 {
-        width: 85vw;
+        width: 80vw;
         text-align: center;
     }
 
@@ -210,5 +210,9 @@ footer {
 
     #top {
         justify-content: space-around;
+    }
+
+    .card {
+        width: 70vw;
     }
 }
