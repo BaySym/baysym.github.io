@@ -132,7 +132,7 @@ h4 {
 }
 
 .unready {
-    background-image: linear-gradient(45deg,
+    background-image: linear-gradient(-45deg,
         transparent 12.5%, #f0f0f0 12.5%,
         #f0f0f0 25%, transparent 25%,
         transparent 37.5%, #f0f0f0 37.5%,
@@ -270,6 +270,7 @@ footer {
 }
 
 .block {
+    cursor: pointer;
     display: inline-block;
     width: 100%;
     height: 50px;
@@ -279,10 +280,28 @@ footer {
 .available {
     background-color: #A7E8BD;
 }
+.available:hover {
+  background-size: 30px 30px;
+  background-image: linear-gradient(
+    45deg, 
+    rgba(black, 0.1)  25%, 
+    transparent       25%, 
+    transparent       50%, 
+    rgba(black, 0.1)  50%, 
+    rgba(black, 0.1)  75%, 
+    transparent       75%, 
+    transparent
+  );  
+  animation: barberpole 0.5s linear infinite;
+}
+@keyframes barberpole {
+  from { background-position: 0 0; }
+  to   { background-position: 60px 30px; }
+}
 
 .unavailable {
     background-color: #FFACAC;
-    background-image: linear-gradient(45deg,
+    background-image: linear-gradient(-45deg,
         #FFACAC 12.5%, #FFC6C6 12.5%,
         #FFC6C6 25%, #FFACAC 25%,
         #FFACAC 37.5%, #FFC6C6 37.5%,
@@ -292,4 +311,11 @@ footer {
         #FFACAC 87.5%, #FFC6C6 87.5%,
         #FFC6C6);
     background-size: 50px 50px;
+}
+.unavailable:hover {
+    animation: barberpole 1s linear infinite;
+}
+@keyframes barberpole {
+    from { background-position: 0 0; }
+    to   { background-position: 50px 0px; }
 }
