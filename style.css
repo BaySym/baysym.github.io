@@ -148,29 +148,6 @@ h4 {
     box-shadow: none !important;
 }
 
-.footer {
-    padding: 5px 10px 5px 10px;
-    margin: 10px 5px 10px 5px;
-}
-.footer:hover {
-    padding: 7px 12px 7px 12px;
-    margin: 8px 3px 8px 3px;
-    color: white;
-}
-
-.linkedin:hover { background: #0e76a8; }
-.twitter:hover { background: #1DA1F3; }
-
-footer {
-    display: none;  /* debug */
-    justify-content: center;
-    height: 50px;
-    width: 100vw;
-    background: #f0f0f0;
-    position: absolute;
-    bottom: 0;
-}
-
 @media only screen and (max-width: 700px) {
     #wrapper, #top {
         width: 80vw;
