@@ -219,11 +219,48 @@ footer {
 
 
 /* TIMETABLES */
+h5 {
+    display: inline-block;
+    margin: 0;
+}
 
+.timeWrapper {
+    display: inline-block;
+}
 
+.timeWrapper td {
+    width: auto;
+}
 
-/* REMEMBER:
-cursor: pointer;
-background-color: #A7E8BD;
-background-color: #FFACAC;
-*/
+.tableWrapper {
+    text-align: center;
+    display: inline-block;
+    margin-left: 1vw;
+}
+
+.label {
+    font-size: 0.75rem;
+    width: 2.5vw;
+    height: 2.5vw;
+    text-align: right;
+    vertical-align: top;
+    border: 1px solid #fff;
+    cursor: auto !important;
+}
+
+.userTable td {
+    width: 2.5vw;
+    height: 2.5vw;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #fff;
+    cursor: pointer;
+}
+  
+.free {
+    background-color:#A7E8BD;
+}
+
+.busy {
+    background-color:#FFACAC;
+}
