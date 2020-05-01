@@ -7,109 +7,76 @@
     <meta name="viewport" content="width=device-width">
 </head>
 <body>
-    <div id="wrapper">
-        <div id="top">
-            <h1>Bailey Symonds</h1>
-            <h2 style="color:black;">Home</h2>
-            <h2><a href="https://bsym.dev/projects">Projects</a></h2>
+    <div id="nav">
+        <p style="font-weight: 700"><a href="https://bsym.dev">bsym.dev</a></p>
+        <p><a href="https://bsym.dev/projects">/projects</a></p>
+        <p><a href="https://bsym.dev/about">/about</a></p>
+    </div>
+    <div id="content">
+        <div class="column">
+            <h4 class="name">Artificial Intelligence</h4>
+            <h5 class="desc" id="aicountdown">X days until exam on 5 May</h5>
+            <a class="ai topic" href="PDF/AI/Logic Programming.pdf" target="_blank">
+                <div class="name">Logic Programming</div>
+                <div class="desc">propositional logic, predicate calculus, and backtracking</div>
+            </a>
+            <a class="ai topic" href="PDF/AI/Artificial Neural Networks.pdf" target="_blank">
+                <div class="name">Artificial Neural Networks</div>
+                <div class="desc">neurons, training, single and multi-layer</div>
+            </a>
+            <a class="ai topic" href="PDF/AI/Pathfinding.pdf" target="_blank">
+                <div class="name">Pathfinding</div>
+                <div class="desc">games AI, Dijkstra's algorithm, A* and further optimisations</div>
+            </a>
+            <a class="ai topic" href="PDF/AI/AI Planning.pdf" target="_blank">
+                <div class="name">AI Planning</div>
+                <div class="desc">requirements and heuristic functions</div>
+            </a>
+            <a class="ai topic" href="PDF/AI/Bayes Theorem.pdf" target="_blank">
+                <div class="name">Bayes' Theorem</div>
+                <div class="desc">explanation and example</div>
+            </a>
+            <a class="ai topic" href="PDF/AI/Mock Questions.pdf" target="_blank">
+                <div class="name">Mock Questions</div>
+            </a>
+            <a class="ai topic" href="PDF/AI/Mock Answers.pdf" target="_blank">
+                <div class="name">Mock Answers</div>
+            </a>
         </div>
-        <div id="content">
-            <h3>Artificial Intelligence</h3>
-            <h4 id="aicountdown">X days until exam on 5 May</h4>
-            <div class="card-wrapper">
-                <a href="PDF/AI/Logic Programming.pdf" target="_blank">
-                    <span class="ai card">
-                        Logic Programming
-                    </span>
-                </a>
-                <a href="PDF/AI/Artificial Neural Networks.pdf" target="_blank">
-                    <span class="ai card">
-                        Artificial Neural Networks
-                    </span>
-                </a>
-                <a href="PDF/AI/Pathfinding.pdf" target="_blank">
-                    <span class="ai card">
-                        Pathfinding
-                    </span>
-                </a>
-                <a href="PDF/AI/AI Planning.pdf" target="_blank">
-                    <span class="ai card">
-                        AI Planning
-                    </span>
-                </a>
-                <a href="PDF/AI/Bayes Theorem.pdf" target="_blank">
-                    <span class="ai card">
-                        Bayes' Theorem
-                    </span>
-                </a>
-                <a href="PDF/AI/Overview.pdf" target="_blank">
-                    <span class="ai card">
-                        Overview
-                    </span>
-                </a>
-                <a href="PDF/AI/Mock Questions.pdf" target="_blank">
-                    <span class="ai card">
-                        Mock Questions
-                    </span>
-                </a>
-                <a href="PDF/AI/Mock Answers.pdf" target="_blank">
-                    <span class="ai card">
-                        Mock Answers
-                    </span>
-                </a>
-            </div>
-
-            <br>
-
-            <h3>User Experience Design</h3>
-            <h4 id="uxdcountdown">X days until exam on 7 May</h4>
-            <div class="card-wrapper">
-                <a href="PDF/UXD/Introduction.pdf" target="_blank">
-                    <span class="uxd card">
-                        Introduction
-                    </span>
-                </a>
-                <a href="PDF/UXD/Cognition.pdf" target="_blank">
-                    <span class="uxd card">
-                        Cognition
-                    </span>
-                </a>
-                <a href="PDF/UXD/Usability and Accessibility.pdf" target="_blank">
-                    <span class="uxd card">
-                        Usability and Accessibility
-                    </span>
-                </a>         
-                <a href="PDF/UXD/Gathering Data.pdf" target="_blank">
-                    <span class="uxd card">
-                        Gathering Data
-                    </span>
-                </a>
-                <a href="PDF/UXD/Data Analysis.pdf" target="_blank">
-                    <span class="uxd card">
-                        Data Analysis
-                    </span>
-                </a>
-                <a href="PDF/UXD/Ethics of Human Research.pdf" target="_blank">
-                    <span class="uxd card">
-                        Ethics of Human Research
-                    </span>
-                </a>
-                <a href="PDF/UXD/Overview.pdf" target="_blank">
-                    <span class="uxd card">
-                        Overview
-                    </span>
-                </a>
-                <a href="PDF/UXD/Mock Questions.pdf" target="_blank">
-                    <span class="uxd card">
-                        Mock Questions
-                    </span>
-                </a>
-                <a href="PDF/UXD/Mock Answers.pdf" target="_blank">
-                    <span class="uxd card">
-                        Mock Answers
-                    </span>
-                </a>
-            </div>
+        
+        <div class="column">
+            <h4 class="name">User Experience Design</h4>
+            <h5 class="desc" id="uxdcountdown">X days until exam on 7 May</h5>
+            <a class="uxd topic" href="PDF/UXD/Introduction.pdf" target="_blank">
+                <div class="name">Introduction</div>
+                <div class="desc">questions to consider, usability, and accessibility</div>
+            </a>
+            <a class="uxd topic" href="PDF/UXD/Cognition.pdf" target="_blank">
+                <div class="name">Cognition</div>
+                <div class="desc">types of cognition, and memory</div>
+            </a>
+            <a class="uxd topic" href="PDF/UXD/Usability and Accessibility.pdf" target="_blank">
+                <div class="name">Usability and Accessibility</div>
+                <div class="desc">heuristics and user differences</div>
+            </a>
+            <a class="uxd topic" href="PDF/UXD/Gathering Data.pdf" target="_blank">
+                <div class="name">Gathering Data</div>
+                <div class="desc">questionnaires and user feedback</div>
+            </a>
+            <a class="uxd topic" href="PDF/UXD/Data Analysis.pdf" target="_blank">
+                <div class="name">Data Analysis</div>
+                <div class="desc">visualising data, sampling, and comparing datasets</div>
+            </a>
+            <a class="uxd topic" href="PDF/UXD/Ethics of Human Research.pdf" target="_blank">
+                <div class="name">Ethics of Human Research</div>
+                <div class="desc">history and principles of research ethics</div>
+            </a>
+            <a class="uxd topic" href="PDF/UXD/Mock Questions.pdf" target="_blank">
+                <div class="name">Mock Questions</div>
+            </a>
+            <a class="uxd topic" href="PDF/UXD/Mock Answers.pdf" target="_blank">
+                <div class="name">Mock Answers</div>
+            </a>
         </div>
     </div>
 </body>

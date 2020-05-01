@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+h1 {
+    width: 60%;
+    font-size: 1.5em;
+    font-weight: 700;
+    line-height: 5vh;
+    vertical-align: middle;
+}
+
+h2 {
+    font-size: 1em;
+    font-weight: 500;
+    line-height: 5vh;
+    color: #888;
+    transition-duration: 200ms;
+}
+h2 a {
+    color: #888;
+    transition-duration: 200ms;
+}
+h2:hover, h2 a:hover {
+    color: #000;
+    transition-duration: 50ms;
+}
+
+h3 {
+    font-size: 1.125rem;
+    text-align: center;
+}
+
+h4 {
+    font-size: 0.85rem;
+    text-align: center;
+    font-weight: 400;
+    margin-top: -15px;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+#top {
+    margin-top: 1.6rem;
+    margin-bottom: 1.6rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+#top img {
+    border-radius: 50%;
+    height: 5vh;
+    display: inline-flex;
+}
+
+#wrapper {
+    width: 50vw;
+    min-height: calc(100vh - 50px - 1.6rem);
+    margin: 0 auto;
+}
+
+.card-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    background: white;
+    height: 2.5vh;
+    font-size: 0.8em;
+    line-height: 2.5vh;
+    display: block;
+    border-radius: 3px;
+    color: black;
+    font-weight: 500;
+    margin: 0 5px 10px 5px;
+    padding: 10px 15px 10px 15px;
+    text-align: center;
+    transition: 0.1s;
+}
+.card:hover {
+    transition: 0.1s;
+}
+.card:active {
+    color: #666;
+    transition-duration: 50ms;
+}
+
+.ai { background: #ffe0e0; }
+.ai:hover { background: #ffc2c2; }
+.ai:active { background: #ffeeee; }
+
+.uxd { background: #e0f3ff; }
+.uxd:hover { background: #bee2ff; }
+.uxd:active { background: #ecf8ff; }
+
+.unready {
+    background-image: linear-gradient(-45deg,
+        transparent 12.5%, #f0f0f0 12.5%,
+        #f0f0f0 25%, transparent 25%,
+        transparent 37.5%, #f0f0f0 37.5%,
+        #f0f0f0 50%, transparent 50%,
+        transparent 62.5%, #f0f0f0 62.5%,
+        #f0f0f0 75%, transparent 75%,
+        transparent 87.5%, #f0f0f0 87.5%,
+        #f0f0f0);
+    background-size: 50px 50px;
+    color: #555;
+    margin: 0 5px 10px 5px !important;
+    padding: 10px 15px 10px 15px !important;
+    box-shadow: none !important;
+}
+
+@media only screen and (max-width: 700px) {
+    #wrapper, #top {
+        width: 80vw;
+    }
+
+    .card {
+        min-width: 30vw;
+        height: 4vh;
+        font-size: 1em;
+        line-height: 4vh;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #wrapper, #top {
+        width: 85vw;
+    }
+
+    #content {
+        margin-top: 15px;
+    }
+
+    .card {
+        width: 80vw;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    h1 {
+        width: 80vw;
+        text-align: center;
+    }
+
+    #content {
+        margin-top: 5px;
+    }
+
+    #top {
+        justify-content: space-around;
+    }
+
+    .card {
+        width: 70vw;
+    }
+}
+
+#portItem {
+    padding: 0.25vw 1vw 1vw 1vw;
+    border-radius: 4px;
+    transition: 0.5s;
+}
+
+#portItem:hover {
+    box-shadow: 0px -1px 8px rgba(0,0,0,0.2);
+    box-shadow: 0px 3px 8px rgba(0,0,0,0.2);
+    transition: 0.2s;
+}
+
+#portItem img {
+    width: 100%;
+    height: auto;
+}
