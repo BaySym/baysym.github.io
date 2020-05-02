@@ -39,7 +39,7 @@ h5 { font-weight: 400; }
     display: flex;
     justify-content: space-between;
     max-width: 550px;
-    min-width: 400px;
+    min-width: 450px;
 }
 
 /* column of topics */
