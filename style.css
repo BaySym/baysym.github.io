@@ -12,7 +12,7 @@ h5 { font-weight: 400; }
 #nav {
     display: flex;
     justify-content: space-between;
-    width: 250px;
+    width: 320px;
     margin: 15px auto;
     vertical-align: middle;
 }
@@ -114,3 +114,35 @@ h5 { font-weight: 400; }
         text-decoration: none !important;
         color: black;
     }
+
+/* about page banner */
+#banner {
+    height: auto;
+    width: 100vw;
+    margin: auto;
+    max-width: 550px;
+    display: block;
+}
+
+#about {
+    text-align: justify;
+    width: calc(100vw-25px);
+    margin: auto;
+    max-width: 550px;
+    padding: 25px;
+}
+
+#gallery {
+    margin-bottom: 25px;
+}
+    #gallery-row {
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        width: 654px;
+    }
+        #gallery img {
+            margin-bottom: 6px;
+            height: 300px;
+            width: auto;
+        }
