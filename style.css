@@ -135,14 +135,15 @@ h5 { font-weight: 400; }
 #gallery {
     margin-bottom: 25px;
 }
-    #gallery-row {
+    .gallery-row {
         margin: auto;
         display: flex;
         justify-content: space-between;
         width: 654px;
+        margin-bottom: 6px;
     }
-        #gallery img {
-            margin-bottom: 6px;
+        .gallery-row img {
             height: 300px;
             width: auto;
+            transition: 0.5s;
         }
