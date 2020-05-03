@@ -74,7 +74,7 @@ h5 { font-weight: 400; }
     .ai {
         color: #c00;
     }
-        .ai:hover, .ai:active, .ai:focus {
+        .ai:hover {
             color: #000;
             border-color: #c00;
             background-color: #fdd;
@@ -82,7 +82,7 @@ h5 { font-weight: 400; }
     .uxd {
         color: #07c;
     }
-        .uxd:hover, .uxd:active, .uxd:focus {
+        .uxd:hover {
             color: #000;
             border-color: #07c;
             background-color: #c1eaff;
