@@ -91,6 +91,16 @@
         return Math.ceil((exam.getTime() - today.getTime()) / 86400000);
     }
     
-    document.getElementById("aicountdown").innerHTML = `${daysBetween(new Date(), new Date("05/05/2020"))} days until exam on 5 May`;
-    document.getElementById("uxdcountdown").innerHTML = `${daysBetween(new Date(), new Date("05/07/2020"))} days until exam on 7 May`;
+    var aiDays = daysBetween(new Date(), new Date("05/05/2020"));
+    var uxdDays = daysBetween(new Date(), new Date("05/07/2020"));
+
+    if (aiDays == 1)
+        document.getElementById("aicountdown").innerHTML = `${aiDays} day until exam on 5 May`;
+    else
+        document.getElementById("aicountdown").innerHTML = `${aiDays} days until exam on 5 May`;
+
+    if (uxdDays == 1)
+        document.getElementById("uxdcountdown").innerHTML = `${uxdDays} day until exam on 7 May`;
+    else
+        document.getElementById("uxdcountdown").innerHTML = `${uxdDays} days until exam on 7 May`;
 </script>
