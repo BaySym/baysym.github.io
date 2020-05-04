@@ -64,10 +64,10 @@ h5 { font-weight: 400; }
     display: block;
     text-decoration: none;
     max-width: 250px;
-    background-color: #f8f8f8;
-    border: 1px solid #e6e6e6;
+    border: 1px solid #ddd;
 }
     .topic:hover {
+        box-shadow: 0 5px 5px rgb(0, 0, 0, 0.05);
         transition: 0.1s;
     }
     .name {
@@ -81,17 +81,13 @@ h5 { font-weight: 400; }
         color: #c00;
     }
         .ai:hover {
-            color: #000;
             border-color: #c00;
-            background-color: #fdd;
     }
     .uxd {
         color: #07c;
     }
         .uxd:hover {
-            color: #000;
             border-color: #07c;
-            background-color: #c1eaff;
         }
 
 /* project on projects page */
