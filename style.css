@@ -159,13 +159,16 @@ h5 { font-weight: 400; }
 }
     .gallery-row {
         margin: auto;
+        margin-bottom: 4px;
         display: flex;
         justify-content: space-between;
         max-width: 550px;
         width: calc(100vw-25px);
     }
         .gallery-row img {
-            margin: 0.25vw;
             max-height: 300px;
             display: inline;
+        }
+        .gallery-row img + img {
+            margin-left: 4px;
         }
