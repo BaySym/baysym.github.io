@@ -16,7 +16,7 @@
     <div id="content">
         <div class="column">
             <h4 class="name">Artificial Intelligence</h4>
-            <h5 class="desc" id="aicountdown">X days until exam on 5 May</h5>
+            <h5 class="desc" id="aicountdown">Exam tomorrow at 3pm</h5>
             <a class="ai topic" href="PDF/AI/Logic Programming.pdf" target="_blank">
                 <div class="name">Logic Programming</div>
                 <div class="desc">propositional logic, predicate calculus, and backtracking</div>
@@ -90,17 +90,8 @@
     function daysBetween(today, exam){
         return Math.ceil((exam.getTime() - today.getTime()) / 86400000);
     }
-    function hoursBetween(today, exam){
-        return Math.ceil(24*(exam.getTime() - today.getTime()) / 86400000);
-    }
     
-    var aiDays = hoursBetween(new Date(), new Date("05/05/2020 15:00"));
     var uxdDays = daysBetween(new Date(), new Date("05/07/2020 16:05"));
-
-    if (aiDays == 1)
-        document.getElementById("aicountdown").innerHTML = `${aiDays} hour until exam on 5 May`;
-    else
-        document.getElementById("aicountdown").innerHTML = `${aiDays} hours until exam on 5 May`;
 
     if (uxdDays == 1)
         document.getElementById("uxdcountdown").innerHTML = `${uxdDays} day until exam on 7 May`;
