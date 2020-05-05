@@ -100,8 +100,7 @@ h5 { font-weight: 400; }
     .project:hover > img {
         border-color: #ccc;
         box-shadow: 0 5px 5px rgb(0, 0, 0, 0.05);
-        transform: translateY(-5px);
-        transition: 0.2s;
+        transition: 0.1s;
     }
     .project img {
         margin-top: 1vh;
