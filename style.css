@@ -59,7 +59,7 @@ h5 { font-weight: 400; }
     padding: 10px;
     margin: 10px auto 10px;
     border-radius: 5px;
-    transition: 0.1s;
+    transition: 0.2s;
     cursor: pointer;
     display: block;
     text-decoration: none;
@@ -108,7 +108,7 @@ h5 { font-weight: 400; }
         height: auto;
         border: 1px solid #e6e6e6;
         border-radius: 4px;
-        transition: 0.1s;
+        transition: 0.2s;
     }
     .project h4 {
         text-align: center;
