@@ -51,7 +51,8 @@ h5 { font-weight: 400; }
 /* column of topics */
 .column {
     display: block;
-    width: 47.5%;
+    width: 60%;
+    margin: auto;
 }
 
 /* topic a-tag 'div' */
@@ -63,7 +64,6 @@ h5 { font-weight: 400; }
     cursor: pointer;
     display: block;
     text-decoration: none;
-    max-width: 250px;
     border: 1px solid #ddd;
 }
     .topic:hover {
