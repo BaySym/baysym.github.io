@@ -16,7 +16,7 @@
     <div id="content">        
         <div class="column">
             <h4 class="name">User Experience Design</h4>
-            <h5 class="desc" id="uxdcountdown">X days until exam on 7 May</h5>
+            <h5 class="desc" id="uxdcountdown">Exam tomorrow at 4:05pm</h5>
             <a class="uxd topic" href="PDF/UXD/Introduction.pdf" target="_blank">
                 <div class="name">Introduction</div>
                 <div class="desc">questions to consider, usability, and accessibility</div>
@@ -52,16 +52,3 @@
     </div>
 </body>
 </html>
-
-<script>
-    function daysBetween(today, exam){
-        return Math.ceil((exam.getTime() - today.getTime()) / 86400000);
-    }
-    
-    var uxdDays = daysBetween(new Date(), new Date("05/07/2020 16:05"));
-
-    if (uxdDays == 1)
-        document.getElementById("uxdcountdown").innerHTML = `${uxdDays} day until exam on 7 May`;
-    else
-        document.getElementById("uxdcountdown").innerHTML = `${uxdDays} days until exam on 7 May`;
-</script>

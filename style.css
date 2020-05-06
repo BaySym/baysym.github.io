@@ -168,3 +168,9 @@ h5 { font-weight: 400; }
         .gallery-row img + img {
             margin-left: 4px;
         }
+
+.bd { color: #07c; }
+.ml { color: #0b0; }
+.var { color: #e80; }
+.pp { color: #e42; }
+.cpd { color: #c153e9; }
