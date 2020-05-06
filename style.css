@@ -6,6 +6,10 @@ html {
 
 body, h4, h5 { margin: 0; }
 
+body {
+    padding-bottom: 25px;
+}
+
 h1 {
     font-size: 1.5rem;
 }
@@ -148,7 +152,6 @@ h5 { font-weight: 400; }
         }
 
 #gallery {
-    margin-bottom: 25px;
 }
     .gallery-row {
         margin: auto;
