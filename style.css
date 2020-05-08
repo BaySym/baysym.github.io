@@ -79,18 +79,6 @@ h5 { font-weight: 400; }
         font-size: 0.8rem;
         color: #444;
     }
-    .ai {
-        color: #c00;
-    }
-        .ai:hover {
-            border-color: #c00;
-    }
-    .uxd {
-        color: #07c;
-    }
-        .uxd:hover {
-            border-color: #07c;
-        }
 
 /* project on projects page */
 .project {
@@ -151,23 +139,21 @@ h5 { font-weight: 400; }
             opacity: calc(1/3);
         }
 
-#gallery {
+.gallery-row {
+    margin: auto;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+    max-width: 550px;
+    width: calc(100vw-25px);
 }
-    .gallery-row {
-        margin: auto;
-        margin-bottom: 4px;
-        display: flex;
-        justify-content: space-between;
-        max-width: 550px;
-        width: calc(100vw-25px);
+    .gallery-row img {
+        max-height: 300px;
+        display: inline;
     }
-        .gallery-row img {
-            max-height: 300px;
-            display: inline;
-        }
-        .gallery-row img + img {
-            margin-left: 4px;
-        }
+    .gallery-row img + img {
+        margin-left: 4px;
+    }
 
 .bd { color: #07c; }
 .ml { color: #0b0; }
