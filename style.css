@@ -22,7 +22,7 @@ h5 { font-weight: 400; }
 #nav {
     display: flex;
     justify-content: space-between;
-    width: 320px;
+    width: 250px;
     margin: 15px auto;
     vertical-align: middle;
 }
