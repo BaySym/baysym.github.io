@@ -42,69 +42,56 @@ h5 { font-weight: 400; }
         transition: 0.1s;
     }
 
-/* page's main content */
-#content {
+/* a-tag 'div' card */
+.card {
     margin: auto;
-    display: flex;
-    justify-content: space-between;
-    max-width: 550px;
-    min-width: 400px;
-}
-
-/* column of topics */
-.column {
-    display: block;
-    margin: auto;
-}
-
-/* topic a-tag 'div' */
-.topic {
+    display: inline-block;
     padding: 10px;
-    margin: 10px auto 10px;
     border-radius: 5px;
-    transition: 0.2s;
     cursor: pointer;
-    display: block;
     text-decoration: none;
+    text-align: left;
+    width: calc(50% - 10px);
+    box-sizing: border-box;
     border: 1px solid #ddd;
+    transition: 0.2s;
 }
-    .topic:hover {
+    .card:hover {
+        border-color: #aaa;
         box-shadow: 0 5px 5px rgb(0, 0, 0, 0.05);
         transition: 0.1s;
     }
+    .card * {
+        margin: 0;
+    }
     .name {
         font-weight: 700;
+        color: #000;
+        margin-bottom: 2px;
     }
     .desc {
         font-size: 0.8rem;
         color: #444;
     }
-
-/* project on projects page */
-.project {
-    text-decoration: none;
-    padding: 1vw;
-    border-radius: 4px;
-    display: block;
-}
-    .project:hover > img {
-        border-color: #ccc;
-        box-shadow: 0 5px 5px rgb(0, 0, 0, 0.05);
-        transition: 0.1s;
-    }
-    .project img {
-        margin-top: 1vh;
+    .card img {
         width: 100%;
-        height: auto;
-        border: 1px solid #e6e6e6;
-        border-radius: 4px;
-        transition: 0.2s;
+        margin-top: 10px;
+        margin-bottom: -4px;
+        border-radius: 2px;
+        border: 1px solid #ddd;
+        box-sizing: border-box;
     }
-    .project h4 {
-        text-align: center;
-        text-decoration: none !important;
-        color: black;
+    .card + .card {
+        margin-left: 10px;
     }
+
+#projects {
+    text-align: justify;
+    width: calc(100vw-25px);
+    margin: auto;
+    max-width: 550px;
+    padding: 25px;
+}
 
 /* about page banner */
 #banner {
