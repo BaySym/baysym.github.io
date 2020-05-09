@@ -90,7 +90,7 @@ h5 { font-weight: 400; }
     width: calc(100vw-25px);
     margin: auto;
     max-width: 550px;
-    padding: 25px;
+    padding: 0 25px;
 }
 
 /* about page banner */
