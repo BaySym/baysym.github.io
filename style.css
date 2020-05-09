@@ -104,6 +104,9 @@ h5 { font-weight: 400; }
     padding: 25px;
     line-height: 1.5rem;
 }
+    #about h1 {
+        display: inline;
+    }
     #social {
         width: 96px;
         float: right;
