@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="shortcut icon" href="../../img/me.png"/>
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+    <title>Timetables</title>
+    <meta name="viewport" content="width=device-width">
+</head>
+<body>
+    <div id="nav">
+        <p><a href="https://bsym.dev">bsym.dev</a></p>
+        <p><a href="https://bsym.dev/projects">/projects</a></p>
+        <p><a href="https://bsym.dev/photo">/photo</a></p>
+    </div>
+    <div class="timetable-wrapper">
+        <!-- Top panel of buttons and key -->
+        <div id="top-panel">
+            <div id="key"></div>
+
+            <!-- Reset timetable -->
+        </div>
+        
+        <div id="tables-wrapper">
+            <!-- Displays the users' timetables -->
+            <div id="user-wrapper">
+                <div class="table-header">
+                    <button onclick="addUser()">←</button>
+                    <h1>Timetables</h1>
+                    <button onclick="removeUser()">→</button>
+                </div>
+                <table cellpadding="0" cellspacing="0" id="user-timetable">
+                    <tr>
+                        <td class="day"></td>
+                        <td class="day">MON</td>
+                        <td class="day">TUE</td>
+                        <td class="day">WED</td>
+                        <td class="day">THU</td>
+                        <td class="day">FRI</td>
+                    </tr>
+                    <tr><td class="time-cell-l">9:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">9:00</td></tr>
+                    <tr><td class="time-cell-l">10:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">10:00</td></tr>
+                    <tr><td class="time-cell-l">11:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">11:00</td></tr>
+                    <tr><td class="time-cell-l">12:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">12:00</td></tr>
+                    <tr><td class="time-cell-l">13:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">13:00</td></tr>
+                    <tr><td class="time-cell-l">14:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">14:00</td></tr>
+                    <tr><td class="time-cell-l">15:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">15:00</td></tr>
+                    <tr><td class="time-cell-l">16:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">16:00</td></tr>
+                    <tr><td class="time-cell-l">17:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">17:00</td></tr>
+                </table>
+            </div>
+            
+            <!-- Displays the output table -->
+            <div id="output-wrapper">
+                <div class="table-header">
+                    <h1>Comparison</h1>
+                </div>
+                <table cellpadding="0" cellspacing="0" id="output-timetable">
+                    <tr>
+                        <td class="day"></td>
+                        <td class="day">MON</td>
+                        <td class="day">TUE</td>
+                        <td class="day">WED</td>
+                        <td class="day">THU</td>
+                        <td class="day">FRI</td>
+                    </tr>
+                    <tr><td class="time-cell-l">9:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">9:00</td></tr>
+                    <tr><td class="time-cell-l">10:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">10:00</td></tr>
+                    <tr><td class="time-cell-l">11:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">11:00</td></tr>
+                    <tr><td class="time-cell-l">12:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">12:00</td></tr>
+                    <tr><td class="time-cell-l">13:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">13:00</td></tr>
+                    <tr><td class="time-cell-l">14:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">14:00</td></tr>
+                    <tr><td class="time-cell-l">15:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">15:00</td></tr>
+                    <tr><td class="time-cell-l">16:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">16:00</td></tr>
+                    <tr><td class="time-cell-l">17:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">17:00</td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!-- link JS -->
+<script src="script.js"></script>

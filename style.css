@@ -54,10 +54,8 @@ h5 { font-weight: 400; }
     border: 1px solid transparent;
     transition: 0.2s;
 }
-    .card:hover {
-        border-color: #ddd;
-        box-shadow: 0 5px 5px rgb(0, 0, 0, 0.05);
-        transition: 0.1s;
+    .card:hover > .name {
+        text-decoration: underline;
     }
     .card * {
         margin: 0;
@@ -74,7 +72,6 @@ h5 { font-weight: 400; }
     .card img {
         width: 100%;
         margin-top: 10px;
-        margin-bottom: -4px;
         border-radius: 2px;
         border: 1px solid #ddd;
         box-sizing: border-box;
@@ -210,3 +207,78 @@ footer {
 .var { color: #e80; }
 .pp { color: #e42; }
 .cpd { color: #c153e9; }
+
+#tables-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: calc(100vw-25px);
+    max-width: 550px;
+    margin: auto;
+    padding: 10px;
+}
+    .table-header {
+        display: flex;
+        justify-content: space-around;
+    }
+        .table-header * {
+            display: inline;
+        }
+        .table-header button {
+            background: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    #user-wrapper, #output-wrapper {
+        display: inline-block;
+        width: 250px;
+        margin: auto;
+        margin-bottom: 25px;
+    }
+    #user-wrapper h1, #output-wrapper h1 {
+        font-size: 1rem;
+        text-align: center;
+        margin: 0;
+    }
+    table {
+        margin: auto;
+        margin-bottom: 25px;
+    }
+        td {
+            border: 1px solid white;
+            background-color: lightgrey;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .time-cell-l, .time-cell-r {
+            vertical-align: top;
+            font-weight: 400 !important;
+            color: #444;
+            font-size: 0.6rem !important;
+            }
+            .time-cell-l {
+                text-align: right;
+                padding-right: 5px;
+            }
+            .time-cell-r {
+                text-align: left;
+                padding-left: 3px;
+            }
+        .day {
+            text-align: center;
+            vertical-align: bottom;
+        }
+        .day, .time-cell-l, .time-cell-r {
+            font-size: 0.7rem;
+            font-weight: 500;
+            font-variant: small-caps;
+            border: none !important;
+            background-color: transparent !important;
+            cursor: auto !important;
+        }
+        .free { background-color: lime; }
+            .free:hover { opacity: 0.3; }
+        .busy { background-color: red; }
+            .busy:hover { opacity: 0.3; }
