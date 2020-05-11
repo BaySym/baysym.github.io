@@ -42,20 +42,20 @@ h5 { font-weight: 400; }
 /* a-tag 'div' card */
 .card {
     margin: auto;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     display: inline-block;
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
     text-decoration: none;
-    text-align: left;
+    text-align: justify;
     width: calc(50% - 10px);
     box-sizing: border-box;
-    border: 1px solid #ddd;
+    border: 1px solid transparent;
     transition: 0.2s;
 }
     .card:hover {
-        border-color: #aaa;
+        border-color: #ddd;
         box-shadow: 0 5px 5px rgb(0, 0, 0, 0.05);
         transition: 0.1s;
     }
