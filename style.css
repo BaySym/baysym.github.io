@@ -8,6 +8,8 @@ body { padding-bottom: 25px; }
 
 h1 { font-size: 1.5rem; }
 
+h3 { font-weight: 500; }
+
 h4, h5 { margin-left: 10px; }
 
 h5 { font-weight: 400; }
@@ -40,6 +42,7 @@ h5 { font-weight: 400; }
 /* a-tag 'div' card */
 .card {
     margin: auto;
+    margin-bottom: 20px;
     display: inline-block;
     padding: 10px;
     border-radius: 5px;
@@ -75,9 +78,6 @@ h5 { font-weight: 400; }
         border-radius: 2px;
         border: 1px solid #ddd;
         box-sizing: border-box;
-    }
-    .card+.card {
-        margin-left: 10px;
     }
 
 #projects {
@@ -135,6 +135,75 @@ h5 { font-weight: 400; }
     .gallery-row img+img {
         margin-left: 4px;
     }
+
+.password-wrapper {
+    text-align: center;
+    width: calc(100vw-25px);
+    margin: auto;
+    max-width: 550px;
+    padding: 0 25px;
+    line-height: 1.5rem;
+}
+    .password-wrapper h4 {
+        font-weight: 400;
+        font-size: 0.9rem;
+    }
+    #include-upp, #include-low, #include-num,
+    #include-sym, #password-length, .label {
+        display: inline;
+        padding: 0;
+    }
+    .checkbox + .label {
+        margin-left: 15px;
+    }
+    #password-gen {
+        margin-top: 40px;
+        margin-bottom: 15px;
+        background: #f9f9f9;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 5px 10px;
+        box-sizing: border-box;
+        transition: 0.2s;
+    }
+        #password-gen:hover {
+            border-color: #666;
+            box-shadow: 0 5px 5px rgb(0, 0, 0, 0.05);
+            transition: 0.1s;
+        }
+        #password-gen:active {
+            background-color: #eee;
+            box-shadow: none;
+        }
+    #password-input {
+        background: #FFBFB8;
+        border: 1px solid #000;
+        border-radius: 5px;
+        padding: 10px;
+        box-sizing: border-box;
+        font-size: 1.5rem;
+        width: 80%;
+        margin: 10px 0;
+    }
+    #password-length {
+        width: 8%;
+        padding: 2px 3px;
+        text-align: center;
+    }
+        .time-display {
+            display: inline;
+        }
+        #password-info p {
+            margin: 0;
+        }
+
+footer {
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
+}
 
 .bd { color: #07c; }
 .ml { color: #0b0; }

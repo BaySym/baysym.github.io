@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="shortcut icon" href="../../img/me.png"/>
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+    <title>Passwords</title>
+    <meta name="viewport" content="width=device-width">
+</head>
+<body>
+    <div id="nav">
+        <p><a href="https://bsym.dev">bsym.dev</a></p>
+        <p><a href="https://bsym.dev/projects">/projects</a></p>
+        <p><a href="https://bsym.dev/photo">/photo</a></p>
+    </div>
+    <div class="password-wrapper">
+        <h4>Enter a password and press enter to check its strength:</h4>
+        <input type="text" id="password-input" autofocus>
+        <br>
+        <div id="password-info">
+            <h3 class="time-display">Time to crack: </h3>
+            <h3 class="time-display" id="crack-time">no time</h3>
+        </div>
+        <button id="password-gen" onclick="generate()">Generate a random password</button>
+        <br>
+        <p class="label">Password length:</p>
+        <input type="number" id="password-length" min="1" max="20" value="8">
+        <br>
+        <p class="label">Include upper case?</p>
+        <input type="checkbox" class="checkbox" id="include-upp" checked>
+        <p class="label">Include lower case?</p>
+        <input type="checkbox" class="checkbox" id="include-low" checked>
+        <br>
+        <p class="label">Include numbers?</p>
+        <input type="checkbox" class="checkbox" id="include-num" checked>
+        <p class="label">Include symbols?</p>
+        <input type="checkbox" class="checkbox" id="include-sym" checked>
+    </div>
+    <footer>
+        <p>Password strength algorithm obtained from <a href="https://github.com/dropbox/zxcvbn">https://github.com/dropbox/zxcvbn</a>.</p>
+    </footer>
+</body>
+</html>
+
+<!-- link JS -->
+<script src="zxcvbn.js"></script>
+<script src="script.js"></script>
