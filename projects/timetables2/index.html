@@ -16,9 +16,11 @@
     <div class="timetable-wrapper">
         <!-- Top panel of buttons and key -->
         <div id="top-panel">
-            <div id="key"></div>
-
-            <!-- Reset timetable -->
+            <button onclick="addUser()">🆕</button>
+            <button onclick="prevUser()">⬅️</button>
+            <button onclick="nextUser()">➡️</button>
+            <button onclick="removeUser()">🗑️</button>
+            <h4>1 user</h4>
         </div>
         
         <div id="tables-wrapper">
@@ -26,10 +28,7 @@
             <div id="user-wrapper">
                 <div class="user" id="user1">
                     <div class="table-header">
-                        <!--<button onclick="prevUser()">←</button>-->
                         <h1>User 1</h1>
-                        <!--<button onclick="nextUser()">→</button>-->
-                        <button onclick="addUser()">+</button>
                     </div>
                     <table cellpadding="0" cellspacing="0" class="user-timetable">
                         <tr>
@@ -80,6 +79,7 @@
             </div>
         </div>
     </div>
+    <footer>Special thanks to <a href="https://github.com/Pittsy24">Joe Pitts</a>, master debugger.</footer>
 </body>
 </html>
 

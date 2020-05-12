@@ -196,7 +196,7 @@ h5 { font-weight: 400; }
 
 footer {
     position: absolute;
-    bottom: 5px;
+    bottom: 10px;
     width: 100%;
     text-align: center;
     font-size: 0.8rem;
@@ -217,32 +217,41 @@ footer {
     margin: auto;
     padding: 10px;
 }
-    .table-header {
+    #top-panel {
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
+        height: 50px;
+        line-height: 50px;
     }
-        .table-header * {
+        #top-panel * {
             display: inline;
         }
-        .table-header button {
-            background: #f9f9f9;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+        #top-panel button {
+            cursor: pointer;
+            padding: 10px 5px;
+            font-size: 1.2rem;
+            line-height: 1.2rem;
+            border: none;
+            background-color: transparent;
         }
+            #top-panel button+button {
+                margin-left: 5px;
+            }
     #user-wrapper, #output-wrapper {
         display: inline-block;
         width: 250px;
         margin: auto;
-        margin-bottom: 25px;
     }
-    #user-wrapper h1, #output-wrapper h1 {
-        font-size: 1rem;
-        text-align: center;
-        margin: 0;
-    }
+        #user-wrapper h1, #output-wrapper h1 {
+            font-size: 1rem;
+            text-align: center;
+            margin: 0;
+        }
+        .user {
+            display: none;
+        }
     table {
         margin: auto;
-        margin-bottom: 25px;
     }
         td {
             border: 1px solid white;

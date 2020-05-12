@@ -13,7 +13,11 @@ function toggleFreeBusy() {
     let thisCol = this.cellIndex;
     let outputCell = outputTable.rows[thisRow].cells[thisCol];
 
-    outputCell.innerHTML += this.classList.contains('free') ? 1 : -1;
+    if(this.classList.contains('free')) {
+        outputCell.innerHTML++;
+    } else {
+        outputCell.innerHTML--;
+    }
 }
 
 
@@ -38,6 +42,7 @@ class userTable {
 window.onload = function () {
     // Add the inital table to allTables
     allTables.push(new userTable('user1'));
+    document.getElementById('user1').style.display = 'inline';
 
     outputTable = document.getElementById('output-timetable');
 
@@ -54,40 +59,40 @@ window.onload = function () {
 }
 
 
-// // Navigate between users
-// var currentUser = 0;
-// var userCount = 1;
-// // Previous user
-// function prevUser() {
-//     if (currentUser > 0) currentUser--;
-//     showUser();
-// }
-// // Next user
-// function nextUser() {
-//     if (currentUser < userCount) currentUser++;
-//     showUser();
-// }
-// // Show current user
-// function showUser() {
-//     var allUsers = document.getElementsByClassName('user');
-//     // Hide all users
-//     for (let u = 0; u < allUsers.length; u++)
-//         allUsers[u].style.display = 'hidden';
-//     // Show current user
-//     allUsers[currentUser].style.display = 'inline';
-// }
+// Navigate between users
+var currentUser = 0;
+var userCount = 1;
+// Previous user
+function prevUser() {
+    if (currentUser > 0) currentUser--;
+    showUser();
+}
+// Next user
+function nextUser() {
+    if (currentUser < userCount - 1) currentUser++;
+    showUser();
+}
+// Show current user
+function showUser() {
+    var allUsers = document.getElementsByClassName('user');
+    // Hide all users
+    for (let u = 0; u < allUsers.length; u++) {
+        allUsers[u].style.display = 'none';
+    }
+    // Show current user
+    allUsers[currentUser].style.display = 'inline';
+}
 
 // Add a new user
 function addUser() {
+    userCount++;
     let index = allTables.length + 1;
     let wrapper = document.getElementById('user-wrapper');
     // Add user HTML
     wrapper.insertAdjacentHTML('beforeend', `
     <div class="user" id="user` + index + `">
         <div class="table-header">
-            <button onclick="prevUser()">←</button>
             <h1>User ` + index + `</h1>
-            <button onclick="nextUser()">→</button>
         </div>
         <table cellpadding="0" cellspacing="0" class="user-timetable">
             <tr>
