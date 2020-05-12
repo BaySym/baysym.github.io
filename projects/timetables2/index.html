@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="../../style.css">
     <title>Timetables</title>
     <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8"/>
 </head>
 <body>
     <div id="nav">
@@ -23,30 +24,33 @@
         <div id="tables-wrapper">
             <!-- Displays the users' timetables -->
             <div id="user-wrapper">
-                <div class="table-header">
-                    <button onclick="addUser()">←</button>
-                    <h1>Timetables</h1>
-                    <button onclick="removeUser()">→</button>
+                <div class="user" id="user1">
+                    <div class="table-header">
+                        <button onclick="prevUser()">←</button>
+                        <h1>User 1</h1>
+                        <button onclick="nextUser()">→</button>
+                        <button onclick="addUser()">+</button>
+                    </div>
+                    <table cellpadding="0" cellspacing="0" class="user-timetable">
+                        <tr>
+                            <td class="day"></td>
+                            <td class="day">MON</td>
+                            <td class="day">TUE</td>
+                            <td class="day">WED</td>
+                            <td class="day">THU</td>
+                            <td class="day">FRI</td>
+                        </tr>
+                        <tr><td class="time-cell-l">9:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">9:00</td></tr>
+                        <tr><td class="time-cell-l">10:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">10:00</td></tr>
+                        <tr><td class="time-cell-l">11:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">11:00</td></tr>
+                        <tr><td class="time-cell-l">12:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">12:00</td></tr>
+                        <tr><td class="time-cell-l">13:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">13:00</td></tr>
+                        <tr><td class="time-cell-l">14:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">14:00</td></tr>
+                        <tr><td class="time-cell-l">15:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">15:00</td></tr>
+                        <tr><td class="time-cell-l">16:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">16:00</td></tr>
+                        <tr><td class="time-cell-l">17:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">17:00</td></tr>
+                    </table>
                 </div>
-                <table cellpadding="0" cellspacing="0" id="user-timetable">
-                    <tr>
-                        <td class="day"></td>
-                        <td class="day">MON</td>
-                        <td class="day">TUE</td>
-                        <td class="day">WED</td>
-                        <td class="day">THU</td>
-                        <td class="day">FRI</td>
-                    </tr>
-                    <tr><td class="time-cell-l">9:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">9:00</td></tr>
-                    <tr><td class="time-cell-l">10:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">10:00</td></tr>
-                    <tr><td class="time-cell-l">11:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">11:00</td></tr>
-                    <tr><td class="time-cell-l">12:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">12:00</td></tr>
-                    <tr><td class="time-cell-l">13:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">13:00</td></tr>
-                    <tr><td class="time-cell-l">14:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">14:00</td></tr>
-                    <tr><td class="time-cell-l">15:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">15:00</td></tr>
-                    <tr><td class="time-cell-l">16:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">16:00</td></tr>
-                    <tr><td class="time-cell-l">17:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">17:00</td></tr>
-                </table>
             </div>
             
             <!-- Displays the output table -->
