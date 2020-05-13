@@ -54,9 +54,8 @@ h5 { font-weight: 400; }
     border: 1px solid transparent;
     transition: 0.2s;
 }
-    .card:hover > .name {
-        text-decoration: underline;
-    }
+    .card:hover > .name { text-decoration: underline; }
+    .card:hover > img { border-color: #888; }
     .card * {
         margin: 0;
     }
