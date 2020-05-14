@@ -15,10 +15,22 @@ function toggleFreeBusy() {
     let outputCell = outputTable.rows[thisRow].cells[thisCol];
 
     if(this.classList.contains('free')) {
+        this.innerHTML = '✔';
         outputCell.innerHTML++;
+        classChange(outputCell);
     } else {
+        this.innerHTML = '✘';
         outputCell.innerHTML--;
+        classChange(outputCell);
     }
+}
+
+
+// change an output cell's colour
+function classChange(cell) {
+    if (cell.innerHTML <= allTables.length/2) { cell.classList = 'mostBusy'; }
+    else if (cell.innerHTML == allTables.length) { cell.classList = 'allFree'; }
+    else { cell.classList = 'mostFree'; }
 }
 
 
@@ -32,6 +44,7 @@ class userTable {
             // See if cell is a time slot not a label
             if (cell.classList.length === 0) {
                 cell.classList.add('free');
+                cell.innerHTML = '✔';
                 cell.onclick = toggleFreeBusy;
             }
         }
@@ -54,6 +67,7 @@ window.onload = function () {
             let thisCell = outputTable.rows[r].cells[c];
             if (thisCell.classList.length == 0) {
                 thisCell.innerHTML = 1;
+                thisCell.classList = 'allFree';
             }
         }
     }
@@ -70,9 +84,11 @@ function prevUser() {
         currentUser--;
         document.getElementById('nextUser').style.opacity = 1;
         if (currentUser === 0) {
-            document.getElementById('prevUser').style.opacity = 0.3;
+            document.getElementById('prevUser').style.opacity = 0.2;
+            document.getElementById('removeUser').style.opacity = 0.2;
         } else {
             document.getElementById('prevUser').style.opacity = 1;
+            document.getElementById('removeUser').style.opacity = 1;
         }
     }
     showUser();
@@ -81,9 +97,10 @@ function prevUser() {
 function nextUser() {
     if (currentUser < userCount - 1) {
         currentUser++;
+        document.getElementById('removeUser').style.opacity = 1;
         document.getElementById('prevUser').style.opacity = 1;
         if (currentUser === userCount - 1) {
-            document.getElementById('nextUser').style.opacity = 0.3;
+            document.getElementById('nextUser').style.opacity = 0.2;
         } else {
             document.getElementById('nextUser').style.opacity = 1;
         }
@@ -130,6 +147,11 @@ function addUser() {
                 <tr><td class="time-cell-l">16:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">16:00</td></tr>
                 <tr><td class="time-cell-l">17:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">17:00</td></tr>
         </table>
+        <p id="caption">
+            Click a cell to toggle between free and busy.
+            <br>
+            Edit the user's name by clicking it and typing.
+        </p>
     </div>`);
     allTables.push(new userTable(`user${tableId}`));
     // Show the next table
@@ -137,14 +159,17 @@ function addUser() {
     currentUser = userCount - 1;
     showUser()
     // Update button opacities
-    document.getElementById('nextUser').style.opacity = 0.3;
+    document.getElementById('nextUser').style.opacity = 0.2;
     document.getElementById('prevUser').style.opacity = 1;
+    document.getElementById('removeUser').style.opacity = 1;
     // Increase output cells by 1
     for (let r = 0; r < outputTable.rows.length; r++) {
         for (let c = 0; c < outputTable.rows[r].cells.length; c++) {
             let thisCell = outputTable.rows[r].cells[c];
-            if (thisCell.classList.length === 0) {
+            let inner = thisCell.innerHTML;
+            if (!isNaN(inner) && inner != '') {
                 thisCell.innerHTML++;
+                classChange(thisCell);
             }
         }
     }

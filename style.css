@@ -224,16 +224,6 @@ h5 { font-weight: 400; }
     }
 
 
-/* footer comment */
-footer {
-    position: absolute;
-    padding: 10px 0;
-    width: 100%;
-    text-align: center;
-    font-size: 0.8rem;
-}
-
-
 /* third year topic colours */
 .bd { color: #07c; }
 .ml { color: #0b0; }
@@ -277,7 +267,7 @@ footer {
                 margin-left: 5px;
             }
         /* nav buttons initially disabled */
-        #nextUser, #prevUser { opacity: 0.3; }
+        #nextUser, #prevUser, #removeUser { opacity: 0.2; }
     /* inline table wrappers */
     #user-wrapper, #output-wrapper {
         display: inline-block;
@@ -294,20 +284,34 @@ footer {
         .user {
             display: none;
         }
+        #caption {
+            font-size: 0.75rem;
+            color: #999;
+            text-align: center;
+        }
     /* centre tables */
     table {
         margin: auto;
     }
         /* table cells */
         td {
+            color: rgb(0, 0, 0, 0.4);
             border: 1px solid white;
-            background-color: lightgrey;
+            background-color: #d3d3d3;
             width: 30px;
             height: 30px;
             text-align: center;
             vertical-align: middle;
             cursor: pointer;
+            user-select: none;
         }
+            .allFree, .mostFree, .mostBusy {
+                font-weight: 700;
+                cursor: initial;
+            }
+                .allFree  { background-color: #62ff62; }
+                .mostFree { background-color: #ffe262; }
+                .mostBusy { background-color: #ff7979; }
         /* time labels */
         .time-cell-l, .time-cell-r {
             vertical-align: top;
@@ -340,10 +344,32 @@ footer {
             cursor: auto !important;
         }
         /* free cell */
-        .free { background-color: lime; }
+        .free {
+            background-color: #62ff62;
+        }
             /* free cell on hover */
-            .free:hover { opacity: 0.3; }
+            .free:hover {
+                border: 3px solid #0b0;
+                box-sizing: border-box;
+            }
         /* busy cell */
-        .busy { background-color: red; }
+        .busy {
+            background-color: #ff7979;
+        }
             /* busy cell on hover */
-            .busy:hover { opacity: 0.3; }
+            .busy:hover {
+                border: 3px solid #c52e10;
+                box-sizing: border-box;
+            }
+
+
+/* footer comment */
+footer {
+    position: absolute;
+    padding: 10px 0;
+    bottom: 0;
+    height: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
+}
