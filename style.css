@@ -23,10 +23,12 @@ h5 { font-weight: 400; }
     margin: 15px auto;
     vertical-align: middle;
 }
+    /* nav paragraphs */
     #nav p {
         cursor: default;
         line-height: 32px;
     }
+    /* nav links */
     #nav a {
         text-decoration: none;
         color: black;
@@ -34,10 +36,11 @@ h5 { font-weight: 400; }
         border-radius: 5px;
         transition: 0.1s;
     }
-    #nav a:hover {
-        text-decoration: underline;
-        transition: 0.1s;
-    }
+        /* nav links on hover */
+        #nav a:hover {
+            text-decoration: underline;
+            transition: 0.1s;
+        }
 
 /* a-tag 'div' card */
 .card {
@@ -54,20 +57,25 @@ h5 { font-weight: 400; }
     border: 1px solid transparent;
     transition: 0.2s;
 }
+    /* change name and image on card hover */
     .card:hover > .name { text-decoration: underline; }
     .card:hover > img { border-color: #888; }
+    /* remove all child elements' borders */
     .card * {
         margin: 0;
     }
+    /* card name */
     .name {
         font-weight: 700;
         color: #000;
         margin-bottom: 3px;
     }
+    /* card description */
     .desc {
         font-size: 0.8rem;
         color: #444;
     }
+    /* card image */
     .card img {
         width: 100%;
         margin-top: 10px;
@@ -76,6 +84,8 @@ h5 { font-weight: 400; }
         box-sizing: border-box;
     }
 
+
+/* project card wrapper */
 #projects {
     text-align: justify;
     width: calc(100vw-25px);
@@ -84,6 +94,8 @@ h5 { font-weight: 400; }
     padding: 0 25px;
 }
 
+
+/* about me banner */
 #banner {
     height: auto;
     width: 100vw;
@@ -92,6 +104,8 @@ h5 { font-weight: 400; }
     display: block;
 }
 
+
+/* about me wrapper */
 #about {
     text-align: justify;
     width: calc(100vw-25px);
@@ -100,22 +114,28 @@ h5 { font-weight: 400; }
     padding: 25px;
     line-height: 1.5rem;
 }
+    /* about me header */
     #about h1 {
         display: inline;
     }
+    /* social link wrapper */
     #social {
         width: 96px;
         float: right;
         display: inline-flex;
         justify-content: space-between;
     }
+        /* social link image */
         #social img {
             width: 24px;
         }
-        #social img:hover {
-            opacity: calc(1/3);
-        }
+            /* social link image on hover */
+            #social img:hover {
+                opacity: calc(1/3);
+            }
 
+
+/* gallery image row */
 .gallery-row {
     margin: auto;
     margin-bottom: 4px;
@@ -124,14 +144,18 @@ h5 { font-weight: 400; }
     max-width: 550px;
     width: calc(100vw-25px);
 }
+    /* image in row */
     .gallery-row img {
         max-height: 300px;
         display: inline;
     }
+    /* image next to another */
     .gallery-row img+img {
         margin-left: 4px;
     }
 
+
+/* password project wrapper */
 .password-wrapper {
     text-align: center;
     width: calc(100vw-25px);
@@ -140,18 +164,22 @@ h5 { font-weight: 400; }
     padding: 0 25px;
     line-height: 1.5rem;
 }
+    /* password project h4 */
     .password-wrapper h4 {
         font-weight: 400;
         font-size: 0.9rem;
     }
+    /* inline input */
     #include-upp, #include-low, #include-num,
     #include-sym, #password-length, .label {
         display: inline;
         padding: 0;
     }
+    /* spacer between a checkbox and its label */
     .checkbox + .label {
         margin-left: 15px;
     }
+    /* password generation button */
     #password-gen {
         margin-top: 40px;
         margin-bottom: 15px;
@@ -162,15 +190,18 @@ h5 { font-weight: 400; }
         box-sizing: border-box;
         transition: 0.2s;
     }
+        /* pwd gen button on hover */
         #password-gen:hover {
             border-color: #666;
             box-shadow: 0 5px 5px rgb(0, 0, 0, 0.05);
             transition: 0.1s;
         }
+        /* pwd gen button on click */
         #password-gen:active {
             background-color: #eee;
             box-shadow: none;
         }
+    /* password input field */
     #password-input {
         background: #FFBFB8;
         border: 1px solid #000;
@@ -181,32 +212,37 @@ h5 { font-weight: 400; }
         width: 80%;
         margin: 10px 0;
     }
+    /* password length input */
     #password-length {
         width: 8%;
         padding: 2px 3px;
         text-align: center;
     }
-        .time-display {
-            display: inline;
-        }
-        #password-info p {
-            margin: 0;
-        }
+    /* crack time display */
+    .time-display {
+        display: inline;
+    }
 
+
+/* footer comment */
 footer {
     position: absolute;
-    bottom: 10px;
+    padding: 10px 0;
     width: 100%;
     text-align: center;
     font-size: 0.8rem;
 }
 
+
+/* third year topic colours */
 .bd { color: #07c; }
 .ml { color: #0b0; }
 .var { color: #e80; }
 .pp { color: #e42; }
 .cpd { color: #c153e9; }
 
+
+/* timetable project wrapper */
 #tables-wrapper {
     display: flex;
     justify-content: space-between;
@@ -216,15 +252,18 @@ footer {
     margin: auto;
     padding: 10px;
 }
+    /* timetable buttons wrapper */
     #top-panel {
         display: flex;
         justify-content: center;
         height: 50px;
         line-height: 50px;
     }
+        /* all buttons inline */
         #top-panel * {
             display: inline;
         }
+        /* timetable buttons */
         #top-panel button {
             cursor: pointer;
             padding: 10px 5px;
@@ -233,25 +272,33 @@ footer {
             border: none;
             background-color: transparent;
         }
+            /* adjacent timetable buttons */
             #top-panel button+button {
                 margin-left: 5px;
             }
+        /* nav buttons initially disabled */
+        #nextUser, #prevUser { opacity: 0.3; }
+    /* inline table wrappers */
     #user-wrapper, #output-wrapper {
         display: inline-block;
         width: 250px;
         margin: auto;
     }
+        /* table titles */
         #user-wrapper h1, #output-wrapper h1 {
             font-size: 1rem;
             text-align: center;
             margin: 0;
         }
+        /* initially hide user tables */
         .user {
             display: none;
         }
+    /* centre tables */
     table {
         margin: auto;
     }
+        /* table cells */
         td {
             border: 1px solid white;
             background-color: lightgrey;
@@ -261,24 +308,29 @@ footer {
             vertical-align: middle;
             cursor: pointer;
         }
+        /* time labels */
         .time-cell-l, .time-cell-r {
             vertical-align: top;
             font-weight: 400 !important;
             color: #444;
             font-size: 0.6rem !important;
             }
+            /* left time column */
             .time-cell-l {
                 text-align: right;
                 padding-right: 5px;
             }
+            /* right time column */
             .time-cell-r {
                 text-align: left;
                 padding-left: 3px;
             }
+        /* day label */
         .day {
             text-align: center;
             vertical-align: bottom;
         }
+        /* table lables */
         .day, .time-cell-l, .time-cell-r {
             font-size: 0.7rem;
             font-weight: 500;
@@ -287,7 +339,11 @@ footer {
             background-color: transparent !important;
             cursor: auto !important;
         }
+        /* free cell */
         .free { background-color: lime; }
+            /* free cell on hover */
             .free:hover { opacity: 0.3; }
+        /* busy cell */
         .busy { background-color: red; }
+            /* busy cell on hover */
             .busy:hover { opacity: 0.3; }

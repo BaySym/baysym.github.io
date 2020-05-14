@@ -1,6 +1,6 @@
 let allTables = [];
 let outputTable;
-let index = 1;
+let tableId = 1;
 
 
 // Toggle cell free/busy on click
@@ -66,12 +66,28 @@ var currentUser = 0;
 var userCount = 1;
 // Previous user
 function prevUser() {
-    if (currentUser > 0) currentUser--;
+    if (currentUser > 0) {
+        currentUser--;
+        document.getElementById('nextUser').style.opacity = 1;
+        if (currentUser === 0) {
+            document.getElementById('prevUser').style.opacity = 0.3;
+        } else {
+            document.getElementById('prevUser').style.opacity = 1;
+        }
+    }
     showUser();
 }
 // Next user
 function nextUser() {
-    if (currentUser < userCount - 1) currentUser++;
+    if (currentUser < userCount - 1) {
+        currentUser++;
+        document.getElementById('prevUser').style.opacity = 1;
+        if (currentUser === userCount - 1) {
+            document.getElementById('nextUser').style.opacity = 0.3;
+        } else {
+            document.getElementById('nextUser').style.opacity = 1;
+        }
+    }
     showUser();
 }
 // Show current user
@@ -87,13 +103,13 @@ function showUser() {
 // Add a new user
 function addUser() {
     userCount++;
-    index++;
+    tableId++;
     let wrapper = document.getElementById('user-wrapper');
     // Add user HTML
     wrapper.insertAdjacentHTML('beforeend', `
-    <div class="user" id="user` + index + `">
+    <div class="user" id="user` + tableId + `">
         <div class="table-header">
-            <h1 contenteditable>User ` + index + `</h1>
+            <h1 contenteditable>User ` + tableId + `</h1>
         </div>
         <table cellpadding="0" cellspacing="0" class="user-timetable">
             <tr>
@@ -115,13 +131,14 @@ function addUser() {
                 <tr><td class="time-cell-l">17:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">17:00</td></tr>
         </table>
     </div>`);
-
-    allTables.push(new userTable(`user${index}`));
-
+    allTables.push(new userTable(`user${tableId}`));
+    // Show the next table
     updateCount();
     currentUser = userCount - 1;
     showUser()
-
+    // Update button opacities
+    document.getElementById('nextUser').style.opacity = 0.3;
+    document.getElementById('prevUser').style.opacity = 1;
     // Increase output cells by 1
     for (let r = 0; r < outputTable.rows.length; r++) {
         for (let c = 0; c < outputTable.rows[r].cells.length; c++) {
@@ -135,7 +152,6 @@ function addUser() {
 // Remove the current user
 function removeUser() {
     if (currentUser > 0) {
-        console.log('currentUser is ' + currentUser);
         document.getElementById('user' + (currentUser + 1)).remove();
         allTables = allTables.splice(currentUser, 1)
         userCount--;
@@ -143,10 +159,10 @@ function removeUser() {
         showUser()
     }
 }
+
 // Update count text
 function updateCount() {
-    let text = document.getElementById('user-count').innerHTML;
-    text = userCount + ' user';
+    let text = userCount + ' user';
     if (userCount > 1) text += 's';
     document.getElementById('user-count').innerHTML = text;
 }
