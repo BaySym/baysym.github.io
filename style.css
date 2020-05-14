@@ -295,7 +295,6 @@ h5 { font-weight: 400; }
     }
         /* table cells */
         td {
-            color: rgb(0, 0, 0, 0.4);
             border: 1px solid white;
             background-color: #d3d3d3;
             width: 30px;
@@ -305,8 +304,14 @@ h5 { font-weight: 400; }
             cursor: pointer;
             user-select: none;
         }
+            .free, .busy, .allFree, .mostFree, .mostBusy {
+                color: rgb(0, 0, 0, 0.4);
+            }
+            .free, .busy {
+                font-weight: 400;
+            }
             .allFree, .mostFree, .mostBusy {
-                font-weight: 700;
+                font-weight: 500;
                 cursor: initial;
             }
                 .allFree  { background-color: #62ff62; }
