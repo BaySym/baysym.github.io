@@ -9,11 +9,12 @@ function toggleFreeBusy() {
     this.classList.toggle('free');
     this.classList.toggle('busy');
 
-    // Adjust the corresponding output cell
+    // Find the corresponding output cell
     let thisRow = this.parentElement.rowIndex;
     let thisCol = this.cellIndex;
     let outputCell = outputTable.rows[thisRow].cells[thisCol];
 
+    // Check this cell's class, tick/cross and change the output cell accordingly
     if(this.classList.contains('free')) {
         this.innerHTML = '✔';
         outputCell.innerHTML++;
@@ -26,7 +27,7 @@ function toggleFreeBusy() {
 }
 
 
-// change an output cell's colour
+// change an output cell's colour depending on its value
 function classChange(cell) {
     if (cell.innerHTML <= allTables.length/2) { cell.classList = 'mostBusy'; }
     else if (cell.innerHTML == allTables.length) { cell.classList = 'allFree'; }
@@ -34,14 +35,15 @@ function classChange(cell) {
 }
 
 
+// User table class
 class userTable {
     constructor(id) {
         this.table = document.getElementById(id);
         this.cells = this.table.getElementsByTagName('td');
         
+        // Set each time slot cell to free and give it its onclick
         for (let i = 0; i < this.cells.length; i++) {
             let cell = this.cells[i];
-            // See if cell is a time slot not a label
             if (cell.classList.length === 0) {
                 cell.classList.add('free');
                 cell.innerHTML = '✔';
@@ -74,14 +76,15 @@ window.onload = function () {
 }
 
 
-// User table buttons
 // Navigate between users
 var currentUser = 0;
-var userCount = 1;
+
+
 // Previous user
 function prevUser() {
     if (currentUser > 0) {
         currentUser--;
+        showUser();
         document.getElementById('nextUser').style.opacity = 1;
         if (currentUser === 0) {
             document.getElementById('prevUser').style.opacity = 0.2;
@@ -91,38 +94,41 @@ function prevUser() {
             document.getElementById('removeUser').style.opacity = 1;
         }
     }
-    showUser();
 }
+
+
 // Next user
 function nextUser() {
-    if (currentUser < userCount - 1) {
+    if (currentUser < allTables.length - 1) {
         currentUser++;
+        showUser();
         document.getElementById('removeUser').style.opacity = 1;
         document.getElementById('prevUser').style.opacity = 1;
-        if (currentUser === userCount - 1) {
+        if (currentUser === allTables.length - 1) {
             document.getElementById('nextUser').style.opacity = 0.2;
         } else {
             document.getElementById('nextUser').style.opacity = 1;
         }
     }
-    showUser();
 }
+
+
 // Show current user
 function showUser() {
     var allUsers = document.getElementsByClassName('user');
     // Hide all users
-    for (let u = 0; u < allUsers.length; u++) {
-        allUsers[u].style.display = 'none';
-    }
+    for (let u = 0; u < allUsers.length; u++) allUsers[u].style.display = 'none';
     // Show current user
     allUsers[currentUser].style.display = 'inline';
 }
+
+
 // Add a new user
 function addUser() {
-    userCount++;
     tableId++;
     let wrapper = document.getElementById('user-wrapper');
-    // Add user HTML
+
+    // Add user table HTML
     wrapper.insertAdjacentHTML('beforeend', `
     <div class="user" id="user` + tableId + `">
         <div class="table-header">
@@ -153,15 +159,20 @@ function addUser() {
             Edit the user's name by clicking it and typing.
         </p>
     </div>`);
+
+    // Add the table to the list
     allTables.push(new userTable(`user${tableId}`));
+
     // Show the next table
     updateCount();
-    currentUser = userCount - 1;
+    currentUser = allTables.length - 1;
     showUser()
+
     // Update button opacities
     document.getElementById('nextUser').style.opacity = 0.2;
     document.getElementById('prevUser').style.opacity = 1;
     document.getElementById('removeUser').style.opacity = 1;
+
     // Increase output cells by 1
     for (let r = 0; r < outputTable.rows.length; r++) {
         for (let c = 0; c < outputTable.rows[r].cells.length; c++) {
@@ -173,21 +184,53 @@ function addUser() {
             }
         }
     }
+
+    console.log('added user' + tableId);
+    console.log(allTables);
 }
+
+
 // Remove the current user
 function removeUser() {
+    console.log('removed user' + (currentUser + 1));
+    console.log(allTables);
+    // Can't delete the first table - TO CHANGE TO can't delete all tables
     if (currentUser > 0) {
-        document.getElementById('user' + (currentUser + 1)).remove();
-        allTables = allTables.splice(currentUser, 1)
-        userCount--;
+        // Adjust global variables
         currentUser--;
+        updateCount();
+
+        // Set this user's cells to free, thus making its cells' effects on output all +1
+        this.table = document.getElementById('user' + (currentUser + 1));
+        this.cells = this.table.getElementsByTagName('td');
+
+        let outTable = document.getElementById('output-timetable');
+        let outCells = outTable.getElementsByTagName('td');
+
+        // Delete this table from the list of tables
+        allTables.splice(currentUser + 1, 1)
+        document.getElementById('user' + (currentUser + 2)).remove();
+        
+        // For each cell
+        for (let i = 0; i < this.cells.length; i++) {
+            let cell = this.cells[i];
+            // If it's free, negate its output effect
+            if (cell.innerHTML == '✔') {
+                outCells[i].innerHTML--;
+                classChange(outCells[i]);
+            }
+        }
+
+        // Show the previous table
         showUser()
     }
 }
 
+
 // Update count text
 function updateCount() {
-    let text = userCount + ' user';
-    if (userCount > 1) text += 's';
-    document.getElementById('user-count').innerHTML = text;
+    console.log('updateCount()');
+    /*let text = allTables.length + ' user';
+    if (allTables.length > 1) text += 's';
+    document.getElementById('user-count').innerHTML = text;*/
 }

@@ -246,8 +246,7 @@ h5 { font-weight: 400; }
     #top-panel {
         display: flex;
         justify-content: center;
-        height: 50px;
-        line-height: 50px;
+        margin-bottom: 20px;
     }
         /* all buttons inline */
         #top-panel * {
@@ -255,16 +254,20 @@ h5 { font-weight: 400; }
         }
         /* timetable buttons */
         #top-panel button {
+            padding: 6px 8px;
             cursor: pointer;
-            padding: 10px 5px;
-            font-size: 1.2rem;
-            line-height: 1.2rem;
+            font-size: 0.8rem;
             border: none;
             background-color: transparent;
         }
+            /* button hover */
+            #top-panel button:hover {
+                background: #eee;
+                border-radius: 5px;
+            }
             /* adjacent timetable buttons */
             #top-panel button+button {
-                margin-left: 5px;
+                margin-left: 10px;
             }
         /* nav buttons initially disabled */
         #nextUser, #prevUser, #removeUser { opacity: 0.2; }
