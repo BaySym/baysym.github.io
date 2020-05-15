@@ -52,7 +52,7 @@ h5 { font-weight: 400; }
     cursor: pointer;
     text-decoration: none;
     text-align: justify;
-    width: calc(50% - 10px);
+    max-width: 250px;
     box-sizing: border-box;
     border: 1px solid transparent;
     transition: 0.2s;
@@ -87,11 +87,10 @@ h5 { font-weight: 400; }
 
 /* project card wrapper */
 #projects {
-    text-align: justify;
-    width: calc(100vw-25px);
     margin: auto;
-    max-width: 550px;
-    padding: 0 25px;
+    max-width: 570px;
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -188,6 +187,7 @@ h5 { font-weight: 400; }
         border-radius: 5px;
         padding: 5px 10px;
         box-sizing: border-box;
+        cursor: pointer;
         transition: 0.2s;
     }
         /* pwd gen button on hover */
