@@ -1,175 +1,95 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8"/>
     <link rel="shortcut icon" href="../../img/me.png"/>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../style.css">
     <title>Timetables</title>
     <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8"/>
 </head>
-<body style="background: #f4faf7">
-    <a href="https://bsym.dev"><h5 style="margin-top: 0">← Home</h5></a>
-    <a href="https://bsym.dev/projects"><h5 style="margin-top: 0">← Projects</h5></a>
-    <div id="wrapper" style="width: 70vw; margin: 0 auto">
-        <h1 style="width: 100%; text-align: center">Timetable comparison</h1>
-        <div id="content">
-            <div id="topPanel">
-                <button onclick="addUser()">Add user</button>
-                <button onclick="removeUser()">Remove user</button>
-                <table id="keyTable">
-                    <tr>
-                        <td class="key allFree"></td>
-                        <td class="key label">All<br>free</td>
-                        <td class="key mostFree"></td>
-                        <td class="key label">Most free</td>
-                        <td class="key mostBusy"></td>
-                        <td class="key label">Most busy</td>
-                    </tr>
-                </table>
-                <button onclick="reset()">Reset timetables</button>
-            </div>
-            <div id="leftPanel">
-                <div id="timePanel">                
-                    <div class="timeWrapper">
-                        <table cellpadding="0" cellspacing="0">
-                            <tr><td class="label"></td></tr>
-                            <tr><td class="label">9:00</td></tr>
-                            <tr><td class="label">10:00</td></tr>
-                            <tr><td class="label">11:00</td></tr>
-                            <tr><td class="label">12:00</td></tr>
-                            <tr><td class="label">13:00</td></tr>
-                            <tr><td class="label">14:00</td></tr>
-                            <tr><td class="label">15:00</td></tr>
-                            <tr><td class="label">16:00</td></tr>
-                            <tr><td class="label">17:00</td></tr>
-                        </table>
+<body>
+    <div id="nav">
+        <p><a href="https://bsym.dev">bsym.dev</a></p>
+        <p><a href="https://bsym.dev/projects">/projects</a></p>
+        <p><a href="https://bsym.dev/photo">/photo</a></p>
+    </div>
+    <div class="timetable-wrapper">
+        <!-- Top panel of buttons and key -->
+        <div id="top-panel">
+            <button onclick="add()">New user</button>
+            <button onclick="prev()" id="prevUser" disabled>← Previous user</button>
+            <button onclick="next()" id="nextUser" disabled>Next user →</button>
+            <button onclick="remove()" id="removeUser" disabled>Remove user</button>
+            <!--<h4 id="user-count">1 user</h4>-->
+        </div>
+        
+        <div id="tables-wrapper">
+            <!-- Displays the users' timetables -->
+            <div id="user-wrapper">
+                <div class="user" id="user0">
+                    <div class="table-header">
+                        <h1 id='user0-name' contenteditable>#user0</h1>
                     </div>
-                </div>
-                <div id="tablePanel">
-                    <div class="tableWrapper" id="user1">
-                        <h5 contenteditable="true">User 1</h5>
-                        <table cellpadding="0" cellspacing="0" class="timetable user">
-                            <tr>
-                                <td class="label">Mon</td>
-                                <td class="label">Tue</td>
-                                <td class="label">Wed</td>
-                                <td class="label">Thu</td>
-                                <td class="label">Fri</td>
-                            </tr>
-                            <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                        </table>
-                    </div>
-                    <div class="tableWrapper" id="user2">
-                        <h5 contenteditable="true">User 2</h5>
-                        <table cellpadding="0" cellspacing="0" class="timetable user">
-                            <tr>
-                                <td class="label">Mon</td>
-                                <td class="label">Tue</td>
-                                <td class="label">Wed</td>
-                                <td class="label">Thu</td>
-                                <td class="label">Fri</td>
-                            </tr>
-                            <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div id="rightPanel">
-                <div class="tableWrapper">
-                    <h5>How many users are busy?</h5>
-                    <table cellpadding="0" cellspacing="0" class="timetable out" id="output">
+                    <table cellpadding="0" cellspacing="0" class="user-timetable">
                         <tr>
-                            <td class="label">Mon</td>
-                            <td class="label">Tue</td>
-                            <td class="label">Wed</td>
-                            <td class="label">Thu</td>
-                            <td class="label">Fri</td>
+                            <td class="day"></td>
+                            <td class="day">MON</td>
+                            <td class="day">TUE</td>
+                            <td class="day">WED</td>
+                            <td class="day">THU</td>
+                            <td class="day">FRI</td>
                         </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+                        <tr><td class="time-cell-l">9:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">9:00</td></tr>
+                        <tr><td class="time-cell-l">10:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">10:00</td></tr>
+                        <tr><td class="time-cell-l">11:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">11:00</td></tr>
+                        <tr><td class="time-cell-l">12:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">12:00</td></tr>
+                        <tr><td class="time-cell-l">13:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">13:00</td></tr>
+                        <tr><td class="time-cell-l">14:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">14:00</td></tr>
+                        <tr><td class="time-cell-l">15:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">15:00</td></tr>
+                        <tr><td class="time-cell-l">16:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">16:00</td></tr>
+                        <tr><td class="time-cell-l">17:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">17:00</td></tr>
                     </table>
+                    <p id="caption">
+                        Click a cell to toggle between free and busy.
+                        <br>
+                        Edit the user's name by clicking it and typing.
+                    </p>
                 </div>
+            </div>
+            
+            <!-- Displays the output table -->
+            <div id="output-wrapper">
+                <div class="table-header">
+                    <h1>Comparison</h1>
+                </div>
+                <table cellpadding="0" cellspacing="0" id="output-timetable">
+                    <tr>
+                        <td class="day"></td>
+                        <td class="day">MON</td>
+                        <td class="day">TUE</td>
+                        <td class="day">WED</td>
+                        <td class="day">THU</td>
+                        <td class="day">FRI</td>
+                    </tr>
+                    <tr><td class="time-cell-l">9:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">9:00</td></tr>
+                    <tr><td class="time-cell-l">10:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">10:00</td></tr>
+                    <tr><td class="time-cell-l">11:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">11:00</td></tr>
+                    <tr><td class="time-cell-l">12:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">12:00</td></tr>
+                    <tr><td class="time-cell-l">13:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">13:00</td></tr>
+                    <tr><td class="time-cell-l">14:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">14:00</td></tr>
+                    <tr><td class="time-cell-l">15:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">15:00</td></tr>
+                    <tr><td class="time-cell-l">16:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">16:00</td></tr>
+                    <tr><td class="time-cell-l">17:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">17:00</td></tr>
+                </table>
+                <p id="caption">
+                    Each cell shows the number of users<br>available at that particular time.
+                </p>
             </div>
         </div>
     </div>
 </body>
 </html>
+
+<!-- link JS -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript"></script>
+<script src="script.js"></script>
