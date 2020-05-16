@@ -52,7 +52,7 @@ h5 { font-weight: 400; }
     cursor: pointer;
     text-decoration: none;
     text-align: justify;
-    max-width: 250px;
+    min-width: 250px;
     box-sizing: border-box;
     border: 1px solid transparent;
     transition: 0.2s;
@@ -87,11 +87,14 @@ h5 { font-weight: 400; }
 
 /* project card wrapper */
 #projects {
-    margin: auto;
-    max-width: 570px;
     display: flex;
+    width: calc(100vw-25px);
+    margin: auto;
+    max-width: 550px;
     justify-content: center;
+    flex-wrap: wrap;
 }
+    #projects * { flex: 0 50%; }
 
 
 /* about me banner */

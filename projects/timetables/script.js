@@ -219,7 +219,6 @@ function show(id) {
 function setBtn(btn, opacity, disabled, pointer) {
     btn.style.opacity = opacity;
     btn.disabled = disabled;
-    btn.style.pointer = pointer;
 }
 // Enable a button
 function enable(btn) { setBtn(btn, 1, false, 'pointer'); }
