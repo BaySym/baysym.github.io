@@ -150,6 +150,7 @@ h5 { font-weight: 400; }
     .gallery-row img {
         max-height: 300px;
         display: inline;
+        background-color: #ddd;
     }
     /* image next to another */
     .gallery-row img+img {
