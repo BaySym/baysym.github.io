@@ -258,6 +258,7 @@ h5 { font-weight: 400; }
         }
         /* timetable buttons */
         #top-panel button {
+            color: #000;
             padding: 6px 8px;
             font-size: 0.8rem;
             border: none;

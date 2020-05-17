@@ -77,7 +77,6 @@ function setClassOf(cell) {
     let value = cell.innerHTML;
     let len = allUserTables.length;
 
-    console.log(len + ' tables');
     if (value <= len/2) { cell.classList = 'mostBusy'; }
     else if (value == len) { cell.classList = 'allFree'; }
     else { cell.classList = 'mostFree'; }
@@ -159,6 +158,32 @@ function add() {
 function prev() { show(--thisUser); }
 // Go to the next user
 function next() { show(++thisUser); }
+
+
+// Reset this user to all free
+function reset() {
+    // Get the user table's cells
+    let table = document.getElementById('user' + thisUser);
+    let cells = table.getElementsByTagName('td');    
+    // Set each time slot cell to free
+    for (let i = 0; i < cells.length; i++) {
+        let cell = cells[i];
+        // If this cell is busy
+        if (cell.classList.contains('busy')) {
+            // Get cells
+            let row = cell.parentElement.rowIndex;
+            let col = cell.cellIndex;
+            let out = output.rows[row].cells[col];
+            // Set this cell to free
+            cell.classList.toggle('busy');
+            cell.classList.toggle('free');
+            cell.innerHTML = '✔';
+            // Adjust respective output cell
+            out.innerHTML++;
+            setClassOf(out);
+        }
+    }
+}
 
 
 // Remove this user
