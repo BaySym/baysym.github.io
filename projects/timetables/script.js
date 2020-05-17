@@ -46,6 +46,9 @@ window.onload = function () {
     disable(prev);
     disable(next);
     disable(remv);
+
+    // Encode
+    this.encode(thisUser);
 }
 
 
@@ -69,6 +72,7 @@ function toggle() {
         out.innerHTML--;
     }
     setClassOf(out);
+    encode();
 }
 
 
@@ -273,4 +277,89 @@ function randomName() {
     name += '\'';
 
     return name;
+}
+
+
+// Timetable to string
+function encode() {
+    let code = '';
+    // Get the user table's cells
+    let table = document.getElementById('user' + thisUser);
+    let cells = table.getElementsByTagName('td');    
+    // Set each time slot cell to free and give it its onclick
+    for (let i = 0; i < cells.length; i++) {
+        let cell = cells[i];
+        if (cell.classList.contains('free')) code += '1';
+        if (cell.classList.contains('busy')) code += '0';
+    }
+    document.getElementById('code-input').value = toBase62(code);
+}
+
+
+// String to timetable
+function decode() {
+    let code = toBase2(document.getElementById('code-input').value);
+    // Get cells
+    let table = document.getElementById('user' + thisUser);
+    let cells = table.getElementsByTagName('td');    
+    let outTable = document.getElementById('output-timetable');
+    let outCells = outTable.getElementsByTagName('td');
+    // Set each time slot cell to free and give it its onclick
+    let progress = 0;
+    for (let i = 0; i < cells.length; i++) {
+        let cell = cells[i];
+        if (cell.innerHTML === '✔' || cell.innerHTML === '✘') {
+            progress++;
+            if (!matches(cells[i].innerHTML, code[progress])) {
+                // Toggle the cell's class
+                cell.classList.toggle('free');
+                cell.classList.toggle('busy');
+
+                // Find the corresponding output cell
+                let row = cell.parentElement.rowIndex;
+                let col = cell.cellIndex;
+                let out = output.rows[row].cells[col];
+
+                // Set this cell's innerHTML and edit its corresponding output cell
+                if (cell.classList.contains('free')) {
+                    cell.innerHTML = '✔';
+                    out.innerHTML++;
+                } else {
+                    cell.innerHTML = '✘';
+                    out.innerHTML--;
+                }
+                setClassOf(out);
+            }
+        }
+    }
+}
+
+
+// Check if a cell matches its code value
+function matches(cell, code) {
+    return ((cell === '✔' && code === '1') || (cell === '✘' && code === '0'));
+}
+
+
+// Convert to base 2 from base 62
+function toBase2(value) { return convertBase(value, 62, 2)};
+// Convert to base 62 from base 2
+function toBase62(value) { return convertBase(value, 2, 62)};
+// Convert between bases (slightly modified from ryansmith94 on GitHub, https://git.io/JfEeZ)
+function convertBase(value, from_base, to_base) {
+    var range = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+    var from_range = range.slice(0, from_base);
+    var to_range = range.slice(0, to_base);
+    
+    var dec_value = value.split('').reverse().reduce(function (carry, digit, index) {
+        if (from_range.indexOf(digit) === -1)throw new Error('Invalid digit `' + digit + '` for base ' + from_base + '.');
+        return carry += from_range.indexOf(digit) * (Math.pow(from_base, index));
+    }, 0);
+    
+    var new_value = '';
+    while (dec_value > 0) {
+        new_value = to_range[dec_value % to_base] + new_value;
+        dec_value = (dec_value - (dec_value % to_base)) / to_base;
+    }
+    return new_value || '0';
 }

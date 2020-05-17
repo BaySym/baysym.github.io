@@ -255,7 +255,21 @@ h5 { font-weight: 400; }
         /* all buttons inline */
         #top-panel * {
             display: inline;
+            text-align: center;
         }
+        /* input field */
+        #top-panel input {
+            margin: 0 5px;
+            width: 10ch;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 0.75rem;
+        }
+            #top-panel input:hover { background-color: #f4f4f4; }
+            #top-panel input:focus {
+                border-color: #888;
+                background-color: #f4f4f4;
+            }
         /* timetable buttons */
         #top-panel button {
             color: #000;
@@ -263,11 +277,11 @@ h5 { font-weight: 400; }
             font-size: 0.8rem;
             border: none;
             background-color: transparent;
+            border-radius: 5px;
         }
             /* button hover */
-            #top-panel button:hover {
-                background: #eee;
-                border-radius: 5px;
+            #top-panel button:hover:enabled {
+                background-color: #f4f4f4;
             }
             /* adjacent timetable buttons */
             #top-panel button+button {
