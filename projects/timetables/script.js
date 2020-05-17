@@ -94,7 +94,7 @@ function add() {
     document.getElementById('user-wrapper').insertAdjacentHTML('beforeend', `
     <div class="user" id="user` + thisUser + `">
         <div class="table-header">
-            <h1 class="placeholder" onclick="noClass()" contenteditable>` + name + `</h1>
+            <h1 contenteditable>` + name + `</h1>
         </div>
         <table cellpadding="0" cellspacing="0" class="user-timetable">
             <tr>

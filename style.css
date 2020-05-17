@@ -288,9 +288,7 @@ h5 { font-weight: 400; }
             margin: 0;
         }
         /* initially hide user tables */
-        .user {
-            display: none;
-        }
+        .user { display: none; }
         #caption {
             font-size: 0.75rem;
             color: #999;
