@@ -375,20 +375,20 @@ img { border-radius: 3px; }
         }
         /* free cell */
         .free {
-            background-color: #62ff62;
+            background-color: #62ff62 !important;
         }
             /* free cell on hover */
             .free:hover {
-                border: 3px solid #0b0;
+                border: 3px solid #0b0 !important;
                 box-sizing: border-box;
             }
         /* busy cell */
         .busy {
-            background-color: #ff7979;
+            background-color: #ff7979 !important;
         }
             /* busy cell on hover */
             .busy:hover {
-                border: 3px solid #c52e10;
+                border: 3px solid #c52e10 !important;
                 box-sizing: border-box;
             }
 
