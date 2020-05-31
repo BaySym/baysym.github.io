@@ -87,7 +87,8 @@ img { border-radius: 3px; }
     }
 
 
-/* project card wrapper */
+/* ---- PROJECTS ---- */
+/* wrapper */
 #projects {
     display: flex;
     width: calc(100vw-25px);
@@ -109,7 +110,8 @@ img { border-radius: 3px; }
 }
 
 
-/* about me wrapper */
+/* ---- ABOUT ME ---- */
+/* wrapper */
 #about {
     text-align: justify;
     width: calc(100vw-25px);
@@ -160,7 +162,8 @@ img { border-radius: 3px; }
     }
 
 
-/* password project wrapper */
+/* ---- PASSWORD PROJECT ---- */
+/* wrapper */
 .password-wrapper {
     text-align: center;
     width: calc(100vw-25px);
@@ -238,7 +241,8 @@ img { border-radius: 3px; }
 .cpd { color: #c153e9; }
 
 
-/* timetable project wrapper */
+/* ---- TIMETABLE PROJECT ---- */
+/* wrapper */
 #tables-wrapper {
     display: flex;
     justify-content: space-between;
@@ -311,11 +315,11 @@ img { border-radius: 3px; }
             text-align: center;
         }
     /* centre tables */
-    table {
+    #tables-wrapper table {
         margin: auto;
     }
         /* table cells */
-        td {
+        #tables-wrapper td {
             border: 1px solid white;
             background-color: #d3d3d3;
             width: 30px;
@@ -387,3 +391,95 @@ img { border-radius: 3px; }
                 border: 3px solid #c52e10;
                 box-sizing: border-box;
             }
+
+            
+/* ---- PATHFINDING PROJECT ---- */
+/* wrapper */
+#pathfinding-wrapper {
+    width: calc(100vw-25px);
+    max-width: 550px;
+    margin: auto;
+}
+    /* top panel */
+    #top { padding-bottom: 10px; }
+        #tools, #algorithms {
+            display: flex;
+            justify-content: center;
+            font-size: 0.8rem;
+            margin-bottom: 20px;
+        }
+        #tools *, #algorithms * {
+            margin: 0;
+            padding: 6px 8px;
+            margin: 0 10px;
+        }
+        #top button {
+            cursor: pointer;
+            border: none;
+            background-color: #eee;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            border-radius: 5px;
+        }
+        #top button:hover { background-color: #fff; }
+        #top button:active { background-color: #ddd; }
+        #algorithms p { margin-right: 0; }
+        #diag-btn { margin-left: 0; }
+
+    /* pathfinding grid */
+    #grid {
+        margin: auto;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #eee;
+    }
+        #grid td {
+            margin: 2px;
+            padding: 0;
+            width: 1.25rem;
+            height: 1.25rem;
+            user-select: none;
+            box-sizing: border-box;
+            background-color: #eee;
+            border: 0 solid #eee;
+            border-radius: calc(100%/3);
+        }
+            #grid td:hover {
+                border: 0.2rem solid rgba(0, 0, 0, 0.2);
+                cursor: pointer;
+            }
+        /* Classed cells */
+        .start, .end {
+            border-radius: 50% !important;
+            border: 0.2rem solid #eee !important;
+        }
+        .start { background-color: #0cc !important; }
+        .end { background-color: #e42 !important; }
+        .obstacle { background-color: #ccc !important; }
+        .path {
+            background-color: #666 !important;
+            border-radius: 50% !important;
+            border: 0.4rem solid #eee !important;
+        }
+        .closed {
+            background-color: #ada !important;
+            border-radius: 50% !important;
+            border: 0.5rem solid #eee !important;
+        }
+        
+    #stats {
+        font-size: 0.8rem;
+        text-align: center;
+    }
+    #stats * { display: inline; }
+        #checkedCount, #pathCount, #searchTime { font-weight: 500; }
+        #searchType {
+            font-weight: 700;
+            font-size: 1rem;
+            line-height: 2rem;
+        }
+        #extraInfo {
+            font-size: 0.7rem;
+            line-height: 1.2rem;
+            color: #444;
+        }
