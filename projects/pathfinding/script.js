@@ -12,6 +12,7 @@ window.onload = function () {
     pathCount = document.getElementById('pathCount');
     searchTime = document.getElementById('searchTime');
     grid = document.getElementById('grid');
+    unreachableError = document.getElementById('unreachableError');
     reset();
 }
 
@@ -68,11 +69,18 @@ function obstacle() {
     let cL = this.classList;
     if (!cL.contains('obstacle') || cL.contains('path')) this.classList = 'obstacle';
     else if (cL.contains('obstacle')) this.classList = '';
+
     // Reset stats text
     searchType.innerHTML = 'No search yet!';
     checkedCount.innerHTML = 0;
     pathCount.innerHTML = 0;
     searchTime.innerHTML = '0ms';
+
+    // Reset info display
+    unreachableError.style.display = "none";
+    grid.style.borderColor = '#ccc';
+    stats.style.display = "block";
+
     // Reset cells
     for (let i = 0; i < size; i++) {
         for (let j = 0; j < size; j++) {
@@ -172,13 +180,18 @@ function distance(a, b) {
 }
 
 
-// base search for dijkstra and A*
+// search(0) for Dijsktra, search(1) for A*
 async function search(isAStar) {
     // Start the counters at zero
     checkedCount.innerHTML = 0;
     pathCount.innerHTML = 0;
 
-    // If there is a start and end cell
+    // Reset info display
+    unreachableError.style.display = "none";
+    grid.style.borderColor = '#ccc';
+    stats.style.display = "block";
+
+    // Ensure there is a valid start and end cell
     if ((startPos[0] != -1) && (endPos[0] != -1)) {
         // Declare the variables needed
         let lowestCost = Infinity;
@@ -209,7 +222,7 @@ async function search(isAStar) {
         // Set the start position's cost to zero
         cost[startPos[0]][startPos[1]] = 0;
 
-        // Main checking while loop
+        let done = false;
         let checking = true;
         while (checking) {
             // Increase the counter by one
@@ -236,6 +249,15 @@ async function search(isAStar) {
                     }
                 }
 
+                // If the end node is unreachable, exit
+                if (checkedCount.innerHTML > 400) {
+                    unreachableError.style.display = "block";
+                    grid.style.borderColor = '#f00';
+                    stats.style.display = "none";
+                    checking = false;
+                    done = true;
+                }
+
                 // Close the cell with the lowest cost (this one) and pause momentarily
                 closed[lowestX][lowestY] = true;
                 let thisClassList = grid.rows[lowestX].cells[lowestY].classList;
@@ -256,8 +278,7 @@ async function search(isAStar) {
                 // For each neighbour
                 for (let n = 0; n < dx.length; n++) {
                     // Get the distance between the current cell and this neighbour
-                    let travel = 1;
-                    if ((dx[n] + dy[n]) % 2 == 0) travel = 1.4;
+                    let travel = (dx[n] + dy[n]) % 2 == 0 ? 1.4 : 1;
 
                     // Find this neighbour's coordinates
                     let nx = lowestX + dx[n];
@@ -291,7 +312,6 @@ async function search(isAStar) {
         }
 
         // Find the final path from start to end using the link lists
-        let done = false;
         let nextClosedX = endPos[0];
         let nextClosedY = endPos[1];
         while (!done) {
@@ -310,7 +330,7 @@ async function search(isAStar) {
             pathCount.innerHTML++;
 
             // Once the end of the list is reached, stop the loop
-            if ((nextClosedX == -1) && (nextClosedY == -1)) done = true;
+            done = ((nextClosedX == -1) && (nextClosedY == -1));
         }
     }
 }

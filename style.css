@@ -467,12 +467,15 @@ img { border-radius: 3px; }
             border: 0.5rem solid #eee !important;
         }
         
-    #stats {
+    #searchInfo {
         font-size: 0.8rem;
         text-align: center;
     }
-    #stats * { display: inline; }
-        #checkedCount, #pathCount, #searchTime { font-weight: 500; }
+        #stats * { display: inline; }
+        #checkedCount, #pathCount, #searchTime {
+            font-weight: 500;
+            display: inline;
+        }
         #searchType {
             font-weight: 700;
             font-size: 1rem;
@@ -480,6 +483,12 @@ img { border-radius: 3px; }
         }
         #extraInfo {
             font-size: 0.7rem;
-            line-height: 1.2rem;
+            line-height: 2rem;
             color: #444;
+        }
+        #unreachableError {
+            font-weight: 700;
+            font-size: 1rem;
+            display: none;
+            color: red;
         }

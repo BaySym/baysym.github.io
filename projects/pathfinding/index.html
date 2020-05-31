@@ -27,12 +27,17 @@
             </div>
         </div>
         <table cellpadding="0" cellspacing="0" id="grid"></table>
-        <div id="stats">
-            <br><p id="searchType">No search yet!</p>
-            <br><p id="checkedCount">0</p><p> cells checked</p>
-            <br><p id="pathCount">0</p> cells in the path</p>
-            <br><p id="searchTime">0</p> to complete</p>
-            <br><p id="extraInfo"></p>
+        <div id="searchInfo">
+            <p id="searchType">No search yet!</p>
+            <div id="unreachableError">
+                <p>There is no path between the start and end nodes!</p>
+            </div>
+            <div id="stats">
+                <p id="checkedCount">0</p><p> cells checked</p><br>
+                <p id="pathCount">0</p> cells in the path</p><br>
+                <p id="searchTime">0</p> to complete</p><br>
+                <p id="extraInfo"></p>
+            </div>
         </div>
     </div>
 </body>
