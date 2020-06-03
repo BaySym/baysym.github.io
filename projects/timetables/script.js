@@ -52,6 +52,14 @@ window.onload = function () {
 }
 
 
+// Enter in code input to decode
+document.getElementById('code-input')
+    .addEventListener('keyup', function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) decode();
+});
+
+
 // Toggle a cell between free and busy
 function toggle() {
     // Toggle the cell's class
