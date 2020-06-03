@@ -1,23 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
+/* ALL PAGES */
 html { font-family: 'Roboto', sans-serif;}
-
 body, h4, h5 { margin: 0; }
-
 body { padding-bottom: 25px; }
-
 h1 { font-size: 1.5rem; }
-
 h3 { font-weight: 500; }
-
 h4, h5 { margin-left: 10px; }
-
 h5 { font-weight: 400; }
-
 img { border-radius: 3px; }
 
-
-/* navigation bar */
+/* NAVIGATION BAR */
 #nav {
     display: flex;
     justify-content: space-between;
@@ -44,50 +37,8 @@ img { border-radius: 3px; }
             transition: 0.1s;
         }
 
-/* a-tag 'div' card */
-.card {
-    margin: auto;
-    margin-bottom: 10px;
-    display: inline-block;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none;
-    text-align: justify;
-    min-width: 250px;
-    box-sizing: border-box;
-    border: 1px solid transparent;
-    transition: 0.2s;
-}
-    /* change name and image on card hover */
-    .card:hover > .name { text-decoration: underline; }
-    .card:hover > img { border-color: #888; }
-    /* remove all child elements' borders */
-    .card * {
-        margin: 0;
-    }
-    /* card name */
-    .name {
-        font-weight: 700;
-        color: #000;
-        margin-bottom: 3px;
-    }
-    /* card description */
-    .desc {
-        font-size: 0.8rem;
-        color: #444;
-    }
-    /* card image */
-    .card img {
-        width: 100%;
-        margin-top: 10px;
-        border-radius: 2px;
-        border: 1px solid #ddd;
-        box-sizing: border-box;
-    }
 
-
-/* ---- PROJECTS ---- */
+/* PROJECTS PAGE */
 /* wrapper */
 #projects {
     display: flex;
@@ -98,9 +49,50 @@ img { border-radius: 3px; }
     flex-wrap: wrap;
 }
     #projects * { flex: 0 50%; }
+    /* a-tag 'div' card */
+    .card {
+        margin: auto;
+        margin-bottom: 10px;
+        display: inline-block;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        text-align: justify;
+        min-width: 250px;
+        box-sizing: border-box;
+        border: 1px solid transparent;
+        transition: 0.2s;
+    }
+        /* change name and image on card hover */
+        .card:hover > .name { text-decoration: underline; }
+        .card:hover > img { border-color: #888; }
+        /* remove all child elements' borders */
+        .card * {
+            margin: 0;
+        }
+        /* card name */
+        .name {
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 3px;
+        }
+        /* card description */
+        .desc {
+            font-size: 0.8rem;
+            color: #444;
+        }
+        /* card image */
+        .card img {
+            width: 100%;
+            margin-top: 10px;
+            border-radius: 2px;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+        }
 
 
-/* about me banner */
+/* ABOUT */
 #banner {
     height: auto;
     width: 100vw;
@@ -108,9 +100,6 @@ img { border-radius: 3px; }
     max-width: 550px;
     display: block;
 }
-
-
-/* ---- ABOUT ME ---- */
 /* wrapper */
 #about {
     text-align: justify;
@@ -141,6 +130,7 @@ img { border-radius: 3px; }
             }
 
 
+/* GALLERY */
 /* gallery image row */
 .gallery-row {
     margin: auto;
@@ -162,384 +152,9 @@ img { border-radius: 3px; }
     }
 
 
-/* ---- PASSWORD PROJECT ---- */
-/* wrapper */
-.password-wrapper {
-    text-align: center;
-    width: calc(100vw-25px);
-    margin: auto;
-    max-width: 550px;
-    padding: 0 25px;
-    line-height: 1.5rem;
-}
-    /* password project h4 */
-    .password-wrapper h4 {
-        font-weight: 400;
-        font-size: 0.9rem;
-    }
-    /* inline input */
-    #include-upp, #include-low, #include-num,
-    #include-sym, #password-length, .label {
-        display: inline;
-        padding: 0;
-    }
-    /* spacer between a checkbox and its label */
-    .checkbox + .label {
-        margin-left: 15px;
-    }
-    /* password generation button */
-    #password-gen {
-        margin-top: 40px;
-        margin-bottom: 15px;
-        background: #f9f9f9;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        padding: 5px 10px;
-        box-sizing: border-box;
-        cursor: pointer;
-        transition: 0.2s;
-    }
-        /* pwd gen button on hover */
-        #password-gen:hover {
-            border-color: #666;
-            box-shadow: 0 5px 5px rgb(0, 0, 0, 0.05);
-            transition: 0.1s;
-        }
-        /* pwd gen button on click */
-        #password-gen:active {
-            background-color: #eee;
-            box-shadow: none;
-        }
-    /* password input field */
-    #password-input {
-        background: #FFBFB8;
-        border: 1px solid #000;
-        border-radius: 5px;
-        padding: 10px;
-        box-sizing: border-box;
-        font-size: 1.5rem;
-        width: 80%;
-        margin: 10px 0;
-    }
-    /* password length input */
-    #password-length {
-        width: 8%;
-        padding: 2px 3px;
-        text-align: center;
-    }
-    /* crack time display */
-    .time-display {
-        display: inline;
-    }
-
-
 /* third year topic colours */
 .bd { color: #07c; }
 .ml { color: #0b0; }
 .var { color: #e80; }
 .pp { color: #e42; }
 .cpd { color: #c5e; }
-
-
-/* ---- TIMETABLE PROJECT ---- */
-/* wrapper */
-#tables-wrapper {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    width: calc(100vw-25px);
-    max-width: 550px;
-    margin: auto;
-    padding: 10px;
-}
-    /* timetable buttons wrapper */
-    #top-panel {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 20px;
-    }
-        /* all buttons inline */
-        #top-panel * {
-            display: inline;
-            text-align: center;
-        }
-        /* input field */
-        #top-panel input {
-            margin: 0 5px;
-            width: 10ch;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 0.75rem;
-        }
-            #top-panel input:hover { background-color: #f4f4f4; }
-            #top-panel input:focus {
-                border-color: #888;
-                background-color: #f4f4f4;
-            }
-        /* timetable buttons */
-        #top-panel button {
-            color: #000;
-            padding: 6px 8px;
-            font-size: 0.8rem;
-            border: none;
-            background-color: transparent;
-            border-radius: 5px;
-        }
-            /* button hover */
-            #top-panel button:hover:enabled {
-                background-color: #f4f4f4;
-            }
-            /* adjacent timetable buttons */
-            #top-panel button+button {
-                margin-left: 10px;
-            }
-        /* nav buttons initially disabled */
-        #nextUser, #prevUser, #removeUser { opacity: 0.2; }
-    /* inline table wrappers */
-    #user-wrapper, #output-wrapper {
-        display: inline-block;
-        width: 250px;
-        margin: auto;
-    }
-        /* table titles */
-        #user-wrapper h1, #output-wrapper h1 {
-            font-size: 1rem;
-            text-align: center;
-            margin: 0;
-        }
-        /* initially hide user tables */
-        .user { display: none; }
-        #caption {
-            font-size: 0.75rem;
-            color: #999;
-            text-align: center;
-        }
-    /* centre tables */
-    #tables-wrapper table {
-        margin: auto;
-    }
-        /* table cells */
-        #tables-wrapper td {
-            border: 1px solid white;
-            background-color: #d3d3d3;
-            width: 30px;
-            height: 30px;
-            text-align: center;
-            vertical-align: middle;
-            cursor: pointer;
-            user-select: none;
-        }
-            .free, .busy, .allFree, .mostFree, .mostBusy {
-                color: rgb(0, 0, 0, 0.4);
-            }
-            .free, .busy {
-                font-weight: 400;
-            }
-            .allFree, .mostFree, .mostBusy {
-                font-weight: 500;
-                cursor: initial;
-            }
-                .allFree  { background-color: #62ff62; }
-                .mostFree { background-color: #ffe262; }
-                .mostBusy { background-color: #ff7979; }
-        /* time labels */
-        .time-cell-l, .time-cell-r {
-            vertical-align: top;
-            font-weight: 400 !important;
-            color: #444;
-            font-size: 0.6rem !important;
-            }
-            /* left time column */
-            .time-cell-l {
-                text-align: right;
-                padding-right: 5px;
-            }
-            /* right time column */
-            .time-cell-r {
-                text-align: left;
-                padding-left: 3px;
-            }
-        /* day label */
-        .day {
-            text-align: center;
-            vertical-align: bottom;
-        }
-        /* table lables */
-        .day, .time-cell-l, .time-cell-r {
-            font-size: 0.7rem;
-            font-weight: 500;
-            font-variant: small-caps;
-            border: none !important;
-            background-color: transparent !important;
-            cursor: auto !important;
-        }
-        /* free cell */
-        .free {
-            background-color: #62ff62 !important;
-        }
-            /* free cell on hover */
-            .free:hover {
-                border: 3px solid #0b0 !important;
-                box-sizing: border-box;
-            }
-        /* busy cell */
-        .busy {
-            background-color: #ff7979 !important;
-        }
-            /* busy cell on hover */
-            .busy:hover {
-                border: 3px solid #c52e10 !important;
-                box-sizing: border-box;
-            }
-
-            
-/* ---- PATHFINDING PROJECT ---- */
-/* wrapper */
-#pathfinding-wrapper {
-    width: calc(100vw-25px);
-    max-width: 550px;
-    margin: auto;
-}
-    /* top panel */
-    #top { padding-bottom: 10px; }
-        #tools, #algorithms {
-            display: flex;
-            justify-content: center;
-            font-size: 0.8rem;
-            margin-bottom: 20px;
-        }
-        #tools *, #algorithms * {
-            margin: 0;
-            padding: 6px 8px;
-            margin: 0 10px;
-        }
-        #top button {
-            cursor: pointer;
-            border: none;
-            background-color: #eee;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-            border-radius: 5px;
-        }
-        #top button:hover { background-color: #fff; }
-        #top button:active { background-color: #ddd; }
-        #algorithms p { margin-right: 0; }
-        #diag-btn { margin-left: 0; }
-
-    /* pathfinding grid */
-    #grid {
-        margin: auto;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        background-color: #eee;
-    }
-        #grid td {
-            margin: 2px;
-            padding: 0;
-            width: 1.25rem;
-            height: 1.25rem;
-            user-select: none;
-            box-sizing: border-box;
-            background-color: #eee;
-            border: 0 solid #eee;
-            border-radius: calc(100%/3);
-        }
-            #grid td:hover {
-                border: 0.2rem solid rgba(0, 0, 0, 0.2);
-                cursor: pointer;
-            }
-        /* Classed cells */
-        .start, .end {
-            border-radius: 50% !important;
-            border: 0.2rem solid #eee !important;
-        }
-        .start { background-color: #0cc !important; }
-        .end { background-color: #e42 !important; }
-        .obstacle { background-color: #ccc !important; }
-        .path {
-            background-color: #666 !important;
-            border-radius: 50% !important;
-            border: 0.4rem solid #eee !important;
-        }
-        .closed {
-            background-color: #ada !important;
-            border-radius: 50% !important;
-            border: 0.5rem solid #eee !important;
-        }
-    
-    /* text below the grid */
-    #searchInfo {
-        font-size: 0.8rem;
-        text-align: center;
-    }
-        #stats * { display: inline; }
-        #checkedCount, #pathCount, #searchTime {
-            font-weight: 500;
-            display: inline;
-        }
-        #searchType {
-            font-weight: 700;
-            font-size: 1rem;
-            line-height: 2rem;
-        }
-        #extraInfo {
-            font-size: 0.7rem;
-            line-height: 2rem;
-            color: #444;
-        }
-        #unreachableError {
-            font-weight: 700;
-            font-size: 1rem;
-            display: none;
-            color: red;
-        }
-
-
-/* ---- SORTS PROJECT ---- */
-#sorts-wrapper {
-    width: calc(100vw-25px);
-    margin: auto;
-    max-width: 350px;
-}
-    .sort-header {
-        display: flex;
-        justify-content: space-between;
-        cursor: default;
-    }
-        .sort-header h1 { font-size: 1.2rem; }
-        .sort-header button {
-            height: 25px;
-            cursor: pointer;
-            border: none;
-            background-color: #eee;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-            border-radius: 5px;
-            margin: 12px 0;
-        }
-            .sort-header button:hover { background-color: #fff; }
-            .sort-header button:active { background-color: #ddd; }
-    .sort-data {
-        width: 100%;
-        height: 100px;
-        display: flex;
-        justify-content: space-around;
-        background-color: #eee;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-        box-sizing: border-box;
-        padding: 10px;
-    }
-        .sort-datum {
-            height: 100%;
-            width: 3.5%;
-            border-radius: 5px;
-            background-color: #e42;
-            font-weight: 700;
-            text-align: center;
-        }
-    .sort p {
-        font-size: 0.8rem;
-        font-weight: 400;
-        margin-bottom: 25px;
-    }

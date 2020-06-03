@@ -1,0 +1,99 @@
+/* wrapper */
+#pathfinding-wrapper {
+    width: calc(100vw-25px);
+    max-width: 550px;
+    margin: auto;
+}
+    /* top panel */
+    #top { padding-bottom: 10px; }
+        #tools, #algorithms {
+            display: flex;
+            justify-content: center;
+            font-size: 0.8rem;
+            margin-bottom: 20px;
+        }
+        #tools *, #algorithms * {
+            margin: 0;
+            padding: 6px 8px;
+            margin: 0 10px;
+        }
+        #top button {
+            cursor: pointer;
+            border: none;
+            background-color: #eee;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            border-radius: 5px;
+        }
+        #top button:hover { background-color: #fff; }
+        #top button:active { background-color: #ddd; }
+        #algorithms p { margin-right: 0; }
+        #diag-btn { margin-left: 0; }
+
+    /* pathfinding grid */
+    #grid {
+        margin: auto;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #eee;
+    }
+        #grid td {
+            margin: 2px;
+            padding: 0;
+            width: 1.25rem;
+            height: 1.25rem;
+            user-select: none;
+            box-sizing: border-box;
+            background-color: #eee;
+            border: 0 solid #eee;
+            border-radius: calc(100%/3);
+        }
+            #grid td:hover {
+                border: 0.2rem solid rgba(0, 0, 0, 0.2);
+                cursor: pointer;
+            }
+        /* Classed cells */
+        .start, .end {
+            border-radius: 50% !important;
+            border: 0.2rem solid #eee !important;
+        }
+        .start { background-color: #0cc !important; }
+        .end { background-color: #e42 !important; }
+        .obstacle { background-color: #ccc !important; }
+        .path {
+            background-color: #666 !important;
+            border-radius: 50% !important;
+            border: 0.4rem solid #eee !important;
+        }
+        .closed {
+            background-color: #ada !important;
+            border-radius: 50% !important;
+            border: 0.5rem solid #eee !important;
+        }
+    
+    /* text below the grid */
+    #searchInfo {
+        font-size: 0.8rem;
+        text-align: center;
+    }
+        #stats * { display: inline; }
+        #checkedCount, #pathCount, #searchTime {
+            font-weight: 500;
+            display: inline;
+        }
+        #searchType {
+            font-weight: 700;
+            font-size: 1rem;
+            line-height: 2rem;
+        }
+        #extraInfo {
+            font-size: 0.7rem;
+            line-height: 2rem;
+            color: #444;
+        }
+        #unreachableError {
+            font-weight: 700;
+            font-size: 1rem;
+            display: none;
+            color: red;
+        }
