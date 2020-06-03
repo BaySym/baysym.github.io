@@ -16,7 +16,7 @@ window.onload = function () {
 
     // Get the initial user table's cells
     let table = document.getElementById('user0');
-    let cells = table.getElementsByTagName('td');    
+    let cells = table.getElementsByTagName('td');
     // Set each time slot cell to free and give it its onclick
     for (let i = 0; i < cells.length; i++) {
         let cell = cells[i];
@@ -29,15 +29,15 @@ window.onload = function () {
 
     // Get the output table's cells
     output = document.getElementById('output-timetable');
-    let outputCells = output.getElementsByTagName('td');  
+    let outputCells = output.getElementsByTagName('td');
     // Set each output cell's innerHTML and class if it has no class
     for (let i = 0; i < outputCells.length; i++) {
         let cell = outputCells[i];
         if (cell.classList.length === 0) {
             cell.innerHTML = 1;
             cell.classList = 'allFree';
-            }
-    }    
+        }
+    }
 
     // Enable all buttons, initially
     let prev = document.getElementById('prevUser');
@@ -48,7 +48,7 @@ window.onload = function () {
     disable(remv);
 
     // Encode
-    this.encode(thisUser);
+    this.encode();
 }
 
 
@@ -128,7 +128,7 @@ function add() {
 
     // Get the user table's cells
     let table = document.getElementById('user' + thisUser);
-    let cells = table.getElementsByTagName('td');    
+    let cells = table.getElementsByTagName('td');
     // Set each time slot cell to free and give it its onclick
     for (let i = 0; i < cells.length; i++) {
         let cell = cells[i];
@@ -159,16 +159,24 @@ function add() {
 
 
 // Go to the previous user
-function prev() { show(--thisUser); }
+function prev() {
+    show(--thisUser);
+    encode();
+}
+
+
 // Go to the next user
-function next() { show(++thisUser); }
+function next() {
+    show(++thisUser);
+    encode();
+}
 
 
 // Reset this user to all free
 function reset() {
     // Get the user table's cells
     let table = document.getElementById('user' + thisUser);
-    let cells = table.getElementsByTagName('td');    
+    let cells = table.getElementsByTagName('td');
     // Set each time slot cell to free
     for (let i = 0; i < cells.length; i++) {
         let cell = cells[i];
@@ -187,6 +195,8 @@ function reset() {
             setClassOf(out);
         }
     }
+
+    encode();
 }
 
 
@@ -197,18 +207,18 @@ function remove() {
     let cells = table.getElementsByTagName('td');
     let outTable = document.getElementById('output-timetable');
     let outCells = outTable.getElementsByTagName('td');
-    
+
     // Remove this user from arrays
     allUserIds.splice(thisUser, 1);
     allUserTables[thisUser].remove();
-    
+
     // Undo this table's output effect
     for (let i = 0; i < cells.length; i++) {
         let cell = cells[i];
         if (cell.innerHTML == '✔') outCells[i].innerHTML--;
         if (cell.innerHTML == '✔' || cell.innerHTML == '✘') setClassOf(outCells[i]);
     }
-    
+
     // Show the previous user
     show(--thisUser);
 }
@@ -236,11 +246,13 @@ function show(id) {
         disable(remv);
         disable(prev);
     }
-    
+
     // If this is the last user, disable nextUser
     if (thisUser === (allUserTables.length - 1)) {
         disable(next);
     }
+
+    encode();
 }
 
 
@@ -285,7 +297,7 @@ function encode() {
     let code = '';
     // Get the user table's cells
     let table = document.getElementById('user' + thisUser);
-    let cells = table.getElementsByTagName('td');    
+    let cells = table.getElementsByTagName('td');
     // Set each time slot cell to free and give it its onclick
     for (let i = 0; i < cells.length; i++) {
         let cell = cells[i];
@@ -301,15 +313,15 @@ function decode() {
     let code = toBase2(document.getElementById('code-input').value);
     // Get cells
     let table = document.getElementById('user' + thisUser);
-    let cells = table.getElementsByTagName('td');    
+    let cells = table.getElementsByTagName('td');
     let outTable = document.getElementById('output-timetable');
     let outCells = outTable.getElementsByTagName('td');
+
     // Set each time slot cell to free and give it its onclick
     let progress = 0;
     for (let i = 0; i < cells.length; i++) {
         let cell = cells[i];
         if (cell.innerHTML === '✔' || cell.innerHTML === '✘') {
-            progress++;
             if (!matches(cells[i].innerHTML, code[progress])) {
                 // Toggle the cell's class
                 cell.classList.toggle('free');
@@ -330,6 +342,7 @@ function decode() {
                 }
                 setClassOf(out);
             }
+            progress++;
         }
     }
 }
@@ -350,12 +363,12 @@ function convertBase(value, from_base, to_base) {
     var range = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
     var from_range = range.slice(0, from_base);
     var to_range = range.slice(0, to_base);
-    
+
     var dec_value = value.split('').reverse().reduce(function (carry, digit, index) {
         if (from_range.indexOf(digit) === -1)throw new Error('Invalid digit `' + digit + '` for base ' + from_base + '.');
         return carry += from_range.indexOf(digit) * (Math.pow(from_base, index));
     }, 0);
-    
+
     var new_value = '';
     while (dec_value > 0) {
         new_value = to_range[dec_value % to_base] + new_value;

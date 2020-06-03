@@ -95,9 +95,9 @@
                 font-weight: 500;
                 cursor: initial;
             }
-                .allFree  { background-color: #62ff62; }
-                .mostFree { background-color: #ffe262; }
-                .mostBusy { background-color: #ff7979; }
+                .allFree  { background-color: #62ff62 !important; }
+                .mostFree { background-color: #ffe262 !important; }
+                .mostBusy { background-color: #ff7979 !important; }
         /* time labels */
         .time-cell-l, .time-cell-r {
             vertical-align: top;
