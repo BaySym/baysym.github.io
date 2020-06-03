@@ -288,7 +288,6 @@ async function search(isAStar) {
                     if (nx > -1 && nx < size && ny > -1 && ny < size) {
                         // If this neighbour is not closed and is not an obstacle
                         let date = new Date();
-                        let time = date.getMilliseconds();
                         if (!closed[nx][ny] && notObs(nx, ny)) {
                             // Calculate a new cost for the neighbour
                             let newCost = cost[lowestX][lowestY] + travel;
