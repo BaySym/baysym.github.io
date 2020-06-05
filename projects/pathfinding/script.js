@@ -185,17 +185,23 @@ function distance(a, b) {
 
 // Disable all user buttons
 function disableAll() {
-    document.getElementById('top').style.opacity = 0.25;
-    for (let i = 0; i < userInput.length; i++)
-        userInput[i].disabled = true;
+    // Disable buttons
+    let top = document.getElementById('top');
+    top.style.opacity = 0.25;
+    top.style.pointerEvents = 'none';
+    // Disable cells
+    grid.style.pointerEvents = 'none';
 }
 
 
 // Enable all user buttons
 function enableAll() {
-    document.getElementById('top').style.opacity = 1;
-    for (let i = 0; i < userInput.length; i++)
-        userInput[i].disabled = false;
+    // Enable buttons
+    let top = document.getElementById('top');
+    top.style.opacity = 1;
+    top.style.pointerEvents = 'auto';
+    // Enable cells
+    grid.style.pointerEvents = 'auto';
 }
 
 
