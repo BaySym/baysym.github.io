@@ -272,15 +272,16 @@ function show(id) {
 }
 
 
-// Set a button's attributes
-function setBtn(btn, opacity, disabled, pointer) {
-    btn.style.opacity = opacity;
-    btn.disabled = disabled;
-}
 // Enable a button
-function enable(btn) { setBtn(btn, 1, false, 'pointer'); }
+function enable(btn) {
+    btn.style.opacity = 1;
+    btn.disabled = false;
+}
 // Disable a button
-function disable(btn) { setBtn(btn, 0.2, true, 'default'); }
+function disable(btn) {
+    btn.style.opacity = 0.2;
+    btn.disabled = true;
+}
 
 
 // Make clicked usernames black
