@@ -14,6 +14,9 @@ window.onload = function () {
     grid = document.getElementById('grid');
     unreachableError = document.getElementById('unreachableError');
     reset();
+
+    // Get user buttons
+    userInput = document.querySelectorAll('button,input');
 }
 
 
@@ -180,8 +183,27 @@ function distance(a, b) {
 }
 
 
+// Disable all user buttons
+function disableAll() {
+    document.getElementById('top').style.opacity = 0.25;
+    for (let i = 0; i < userInput.length; i++)
+        userInput[i].disabled = true;
+}
+
+
+// Enable all user buttons
+function enableAll() {
+    document.getElementById('top').style.opacity = 1;
+    for (let i = 0; i < userInput.length; i++)
+        userInput[i].disabled = false;
+}
+
+
 // search(0) for Dijsktra, search(1) for A*
 async function search(isAStar) {
+    // Disable user buttons
+    disableAll();
+
     // Start the counters at zero
     checkedCount.innerHTML = 0;
     pathCount.innerHTML = 0;
@@ -227,7 +249,7 @@ async function search(isAStar) {
         while (checking) {
             // Increase the counter by one
             checkedCount.innerHTML++;
-            
+
             // Set the initial lowest cost to infinity
             lowestCost = Infinity;
 
@@ -284,7 +306,7 @@ async function search(isAStar) {
                     let nx = lowestX + dx[n];
                     let ny = lowestY + dy[n];
 
-                    // If the neighbour is within the grid boundaries                    
+                    // If the neighbour is within the grid boundaries
                     if (nx > -1 && nx < size && ny > -1 && ny < size) {
                         // If this neighbour is not closed and is not an obstacle
                         let date = new Date();
@@ -316,7 +338,7 @@ async function search(isAStar) {
         while (!done) {
             // Find this cell's classes
             let thisClass = grid.rows[nextClosedX].cells[nextClosedY].classList;
-            
+
             // If this cell is not the start or end, set its class to 'path'
             if (!thisClass.contains('start') && !thisClass.contains('end'))
                 grid.rows[nextClosedX].cells[nextClosedY].classList = 'path';
@@ -332,4 +354,7 @@ async function search(isAStar) {
             done = ((nextClosedX == -1) && (nextClosedY == -1));
         }
     }
+
+    // Enable user buttons
+    enableAll();
 }
