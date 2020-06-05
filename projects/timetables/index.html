@@ -18,13 +18,13 @@
         <!-- Top panel of buttons -->
         <div id="top-panel">
             <!-- User edit functionality -->
-            <button onclick="add()">New</button>
-            <button onclick="prev()" id="prevUser" disabled>Previous</button>
-            <button onclick="next()" id="nextUser" disabled>Next</button>
-            <button onclick="reset()" id="resetUser">Reset</button>
-            <button onclick="remove()" id="removeUser" disabled>Remove</button>
-            <!-- Encode/decode interface -->
-            <input type="text" title="Sharing code" id="code-input" value="9ZrjFE4v">
+            <div id="buttons">
+                <button onclick="add()">New</button>
+                <button onclick="prev()" id="prevUser" disabled>Previous</button>
+                <button onclick="next()" id="nextUser" disabled>Next</button>
+                <button onclick="reset()" id="resetUser">Reset</button>
+                <button onclick="remove()" id="removeUser" disabled>Remove</button>
+            </div>
         </div>
 
         <div id="tables-wrapper">
@@ -59,6 +59,13 @@
                         <br>
                         Edit the user's name by clicking it and typing.
                     </p>
+                </div>
+
+                <!-- Encode/decode interface -->
+                <div id="code">
+                    <button onclick="copy()">Copy</button>
+                    <input type="text" title="Sharing code" id="code-input" value="9ZrjFE4v">
+                    <button onclick="decode()">Set</button>
                 </div>
             </div>
 

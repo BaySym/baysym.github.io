@@ -60,6 +60,14 @@ document.getElementById('code-input')
 });
 
 
+// Copy the timetable's sharing code
+function copy() {
+    var copyText = document.querySelector("#code-input");
+    copyText.select();
+    document.execCommand("copy");
+}
+
+
 // Toggle a cell between free and busy
 function toggle() {
     // Toggle the cell's class
