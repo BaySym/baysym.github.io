@@ -10,10 +10,8 @@ window.onload = function () {
     show(0);
     allUserIds.push('user0');
     allUserTables = document.getElementsByClassName('user');
-
     // Give the initial user a random name
     document.getElementById('user0-name').innerHTML = randomName();
-
     // Get the initial user table's cells
     let table = document.getElementById('user0');
     let cells = table.getElementsByTagName('td');
@@ -26,7 +24,6 @@ window.onload = function () {
             cell.onclick = toggle;
         }
     }
-
     // Get the output table's cells
     output = document.getElementById('output-timetable');
     let outputCells = output.getElementsByTagName('td');
@@ -38,7 +35,6 @@ window.onload = function () {
             cell.classList = 'allFree';
         }
     }
-
     // Enable all buttons, initially
     let prev = document.getElementById('prevUser');
     let next = document.getElementById('nextUser');
@@ -46,7 +42,6 @@ window.onload = function () {
     disable(prev);
     disable(next);
     disable(remv);
-
     // Encode
     this.encode();
 }
@@ -73,12 +68,10 @@ function toggle() {
     // Toggle the cell's class
     this.classList.toggle('free');
     this.classList.toggle('busy');
-
     // Find the corresponding output cell
     let row = this.parentElement.rowIndex;
     let col = this.cellIndex;
     let out = output.rows[row].cells[col];
-
     // Set this cell's innerHTML and edit its corresponding output cell
     if (this.classList.contains('free')) {
         this.innerHTML = '✔';
@@ -87,16 +80,19 @@ function toggle() {
         this.innerHTML = '✘';
         out.innerHTML--;
     }
+    // Update the corresponding output cell's class
     setClassOf(out);
+    // Encode the timetable
     encode();
 }
 
 
 // Set the class of an output cell
 function setClassOf(cell) {
+    // Get the values needed for cell allocation
     let value = cell.innerHTML;
     let len = allUserTables.length;
-
+    // Set the cell's class accordingly
     if (value <= len/2) { cell.classList = 'mostBusy'; }
     else if (value == len) { cell.classList = 'allFree'; }
     else { cell.classList = 'mostFree'; }
@@ -105,11 +101,10 @@ function setClassOf(cell) {
 
 // Add a new user
 function add() {
+    // Set thisUser to the last user
     thisUser = allUserTables.length;
-
     // Give the user a random name
     let name = randomName();
-
     // Add user table HTML
     document.getElementById('user-wrapper').insertAdjacentHTML('beforeend', `
     <div class="user" id="user` + thisUser + `">
@@ -141,7 +136,6 @@ function add() {
             Edit the user's name by clicking it and typing.
         </p>
     </div>`);
-
     // Get the user table's cells
     let table = document.getElementById('user' + thisUser);
     let cells = table.getElementsByTagName('td');
@@ -154,13 +148,10 @@ function add() {
             cell.onclick = toggle;
         }
     }
-
     // Add the table to the list
     allUserIds.push('user' + thisUser);
-
     // Show the new table
     show(allUserIds.length - 1);
-
     // Increase output cells by 1
     for (let row = 0; row < output.rows.length; row++) {
         for (let col = 0; col < output.rows[row].cells.length; col++) {
@@ -211,7 +202,7 @@ function reset() {
             setClassOf(out);
         }
     }
-
+    // Encode the timetable
     encode();
 }
 
@@ -223,18 +214,15 @@ function remove() {
     let cells = table.getElementsByTagName('td');
     let outTable = document.getElementById('output-timetable');
     let outCells = outTable.getElementsByTagName('td');
-
     // Remove this user from arrays
     allUserIds.splice(thisUser, 1);
     allUserTables[thisUser].remove();
-
     // Undo this table's output effect
     for (let i = 0; i < cells.length; i++) {
-        let cell = cells[i];
-        if (cell.innerHTML == '✔') outCells[i].innerHTML--;
-        if (cell.innerHTML == '✔' || cell.innerHTML == '✘') setClassOf(outCells[i]);
+        let inner = cells[i].innerHTML;
+        if (inner == '✔') outCells[i].innerHTML--;
+        if (inner == '✔' || inner == '✘') setClassOf(outCells[i]);
     }
-
     // Show the previous user
     show(--thisUser);
 }
@@ -244,11 +232,9 @@ function remove() {
 function show(id) {
     // Get all users
     allUserTables = document.getElementsByClassName('user');
-
     // Only display the current user
     for (let u = 0; u < allUserTables.length; u++) allUserTables[u].style.display = 'none';
     allUserTables[id].style.display = 'inline';
-
     // Enable all buttons, initially
     let prev = document.getElementById('prevUser');
     let next = document.getElementById('nextUser');
@@ -256,18 +242,14 @@ function show(id) {
     enable(prev);
     enable(next);
     enable(remv);
-
     // If this is the first user, disable prevUser and removeUser
     if (thisUser === 0) {
         disable(remv);
         disable(prev);
     }
-
     // If this is the last user, disable nextUser
-    if (thisUser === (allUserTables.length - 1)) {
-        disable(next);
-    }
-
+    if (thisUser === (allUserTables.length - 1)) { disable(next); }
+    // Encode the timetable
     encode();
 }
 
@@ -277,6 +259,8 @@ function enable(btn) {
     btn.style.opacity = 1;
     btn.disabled = false;
 }
+
+
 // Disable a button
 function disable(btn) {
     btn.style.opacity = 0.2;
@@ -284,12 +268,9 @@ function disable(btn) {
 }
 
 
-// Make clicked usernames black
-function noClass() { this.style.color = '#000'; }
-
-
 // Generate a random name for a user
 function randomName() {
+    // Possible names
     let first = ['Jacob', 'Emily', 'Michael', 'Madison', 'Joshua',
                  'Emma', 'Matthew', 'Olivia', 'Daniel', 'Hannah',
                  'Christopher', 'Abigail', 'Andrew', 'Isabella', 'Ethan',
@@ -298,13 +279,13 @@ function randomName() {
                  'Nicholas', 'Ryan', 'Grace', 'Ava', 'James',
                  'Taylor', 'John', 'Lauren', 'Chloe', 'Natalie'];
     let last = 'QWERTYUIOPASDFGHJKLCVBNM';
-
+    // Pick a random name
     let name = '\'';
     name += first[Math.floor(Math.random() * first.length)];
     name += ' ';
     name += last.charAt(Math.floor(Math.random() * 24));
     name += '\'';
-
+    // Return the random name
     return name;
 }
 
@@ -321,6 +302,7 @@ function encode() {
         if (cell.classList.contains('free')) code += '1';
         if (cell.classList.contains('busy')) code += '0';
     }
+    // Display the code
     document.getElementById('code-input').value = toBase62(code);
 }
 
@@ -333,7 +315,6 @@ function decode() {
     let cells = table.getElementsByTagName('td');
     let outTable = document.getElementById('output-timetable');
     let outCells = outTable.getElementsByTagName('td');
-
     // Set each time slot cell to free and give it its onclick
     let progress = 0;
     for (let i = 0; i < cells.length; i++) {
@@ -343,12 +324,10 @@ function decode() {
                 // Toggle the cell's class
                 cell.classList.toggle('free');
                 cell.classList.toggle('busy');
-
                 // Find the corresponding output cell
                 let row = cell.parentElement.rowIndex;
                 let col = cell.cellIndex;
                 let out = output.rows[row].cells[col];
-
                 // Set this cell's innerHTML and edit its corresponding output cell
                 if (cell.classList.contains('free')) {
                     cell.innerHTML = '✔';
@@ -357,8 +336,10 @@ function decode() {
                     cell.innerHTML = '✘';
                     out.innerHTML--;
                 }
+                // Update the corresponding output cell's class
                 setClassOf(out);
             }
+            // Increase the progress counter
             progress++;
         }
     }
@@ -373,8 +354,12 @@ function matches(cell, code) {
 
 // Convert to base 2 from base 62
 function toBase2(value) { return convertBase(value, 62, 2)};
+
+
 // Convert to base 62 from base 2
 function toBase62(value) { return convertBase(value, 2, 62)};
+
+
 // Convert between bases (slightly modified from ryansmith94 on GitHub, https://git.io/JfEeZ)
 function convertBase(value, from_base, to_base) {
     var range = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
@@ -382,7 +367,7 @@ function convertBase(value, from_base, to_base) {
     var to_range = range.slice(0, to_base);
 
     var dec_value = value.split('').reverse().reduce(function (carry, digit, index) {
-        if (from_range.indexOf(digit) === -1)throw new Error('Invalid digit `' + digit + '` for base ' + from_base + '.');
+        if (from_range.indexOf(digit) === -1) throw new Error('Invalid digit `' + digit + '` for base ' + from_base + '.');
         return carry += from_range.indexOf(digit) * (Math.pow(from_base, index));
     }, 0);
 
