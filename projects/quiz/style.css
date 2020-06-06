@@ -17,6 +17,15 @@ button {
     button+button { margin-left: 10px; }
 
 
+/* Loading and final score wrappers */
+#loading, #final {
+    padding-top: 50px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+    #final-txt { margin-bottom: 15px; }
+
 /* Main content wrapper */
 #wrapper {
     width: calc(100vw-25px);
@@ -25,16 +34,14 @@ button {
     margin: auto;
 }
     /* Question container */
-    #question {
-        text-align: center;
-    }
-        #question-num {
+    #question { text-align: center; }
+        #score {
             font-size: 0.9rem;
             color: #666;
         }
         #question-txt {
             font-size: 1.2rem;
-            font-weight: 700;
+            font-weight: 500;
             margin-top: 20px;
             height: 4.8rem;
             display: inline-block;
@@ -57,6 +64,7 @@ button {
             cursor: pointer;
             box-sizing: border-box;
             border: 1px solid #fff;
+            user-select: none;
         }
             .option:hover { filter: brightness(95%); }
             .selected, .correct { font-weight: 700; }

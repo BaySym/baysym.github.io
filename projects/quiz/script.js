@@ -1,42 +1,66 @@
 // Global variables
-let chosen = false;
-let progress = 1;
-let data = 0;
+let progress = 0;
 let score = 0;
+var trivia;
 
 
 // Onload function
-window.onload = function () {
-    // Disable the suibmit button
+window.onload = async function () {
+    // Get elements
+    loadingWrapper = document.getElementById('loading');
+    questionWrapper = document.getElementById('wrapper');
+    finalWrapper = document.getElementById('final');
     submitBtn = document.getElementById('submit-btn');
-    submitBtn.disabled = true;
-    // Hide the next button
     nextBtn = document.getElementById('next-btn');
-    nextBtn.style.display = 'none';
-    // Get the question number text
-    questionNum = document.getElementById('question-num');
+    scoreTxt = document.getElementById('score-txt');
     questionTxt = document.getElementById('question-txt');
-    // Make all options selectable
     options = document.getElementsByClassName('option');
-    for (let i = 0; i < 4; i++) options[i].onclick = select;
-    // Get a new question and answers
-    getTrivia();
+    progressBar = document.getElementById('progress');
+    // Start the first round
+    freshStart();
 }
 
 
-// Get the trivia
-function getTrivia() {
-    fetch('https://opentdb.com/api.php?amount=1&category=9&type=multiple')
-    .then(response => { return response.json() })
-    .then(jsonData => {
-        let data = jsonData.results[0];
-        questionTxt.innerHTML = data.question;
-        let potentialAnswers = data.incorrect_answers;
-        potentialAnswers.push(data.correct_answer);
-        potentialAnswers = shuffle(potentialAnswers);
-        for (let i = 0; i < 4; i++) options[i].innerHTML = potentialAnswers[i];
-        options[potentialAnswers.indexOf(data.correct_answer)].id = 'correct-answer';
-    });
+// Start a new round
+async function freshStart() {
+    progress = 0;
+    score = 0;
+    // Set loading wrapper visibility
+    loadingWrapper.style.display = 'block';
+    // Set question wrapper visibility
+    questionWrapper.style.display = 'none';
+    // Set final score wrapper visibility
+    finalWrapper.style.display = 'none';
+    // Get the trivia
+    trivia = await getTrivia();
+    // Disable the suibmit button
+    submitBtn.disabled = true;
+    // Hide the next button
+    nextBtn.style.display = 'none';
+    // Reset the score
+    scoreTxt.innerHTML = 'Score: ' + score;
+    // Get the question text
+    // Make all options selectable
+    for (let i = 0; i < 4; i++) options[i].onclick = select;
+    // Load for three seconds
+    await sleep();
+    loadingWrapper.style.display = 'none';
+    questionWrapper.style.display = 'block';
+    // Start the first question
+    next();
+}
+
+
+async function getTrivia() {
+    fetch('https://opentdb.com/api.php?amount=10&category=9&type=multiple')
+    .then(res => { return res.json() })
+    .then(data => { trivia = data });
+}
+
+
+// Sleep for an amount of milliseconds
+function sleep() {
+    return new Promise(resolve => setTimeout(resolve, 3000));
 }
 
 
@@ -58,30 +82,47 @@ function submit() {
     // Disable pointer events on answers
     for (let i = 0; i < 4; i++) options[i].style.pointerEvents = 'none';
     // Update the score
-    questionNum.innerHTML = 'Score: ' + score + '/' + progress;
+    scoreTxt.innerHTML = 'Score: ' + score;
 }
 
 
 // Move on to the next question
-function next() {
-    progress++;
-    // Reset options
-    for (let i = 0; i < 4; i++) {
+async function next() {
+    // Finish the quiz after 10 questions
+    if (progress == 10) {
+        questionWrapper.style.display = 'none';
+        finalWrapper.style.display = 'block';
+        let finalTxt = document.getElementById('final-txt');
+        finalTxt.innerHTML = 'Your final score is ' + score + '/10!';
+        await sleep();
+    } else {
         // Reset options
-        options[i].classList = 'option';
-        options[i].id = '';
-        // Enable pointer events on answers
-        options[i].style.pointerEvents = 'auto';
+        for (let i = 0; i < 4; i++) {
+            // Reset options
+            options[i].classList = 'option';
+            options[i].id = '';
+            // Enable pointer events on answers
+            options[i].style.pointerEvents = 'auto';
+        }
+        // Hide the submit button and reveal the next button
+        submitBtn.style.display = 'inline';
+        nextBtn.style.display = 'none';
+        // Get the question data
+        let data = trivia.results[progress++];
+        // Set the question text
+        questionTxt.innerHTML = data.question;
+        // Set the answers' texts
+        let potentialAnswers = data.incorrect_answers;
+        potentialAnswers.push(data.correct_answer);
+        potentialAnswers = shuffle(potentialAnswers);
+        for (let i = 0; i < 4; i++) options[i].innerHTML = potentialAnswers[i];
+        // Identify the correct answer
+        options[potentialAnswers.indexOf(data.correct_answer)].id = 'correct-answer';
+        // Disable the submit button
+        submitBtn.disabled = true;
     }
-    // Hide the submit button and reveal the next button
-    submitBtn.style.display = 'inline';
-    nextBtn.style.display = 'none';
-    // Get a new question and answers
-    getTrivia();
-    // Disable the submit button
-    submitBtn.disabled = true;
 }
-
+5
 
 // Toggle selected answer
 function select() {
