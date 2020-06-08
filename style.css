@@ -48,18 +48,14 @@ img { border-radius: 3px; }
     #projects * { flex: 0 50%; }
     /* a-tag 'div' card */
     .card {
-        margin: auto;
         margin-bottom: 10px;
         display: inline-block;
         padding: 10px;
-        border-radius: 5px;
         cursor: pointer;
         text-decoration: none;
         text-align: justify;
         min-width: 250px;
         box-sizing: border-box;
-        border: 1px solid transparent;
-        transition: 0.2s;
     }
         /* change name and image on card hover */
         .card:hover > .name { text-decoration: underline; }
