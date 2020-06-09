@@ -49,12 +49,9 @@ img { border-radius: 3px; }
         display: block;
         padding: 15px 0;
     }
-        .card:hover > img {
-            filter: saturate(100%);
-            opacity: 1;
-        }
         /* remove all child elements' borders */
         .card * { margin: 0; }
+        .card:hover .name { text-decoration: underline; }
         /* card text */
         .text {
             display: inline-block;
@@ -77,8 +74,6 @@ img { border-radius: 3px; }
             height: 20px;
             vertical-align: middle;
             display: inline-block;
-            filter: saturate(0%);
-            opacity: 0.5;
         }
 
 
