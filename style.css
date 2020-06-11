@@ -42,7 +42,12 @@ a { color: var(--colour1); }
     opacity: 0.75;
     user-select: none;
 }
-#toggle { cursor: pointer; }
+#toggle {
+    cursor: pointer;
+    box-sizing: border-box;
+    padding: 5px;
+}
+    #toggle:hover { text-decoration: underline; }
 
 
 /* NAVIGATION BAR */
