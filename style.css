@@ -205,7 +205,7 @@ a { color: var(--colour1); }
         transition: var(--sstt);
     }
     .card img {
-        transform: scale(0);
+        transform: scale(0) !important;
         transition: var(--sstt);
     }
     .card .text {
