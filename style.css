@@ -145,7 +145,7 @@ a { color: var(--colour1); }
     overflow: hidden;
 }
 /* wrapper */
-#content {
+#about {
     text-align: justify;
     width: calc(100vw-25px);
     margin: auto;
@@ -154,7 +154,7 @@ a { color: var(--colour1); }
     line-height: 1.5rem;
 }
     /* about me header */
-    #content h1 { display: inline; }
+    #about h1 { display: inline; }
     /* social link wrapper */
     #social {
         width: 96px;
