@@ -107,6 +107,7 @@ a { color: var(--colour1); }
                 font-weight: 700;
                 color: var(--colour1);
                 margin-bottom: 3px;
+                line-height: 20px;
             }
                 .tool {
                     color: #aaa;
@@ -118,6 +119,7 @@ a { color: var(--colour1); }
                 }
             /* card description */
             .desc {
+                line-height: 16px;
                 font-size: 0.8rem;
                 color: var(--colour2);
             }
@@ -143,7 +145,7 @@ a { color: var(--colour1); }
     overflow: hidden;
 }
 /* wrapper */
-#about {
+#content {
     text-align: justify;
     width: calc(100vw-25px);
     margin: auto;
@@ -152,7 +154,7 @@ a { color: var(--colour1); }
     line-height: 1.5rem;
 }
     /* about me header */
-    #about h1 { display: inline; }
+    #content h1 { display: inline; }
     /* social link wrapper */
     #social {
         width: 96px;
