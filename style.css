@@ -133,6 +133,29 @@ a { color: var(--colour1); }
         }
 
 
+        #col-cards {
+            display: flex;
+            flex: auto;
+            justify-content: space-between;
+        }
+            .col-card {
+                border-radius: 5px;
+                display: inline-flex;
+                height: 100px;
+                width: 32%;
+                min-width: 32%;
+                cursor: pointer;
+                transition: 0.1s;
+            }
+            .col-card:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -1px rgba(0, 0, 0, .06);
+            }
+                #card-a { background-image: linear-gradient(#fc5c65, #eb3b5a); }
+                #card-b { background-image: linear-gradient(#fd9644, #fa8231); }
+                #card-c { background-image: linear-gradient(#fed330, #f7b731); }
+
+
 /* ABOUT */
 #banner {
     height: auto;
