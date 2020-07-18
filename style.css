@@ -54,7 +54,7 @@ a { color: var(--colour1); }
 #nav {
     display: flex;
     justify-content: space-between;
-    width: 250px;
+    width: 225px;
     margin: 15px auto;
     vertical-align: middle;
 }
