@@ -5,21 +5,6 @@
 :root { --sstt: 0.2s; }
 
 
-/* themes */
-.light {
-    --page-bg: #fff;
-    --colour1: #212121;
-    --colour2: #666;
-    --invert: 0;
-}
-.dark {
-    --page-bg: #0c0c0c;
-    --colour1: #eee;
-    --colour2: #bbb;
-    --invert: 1;
-}
-
-
 /* ALL PAGES */
 html {
     font-family: 'Roboto', sans-serif;
@@ -35,19 +20,6 @@ h5 { font-weight: 400; }
 img { border-radius: 3px; }
 p { color: var(--colour1); }
 a { color: var(--colour1); }
-#toggle, footer {
-    color: var(--colour2);
-    text-align: center;
-    font-size: 0.8rem;
-    opacity: 0.75;
-    user-select: none;
-}
-#toggle {
-    cursor: pointer;
-    box-sizing: border-box;
-    padding: 5px;
-}
-    #toggle:hover { text-decoration: underline; }
 
 
 /* NAVIGATION BAR */
@@ -70,69 +42,6 @@ a { color: var(--colour1); }
     }
         /* nav links on hover */
         #nav a:hover { text-decoration: underline; }
-
-
-/* PROJECTS PAGE */
-/* wrapper */
-#projects {
-    margin: auto;
-    width: 450px;
-}
-    /* a-tag 'div' card */
-    .card {
-        cursor: pointer;
-        text-decoration: none;
-        display: block;
-        padding: 15px 10px;
-        border-radius: 5px;
-    }
-        /* remove all child elements' borders */
-        .card * { margin: 0; }
-        .card:hover .name { text-decoration: underline; }
-        .card:hover .name { text-decoration: none; }
-        .card:hover > img {
-            transform: translateY(-3px);
-            opacity: 1;
-            transition: 0.1s;
-        }
-        /* card text */
-        .text {
-            display: inline-block;
-            vertical-align: middle;
-            margin-left: 10px;
-            transition: var(--sstt);
-        }
-            /* card name */
-            .name {
-                font-weight: 700;
-                color: var(--colour1);
-                margin-bottom: 3px;
-                line-height: 20px;
-            }
-                .tool {
-                    color: #aaa;
-                    font-weight: 500;
-                    font-size: 0.8rem;
-                    text-decoration: none;
-                    opacity: 0;
-                    transition: var(--sstt);
-                }
-            /* card description */
-            .desc {
-                line-height: 16px;
-                font-size: 0.8rem;
-                color: var(--colour2);
-            }
-        /* card image */
-        .card img {
-            height: 20px;
-            vertical-align: middle;
-            display: inline-block;
-            opacity: 0.5;
-            border-radius: 0px;
-            transition: 0.2s;
-            transition: var(--sstt);
-        }
 
 
 /* ABOUT */
@@ -171,32 +80,64 @@ a { color: var(--colour1); }
             #social img:hover { opacity: calc(1/3); }
 
 
-/* GALLERY */
-/* gallery image row */
-.gallery-row {
+/* PROJECTS PAGE */
+/* wrapper */
+#projects {
     margin: auto;
-    margin-bottom: 4px;
-    display: flex;
-    justify-content: space-between;
-    max-width: 550px;
-    width: calc(100vw-25px);
+    width: 450px;
 }
-    /* image in row */
-    .gallery-row img {
-        max-height: 300px;
-        display: inline;
-        background-color: #ddd;
+    /* a-tag 'div' card */
+    .card {
+        cursor: pointer;
+        text-decoration: none;
+        display: block;
+        padding: 15px 10px;
+        border-radius: 5px;
     }
-    /* image next to another */
-    .gallery-row img+img { margin-left: 4px; }
-
-
-/* third year topic colours */
-.bd { color: #07c; }
-.ml { color: #0b0; }
-.var { color: #e80; }
-.pp { color: #e42; }
-.cpd { color: #c5e; }
+        .card * { margin: 0; }
+        .card:hover .name { text-decoration: underline; }
+        .card:hover .name { text-decoration: none; }
+        .card:hover > img {
+            transform: translateY(-3px);
+            opacity: 1;
+            transition: 0.1s;
+        }
+        .card img {
+            height: 20px;
+            vertical-align: middle;
+            display: inline-block;
+            opacity: 0.5;
+            border-radius: 0px;
+            transition: var(--sstt);
+        }
+        /* card text */
+        .text {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 10px;
+            transition: var(--sstt);
+        }
+            /* card name */
+            .name {
+                font-weight: 700;
+                color: var(--colour1);
+                margin-bottom: 3px;
+                line-height: 20px;
+            }
+                .tool {
+                    color: #aaa;
+                    font-weight: 500;
+                    font-size: 0.8rem;
+                    text-decoration: none;
+                    opacity: 0;
+                    transition: var(--sstt);
+                }
+            /* card description */
+            .desc {
+                line-height: 16px;
+                font-size: 0.8rem;
+                color: var(--colour2);
+            }
 
 
 /* media queries */
@@ -210,7 +151,7 @@ a { color: var(--colour1); }
         transform: scale(0) !important;
         transition: var(--sstt);
     }
-    .card .text {
+    .text {
         margin: 0;
         transition: var(--sstt);
     }
