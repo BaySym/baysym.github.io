@@ -18,6 +18,7 @@ h5 { font-weight: 400; }
     max-width: 550px;
     margin: auto;
 }
+    #projects { max-width: 570px; }
     #nav, #about, #projects {
         width: calc(100vw-25px);
         padding: 0 25px;
@@ -87,27 +88,35 @@ h5 { font-weight: 400; }
         flex: 50% 0;
     }
         .card * { margin: 0; }
+        /* card states */
         .card:hover, .card:focus { background-color: #f4f4ff; }
         .card:hover .name { text-decoration: underline; }
+        /* for cards with no hyperlink */
+        .no-link { cursor: default; }
+            .no-link .name { color: #767676; }
+            /* no-link card states */
+            .no-link:hover, .no-link:focus { background-color: #fff; }
+            .no-link:hover .name { text-decoration: none; }
+        /* the name of a project */
         .name {
             font-weight: 600;
             display: inline;
             font-size: 14px;
             color: #2980b9;
         }
+        /* decription and tool text */
         .desc, .tool { font-size: 12px; }
-        .desc { margin: 2px 0;}
-        .tool, .tool-colour { display: inline-block; }
+            .desc { margin: 2px 0;}
+        /* tool text and colour circle */
         .tool, .tool-colour {
+            display: inline-block;
             color: #767676;
             position: relative;
         }
+            /* circle indicating a tool's main colour */
             .tool-colour {
                 height: 12px;
                 width: 12px;
                 border-radius: 50%;
                 top: 1px;
             }
-
-/* media queries */
-@media (max-width: 500px) {}
