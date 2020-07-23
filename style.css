@@ -87,10 +87,11 @@ h5 { font-weight: 400; }
         box-sizing: border-box;
         padding: 6px 10px;
         flex: 50% 0;
+        margin-bottom: 10px;
     }
         .card * { margin: 0; }
         /* card states */
-        .card:hover, .card:focus { background-color: #f4f4ff; }
+        .card:focus { background-color: #f4f4ff; }
         .card:hover .name { text-decoration: underline; }
         /* for cards with no hyperlink */
         .no-link { cursor: default; }
