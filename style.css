@@ -47,6 +47,7 @@ h5 { font-weight: 400; }
     height: auto;
     display: block;
     overflow: hidden;
+    width: 100vw;
 }
 /* wrapper */
 #about {
@@ -75,18 +76,16 @@ h5 { font-weight: 400; }
 /* PROJECTS PAGE */
 /* wrapper */
 #projects {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: 570px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
 }
     /* a-tag 'div' card */
     .card {
         cursor: pointer;
         text-decoration: none;
         box-sizing: border-box;
-        padding: 6px 10px;
-        flex: 50% 0;
+        padding: 6px 0;
         margin-bottom: 10px;
     }
         .card * { margin: 0; }
@@ -97,7 +96,7 @@ h5 { font-weight: 400; }
         .no-link { cursor: default; }
             .no-link .name { color: #767676; }
             /* no-link card states */
-            .no-link:hover, .no-link:focus { background-color: #fff; }
+            .no-link:focus { background-color: transparent; }
             .no-link:hover .name { text-decoration: none; }
         /* the name of a project */
         .name {
