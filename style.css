@@ -1,7 +1,3 @@
-/* screen size transition time */
-:root { --sstt: 0.2s; }
-
-
 /* ALL PAGES */
 html {
     font-family: 'Segoe UI', sans-serif;
@@ -63,23 +59,21 @@ a { color: #000; }
 
     /* social link wrapper */
     #social {
-        width: 96px;
         float: right;
         display: grid;
         grid-template-columns: 20px 20px 20px;
+        grid-column-gap: 20px;
         justify-content: space-between;
     }
         /* social link image */
         #social img {
             padding-top: 2px;
             width: 20px;
-            opacity: 0.5;
+            opacity: 1;
             float: right;
         }
             /* social link image on hover */
-            #social a:hover img, #social a:focus img {
-                opacity: 1;
-            }
+            #social img:hover, #social img:focus { opacity: calc(1/3); }
 
 /* projects wrapper */
 #projects {
@@ -100,8 +94,6 @@ a { color: #000; }
         /* for cards with no hyperlink */
         .no-link { cursor: default; }
             .no-link .name { color: #6c6c6c; }
-            /* no-link card states */
-            .no-link:focus { background-color: transparent; }
             .no-link:hover .name { text-decoration: none; }
 
         /* the name of a project */
@@ -132,8 +124,5 @@ a { color: #000; }
 
 
 @media (orientation: portrait), (max-width: 600px) {
-    #projects {
-        display: grid;
-        grid-template-columns: 1fr;
-    }
+    #projects { grid-template-columns: 1fr; }
 }
