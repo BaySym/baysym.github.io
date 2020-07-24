@@ -127,7 +127,7 @@ p, a, h1, h2, h3, h4, h5 { color: #000; }
             }
 
 
-@media screen and (max-width: 600px) {
+@media (orientation: portrait), (max-width: 600px) {
     #projects {
         display: grid;
         grid-template-columns: 1fr;
