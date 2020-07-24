@@ -72,10 +72,14 @@ p, a, h1, h2, h3, h4, h5 { color: #000; }
         /* social link image */
         #social img {
             width: 24px;
-            filter: invert(var(--invert));
+            opacity: calc(1/3);
+            filter: saturate(0%) brightness(0%);
         }
             /* social link image on hover */
-            #social a:hover { opacity: calc(1/3); }
+            #social a:hover img, #social a:focus img {
+                opacity: 1;
+                filter: saturate(100%) brightness(100%);
+            }
 
 /* projects wrapper */
 #projects {
@@ -86,6 +90,7 @@ p, a, h1, h2, h3, h4, h5 { color: #000; }
     /* a-tag 'div' card */
     .card {
         box-sizing: border-box;
+        background-color: #fff;
         padding: 6px 0;
         margin-bottom: 10px;
         text-decoration: none;
