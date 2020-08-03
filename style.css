@@ -1,8 +1,32 @@
+/* COLOURS */
+.light {
+    --page-bg: #fff;
+    --primary-text: #222;
+    --secondary-text: #767676;
+    --link-col: #2980b9;
+    --cv-bg: #fffaf0;
+    --cv-border: #fed;
+}
+
+.dark {
+    --page-bg: #1e1e1e;
+    --primary-text: #d4d4d4;
+    --secondary-text: #aaa;
+    --link-col: #569CD6;
+    --cv-bg: #252526;
+    --cv-border: #000;
+}
+
+
 /* ALL PAGES */
-html { font-family: 'Segoe UI', sans-serif; }
+html {
+    font-family: 'Segoe UI', sans-serif;
+}
 body {
     padding-bottom: 50px;
     margin: 0;
+    background-color: var(--page-bg);
+    color: var(--primary-text);
 }
 h1, h2 { font-weight: 600; }
     h1 {
@@ -10,7 +34,7 @@ h1, h2 { font-weight: 600; }
         margin-left: -1px;
     }
     h2 { font-size: 1.25rem; }
-a { color: #000; }
+a { color: var(--primary-text); }
 
 
 /* WRAPPER GRID */
@@ -27,7 +51,7 @@ a { color: #000; }
     z-index: 2;
     width: 550px;
     max-width: calc(100vw - 50px);
-    background-color: rgba(255, 255, 255, 1);
+    background-color: var(--page-bg);
     box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.025);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     display: flex;
@@ -46,6 +70,7 @@ a { color: #000; }
     /* links to site pages */
     #pages { float: right; }
         #pages * { margin-left: 15px;}
+        #theme-btn { cursor: pointer; }
 
 
 /* INDEX */
@@ -55,6 +80,7 @@ a { color: #000; }
     display: block;
     overflow: hidden;
     width: 100%;
+    background-color: #ddd;
     max-width: 100vw;
 }
 
@@ -80,11 +106,13 @@ a { color: #000; }
         #social img {
             padding-top: 2px;
             width: 20px;
-            opacity: 1;
+            opacity: calc(1/3);
             float: right;
         }
             /* social link image on hover */
-            #social img:hover, #social img:focus { opacity: calc(1/3); }
+            #social img:hover, #social img:focus {
+                opacity: 1;
+            }
 
 /* projects wrapper */
 #projects {
@@ -103,37 +131,55 @@ a { color: #000; }
         text-decoration: none;
     }
         .card * { margin: 0; }
-        .card:hover .name { text-decoration: underline; }
-        
-        /* for cards with no hyperlink */
-        .no-link { cursor: default; }
-            .no-link .name { color: #6c6c6c; }
-            .no-link:hover .name { text-decoration: none; }
 
         /* the name of a project */
         .name {
             font-weight: 600;
-            color: #2980b9;
+            color: var(--link-col);
             display: inline;
             font-size: 14px;
+            cursor: pointer;
+            text-decoration: none;
         }
+            .name:hover { text-decoration: underline; }
+            .no-link {
+                cursor: default;
+                color: var(--secondary-text); 
+            }
+                .no-link:hover { text-decoration: none; }
 
         /* decription and tool text */
         .desc, .tool { font-size: 12px; }
             .desc { margin: 2px 0; }
 
         /* tool text and colour circle */
-        .tool, .tool-colour {
+        .tool, .tool-colour, .collab {
             display: inline-block;
-            color: #767676;
+            color: var(--secondary-text);
             position: relative;
         }
             /* circle indicating a tool's main colour */
-            .tool-colour {
+            .tool-colour, .collab {
                 height: 12px;
                 width: 12px;
                 border-radius: 50%;
                 top: 2px;
+            }
+            .tool a {
+                color: var(--link-col);
+                font-weight: 600;
+                text-decoration: none;
+            }
+                .tool a:hover { text-decoration: underline; }
+        /* collaborator */
+        .collab {
+            background-color: #ddd;
+            background-size: contain;
+            margin-left: 5px;
+        }
+            .collab + .collab {
+                margin-left: -9px;
+                filter: drop-shadow(-1px 0 0 #fff);
             }
 
 
@@ -145,13 +191,13 @@ a { color: #000; }
     #page {
         padding: 30px 75px 60px 75px;
         text-align: justify;
-        background: #fffaf0;
-        border: 1px solid #fed;
+        background-color: var(--cv-bg);
+        border: 1px solid var(--cv-border);
         box-sizing: border-box;
     }
     #cv .heading, #cv .sub, #cv a {
         font-family: 'Segoe UI Semibold', sans-serif;
-        color: #000;
+        color: var(--primary-text);
     }
     #cv .heading {
         font-size: 14px;
@@ -161,10 +207,10 @@ a { color: #000; }
     #cv .sub { font-size: 12px; }
     #cv p {
         font-size: 12px;
-        color: #222;
+        color: var(--secondary-text);
     }
     #cv a {
-        color: #2980b9;
+        color: var(--link-col);
         text-decoration: none;
     }
         #cv a:hover { text-decoration: underline; }

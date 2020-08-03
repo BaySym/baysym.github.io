@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="Hello, I'm Bailey, a computer science student at the University of Lincoln interested in human-computer interaction and user experience design.">
 </head>
-<body>
+<body class="light">
     <div id="wrapper-grid">
         <div id="left-col"></div>
 
@@ -18,6 +18,7 @@
                 <div id="pages">
                     <p><a href="#projects">#projects</a></p>
                     <p><a href="#cv">#cv</a></p>
+                    <p style="padding-left: 15px" id="theme-btn" onclick="theme()">☼</p>
                 </div>
             </div>
             <img id="banner" src="img/keld.jpg" alt="Bailey Symonds looking over a Yorkshire Dales landscape.">
@@ -34,60 +35,69 @@
             </div>
             <div id="projects">
                 <!-- Poetry Machine -->
-                <a class="no-link card" target="">
-                    <p class="name">Poetry Machine</p>
+                <div class="card">
+                    <p class="no-link name">Poetry Machine</a>
                     <p class="desc">I am involved in the interaction design aspect of this AI-generated-poetry research project.</p>
                     <div class="tool-colour" style="background-color: #f24d1d"></div>
                     <p class="tool">Figma</p>
-                </a>
+                </div>
         
                 <!-- Remy -->
-                <a class="card" href="https://github.com/orgs/LindonDev/teams/remy" target="_blank">
-                    <p class="name">Remy</p>
-                    <p class="desc">I am designing this recipe management app, in development with Joe Pitts.</p>
-                    <div class="tool-colour" style="background-color: #ec6cee"></div>
-                    <p class="tool">Adobe Xd</p>
-                </a>
+                <div class="card">
+                    <a class="name" href="https://github.com/orgs/LindonDev/teams/remy" target="_blank">Remy</a>
+                    <p class="desc">I am designing this recipe management app, a collaborative summer project.</p>
+                    <div class="tool-colour" style="background-color: #f24d1d"></div>
+                    <p class="tool">Figma</p>
+                    <div class="collab" style="background-image: url('img/collabs/joe.jpg')"></div>
+                    <p class="tool"><a href="https://joepits.co.uk">Joe Pitts</a></p>
+                </div>
         
                 <!-- Kontrol -->
-                <a class="card" href="https://kontrol.software" target="_blank">
-                    <p class="name">Kontrol</p>
-                    <p class="desc">I was the design lead on this pose-based Kodi controller project.</p>
+                <div class="card">
+                    <a class="name" href="https://kontrol.software" target="_blank">Kontrol</a>
+                    <p class="desc">I was the designer for this pose-based Kodi controller university project.</p>
                     <div class="tool-colour" style="background-color: #ec6cee"></div>
                     <p class="tool">Adobe Xd</p>
-                </a>
+                    <div class="collab" style="background-image: url('img/collabs/joe.jpg')"></div>
+                    <div class="collab" style="background-image: url('img/collabs/pollard.jpg')"></div>
+                    <div class="collab" style="background-image: url('img/collabs/ben.jpg')"></div>
+                    <div class="collab" style="background-image: url('img/collabs/xu.jpg')"></div>
+                    <div class="collab" style="background-image: url('img/collabs/cooper.jpg')"></div>
+                    <div class="collab" style="background-image: url('img/collabs/faiza.jpg')"></div>
+                    <p class="tool"><a href="https://github.com/orgs/CMP2804M-Group3/people">Group 3</a></p>
+                </div>
         
                 <!-- Timetable Comparison -->
-                <a class="card" href="https://bsym.dev/projects/timetables">
-                    <p class="name">Timetable Comparison</p>
+                <div class="card">
+                    <a class="name" href="https://bsym.dev/projects/timetables">Timetable Comparison</a>
                     <p class="desc">Compare multiple timetables to find the best time to meet.</p>
                     <div class="tool-colour" style="background-color: #f1c40f"></div>
                     <p class="tool">JavaScript</p>
-                </a>
+                </div>
         
                 <!-- Password Generator -->
-                <a class="card" href="https://bsym.dev/projects/passwords">
-                    <p class="name">Password Generator</p>
+                <div class="card">
+                    <a class="name" href="https://bsym.dev/projects/passwords">Password Generator</a>
                     <p class="desc">Generate random passwords and check the strength of your own.</p>
                     <div class="tool-colour" style="background-color: #f1c40f"></div>
                     <p class="tool">JavaScript</p>
-                </a>
+                </div>
         
                 <!-- Pathfinding -->
-                <a class="card" href="https://bsym.dev/projects/pathfinding">
-                    <p class="name">Pathfinding</p>
+                <div class="card">
+                    <a class="name" href="https://bsym.dev/projects/pathfinding">Pathfinding</a>
                     <p class="desc">Demonstrations of pathfinding algorithms on random maps.</p>
                     <div class="tool-colour" style="background-color: #f1c40f"></div>
                     <p class="tool">JavaScript</p>
-                </a>
+                </div>
         
                 <!-- Trivia Quiz -->
-                <a class="card" href="https://bsym.dev/projects/quiz">
-                    <p class="name">Trivia Quiz</p>
+                <div class="card">
+                    <a class="name" href="https://bsym.dev/projects/quiz">Trivia Quiz</a>
                     <p class="desc">A general knowledge quiz using Open Trivia Database' API.</p>
                     <div class="tool-colour" style="background-color: #f1c40f"></div>
                     <p class="tool">JavaScript</p>
-                </a>
+                </div>
             </div>
             
             <div id="cv">
@@ -158,4 +168,7 @@
     </div>    
 
 </body>
+
+<script type="text/javascript" src="script.js"></script>
+
 </html>
