@@ -378,3 +378,11 @@ function convertBase(value, from_base, to_base) {
     }
     return new_value || '0';
 }
+
+var body = document.body;
+var light = true;
+
+function theme() {
+    light = !light;
+    body.classList = light ? 'light' : 'dark';
+}
