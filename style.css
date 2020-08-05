@@ -23,6 +23,7 @@ html {
     font-family: 'Segoe UI', sans-serif;
 }
 body {
+    padding-top: 50px;
     padding-bottom: 50px;
     margin: 0;
     background-color: var(--page-bg);
@@ -40,7 +41,7 @@ a { color: var(--primary-text); }
 /* WRAPPER GRID */
 #wrapper-grid {
     display: grid;
-    grid-template-columns: 1fr fit-content(600px) 1fr;
+    grid-template-columns: 1fr minmax(auto, 600px) 1fr;
 }
     #nav, #about { padding: 0 25px; }
     #projects { padding: 0 15px; }
@@ -69,13 +70,15 @@ a { color: var(--primary-text); }
 
     /* links to site pages */
     #pages { float: right; }
-        #pages * { margin-left: 15px;}
+        #pages * {
+            margin-left: 15px;
+            user-select: none;
+        }
         #theme-btn { cursor: pointer; }
 
 
 /* INDEX */
 #banner {
-    margin-top: 50px;
     height: auto;
     display: block;
     overflow: hidden;
@@ -173,13 +176,13 @@ a { color: var(--primary-text); }
                 .tool a:hover { text-decoration: underline; }
         /* collaborator */
         .collab {
-            background-color: #ddd;
+            background-color: var(--secondary-text);
             background-size: contain;
             margin-left: 5px;
         }
             .collab + .collab {
                 margin-left: -9px;
-                filter: drop-shadow(-1px 0 0 #fff);
+                filter: drop-shadow(-1px 0 0 var(--page-bg));
             }
 
 
