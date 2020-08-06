@@ -19,13 +19,11 @@ button {
     background-color: transparent;
     border-radius: 5px;
     cursor: pointer;
-    text-decoration: underline;
 }
     button:disabled {
         cursor: default;
-        text-decoration: none;
     }
-    button:hover:enabled { background-color: #f4f4f4; }
+    button:hover:enabled { text-decoration: underline; }
     button+button { margin-left: 10px; }
 
 
