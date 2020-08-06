@@ -14,11 +14,9 @@
 
         <div id="mid-col">
             <div id="nav">
-                <p style="font-weight: 700"><a href="#">bsym.dev</a></p>
-                <div id="pages">
-                    <p><a href="#projects">#projects</a></p>
-                    <p><a href="#cv">#cv</a></p>
-                    <p style="padding-left: 15px" id="theme-btn" onclick="theme()">theme</p>
+                <div id="nav">
+                    <p style="font-weight: 700"><a href="#">bsym.dev</a></p>
+                    <p id="theme-btn" onclick="theme()">🌚</p>
                 </div>
             </div>
             <div class="timetable-wrapper">
@@ -37,35 +35,37 @@
                 <div id="tables-wrapper">
                     <!-- Displays the users' timetables -->
                     <div id="user-wrapper">
-                        <div class="user" id="user0">
-                            <div class="table-header">
-                                <h1 id="user0-name" contenteditable>#user0</h1>
+                        <div id="user-table-wrapper">
+                            <div class="user" id="user0">
+                                <div class="table-header">
+                                    <h1 id="user0-name" contenteditable>#user0</h1>
+                                </div>
+                                <table cellpadding="0" cellspacing="0" class="user-timetable">
+                                    <tr>
+                                        <td class="day"></td>
+                                        <td class="day">MON</td>
+                                        <td class="day">TUE</td>
+                                        <td class="day">WED</td>
+                                        <td class="day">THU</td>
+                                        <td class="day">FRI</td>
+                                        <td class="day"></td>
+                                    </tr>
+                                    <tr><td class="time-cell-l">9:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">9:00</td></tr>
+                                    <tr><td class="time-cell-l">10:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">10:00</td></tr>
+                                    <tr><td class="time-cell-l">11:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">11:00</td></tr>
+                                    <tr><td class="time-cell-l">12:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">12:00</td></tr>
+                                    <tr><td class="time-cell-l">13:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">13:00</td></tr>
+                                    <tr><td class="time-cell-l">14:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">14:00</td></tr>
+                                    <tr><td class="time-cell-l">15:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">15:00</td></tr>
+                                    <tr><td class="time-cell-l">16:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">16:00</td></tr>
+                                    <tr><td class="time-cell-l">17:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">17:00</td></tr>
+                                </table>
+                                <p id="caption">
+                                    Click a cell to toggle between free and busy.
+                                    <br>
+                                    Edit the user's name by clicking it and typing.
+                                </p>
                             </div>
-                            <table cellpadding="0" cellspacing="0" class="user-timetable">
-                                <tr>
-                                    <td class="day"></td>
-                                    <td class="day">MON</td>
-                                    <td class="day">TUE</td>
-                                    <td class="day">WED</td>
-                                    <td class="day">THU</td>
-                                    <td class="day">FRI</td>
-                                    <td class="day"></td>
-                                </tr>
-                                <tr><td class="time-cell-l">9:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">9:00</td></tr>
-                                <tr><td class="time-cell-l">10:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">10:00</td></tr>
-                                <tr><td class="time-cell-l">11:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">11:00</td></tr>
-                                <tr><td class="time-cell-l">12:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">12:00</td></tr>
-                                <tr><td class="time-cell-l">13:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">13:00</td></tr>
-                                <tr><td class="time-cell-l">14:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">14:00</td></tr>
-                                <tr><td class="time-cell-l">15:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">15:00</td></tr>
-                                <tr><td class="time-cell-l">16:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">16:00</td></tr>
-                                <tr><td class="time-cell-l">17:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">17:00</td></tr>
-                            </table>
-                            <p id="caption">
-                                Click a cell to toggle between free and busy.
-                                <br>
-                                Edit the user's name by clicking it and typing.
-                            </p>
                         </div>
 
                         <!-- Encode/decode interface -->
