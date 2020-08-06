@@ -263,7 +263,7 @@ function enable(btn) {
 
 // Disable a button
 function disable(btn) {
-    btn.style.opacity = 0.2;
+    btn.style.opacity = 0.5;
     btn.disabled = true;
 }
 
