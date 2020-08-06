@@ -6,6 +6,7 @@
     --link-col: #2980b9;
     --cv-bg: #fffaf0;
     --cv-border: #fed;
+    --cv-body: #555;
 }
 
 .dark {
@@ -15,6 +16,7 @@
     --link-col: #569CD6;
     --cv-bg: #252526;
     --cv-border: #000;
+    --cv-body: #aaa;
 }
 
 
@@ -36,6 +38,7 @@ h1, h2 { font-weight: 600; }
     }
     h2 { font-size: 1.25rem; }
 a { color: var(--primary-text); }
+hr { border: 1px solid #eee; }
 
 
 /* WRAPPER GRID */
@@ -68,13 +71,11 @@ a { color: var(--primary-text); }
     #nav a { text-decoration: none; }
         #nav a:hover, #nav a:focus { text-decoration: underline; }
 
-    /* links to site pages */
-    #pages { float: right; }
-        #pages * {
-            margin-left: 15px;
-            user-select: none;
-        }
-        #theme-btn { cursor: pointer; }
+    #theme-btn {
+        cursor: pointer;
+        opacity: 0.5;
+    }
+        #theme-btn:hover { opacity: 1; }
 
 
 /* INDEX */
@@ -109,22 +110,18 @@ a { color: var(--primary-text); }
         #social img {
             padding-top: 2px;
             width: 20px;
-            opacity: calc(1/3);
+            opacity: 0.5;
             float: right;
         }
             /* social link image on hover */
-            #social img:hover, #social img:focus {
-                opacity: 1;
-            }
+            #social img:hover, #social img:focus { opacity: 1; }
 
 /* projects wrapper */
 #projects {
-    margin-top: -75px;
-    padding-top: 75px;
-    padding-bottom: 25px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 10px;
+    grid-row-gap: 10px;
 }
     /* a-tag 'div' card */
     .card {
@@ -178,45 +175,12 @@ a { color: var(--primary-text); }
         .collab {
             background-color: var(--secondary-text);
             background-size: contain;
-            margin-left: 5px;
+            margin-left: 7px;
         }
             .collab + .collab {
                 margin-left: -9px;
                 filter: drop-shadow(-1px 0 0 var(--page-bg));
             }
-
-
-#cv {
-    padding-top: 50px;
-    margin-top: -50px;
-    line-height: 1.5;
-}
-    #page {
-        padding: 30px 75px 60px 75px;
-        text-align: justify;
-        background-color: var(--cv-bg);
-        border: 1px solid var(--cv-border);
-        box-sizing: border-box;
-    }
-    #cv .heading, #cv .sub, #cv a {
-        font-family: 'Segoe UI Semibold', sans-serif;
-        color: var(--primary-text);
-    }
-    #cv .heading {
-        font-size: 14px;
-        margin-top: 30px;
-        margin-bottom: -5px;
-    }
-    #cv .sub { font-size: 12px; }
-    #cv p {
-        font-size: 12px;
-        color: var(--secondary-text);
-    }
-    #cv a {
-        color: var(--link-col);
-        text-decoration: none;
-    }
-        #cv a:hover { text-decoration: underline; }
 
 
 @media (orientation: portrait), (max-width: 600px) {
