@@ -26,9 +26,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
 }
-    button:disabled {
-        cursor: default;
-    }
+    button:disabled { cursor: default; }
     button:hover:enabled { text-decoration: underline; }
     button+button { margin-left: 10px; }
 
@@ -65,16 +63,17 @@ button {
             /* code text field */
             #code input {
                 border-radius: 3px 3px 0 0;
-                background-color: transparent;
                 color: var(--primary-text);
                 margin: 0 5px;
                 width: 5rem;
                 border: none;
                 font-size: 0.75rem;
+                border-bottom: 1px solid #aaaaaa55;
+                background-color: transparent;
             }
                 #code input:focus {
-                    border-bottom: 1px solid var(--link-col);
-                    background-color: rgba(87, 168, 239, 0.15);
+                    background-color: #aaaaaa11;
+                    border-bottom: 1px solid #aaaaaa;
                 }
         /* nav buttons initially disabled */
         #nextUser, #prevUser, #removeUser { opacity: 0.2; }
@@ -91,7 +90,23 @@ button {
             font-size: 1rem;
             text-align: center;
             margin: 0;
+            padding: 3px 20px;
+            border-bottom: 1px solid transparent;
         }
+            #user-wrapper h1 {
+                border-radius: 3px 3px 0 0;
+                background-color: transparent;
+                width: max-content;
+                max-width: 150px;
+                margin: auto;
+                white-space: nowrap;
+                overflow: hidden;
+                border-bottom: 1px solid #aaaaaa55;
+            }
+                #user-wrapper h1:focus {
+                    background-color: #aaaaaa11;
+                    border-bottom: 1px solid #aaaaaa;
+                }
         /* initially hide user tables */
         .user { display: none; }
         #caption {
@@ -125,20 +140,20 @@ button {
 
         /* time labels */
         .time-cell-l, .time-cell-r {
-            vertical-align: top;
+            vertical-align: top !important;
             font-weight: 400 !important;
             color: var(--primary-text);
             font-size: 0.6rem !important;
-            }
+        }
             /* left time column */
             .time-cell-l {
                 text-align: right;
-                padding-right: 5px;
+                padding-right: 3px;
             }
             /* right time column */
             .time-cell-r {
                 text-align: left;
-                padding-left: 3px;
+                padding-left: 1px;
             }
         /* day label */
         .day {
