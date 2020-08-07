@@ -4,19 +4,13 @@
     --primary-text: #222;
     --secondary-text: #767676;
     --link-col: #2980b9;
-    --cv-bg: #fffaf0;
-    --cv-border: #fed;
-    --cv-body: #555;
 }
 
 .dark {
     --page-bg: #1e1e1e;
     --primary-text: #eee;
     --secondary-text: #aaa;
-    --link-col: #569CD6;
-    --cv-bg: #252526;
-    --cv-border: #000;
-    --cv-body: #aaa;
+    --link-col: #64b2f1;
 }
 
 
