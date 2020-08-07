@@ -2,11 +2,17 @@
     --green-cell: #55efc4;
     --yellow-cell: #fdcb6e;
     --red-cell: #ff7675;
+    
+    --green-cell-hov: #c8fff0;
+    --red-cell-hov: #ffd2d2;
 }
 .dark {
-    --green-cell: #1abc9c;
-    --yellow-cell: #f39c12;
-    --red-cell: #d63031;
+    --green-cell: #128770;
+    --yellow-cell: #bd7a0e;
+    --red-cell: #a01515;
+
+    --green-cell-hov: #37bda2;
+    --red-cell-hov: #d13f3f;
 }
 
 
@@ -58,17 +64,17 @@ button {
         }
             /* code text field */
             #code input {
+                border-radius: 3px 3px 0 0;
+                background-color: transparent;
                 color: var(--primary-text);
-                background-color: var(--page-bg);
                 margin: 0 5px;
                 width: 5rem;
                 border: none;
                 font-size: 0.75rem;
             }
-                #code input:hover { background-color: #f4f4f4; }
                 #code input:focus {
-                    border-color: #888;
-                    background-color: #f4f4f4;
+                    border-bottom: 1px solid var(--link-col);
+                    background-color: rgba(87, 168, 239, 0.15);
                 }
         /* nav buttons initially disabled */
         #nextUser, #prevUser, #removeUser { opacity: 0.2; }
@@ -101,7 +107,7 @@ button {
         /* table cells */
         #tables-wrapper td {
             border: 1px solid var(--page-bg);
-            background-color: #d3d3d3;
+            background-color: var(--page-bg);
             width: 30px;
             height: 30px;
             text-align: center;
@@ -110,7 +116,7 @@ button {
             user-select: none;
         }
             .free, .busy, .allFree, .mostFree, .mostBusy {
-                color: rgb(0, 0, 0, 0.8);
+                color: var(--primary-text);
             }
             .allFree, .mostFree, .mostBusy { cursor: initial; }
                 .allFree  { background-color: var(--green-cell) !important; }
@@ -152,12 +158,15 @@ button {
         .free {
             background-color: var(--green-cell) !important;
         }
+            /* free cell on hover */
+            .free:hover {
+                background-color: var(--green-cell-hov) !important;
+            }
         /* busy cell */
         .busy {
             background-color: var(--red-cell) !important;
         }
-            /* cell on hover */
-            .busy:hover, .free:hover {
-                border: 3px solid rgba(0, 0, 0, 0.25) !important;
-                box-sizing: border-box;
+            /* free cell on hover */
+            .busy:hover {
+                background-color: var(--red-cell-hov) !important;
             }
