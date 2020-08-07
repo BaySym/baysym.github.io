@@ -20,7 +20,7 @@ window.onload = function () {
         let cell = cells[i];
         if (cell.classList.length === 0) {
             cell.classList.add('free');
-            cell.innerHTML = '✔';
+            cell.innerHTML = '✓';
             cell.onclick = toggle;
         }
     }
@@ -74,10 +74,10 @@ function toggle() {
     let out = output.rows[row].cells[col];
     // Set this cell's innerHTML and edit its corresponding output cell
     if (this.classList.contains('free')) {
-        this.innerHTML = '✔';
+        this.innerHTML = '✓';
         out.innerHTML++;
     } else {
-        this.innerHTML = '✘';
+        this.innerHTML = '✗';
         out.innerHTML--;
     }
     // Update the corresponding output cell's class
@@ -144,7 +144,7 @@ function add() {
         let cell = cells[i];
         if (cell.classList.length === 0) {
             cell.classList.add('free');
-            cell.innerHTML = '✔';
+            cell.innerHTML = '✓';
             cell.onclick = toggle;
         }
     }
@@ -196,7 +196,7 @@ function reset() {
             // Set this cell to free
             cell.classList.toggle('busy');
             cell.classList.toggle('free');
-            cell.innerHTML = '✔';
+            cell.innerHTML = '✓';
             // Adjust respective output cell
             out.innerHTML++;
             setClassOf(out);
@@ -220,8 +220,8 @@ function remove() {
     // Undo this table's output effect
     for (let i = 0; i < cells.length; i++) {
         let inner = cells[i].innerHTML;
-        if (inner == '✔') outCells[i].innerHTML--;
-        if (inner == '✔' || inner == '✘') setClassOf(outCells[i]);
+        if (inner == '✓') outCells[i].innerHTML--;
+        if (inner == '✓' || inner == '✗') setClassOf(outCells[i]);
     }
     // Show the previous user
     show(--thisUser);
@@ -319,7 +319,7 @@ function decode() {
     let progress = 0;
     for (let i = 0; i < cells.length; i++) {
         let cell = cells[i];
-        if (cell.innerHTML === '✔' || cell.innerHTML === '✘') {
+        if (cell.innerHTML === '✓' || cell.innerHTML === '✗') {
             if (!matches(cells[i].innerHTML, code[progress])) {
                 // Toggle the cell's class
                 cell.classList.toggle('free');
@@ -330,10 +330,10 @@ function decode() {
                 let out = output.rows[row].cells[col];
                 // Set this cell's innerHTML and edit its corresponding output cell
                 if (cell.classList.contains('free')) {
-                    cell.innerHTML = '✔';
+                    cell.innerHTML = '✓';
                     out.innerHTML++;
                 } else {
-                    cell.innerHTML = '✘';
+                    cell.innerHTML = '✗';
                     out.innerHTML--;
                 }
                 // Update the corresponding output cell's class
@@ -348,7 +348,7 @@ function decode() {
 
 // Check if a cell matches its code value
 function matches(cell, code) {
-    return ((cell === '✔' && code === '1') || (cell === '✘' && code === '0'));
+    return ((cell === '✓' && code === '1') || (cell === '✗' && code === '0'));
 }
 
 
