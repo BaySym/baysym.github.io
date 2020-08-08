@@ -47,6 +47,36 @@ window.onload = function () {
 }
 
 
+// Click and drag to select
+$(function () {
+    var mouseDown = false;
+    var busy;
+    $("#user-wrapper td")
+      .mousedown(function () {
+        if (!$(this).hasClass("day") && !$(this).hasClass(".time-cell-l") && !$(this).hasClass(".time-cell-r")) {
+            mouseDown = true;
+            $(this).toggleClass("free");
+            $(this).toggleClass("busy");
+            busy = $(this).hasClass("busy");
+        }
+      })
+      .mouseover(function () {
+        if (mouseDown && !$(this).hasClass("day") && !$(this).hasClass(".time-cell-l") && !$(this).hasClass(".time-cell-r")) {
+            $(this).toggleClass("free", !busy);
+            $(this).toggleClass("busy", busy);
+        }
+      })
+      .bind("selectstart", function () {
+        return false;
+      })
+  
+    $(document)
+      .mouseup(function () {
+        mouseDown = false;
+      });
+  });
+
+
 // Enter in code input to decode
 document.getElementById('code-input')
     .addEventListener('keyup', function(event) {
@@ -390,11 +420,9 @@ function theme() {
         body.classList = 'light';
         themeBtn.innerHTML = '🌚';
         themeBtn.borderColor = '#000';
-        social.style.filter = 'none';
     } else {
         body.classList = 'dark';
         themeBtn.innerHTML = '🌝';
         themeBtn.borderColor = '#fff';
-        social.style.filter = 'invert()';
     }
 }
