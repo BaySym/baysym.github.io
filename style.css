@@ -19,7 +19,6 @@ html {
     font-family: 'Segoe UI', sans-serif;
 }
 body {
-    padding-top: 50px;
     padding-bottom: 50px;
     margin: 0;
     background-color: var(--page-bg);
@@ -35,7 +34,7 @@ a { color: var(--primary-text); }
 
 
 /* WRAPPER GRID */
-#wrapper-grid {
+#page-grid {
     display: grid;
     grid-template-columns: 1fr minmax(auto, 600px) 1fr;
 }
@@ -53,8 +52,6 @@ a { color: var(--primary-text); }
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     display: flex;
     justify-content: space-between;
-    position: fixed;
-    top: 0;
     height: 50px;
 }
     /* nav paragraphs */
