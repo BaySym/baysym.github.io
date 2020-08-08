@@ -35,7 +35,7 @@ a { color: var(--primary-text); }
 
 
 /* WRAPPER GRID */
-#wrapper-grid {
+#page-grid {
     display: grid;
     grid-template-columns: 1fr minmax(auto, 600px) 1fr;
 }
