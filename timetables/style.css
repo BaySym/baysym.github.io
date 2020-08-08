@@ -1,18 +1,18 @@
 .light {
-    --green-cell: #55efc4;
-    --yellow-cell: #fdcb6e;
-    --red-cell: #ff7675;
+    --free-cell: #9fdefb;
+    --mixed-cell: #ffc394;
+    --busy-cell: #f4825e;
     
-    --green-cell-hov: #c8fff0;
-    --red-cell-hov: #ffd2d2;
+    --free-cell-hov: #caf2ff;
+    --busy-cell-hov: #efa68f;
 }
 .dark {
-    --green-cell: #128770;
-    --yellow-cell: #bd7a0e;
-    --red-cell: #a01515;
+    --free-cell: #6dacc9;
+    --mixed-cell: #db9162;
+    --busy-cell: #c2502c;
 
-    --green-cell-hov: #37bda2;
-    --red-cell-hov: #d13f3f;
+    --free-cell-hov: #9fdefb;
+    --busy-cell-hov: #f4825e;
 }
 
 
@@ -134,9 +134,9 @@ button {
                 color: var(--primary-text);
             }
             .allFree, .mostFree, .mostBusy { cursor: initial; }
-                .allFree  { background-color: var(--green-cell) !important; }
-                .mostFree { background-color: var(--yellow-cell) !important; }
-                .mostBusy { background-color: var(--red-cell) !important; }
+                .allFree  { background-color: var(--free-cell) !important; }
+                .mostFree { background-color: var(--mixed-cell) !important; }
+                .mostBusy { background-color: var(--busy-cell) !important; }
 
         /* time labels */
         .time-cell-l, .time-cell-r {
@@ -171,17 +171,17 @@ button {
         }
         /* free cell */
         .free {
-            background-color: var(--green-cell) !important;
+            background-color: var(--free-cell) !important;
         }
             /* free cell on hover */
             .free:hover {
-                background-color: var(--green-cell-hov) !important;
+                background-color: var(--free-cell-hov) !important;
             }
         /* busy cell */
         .busy {
-            background-color: var(--red-cell) !important;
+            background-color: var(--busy-cell) !important;
         }
             /* free cell on hover */
             .busy:hover {
-                background-color: var(--red-cell-hov) !important;
+                background-color: var(--busy-cell-hov) !important;
             }
