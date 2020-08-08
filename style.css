@@ -1,5 +1,6 @@
 /* COLOURS */
 .light {
+    --emphasis: #000;
     --page-bg: #fff;
     --primary-text: #222;
     --secondary-text: #767676;
@@ -7,9 +8,10 @@
 }
 
 .dark {
+    --emphasis: #fff;
     --page-bg: #1e1e1e;
-    --primary-text: #eee;
-    --secondary-text: #aaa;
+    --primary-text: #d4d4d4;
+    --secondary-text: #888;
     --link-col: #64b2f1;
 }
 
@@ -29,6 +31,7 @@ h1, h2 { font-weight: 600; }
     h1 {
         font-size: 1.5rem;
         margin-left: -1px;
+        color: var(--emphasis);
     }
     h2 { font-size: 1.25rem; }
 a { color: var(--primary-text); }
