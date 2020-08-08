@@ -130,7 +130,7 @@ function add() {
                 <tr><td class="time-cell-l">16:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">16:00</td></tr>
                 <tr><td class="time-cell-l">17:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">17:00</td></tr>
         </table>
-        <p id="caption">
+        <p id="user-caption">
             Click a cell to toggle between free and busy.
             <br>
             Edit the user's name by clicking it and typing.
@@ -162,6 +162,8 @@ function add() {
             }
         }
     }
+    // Adjust the comparison caption
+    document.getElementById('comparison-caption').innerHTML = 'Each cell shows how many of your ' + allUserIds.length + ' users are available at that particular time.';
 }
 
 
@@ -225,6 +227,9 @@ function remove() {
     }
     // Show the previous user
     show(--thisUser);
+    // Adjust the comparison caption
+    var number = allUserIds.length > 1 ? ' ' + allUserIds.length : '';
+    document.getElementById('comparison-caption').innerHTML = 'Each cell shows how many of your' + number + ' users are available at that particular time.';
 }
 
 

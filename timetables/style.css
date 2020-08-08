@@ -109,7 +109,7 @@ button {
                 }
         /* initially hide user tables */
         .user { display: none; }
-        #caption {
+        #user-caption, #comparison-caption {
             font-size: 0.75rem;
             color: var(--secondary-text);
             text-align: center;
