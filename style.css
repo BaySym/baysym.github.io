@@ -11,7 +11,7 @@
     --emphasis: #fff;
     --page-bg: #1e1e1e;
     --primary-text: #d4d4d4;
-    --secondary-text: #888;
+    --secondary-text: #999;
     --link-col: #64b2f1;
 }
 
@@ -20,6 +20,7 @@
 html {
     font-family: 'Segoe UI', sans-serif;
 }
+
 body {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -27,6 +28,7 @@ body {
     background-color: var(--page-bg);
     color: var(--primary-text);
 }
+
 h1, h2 { font-weight: 600; }
     h1 {
         font-size: 1.5rem;
@@ -34,7 +36,13 @@ h1, h2 { font-weight: 600; }
         color: var(--emphasis);
     }
     h2 { font-size: 1.25rem; }
+
 a { color: var(--primary-text); }
+
+hr {
+    border: none;
+    padding: 10px 0;
+}
 
 
 /* WRAPPER GRID */
@@ -43,7 +51,7 @@ a { color: var(--primary-text); }
     grid-template-columns: 1fr minmax(auto, 600px) 1fr;
 }
     #nav, #about { padding: 0 25px; }
-    #projects { padding: 0 15px; }
+    .portfolio { padding: 0 15px; }
 
 
 /* NAVIGATION BAR */
@@ -114,17 +122,14 @@ a { color: var(--primary-text); }
             /* social link image on hover */
             #social img:hover, #social img:focus { opacity: 1; }
 
-/* projects wrapper */
-#projects {
+/* portfolio wrapper */
+.portfolio {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 10px;
-    grid-row-gap: 10px;
-    margin-top: 25px;
 }
     /* a-tag 'div' card */
     .card {
-        box-sizing: border-box;
         padding: 6px 10px;
         margin-bottom: 10px;
         text-decoration: none;
@@ -160,12 +165,12 @@ a { color: var(--primary-text); }
             color: var(--secondary-text);
             position: relative;
         }
+            .tool { top: -2px; }
             /* circle indicating a tool's main colour */
             .tool-colour, .collab {
                 height: 12px;
                 width: 12px;
                 border-radius: 50%;
-                top: 2px;
             }
         /* collaborator */
         .collab {
@@ -179,6 +184,6 @@ a { color: var(--primary-text); }
             }
 
 
-@media (orientation: portrait), (max-width: 600px) {
-    #projects { grid-template-columns: 1fr; }
-}
+    @media (orientation: portrait), (max-width: 600px) {
+        .portfolio { grid-template-columns: 1fr; }
+    }
