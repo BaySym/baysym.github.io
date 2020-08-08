@@ -86,7 +86,6 @@ a { color: var(--primary-text); }
 #about {
     padding-top: 25px;
     padding-bottom: 0;
-    text-align: justify;
     line-height: 1.5rem;
 }
     /* about me header */
