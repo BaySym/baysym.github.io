@@ -171,11 +171,11 @@ hr {
                 height: 12px;
                 width: 12px;
                 border-radius: 50%;
+                background-size: contain;
             }
         /* collaborator */
         .collab {
             background-color: var(--secondary-text);
-            background-size: contain;
             margin-left: 7px;
         }
             .collab + .collab {
