@@ -28,6 +28,7 @@ html { font-family: 'Segoe UI', sans-serif; }
 body {
     background-color: var(--page-bg);
     color: var(--primary-text);
+    margin-bottom: 50px;
 }
 
 h1 {
@@ -138,6 +139,10 @@ hr {
         font-size: 14px;
         cursor: pointer;
     }
+        .no-link {
+            cursor: initial;
+            color: var(--secondary-text);
+        }
 
     .desc, .tool { font-size: 12px; }
         .desc { margin: 2px 0; }
