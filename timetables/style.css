@@ -47,7 +47,6 @@ button {
     #buttons {
         display: flex;
         justify-content: center;
-        margin-top: 25px;
         margin-bottom: 20px;
     }
         /* all buttons inline */
