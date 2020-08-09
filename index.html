@@ -9,111 +9,113 @@
     <meta name="description" content="Hello, I'm Bailey, a computer science student at the University of Lincoln interested in human-computer interaction and user experience design.">
 </head>
 <body class="light">
-    <div id="page-grid">
-        <div id="left-col"></div>
+    <div id="wrapper">
+        <!-- navigation -->
+        <div id="nav">
+            <p><a href="">bsym.dev</a></p>
+            <p id="theme-btn" onclick="theme()">🌚</p>
+        </div>
 
-        <div id="mid-col">
-            <div id="nav">
-                <p style="font-weight: 700"><a href="#">bsym.dev</a></p>
-                <p id="theme-btn" onclick="theme()">🌚</p>
+        <!-- banner -->
+        <div class="banner" style="background-image: url(img/keld.jpg);"></div>
+
+        <!-- about me -->
+        <div id="about">
+            <h1>Bailey Symonds</h1>
+            <div id="social">
+                <a href="https://www.linkedin.com/in/bsym" target="_blank" alt="My LinkedIn profile"><img src="img/li.png"></a>
+                <a href="https://www.github.com/baysym" target="_blank" alt="My GitHub profile"><img src="img/git.png"></a>
+                <a href="https://www.instagram.com/baysym" target="_blank" alt="My Instagram profile"><img src="img/ig.png"></a>
             </div>
-            <img id="banner" src="img/keld.jpg" alt="Bailey Symonds looking over a Yorkshire Dales landscape.">
-            <div id="about">
-                <h1>Bailey Symonds</h1>
-                <div id="social">
-                    <a href="https://www.linkedin.com/in/bsym" target="_blank" alt="My LinkedIn profile"><img src="img/li.png"></a>
-                    <a href="https://www.github.com/baysym" target="_blank" alt="My GitHub profile"><img src="img/git.png"></a>
-                    <a href="https://www.instagram.com/baysym" target="_blank" alt="My Instagram profile"><img src="img/ig.png"></a>
-                </div>
-                <p>
-                    I'm a third year computer science student at the University of Lincoln, mainly interested in user experience design and human-computer interaction. In my free time, I like to work on projects, like the ones below this. I am also a keen photographer and I enjoy playing guitar and listening to audiobooks.
-                </p>
-            </div>
+            <p>
+                I'm a third year computer science student at the University of Lincoln, mainly interested in user experience design and human-computer interaction.
+            </p>
+            <p>
+                In my free time, I am a keen photographer and I enjoy playing guitar and listening to audiobooks.
+            </p>
+        </div>
 
-            <hr>
+        <hr>
 
-            <div id="projects" class="portfolio">
-                <!-- Poetry Machine -->
-                <div class="card">
-                    <p class="no-link name">Poetry Machine</a>
-                    <p class="desc">I am involved in the interaction design aspect of this AI-generated-poetry research project.</p>
-                    <div class="tool-colour" style="background-color: #ddd"></div>
-                    <p class="tool">In progress with</p>
-                    <p class="tool"><a href="https://www.lincoln.ac.uk" target="_blank">University of Lincoln</a></p>
-                </div>
-        
-                <!-- Remy -->
-                <div class="card">
-                    <a class="name" href="https://github.com/orgs/LindonDev/teams/remy" target="_blank">Remy</a>
-                    <p class="desc">I am designing this recipe management app, a collaborative summer project.</p>
-                    <div class="tool-colour" style="background-color: #f24d1d"></div>
-                    <p class="tool">Figma</p>
-                    <div class="collab" style="background-image: url('img/collabs/joe.jpg')"></div>
-                    <p class="tool"><a href="https://joepitts.co.uk" target="_blank">Joe Pitts</a></p>
-                </div>
-        
-                <!-- Kontrol -->
-                <div class="card">
-                    <a class="name" href="https://kontrol.software" target="_blank">Kontrol</a>
-                    <p class="desc">I was the designer for this pose-based Kodi controller university project.</p>
-                    <div class="tool-colour" style="background-color: #ec6cee;"></div>
-                    <p class="tool">Adobe Xd</p>
-                    <div class="collab" style="background-image: url('img/me.png')"></div>
-                    <div class="collab" style="background-image: url('img/collabs/joe.jpg')"></div>
-                    <div class="collab" style="background-image: url('img/collabs/pollard.jpg')"></div>
-                    <div class="collab" style="background-image: url('img/collabs/ben.jpg')"></div>
-                    <p class="tool"><a href="https://github.com/orgs/CMP2804M-Group3/people" target="_blank">Group 3</a></p>
-                </div>
-        
-                <!-- Timetable Comparison -->
-                <div class="card">
-                    <a class="name" href="https://bsym.dev/timetables">Timetable Comparison</a>
-                    <p class="desc">Compare multiple timetables to find the best time to meet.</p>
-                    <div class="tool-colour" style="background-color: #f1c40f"></div>
-                    <p class="tool">JavaScript</p>
-                </div>
+        <!-- projects -->
+        <div id="projects" class="portfolio">
+            <!-- Poetry Machine -->
+            <div>
+                <p class="name">Poetry Machine</p>
+                <p class="desc">I am involved in the interaction design aspect of this AI-generated-poetry research project.</p>
+                <div class="tool-colour" style="background-color: #ddd"></div>
+                <p class="tool">In progress with <a href="https://www.lincoln.ac.uk" target="_blank">University of Lincoln</a></p>
             </div>
 
-            <hr>
+            <!-- Remy -->
+            <div>
+                <a class="name" href="https://github.com/orgs/LindonDev/teams/remy" target="_blank">Remy</a>
+                <p class="desc">I am designing this recipe management app, a collaborative summer project.</p>
+                <div class="tool-colour" style="background-color: #f24d1d"></div>
+                <p class="tool">Figma</p>
+                <div class="collab" style="background-image: url('img/collabs/joe.jpg')"></div>
+                <p class="tool"><a href="https://joepitts.co.uk" target="_blank">Joe Pitts</a></p>
+            </div>
 
-            <div id="achievements" class="portfolio">
-                <!-- Java MTA -->
-                <div class="card">
-                    <a href="https://www.youracclaim.com/badges/c60a277c-fdd8-4996-a6e1-2406081ad832/"  class="name">MTA Exam 98-388</a>
-                    <p class="desc">Microsoft Technology Associate certification: Introduction to Programming Using Java</p>
-                    <div class="tool-colour" style="background-image: url('img/mta.png')"></div>
-                    <p class="tool">I attained a score of 87%</p>
-                </div>
-        
-                <!-- JavaScript MTA -->
-                <div class="card">
-                    <a href="https://www.youracclaim.com/badges/fd914c45-9d05-4ddf-9c37-0846fd625393/" class="name">MTA Exam 98-382</a>
-                    <p class="desc">Microsoft Technology Associate certification: Introduction to Programming Using JavaScript</p>
-                    <div class="tool-colour" style="background-image: url('img/mta.png')"></div>
-                    <p class="tool">I attained a score of 88%</p>
-                </div>
-        
-                <!-- Python MTA -->
-                <div class="card">
-                    <a href="https://www.youracclaim.com/badges/f925298c-4e21-4301-a50d-c766801d200e/" class="name">MTA Exam 98-381</a>
-                    <p class="desc">Microsoft Technology Associate certification: Introduction to Programming Using Python</p>
-                    <div class="tool-colour" style="background-image: url('img/mta.png')"></div>
-                    <p class="tool">I attained a score of 88%</p>
-                </div>
-        
-                <!-- C# MTA -->
-                <div class="card">
-                    <a href="https://www.youracclaim.com/badges/ec9bad2d-b842-4931-939e-e347520093ae/" class="name">MTA Exam 98-361</a>
-                    <p class="desc">Microsoft Technology Associate certification: Software Development Fundamentals</p>
-                    <div class="tool-colour" style="background-image: url('img/mta.png')"></div>
-                    <p class="tool">I attained a score of 80%</p>
-                </div>
+            <!-- Kontrol -->
+            <div>
+                <a class="name" href="https://kontrol.software" target="_blank">Kontrol</a>
+                <p class="desc">I was the designer for this pose-based Kodi controller university project.</p>
+                <div class="tool-colour" style="background-color: #ec6cee;"></div>
+                <p class="tool">Adobe Xd</p>
+                <div class="collab" style="background-image: url('img/me.png')"></div>
+                <div class="collab" style="background-image: url('img/collabs/joe.jpg')"></div>
+                <div class="collab" style="background-image: url('img/collabs/pollard.jpg')"></div>
+                <div class="collab" style="background-image: url('img/collabs/ben.jpg')"></div>
+                <p class="tool"><a href="https://github.com/orgs/CMP2804M-Group3/people" target="_blank">Group 3</a></p>
+            </div>
+
+            <!-- Timetable Comparison -->
+            <div>
+                <a class="name" href="https://bsym.dev/timetables">Timetable Comparison</a>
+                <p class="desc">Compare multiple timetables to find the best time to meet.</p>
+                <div class="tool-colour" style="background-color: #f1c40f"></div>
+                <p class="tool">JavaScript</p>
             </div>
         </div>
 
-        <div id="right-col"></div>
-    </div>    
+        <hr>
 
+        <!-- awards -->
+        <div id="awards" class="portfolio">
+            <!-- Java MTA -->
+            <div>
+                <a href="https://www.youracclaim.com/badges/c60a277c-fdd8-4996-a6e1-2406081ad832/"  class="name">MTA Exam 98-388</a>
+                <p class="desc">Microsoft Technology Associate certification: Introduction to Programming Using Java</p>
+                <div class="tool-colour" style="background-image: url('img/mta.png')"></div>
+                <p class="tool">I attained a score of 87%</p>
+            </div>
+    
+            <!-- JavaScript MTA -->
+            <div>
+                <a href="https://www.youracclaim.com/badges/fd914c45-9d05-4ddf-9c37-0846fd625393/" class="name">MTA Exam 98-382</a>
+                <p class="desc">Microsoft Technology Associate certification: Introduction to Programming Using JavaScript</p>
+                <div class="tool-colour" style="background-image: url('img/mta.png')"></div>
+                <p class="tool">I attained a score of 88%</p>
+            </div>
+    
+            <!-- Python MTA -->
+            <div>
+                <a href="https://www.youracclaim.com/badges/f925298c-4e21-4301-a50d-c766801d200e/" class="name">MTA Exam 98-381</a>
+                <p class="desc">Microsoft Technology Associate certification: Introduction to Programming Using Python</p>
+                <div class="tool-colour" style="background-image: url('img/mta.png')"></div>
+                <p class="tool">I attained a score of 88%</p>
+            </div>
+    
+            <!-- C# MTA -->
+            <div>
+                <a href="https://www.youracclaim.com/badges/ec9bad2d-b842-4931-939e-e347520093ae/" class="name">MTA Exam 98-361</a>
+                <p class="desc">Microsoft Technology Associate certification: Software Development Fundamentals</p>
+                <div class="tool-colour" style="background-image: url('img/mta.png')"></div>
+                <p class="tool">I attained a score of 80%</p>
+            </div>
+        </div>
+    </div>
 </body>
 
 <script type="text/javascript" src="script.js"></script>

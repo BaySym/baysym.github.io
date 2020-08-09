@@ -1,10 +1,11 @@
-/* COLOURS */
+/* themes */
 .light {
     --emphasis: #000;
     --page-bg: #fff;
     --primary-text: #222;
     --secondary-text: #767676;
     --link-col: #2980b9;
+    --hr: #eee;
 }
 
 .dark {
@@ -13,67 +14,62 @@
     --primary-text: #d4d4d4;
     --secondary-text: #999;
     --link-col: #64b2f1;
+    --hr: #444;
 }
 
 
-/* ALL PAGES */
-html {
-    font-family: 'Segoe UI', sans-serif;
-}
+/* tags */
+html { font-family: 'Segoe UI', sans-serif; }
+    html * {
+        margin: 0;
+        padding: 0;
+    }
 
 body {
-    padding-top: 50px;
-    padding-bottom: 50px;
-    margin: 0;
     background-color: var(--page-bg);
     color: var(--primary-text);
 }
 
-h1, h2 { font-weight: 600; }
-    h1 {
-        font-size: 1.5rem;
-        margin-left: -1px;
-        color: var(--emphasis);
-    }
-    h2 { font-size: 1.25rem; }
+h1 {
+    font-size: 24px;
+    color: var(--emphasis);
+    font-weight: 600;
+    display: inline-block;
+    margin-top: -6px;
+}
+
+p { margin: 10px 0; }
 
 a { color: var(--primary-text); }
 
 hr {
-    border: none;
-    padding: 10px 0;
+    border-color: transparent;
+    background-color: var(--hr);
+    margin: 25px 0;
 }
 
 
-/* WRAPPER GRID */
-#page-grid {
-    display: grid;
-    grid-template-columns: 1fr minmax(auto, 600px) 1fr;
-}
-    #nav, #about { padding: 0 25px; }
-    .portfolio { padding: 0 15px; }
-
-
-/* NAVIGATION BAR */
-#nav {
-    z-index: 2;
-    width: 550px;
+/* content wrapper */
+#wrapper {
+    margin: auto;
+    width: 600px;
     max-width: calc(100vw - 50px);
-    background-color: var(--page-bg);
-    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.025);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+
+/* navigation bar */
+#nav {
     display: flex;
     justify-content: space-between;
-    position: fixed;
-    top: 0;
-    height: 50px;
+    width: 550px;
+    max-width: calc(100vw - 50px);
+    padding: 10px 0;
+    margin: auto;
+    font-weight: 700;
 }
-    /* nav paragraphs */
     #nav p { display: inline-block; }
-
-    /* nav links */
-    #nav a { text-decoration: none; }
-        #nav a:hover, #nav a:focus { text-decoration: underline; }
+        #nav a { text-decoration: none; }
+            #nav a:hover, #nav a:focus { text-decoration: underline; }
 
     #theme-btn {
         cursor: pointer;
@@ -83,26 +79,24 @@ hr {
         #theme-btn:hover { opacity: 1; }
 
 
-/* INDEX */
-#banner {
-    height: auto;
-    display: block;
+/* banner image */
+.banner {
+    padding: 0 !important;
+    min-height: 200px;
+    height: 200px;
     overflow: hidden;
-    width: 100%;
-    background-color: var(--secondary-text);
-    max-width: 100vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 3px;
 }
 
-/* wrapper */
+
+/* about me section */
 #about {
-    padding-top: 25px;
-    padding-bottom: 0;
-    line-height: 1.5rem;
+    padding: 30px 25px 0px 25px;
+    line-height: 1.5;
 }
-    /* about me header */
-    #about h1 { display: inline; }
-
-    /* social link wrapper */
     #social {
         filter: none;
         float: right;
@@ -112,76 +106,63 @@ hr {
         justify-content: space-between;
         user-select: none;
     }
-        /* social link image */
         #social img {
             padding-top: 2px;
             width: 20px;
             opacity: calc(1/3);
             float: right;
         }
-            /* social link image on hover */
-            #social img:hover, #social img:focus { opacity: 1; }
+            #social img:hover { opacity: 1; }
 
+            
 /* portfolio wrapper */
 .portfolio {
+    padding: 0 25px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-column-gap: 10px;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
 }
-    /* a-tag 'div' card */
-    .card {
-        padding: 6px 10px;
-        margin-bottom: 10px;
+    .portfolio * { margin: 0; }
+
+    .portfolio a {
+        font-weight: 600;
+        color: var(--link-col);
         text-decoration: none;
     }
-        .card * { margin: 0; }
+        .portfolio a:hover { text-decoration: underline; }
+        
+    .name {
+        font-weight: 600;
+        display: inline-block;
+        font-size: 14px;
+        cursor: pointer;
+    }
 
-        .card a {
-            font-weight: 600;
-            color: var(--link-col);
-            text-decoration: none;
-        }
-            .card a:hover { text-decoration: underline; }
+    .desc, .tool { font-size: 12px; }
+        .desc { margin: 2px 0; }
 
-        /* the name of a project */
-        .name {
-            font-weight: 600;
-            display: inline-block;
-            font-size: 14px;
-            cursor: pointer;
+    .tool, .tool-colour, .collab {
+        display: inline-block;
+        color: var(--secondary-text);
+        position: relative;
+    }
+        .tool { top: -2px; }
+        .tool-colour, .collab {
+            height: 12px;
+            width: 12px;
+            border-radius: 50%;
+            background-size: contain;
         }
-            .no-link {
-                cursor: default;
-                color: var(--secondary-text); 
-            }
 
-        /* decription and tool text */
-        .desc, .tool { font-size: 12px; }
-            .desc { margin: 2px 0; }
-
-        /* tool text and colour circle */
-        .tool, .tool-colour, .collab {
-            display: inline-block;
-            color: var(--secondary-text);
-            position: relative;
+    .collab {
+        background-color: var(--secondary-text);
+        margin-left: 7px;
+    }
+        .collab + .collab {
+            margin-left: -9px;
+            filter: drop-shadow(-1px 0 0 var(--page-bg));
         }
-            .tool { top: -2px; }
-            /* circle indicating a tool's main colour */
-            .tool-colour, .collab {
-                height: 12px;
-                width: 12px;
-                border-radius: 50%;
-                background-size: contain;
-            }
-        /* collaborator */
-        .collab {
-            background-color: var(--secondary-text);
-            margin-left: 7px;
-        }
-            .collab + .collab {
-                margin-left: -9px;
-                filter: drop-shadow(-1px 0 0 var(--page-bg));
-            }
 
 
     @media (orientation: portrait), (max-width: 600px) {
