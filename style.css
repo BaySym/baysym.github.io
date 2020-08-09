@@ -4,7 +4,7 @@
     --page-bg: #fff;
     --primary-text: #222;
     --secondary-text: #767676;
-    --link-col: #2980b9;
+    --link-col: #007ACC;
     --hr: #eee;
 }
 
@@ -91,6 +91,7 @@ hr {
     background-size: cover;
     border-radius: 3px;
 }
+    .banner img { max-width: 600px; }
 
 
 /* about me section */
