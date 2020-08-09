@@ -9,104 +9,97 @@
     <meta charset="utf-8"/>
 </head>
 <body class="light">
-    <div id="page-grid">
-        <div id="left-col"></div>
-
-        <div id="mid-col">
-            <div id="nav">
-                <p style="font-weight: 700"><a href="https://bsym.dev/">bsym.dev</a></p>
-                <p id="theme-btn" onclick="theme()">🌚</p>
+        <div id="nav">
+            <p style="font-weight: 700"><a href="https://bsym.dev/">bsym.dev</a></p>
+            <p id="theme-btn" onclick="theme()">🌚</p>
+        </div>
+        <div class="timetable-wrapper">
+            <!-- Top panel of buttons -->
+            <div id="top-panel">
+                <!-- User edit functionality -->
+                <div id="buttons">
+                    <button onclick="add()">New</button>
+                    <button onclick="prev()" id="prevUser" disabled>Previous</button>
+                    <button onclick="next()" id="nextUser" disabled>Next</button>
+                    <button onclick="reset()" id="resetUser">Reset</button>
+                    <button onclick="remove()" id="removeUser" disabled>Remove</button>
+                </div>
             </div>
-            <div class="timetable-wrapper">
-                <!-- Top panel of buttons -->
-                <div id="top-panel">
-                    <!-- User edit functionality -->
-                    <div id="buttons">
-                        <button onclick="add()">New</button>
-                        <button onclick="prev()" id="prevUser" disabled>Previous</button>
-                        <button onclick="next()" id="nextUser" disabled>Next</button>
-                        <button onclick="reset()" id="resetUser">Reset</button>
-                        <button onclick="remove()" id="removeUser" disabled>Remove</button>
+
+            <div id="tables-wrapper">
+                <!-- Displays the users' timetables -->
+                <div id="user-wrapper">
+                    <div id="user-table-wrapper">
+                        <div class="user" id="user0">
+                            <div class="table-header">
+                                <h1 id="user0-name" contenteditable>#user0</h1>
+                            </div>
+                            <table cellpadding="0" cellspacing="0" class="user-timetable">
+                                <tr>
+                                    <td class="day"></td>
+                                    <td class="day">MON</td>
+                                    <td class="day">TUE</td>
+                                    <td class="day">WED</td>
+                                    <td class="day">THU</td>
+                                    <td class="day">FRI</td>
+                                    <td class="day"></td>
+                                </tr>
+                                <tr><td class="time-cell-l">9:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">9:00</td></tr>
+                                <tr><td class="time-cell-l">10:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">10:00</td></tr>
+                                <tr><td class="time-cell-l">11:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">11:00</td></tr>
+                                <tr><td class="time-cell-l">12:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">12:00</td></tr>
+                                <tr><td class="time-cell-l">13:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">13:00</td></tr>
+                                <tr><td class="time-cell-l">14:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">14:00</td></tr>
+                                <tr><td class="time-cell-l">15:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">15:00</td></tr>
+                                <tr><td class="time-cell-l">16:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">16:00</td></tr>
+                                <tr><td class="time-cell-l">17:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">17:00</td></tr>
+                            </table>
+                            <p id="user-caption">
+                                Click a cell to toggle between free and busy.
+                                <br>
+                                Edit the user's name by clicking it and typing.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Encode/decode interface -->
+                    <div id="code">
+                        <button onclick="copy()">Copy</button>
+                        <input type="text" title="Sharing code" id="code-input" value="9ZrjFE4v">
+                        <button onclick="decode()">Set</button>
                     </div>
                 </div>
 
-                <div id="tables-wrapper">
-                    <!-- Displays the users' timetables -->
-                    <div id="user-wrapper">
-                        <div id="user-table-wrapper">
-                            <div class="user" id="user0">
-                                <div class="table-header">
-                                    <h1 id="user0-name" contenteditable>#user0</h1>
-                                </div>
-                                <table cellpadding="0" cellspacing="0" class="user-timetable">
-                                    <tr>
-                                        <td class="day"></td>
-                                        <td class="day">MON</td>
-                                        <td class="day">TUE</td>
-                                        <td class="day">WED</td>
-                                        <td class="day">THU</td>
-                                        <td class="day">FRI</td>
-                                        <td class="day"></td>
-                                    </tr>
-                                    <tr><td class="time-cell-l">9:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">9:00</td></tr>
-                                    <tr><td class="time-cell-l">10:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">10:00</td></tr>
-                                    <tr><td class="time-cell-l">11:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">11:00</td></tr>
-                                    <tr><td class="time-cell-l">12:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">12:00</td></tr>
-                                    <tr><td class="time-cell-l">13:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">13:00</td></tr>
-                                    <tr><td class="time-cell-l">14:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">14:00</td></tr>
-                                    <tr><td class="time-cell-l">15:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">15:00</td></tr>
-                                    <tr><td class="time-cell-l">16:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">16:00</td></tr>
-                                    <tr><td class="time-cell-l">17:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">17:00</td></tr>
-                                </table>
-                                <p id="user-caption">
-                                    Click a cell to toggle between free and busy.
-                                    <br>
-                                    Edit the user's name by clicking it and typing.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Encode/decode interface -->
-                        <div id="code">
-                            <button onclick="copy()">Copy</button>
-                            <input type="text" title="Sharing code" id="code-input" value="9ZrjFE4v">
-                            <button onclick="decode()">Set</button>
-                        </div>
+                <!-- Displays the output table -->
+                <div id="output-wrapper">
+                    <div class="table-header">
+                        <h1>Comparison</h1>
                     </div>
-
-                    <!-- Displays the output table -->
-                    <div id="output-wrapper">
-                        <div class="table-header">
-                            <h1>Comparison</h1>
-                        </div>
-                        <table cellpadding="0" cellspacing="0" id="output-timetable">
-                            <tr>
-                                <td class="day"></td>
-                                <td class="day">MON</td>
-                                <td class="day">TUE</td>
-                                <td class="day">WED</td>
-                                <td class="day">THU</td>
-                                <td class="day">FRI</td>
-                            </tr>
-                            <tr><td class="time-cell-l">9:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">9:00</td></tr>
-                            <tr><td class="time-cell-l">10:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">10:00</td></tr>
-                            <tr><td class="time-cell-l">11:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">11:00</td></tr>
-                            <tr><td class="time-cell-l">12:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">12:00</td></tr>
-                            <tr><td class="time-cell-l">13:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">13:00</td></tr>
-                            <tr><td class="time-cell-l">14:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">14:00</td></tr>
-                            <tr><td class="time-cell-l">15:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">15:00</td></tr>
-                            <tr><td class="time-cell-l">16:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">16:00</td></tr>
-                            <tr><td class="time-cell-l">17:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">17:00</td></tr>
-                        </table>
-                        <p id="comparison-caption">
-                            Each cell shows how many of your users are available at that particular time.
-                        </p>
-                    </div>
+                    <table cellpadding="0" cellspacing="0" id="output-timetable">
+                        <tr>
+                            <td class="day"></td>
+                            <td class="day">MON</td>
+                            <td class="day">TUE</td>
+                            <td class="day">WED</td>
+                            <td class="day">THU</td>
+                            <td class="day">FRI</td>
+                        </tr>
+                        <tr><td class="time-cell-l">9:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">9:00</td></tr>
+                        <tr><td class="time-cell-l">10:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">10:00</td></tr>
+                        <tr><td class="time-cell-l">11:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">11:00</td></tr>
+                        <tr><td class="time-cell-l">12:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">12:00</td></tr>
+                        <tr><td class="time-cell-l">13:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">13:00</td></tr>
+                        <tr><td class="time-cell-l">14:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">14:00</td></tr>
+                        <tr><td class="time-cell-l">15:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">15:00</td></tr>
+                        <tr><td class="time-cell-l">16:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">16:00</td></tr>
+                        <tr><td class="time-cell-l">17:00</td><td></td><td></td><td></td><td></td><td></td><td class="time-cell-r">17:00</td></tr>
+                    </table>
+                    <p id="comparison-caption">
+                        Each cell shows how many of your users are available at that particular time.
+                    </p>
                 </div>
             </div>
         </div>
-
-        <div id="right-col"></div>
     </div>
 </body>
 </html>
