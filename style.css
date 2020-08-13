@@ -4,8 +4,12 @@
     --page-bg: #fff;
     --primary-text: #222;
     --secondary-text: #767676;
-    --link-col: #007ACC;
+    --link-col: #007acc;
     --hr: #eee;
+    --code-txt: #333333;
+    --code-bg: #fdf6e3;
+    --code-border: #f1e7ca;
+    --opacity: 1;
 }
 
 .dark {
@@ -15,11 +19,18 @@
     --secondary-text: #999;
     --link-col: #64b2f1;
     --hr: #444;
+    --code-txt: #666;
+    --code-bg: #08294a;
+    --code-border: #1e4e6c;
+    --opacity: 0.7;
 }
 
 
 /* tags */
-html { font-family: 'Segoe UI', sans-serif; }
+html {
+    font-family: 'Segoe UI', sans-serif;
+    overflow-y: scroll;
+}
     html * {
         margin: 0;
         padding: 0;
@@ -41,7 +52,12 @@ h1 {
 
 p { margin: 10px 0; }
 
-a { color: var(--primary-text); }
+a {
+    font-weight: 600;
+    color: var(--link-col);
+    text-decoration: none;
+}
+    a:hover { text-decoration: underline; }
 
 hr {
     border-color: transparent;
@@ -64,12 +80,16 @@ hr {
     justify-content: space-between;
     width: 550px;
     max-width: calc(100vw - 50px);
-    padding: 10px 0;
+    padding: 10px 25px;
     margin: auto;
     font-weight: 700;
+    border-bottom: 2px solid var(--hr);
 }
     #nav p { display: inline-block; }
-        #nav a { text-decoration: none; }
+    #nav a {
+        color: var(--emphasis);
+        text-decoration: none;
+    }
             #nav a:hover, #nav a:focus { text-decoration: underline; }
 
     #theme-btn {
@@ -90,6 +110,7 @@ hr {
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 3px;
+    opacity: var(--opacity);
 }
     .banner img { max-width: 600px; }
 
@@ -126,13 +147,6 @@ hr {
     grid-row-gap: 20px;
 }
     .portfolio * { margin: 0; }
-
-    .portfolio a {
-        font-weight: 600;
-        color: var(--link-col);
-        text-decoration: none;
-    }
-        .portfolio a:hover { text-decoration: underline; }
         
     .name {
         font-weight: 600;
@@ -142,7 +156,7 @@ hr {
     }
         .no-link {
             cursor: initial;
-            color: var(--secondary-text);
+            color: var(--primary-text);
         }
 
     .desc, .tool { font-size: 12px; }
