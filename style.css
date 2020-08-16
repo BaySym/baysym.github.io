@@ -300,6 +300,8 @@ pre {
 
 
 
-@media (orientation: portrait), (max-width: 600px) {
+@media (max-width: 600px) {
     .portfolio { grid-template-columns: 1fr; }
+    .name { font-size: 16px; }
+    .desc { display: none; }
 }
