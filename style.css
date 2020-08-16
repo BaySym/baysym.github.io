@@ -211,11 +211,12 @@ hr {
             height: 100%;
             box-sizing: border-box;
             border-radius: 3px;
-            transition: 0.2s ease-in-out;
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
+            transition: 0.2s ease-in-out;
         }
+            .project-overlay:hover { background-position: 0 -90px; }
             .project-overlay:hover .name { text-decoration: underline; }
                 
             .project-text {
