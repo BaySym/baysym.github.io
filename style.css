@@ -5,7 +5,8 @@
     --primary-text: #222;
     --secondary-text: #767676;
     --link-col: #007acc;
-    --hr: #eee;
+    --hr: #eeeeee;
+    --hr-transparent: #eeeeee00;
     --code-txt: #333333;
     --code-bg: #fdf6e3;
     --code-border: #f1e7ca;
@@ -18,7 +19,8 @@
     --primary-text: #d4d4d4;
     --secondary-text: #999;
     --link-col: #64b2f1;
-    --hr: #444;
+    --hr: #444444;
+    --hr-transparent: #44444400;
     --code-txt: #666;
     --code-bg: #08294a;
     --code-border: #1e4e6c;
@@ -70,7 +72,7 @@ a {
 hr {
     border-color: transparent;
     background-color: var(--hr);
-    margin: 45px 0 25px 0;
+    margin: 30px 0 25px 0;
 }
 
 
@@ -125,7 +127,7 @@ hr {
 
 /* about me section */
 #about {
-    padding: 30px 25px 0px 25px;
+    padding: 30px 25px 10px 25px;
     line-height: 1.5;
 }
     #social {
@@ -162,48 +164,100 @@ hr {
 /* portfolio wrapper */
 .portfolio {
     padding: 0 25px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
+    display: flex;
+    flex: 0 calc(50%-25px);
+    flex-flow: row wrap;
+    justify-content: space-between;
 }
     .portfolio * { margin: 0; }
-        
-    .name {
-        font-weight: 600;
-        display: inline-block;
-        font-size: 14px;
-        cursor: pointer;
-    }
-        .no-link {
-            cursor: initial;
-            color: var(--primary-text);
-        }
 
-    .desc, .tool { font-size: 12px; }
-        .desc { margin: 2px 0; }
-
-    .tool, .tool-colour, .collab {
+    .project {
         display: inline-block;
-        color: var(--secondary-text);
+        background-color: var(--hr);
+        border-radius: 4px;
+        box-sizing: border-box;
+        width: calc(50% - 12.5px);
+        margin-bottom: 25px !important;
+        vertical-align: bottom;
         position: relative;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        transition: 0.2s ease-in-out;
     }
-        .tool { top: -2px; }
-        .tool-colour, .collab {
-            height: 12px;
-            width: 12px;
-            border-radius: 50%;
-            background-size: contain;
+        .project:after {
+            content: "";
+            display: block;
+            padding-bottom: 100%;
+        }
+        .project:hover {
+            transition: 0.2s ease-in-out;
         }
 
-    .collab {
-        background-color: var(--secondary-text);
-        margin-left: 7px;
-    }
-        .collab + .collab {
-            margin-left: -9px;
-            filter: drop-shadow(-1px 0 0 var(--page-bg));
+        .wip {
+            opacity: calc(1/3);
+            cursor: default;
         }
+            .wip .name {
+                color: var(--primary-text);
+                text-decoration: none !important;
+                cursor: default !important;
+            }
+                .wip .name:after { content: " (in progress)"; }
+
+        .project-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            border-radius: 3px;
+            transition: 0.2s ease-in-out;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+            .project-overlay:hover .name { text-decoration: underline; }
+                
+            .project-text {
+                display: inline-block;
+                position: absolute;
+                padding: 15px;
+                bottom: 0;
+                box-sizing: border-box;
+                transition: 0.2s ease-in-out;
+            }
+
+            .name {
+                font-weight: 600;
+                display: inline-block;
+                font-size: 14px;
+                cursor: pointer;
+                color: var(--link-col);
+            }
+
+            .desc {
+                font-size: 12px;
+                margin: 2px 0;
+                overflow: hidden;
+                transition: all 0.2s ease-in-out;
+                color: var(--secondary-text);
+            }
+                #awards .desc { color: var(--primary-text); }
+
+            .tool {
+                font-size: 12px;
+                color: var(--secondary-text);
+                margin: 0;
+            }
+
+            .collab {
+                background-color: var(--secondary-text);
+                margin-left: 7px;
+            }
+                .collab + .collab {
+                    margin-left: -6px !important;
+                    filter: drop-shadow(-1px 0 0 var(--page-bg));
+                }
 
 
     @media (orientation: portrait), (max-width: 600px) {
