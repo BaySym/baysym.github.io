@@ -1,6 +1,7 @@
 var body = document.body;
 var themeBtn = document.getElementById('theme-btn');
 var social = document.getElementById('social');
+var caseStudyLink = document.getElementById('case-study-link');
 
 // Set the theme to the most recently viewed theme
 setTheme(window.localStorage.getItem('theme'));
@@ -16,6 +17,7 @@ function setTheme(theme) {
         // Set the theme to dark
         themeBtn.innerHTML = '🌝';
         if (social) social.style.filter = 'invert()';
+        if (caseStudyLink) caseStudyLink.style.filter = 'invert()';
         body.classList = 'dark';
         // Store the theme
         window.localStorage.setItem('theme', 'dark');
@@ -23,6 +25,7 @@ function setTheme(theme) {
         // Set the theme to light (default)
         themeBtn.innerHTML = '🌚';
         if (social) social.style.filter = 'none';
+        if (caseStudyLink) caseStudyLink.style.filter = 'none';
         body.classList = 'light';
         // Store the theme
         window.localStorage.setItem('theme', 'light');
