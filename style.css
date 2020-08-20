@@ -196,7 +196,6 @@ hr {
 
         .wip {
             cursor: default;
-            opacity: 0.5;
         }
             .wip .name {
                 color: var(--primary-text);
