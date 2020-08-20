@@ -220,6 +220,8 @@ hr {
                 margin: 2px 0;
                 color: var(--secondary-text);
                 text-decoration: none !important;
+                line-height: 1.5;
+                font-weight: 500;
             }
                 #awards .desc { color: var(--primary-text); }
 
