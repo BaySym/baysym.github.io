@@ -182,7 +182,6 @@ hr {
     }
         .project:hover .name { text-decoration: underline; }
         .project:hover .project-img-ns { opacity: 0; }
-        .project:hover * { filter: none; }
 
         .project a { text-decoration: none; }
 
