@@ -6,10 +6,10 @@
     --secondary-text: #767676;
     --link-col: #007acc;
     --hr: #eeeeee;
-    --hr-transparent: #eeeeee00;
     --code-txt: #333333;
     --code-bg: #fdf6e3;
     --code-border: #f1e7ca;
+    --img-filter: none;
 }
 
 .dark {
@@ -19,10 +19,10 @@
     --secondary-text: #ddd;
     --link-col: #64b2f1;
     --hr: #444444;
-    --hr-transparent: #44444400;
     --code-txt: #666;
     --code-bg: #08294a;
     --code-border: #1e4e6c;
+    --img-filter: brightness(90%);
 }
 
 
@@ -110,6 +110,7 @@ hr {
 
 /* banner image */
 .banner, .proj-banner {
+    filter: var(--img-filter);
     padding: 0 !important;
     min-height: 200px;
     height: 200px;
@@ -181,16 +182,18 @@ hr {
     }
         .project:hover .name { text-decoration: underline; }
         .project:hover .project-img-ns { opacity: 0; }
+        .project:hover * { filter: none; }
 
         .project a { text-decoration: none; }
 
         .project-img, .project-img-ns {
+            filter: var(--img-filter);
             width: 100%;
             height: 140px;
             background-repeat: no-repeat;
             background-size: 100%;
             background-position: center;
-            transition: 0.2s ease-in-out;
+            transition: opacity 0.2s ease-in-out;
         }
             .project-img-ns { opacity: 0.5; }
 
@@ -199,11 +202,13 @@ hr {
         }
             .wip .name {
                 color: var(--primary-text);
-                opacity: 0.85;
                 text-decoration: none !important;
                 cursor: default !important;
             }
-                .wip .name:after { content: " (in progress)"; }
+                .wip .name:after {
+                    content: " (in progress)";
+                    color: var(--secondary-text);
+                }
                 
             .project-text { margin-top: 5px; }
 
