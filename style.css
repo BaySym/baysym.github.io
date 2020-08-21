@@ -236,11 +236,6 @@ hr {
                 text-decoration: none !important;
                 cursor: default !important;
             }
-                /* add prefix */
-                .wip .name:after {
-                    content: " (in progress)";
-                    opacity: 0.5;
-                }
 
     /* tweak award cards */
     #awards { margin-top: -9px; }
@@ -286,7 +281,6 @@ pre {
 /* media queries */
 @media (max-width: 600px) {
     .portfolio { grid-template-columns: 1fr; }
-    .wip .name::after { content: " (WIP)"}
     .project .desc { display: none; }
 }
 
