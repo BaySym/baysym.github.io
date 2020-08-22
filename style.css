@@ -180,34 +180,47 @@ hr {
     /* all children have no margin */
     .portfolio * { margin: 0; }
 
+    .projects a { width: calc(50% - 12px); }
+
     /* project card */
     .project {
-        display: inline-block;
-        box-sizing: border-box;
-        width: calc(50% - 12px);
-        vertical-align: bottom;
         position: relative;
+        display: inline-block;
+        overflow: hidden;
     }
-        /* hover states */
-        .project:hover .name { text-decoration: underline; }
-        .project:hover .project-img-ns { opacity: 0; }
+        .project * { transition: 0.2s ease-in-out; }
 
-        /* no underline on text links */
-        .project a { text-decoration: none; }
-
-        /* project images with and without shadows */
-        .project-img, .project-img-ns {
-            filter: var(--img-filter);
-            width: 100%;
-            height: 140px;
-            background-repeat: no-repeat;
-            background-size: 100%;
-            background-position: center;
-            transition: opacity 0.2s ease-in-out;
+        .project:hover span {
+            top: 18px;
+            opacity: 1;
         }
-            /* overlay the no-shadow image */
-            .project-img-ns { opacity: 0.5; }
-            
+
+        .project:hover img { top: 25px; }
+
+        .project:active { opacity: 0.8; }
+
+        .project img {
+            position: relative;
+            width: 100%;
+            top: 0;
+        }
+
+        .project span {
+            position: absolute;
+            margin: 0 auto;
+            top: -0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            width: 60%;
+            color: #000;
+            font-weight: 600;
+            font-size: 16px;
+            opacity: 0;
+        }
+
+    /* tweak award cards */
+    #awards { margin-top: -9px; }            
         /* text within the project card */
         .project-text { margin-top: 5px; }
             /* project name */
@@ -222,25 +235,11 @@ hr {
             .desc {
                 font-size: 12px;
                 margin: 2px 0;
-                color: var(--secondary-text);
+                color: var(--primary-text);
                 text-decoration: none !important;
                 line-height: 1.5;
                 font-weight: 500;
             }
-
-        /* unfinished projects */
-        .wip { cursor: default; }
-            /* unfinished project's name */
-            .wip .name {
-                color: var(--primary-text);
-                text-decoration: none !important;
-                cursor: default !important;
-            }
-
-    /* tweak award cards */
-    #awards { margin-top: -9px; }
-        #awards .desc { color: var(--primary-text); }
-
 
 
 /* case studies */
@@ -281,7 +280,7 @@ pre {
 /* media queries */
 @media (max-width: 600px) {
     .portfolio { grid-template-columns: 1fr; }
-    .project .desc { display: none; }
+    .project span { font-size: 13px; }
 }
 
 
