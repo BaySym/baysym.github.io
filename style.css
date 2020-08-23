@@ -10,6 +10,7 @@
     --code-bg: #fdf6e3;
     --code-border: #f1e7ca;
     --img-filter: none;
+    --img-hover: #fff;
 }
 
 .dark {
@@ -22,7 +23,8 @@
     --code-txt: #666;
     --code-bg: #08294a;
     --code-border: #1e4e6c;
-    --img-filter: brightness(90%);
+    --img-filter: brightness(90%);;
+    --img-hover: #000000aa;
 }
 
 
@@ -187,36 +189,25 @@ hr {
         position: relative;
         display: inline-block;
         overflow: hidden;
+        height: 263px;
+        filter: var(--img-filter);
     }
-        .project * { transition: 0.2s ease-in-out; }
 
-        .project:hover span {
-            top: 18px;
-            opacity: 1;
+        .project span {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            background-color: var(--img-hover);
         }
-
-        .project:hover img { top: 25px; }
-
-        .project:active { opacity: 0.8; }
+            .project:hover span { opacity: 0.5; }
 
         .project img {
             position: relative;
             width: 100%;
             top: 0;
-        }
-
-        .project span {
-            position: absolute;
-            margin: 0 auto;
-            top: -0;
-            left: 0;
-            right: 0;
-            text-align: center;
-            width: 60%;
-            color: #000;
-            font-weight: 600;
-            font-size: 16px;
-            opacity: 0;
         }
 
     /* tweak award cards */
