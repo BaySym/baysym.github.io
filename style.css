@@ -48,6 +48,8 @@ a { text-decoration: none; }
             color: var(--primary-text);
             cursor: default;
         }
+    
+        #home { color: var(--primary-text) !important; }
 
 #banner {
     margin: 0 auto 25px auto;
