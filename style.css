@@ -1,34 +1,11 @@
-/* themes */
-.light {
-    --emphasis: #000;
-    --page-bg: #fff;
+:root {
+    --page-background: #fff;
     --primary-text: #222;
-    --secondary-text: #767676;
-    --link-col: #007acc;
-    --hr: #eeeeee;
-    --code-txt: #333333;
-    --code-bg: #fdf6e3;
-    --code-border: #f1e7ca;
-    --img-filter: none;
-    --img-hover: #fff;
+    --secondary-text: #444;
+    --tertiary-text: #aaa;
+    --link: #007acc;
 }
 
-.dark {
-    --emphasis: #fff;
-    --page-bg: #1e1e1e;
-    --primary-text: #eee;
-    --secondary-text: #ddd;
-    --link-col: #64b2f1;
-    --hr: #444444;
-    --code-txt: #666;
-    --code-bg: #08294a;
-    --code-border: #1e4e6c;
-    --img-filter: brightness(90%);;
-    --img-hover: #000000aa;
-}
-
-
-/* tags */
 
 html {
     font-family: 'Segoe UI', sans-serif;
@@ -41,97 +18,66 @@ html {
     }
 
 body {
-    background-color: var(--page-bg);
-    color: var(--primary-text);
+    background-color: var(--page-background);
 }
 
-h1 {
-    font-size: 24px;
-    color: var(--emphasis);
-    font-weight: 600;
-    display: inline-block;
-    margin-top: -6px;
-}
+a { text-decoration: none; }
 
-h2 {
-    font-variant: small-caps;
-    font-weight: 400;
-    margin: 25px 0 -20px 25px;
-    font-size: 16px;
-    color: var(--secondary-text);
-}
-
-p { margin: 10px 0; }
-
-a {
-    font-weight: 600;
-    color: var(--link-col);
-    text-decoration: none;
-}
-    a:hover { text-decoration: underline; }
-
-hr {
-    border-color: transparent;
-    background-color: var(--hr);
-    margin: 45px 0 25px 0;
-}
-
-
-/* my own elements */
-
-/* content wrapper */
-#wrapper {
+#nav, #projects {
     margin: auto;
     width: 600px;
     max-width: calc(100vw - 50px);
-}
-
-
-/* navigation bar */
-#nav {
     display: flex;
+    box-sizing: border-box;
     justify-content: space-between;
-    width: 550px;
-    max-width: calc(100% - 50px);
-    padding: 10px 25px;
-    margin: auto;
-    font-weight: 700;
 }
-    /* links within the nav bar */
-    #nav p { display: inline-block; }
-    #nav a {
+    #pages {
+        display: flex;
+        gap: 50px;
+    }
+
+    #nav a, #nav p {
         text-decoration: none;
-        color: var(--emphasis);
+        display: inline-block;
+        padding: 10px 0;
+        margin: 15px 0;
+        font-weight: 600;
     }
-        #nav a:hover, #nav a:focus { text-decoration: underline; }
-    /* theme toggle button */
-    #theme-btn {
-        cursor: pointer;
-        opacity: 0.5;
-        user-select: none;
-    }
-        #theme-btn:hover { opacity: 1; }
+        #nav a:hover { color: var(--link); }
+        #nav a { color: var(--tertiary-text); }
+        #nav p {
+            color: var(--primary-text);
+            cursor: default;
+        }
 
-
-/* banner image */
-.banner, .proj-banner {
-    filter: var(--img-filter);
-    padding: 0 !important;
-    min-height: 200px;
+#banner {
+    margin: 0 auto 25px auto;
     height: 200px;
-    overflow: hidden;
+    width: 600px;
+    max-width: calc(100vw - 50px);
     background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100%;
+    border-radius: 3px;
 }
-    .banner img, .proj-banner img { max-width: 600px; }
 
-
-/* about me section */
 #about {
-    padding: 30px 25px 0 25px;
     line-height: 1.5;
+    margin: 0 auto 25px auto;
+    width: 600px;
+    max-width: calc(100vw - 50px);
 }
+    #about h1 {
+        font-size: 24px;
+        color: var(--emphasis);
+        font-weight: 600;
+        display: inline-block;
+        margin: -6px 0 8px 0;
+    }
+
+    #about p {
+        margin-bottom: 8px;
+    }
+
     #social {
         filter: none;
         float: right;
@@ -145,135 +91,106 @@ hr {
         #social img {
             padding-top: 2px;
             width: 20px;
-            opacity: calc(1/3);
+            opacity: calc(100%/3);
             float: right;
         }
             #social img:hover { opacity: 1; }
 
-
-
-#case-study-git {
-    filter: none;
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
 }
 
-
-/* section title overlapping <hr> */
-.section-title {
-    display: table;
-    background-color: var(--page-bg);
-    margin: -38px 0 15px 17px;
-    padding: 0 8px;
-    font-size: 14px;
-    font-weight: 600;
-    font-variant: small-caps;
-    color: var(--secondary-text);
+#projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 25px;
 }
 
-
-/* portfolio wrapper */
-.portfolio {
-    padding: 0 25px;
-    display: flex;
-    flex: 0 calc(50%-24px);
-    flex-flow: row wrap;
-    gap: 24px;
-    justify-content: space-between;
+.card {
+    width: 100%;
 }
-    /* all children have no margin */
-    .portfolio * { margin: 0; }
+    .card-image {
+        width: 100%;
+        height: 125px;
+        box-sizing: border-box;
+        border-radius: 3px;
+        background-size: cover;
+        background-position: center;
+    }
+    .card-text {
+        padding: 10px 5px;
+    }
+    .card-text h1 {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 5px;
+        color: var(--primary-text);
+        cursor: pointer;
+        white-space: nowrap;
+        transition: font-size 0.2s ease-in-out;
+    }
+        .card-text h1:after {
+            position: relative;
+            top: -1px;
+            opacity: 0;
+            content: "❯";
+            margin: 0;
+            font-size: 12px;
+            transition: 0.2s ease-in-out;
+        }
 
-    .projects a { width: calc(50% - 12px); }
-
-    /* project card */
-    .project {
-        position: relative;
-        display: inline-block;
-        overflow: hidden;
-        height: 263px;
-        filter: var(--img-filter);
+    .card-text .desc {
+        color: var(--secondary-text);
+        font-size: 14px;
+        transition: font-size 0.2s ease-in-out, opacity 0.2s ease-in-out;
     }
 
-        .project span {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            opacity: 0;
-            background-color: var(--img-hover);
-        }
-            .project:hover span { opacity: 0.5; }
-
-        .project img {
-            position: relative;
-            width: 100%;
-            top: 0;
+    .eyebrow {
+        font-size: 14px;
+        color: var(--secondary-text);
+        font-variant: small-caps;
+        opacity: 0.75;
+    }
+    
+    .card:hover h1 { color: var(--link); }
+        .card:hover h1:after {
+            content: "❯";
+            opacity: 0.85;
+            padding-left: 7px;
         }
 
-    /* tweak award cards */
-    #awards { margin-top: -9px; }            
-        /* text within the project card */
-        .project-text { margin-top: 5px; }
-            /* project name */
-            .name {
-                font-weight: 600;
-                display: inline-block;
-                font-size: 14px;
-                cursor: pointer;
-                color: var(--link-col);
-            }
-            /* project description */
-            .desc {
-                font-size: 12px;
-                margin: 2px 0;
-                color: var(--primary-text);
-                text-decoration: none !important;
-                line-height: 1.5;
-                font-weight: 500;
-            }
-
-
-/* case studies */
-pre {
-    background: var(--code-bg);
-    border-radius: 3px;
-    color: var(--code-text);
-    font-family: 'Consolas', monospace;
-    font-size: 15px;
-    line-height: 24px;
-    margin: 24px 0;
-    padding: 16px 25px;
-    white-space: pre-line;
-    box-sizing: border-box;
-    border: 1px solid var(--code-border);
-}
-
-
-/* blog post */
-.post h1 { margin: 24px 25px 0 25px; }
-
-.post p {
-    margin: 16px 25px 0 25px;
-    line-height: 25px;
-}
-
-.in-text { margin: 24px 0; }
-
-.caption {
-    text-align: center;
-    color: var(--secondary-text);
+.gallery-title {
+    margin: 50px auto 10px auto;
+    width: 600px;
+    max-width: calc(100vw - 50px);
     font-size: 14px;
-    font-style: italic;
-    margin-top: -20px !important;
+    font-weight: 600;
+    color: var(--secondary-text);
 }
 
-
-/* media queries */
-@media (max-width: 600px) {
-    .portfolio { grid-template-columns: 1fr; }
-    .project span { font-size: 13px; }
+#gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 5px;
+    margin: auto;
+    width: 600px;
+    max-width: calc(100vw - 50px);
 }
+    #gallery img {
+        border-radius: 3px;
+        width: 100%;
+    }
 
-
-/* placeholder text */
-.lorem:after { content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."; }
+        
+@media (max-width: 575px) {
+    .card-text h1 { font-size: 14px; }
+        .card:hover h1:after {
+            opacity: 0;
+            font-size: 0px;
+        }
+    .card-text p {
+        font-size: 0px;
+        opacity: 0;
+    }
+}
