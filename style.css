@@ -9,7 +9,6 @@
 html {
     font-family: 'Segoe UI', sans-serif;
     overflow-y: scroll;
-    padding-bottom: 75px;
 }
     html * {
         margin: 0;
@@ -106,7 +105,8 @@ a { text-decoration: none; }
 #projects {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 25px;
+    column-gap: 25px;
+    row-gap: 10px;
 }
 
 .card {
@@ -145,7 +145,9 @@ a { text-decoration: none; }
     .card-text .desc {
         color: var(--secondary-text);
         font-size: 14px;
-        transition: font-size 0.2s ease-in-out, opacity 0.2s ease-in-out;
+        overflow: hidden;
+        height: 75px;
+        transition: 0.1s ease-in-out;
     }
 
     .eyebrow {
@@ -154,7 +156,7 @@ a { text-decoration: none; }
         font-variant: small-caps;
         opacity: 0.75;
     }
-    
+
     .card:hover h1 { color: var(--link); }
         .card:hover h1:after {
             content: "❯";
@@ -192,36 +194,35 @@ a { text-decoration: none; }
     width: 600px;
     max-width: calc(100vw - 50px);
 }
-
-.write-up a {
-    color: var(--link);
-    font-weight: 600;
-}
-    .write-up a:hover { text-decoration: underline; }
-
-.write-up h1 {
-    font-size: 24px;
-    font-weight: 600;
-    color: var(--primary-text);
-    margin-bottom: 10px;
-}
-.write-up h2 {
-    font-size: 18px;
-    font-weight: 500;
-    color: var(--primary-text);
-    margin-bottom: 20px;
-}
-.write-up h3 {
-    font-size: 16px;
-    font-weight: 600;
-    margin-top: 40px;
-    color: var(--primary-text);
-}
-.write-up p {
-    line-height: 1.75;
-    margin-top: 15px;
-    color: var(--primary-text);
-}
+    .write-up h1 {
+        font-size: 24px;
+        font-weight: 600;
+        color: var(--primary-text);
+        margin-bottom: 10px;
+    }
+    .write-up h2 {
+        font-size: 18px;
+        font-weight: 500;
+        color: var(--primary-text);
+        margin-bottom: 20px;
+    }
+    .write-up h3 {
+        font-size: 16px;
+        font-weight: 600;
+        margin-top: 40px;
+        color: var(--primary-text);
+    }
+    .write-up p {
+        line-height: 1.75;
+        margin-top: 15px;
+        color: var(--primary-text);
+    }
+    
+    .write-up a {
+        color: var(--link);
+        font-weight: 600;
+    }
+        .write-up a:hover { text-decoration: underline; }
 
 .wip h3, .wip p, .wip a {
     color: transparent;
@@ -232,13 +233,11 @@ a { text-decoration: none; }
 
         
 @media (max-width: 575px) {
-    .card-text h1 { font-size: 14px; }
-        .card:hover h1:after {
-            opacity: 0;
-            font-size: 0px;
-        }
-    .card-text p {
-        font-size: 0px;
-        opacity: 0;
+    #projects { grid-template-columns: 1fr 1fr; }
+    .card-text h1 {
+        font-size: 14px;
+        padding-bottom: 0;
     }
+        .card:hover h1:after { display: none; }
+    .card-text .desc { display: none; }
 }
