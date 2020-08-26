@@ -1,4 +1,4 @@
-.light {
+:root {
     --free-cell: #9fdefb;
     --mixed-cell: #ffc394;
     --busy-cell: #f4825e;
@@ -6,17 +6,12 @@
     --free-cell-hov: #caf2ff;
     --busy-cell-hov: #efa68f;
 }
-.dark {
-    --free-cell: #6dacc9;
-    --mixed-cell: #db9162;
-    --busy-cell: #c2502c;
 
-    --free-cell-hov: #9fdefb;
-    --busy-cell-hov: #f4825e;
+
+h1 {
+    margin: auto;
+    font-weight: 600;
 }
-
-
-h1 { margin: auto; }
 
 
 /* buttons */
@@ -24,6 +19,7 @@ button {
     color: var(--primary-text);
     padding: 6px 8px;
     font-size: 0.8rem;
+    font-weight: 500;
     border: none;
     background-color: transparent;
     border-radius: 5px;
@@ -45,9 +41,10 @@ button {
 }
     /* timetable buttons wrapper */
     #buttons {
+        margin-top: 25px;
         display: flex;
         justify-content: center;
-        margin-bottom: 20px;
+        margin-bottom: 25px;
     }
         /* all buttons inline */
         #buttons * {
@@ -135,6 +132,7 @@ button {
             vertical-align: middle;
             cursor: pointer;
             user-select: none;
+            border: 1px solid #fff;
         }
             .free, .busy, .allFree, .mostFree, .mostBusy {
                 color: var(--primary-text);
