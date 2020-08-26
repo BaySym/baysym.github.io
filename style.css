@@ -50,6 +50,7 @@ a { text-decoration: none; }
         }
     
         #home { color: var(--primary-text) !important; }
+            #home:hover { color: var(--link) !important; }
 
 #banner {
     margin: 0 auto 25px auto;
@@ -184,6 +185,50 @@ a { text-decoration: none; }
         width: 100%;
     }
         #gallery img:hover { opacity: 0.5; }
+
+
+.write-up h1, .write-up h2, .write-up h3, .write-up p {
+    margin: auto;
+    width: 600px;
+    max-width: calc(100vw - 50px);
+}
+
+.write-up a {
+    color: var(--link);
+    font-weight: 600;
+}
+    .write-up a:hover { text-decoration: underline; }
+
+.write-up h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--primary-text);
+    margin-bottom: 10px;
+}
+.write-up h2 {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--primary-text);
+    margin-bottom: 20px;
+}
+.write-up h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 40px;
+    color: var(--primary-text);
+}
+.write-up p {
+    line-height: 1.75;
+    margin-top: 15px;
+    color: var(--primary-text);
+}
+
+.wip h3, .wip p, .wip a {
+    color: transparent;
+    user-select: none;
+}
+.wip h3 { text-shadow: 0 0 10px rgba(0, 122, 204, 0.4); }
+.wip p { text-shadow: 0 0 10px rgba(0, 0, 0, 0.4); }
 
         
 @media (max-width: 575px) {
