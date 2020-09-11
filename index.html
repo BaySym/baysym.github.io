@@ -4,7 +4,7 @@
 
 <head>
     <link rel="shortcut icon" href=""/>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style-main.css">
     <title>Bailey Symonds</title>
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="Hello, I'm Bailey, a computer science student at the University of Lincoln interested in user experience design and human-computer interaction.">
@@ -13,55 +13,57 @@
 <body>
     <!-- navigation -->
     <div id="nav">
-        <a href="https://bsym.dev/" id="home">bsym.dev</a>
-        <div id="pages">
-            <p>design</p>
-            <a href="https://bsym.dev/photography/">photography</a>
-        </div>
-    </div>
-
-    <div id="banner" style="background-image: url('images/d/banner.jpg')"></div>
-
-    <div id="about">
-        <h1>Bailey Symonds</h1>
+        <p><a href="https://bsym.dev/">bsym.dev</a></p>
         <div id="social">
             <a href="https://www.linkedin.com/in/bsym" target="_blank" rel="noreferrer"><img src="images/linkedin.jpg" alt="My LinkedIn profile"></a>
             <a href="https://www.github.com/baysym" target="_blank" rel="noreferrer"><img src="images/github.jpg" alt="My GitHub profile"></a>
             <a href="https://www.instagram.com/baysym" target="_blank" rel="noreferrer"><img src="images/instagram.jpg" alt="My Instagram profile"></a>
         </div>
+    </div>
+
+    <div class="banner"><img src="images/banner.jpg"></div>
+
+    <div id="about-me">
+        <h1>Hi, I'm Bailey!</h1>
         <p>
-            I'm a third year computer science student at the University of Lincoln, interested in user experience design and human-computer interaction.
+            I'm a third year computer science student at the University of Lincoln, interested in user experience design and human-computer interaction. In my free time, I enjoy photography, playing guitar and listening to audiobooks and podcasts.
+        </p>
+        <p>
+            You can <a href="https://bsym.dev/CV.pdf">read my CV</a> and get in touch through the social links above or <a href="mailto:bsym307@gmail.com">email me</a>.
         </p>
     </div>
-    
+
     <div id="projects">
-        <a href="" rel="noreferrer noopener" target="" class="fade-in card">
-            <div class="card-image" style="background-image: url('images/d/poetry-machine.jpg')"></div>
-            <div class="card-text">
-                <p class="eyebrow">in progress</p>
+        <div class="project">
+            <img src="images/poetry.jpg">
+            <div class="text-container"><div class="text">
+                <h2>case study</h2>
                 <h1>Poetry Machine</h1>
-                <p class="desc">An AI-generated-poetry research project through the University of Lincoln.</p>
-            </div>
-        </a>
-        <a href="https://bsym.dev/remy/" rel="noreferrer noopener" target="" class="fade-in card">
-            <div class="card-image" style="background-image: url('images/d/remy.jpg')"></div>
-            <div class="card-text">
-                <p class="eyebrow">in progress</p>
+                <p>Part of a research project exploring use cases for AI-generated media.</p>
+            </div></div>
+        </div>
+        
+        <!-- WIP
+        <div class="project">
+            <img src="images/remy.jpg">
+            <div class="text-container"><div class="text">
+                <h2>in progress</h2>
                 <h1>Remy</h1>
-                <p class="desc">A collaborative summer project to create a recipe management app.</p>
-            </div>
-        </a>
-        <a href="https://kontrol.software/" rel="noreferrer noopener" target="_blank" class="fade-in card">
-            <div class="card-image" style="background-image: url('images/d/kontrol.jpg')"></div>
-            <div class="card-text">
-                <p class="eyebrow">product website</p>
-                <h1>Kontrol</h1>
-                <p class="desc">An assessed group project which produced a pose-based Kodi controller.</p>
-            </div>
-        </a>
+                <p>A collaborative summer project to produce a recipe management app.</p>
+            </div></div>
+        </div>
+        -->
+    </div>
+
+    <!-- navigation -->
+    <div id="nav">
+        <p><a href="https://bsym.dev/">bsym.dev</a></p>
+        <div id="social">
+            <a href="https://www.linkedin.com/in/bsym" target="_blank" rel="noreferrer"><img src="images/linkedin.jpg" alt="My LinkedIn profile"></a>
+            <a href="https://www.github.com/baysym" target="_blank" rel="noreferrer"><img src="images/github.jpg" alt="My GitHub profile"></a>
+            <a href="https://www.instagram.com/baysym" target="_blank" rel="noreferrer"><img src="images/instagram.jpg" alt="My Instagram profile"></a>
+        </div>
     </div>
 </body>
-
-<script type="text/javascript" src="script.js"></script>
 
 </html>

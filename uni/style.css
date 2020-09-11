@@ -1,0 +1,123 @@
+#module-list {
+    margin: auto;
+    width: 600px;
+    max-width: calc(100vw - 50px);
+    display: grid;
+    gap: 8%;
+    grid-template-columns: 28% 28% 28%;
+}
+    .module-card {
+        box-sizing: border-box;
+        padding: 10px 0;
+    }
+        .module-card h1 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--primary-text);
+            margin: 0 0 3px 0;
+            cursor: initial;
+        }
+        .module-card p {
+            font-size: 1.2rem;
+            color: var(--secondary-text);
+        }
+        .module-card h2 {
+            font-weight: 600;
+            font-size: 1.4rem;
+            color: var(--link);
+            color: var(--secondary-text);
+            opacity: 0.75;
+            display: inline-block;
+            padding: 4px 0;
+        }
+            .date {
+                display: inline-block;
+                width: 10px;
+                margin-left: -20px;
+                margin-right: 10px;
+                opacity: 0;
+                text-align: right;
+            }
+            .module-card h2:hover { cursor: pointer; text-decoration: underline; }
+            .module-card h2:hover .date { opacity: 0.5; }
+        .module-card a h2 { color: var(--link); }
+
+.grade-calc {
+    margin: auto;
+    margin-top: 25px;
+    width: 600px;
+    max-width: calc(100vw - 50px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+    .grade-card {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        width: 40%;
+        box-sizing: border-box;
+        margin-bottom: 50px;
+    }
+        .module-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            padding-bottom: 5px;
+        }
+        .module-score {
+            text-align: middle;
+            color: #767676;
+        }
+
+        .spacer {
+            opacity: 0;
+        }
+
+        .module-title,
+        .module-score,
+        .work-title,
+        .work-score {
+            padding: 0 3px;
+        }
+
+        .module-score,
+        .spacer,
+        .work-title,
+        .work-score,
+        .work-score input {
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+            .work-score input {
+                font-family: 'Segoe UI';
+                border: none;
+                text-align: right;
+                width: 100%;
+                padding: 3px 3px 1px 3px;
+                box-sizing: border-box;
+                background-color: #e0eafc;
+            }
+                .work-score input:focus {
+                    background-color: #c7dbff;
+                }
+
+        .work-title, .work-score {
+            background-color: #f3f3f3;
+        }
+        
+        .work-title {
+            padding-top: 3px;
+        }
+        .work-title:before {
+            content: "Assessment ";
+        }
+
+        .worth {
+            color: #888;
+            font-weight: 500;
+        }
+        .worth:before {
+            content: " worth ";
+        }
+        .worth:after {
+            content: "%";
+        }
