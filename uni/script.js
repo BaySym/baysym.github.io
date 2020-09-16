@@ -12,7 +12,7 @@ function populate() {
         var tList = data[i].topics;
         var rList = data[i].reading;
 
-        inner += '<h3>lecture notes</h3>\n';
+        inner += '<h3>topics</h3>\n';
         // if the topic list is empty, show a placeholder message
         if (tList.length == 0) inner += '<h2 class="placeholder">No notes yet.</h2><br>\n';
         // if there are topics available, generate markup and populate the content div
@@ -22,7 +22,7 @@ function populate() {
         // if the reading list is empty, show a placeholder message
         if (rList.length == 0) inner += '<h2 class="placeholder">No reading yet.</h2><br>\n';
         // if there is reading material available, generate markup and populate the content div
-        else for (var j = 0; j < rList.length; j++) inner += readingMarkup(id, j+1, rList[j]);
+        else for (var j = 0; j < rList.length; j++) inner += readingMarkup(id, rList[j]);
 
         // add the content to the HTML
         content.children[i].innerHTML = inner;
@@ -37,28 +37,28 @@ function topicMarkup (id, itemID, item) {
 
 
 // generate reading list markup
-function readingMarkup (id, itemID, item) {
-    return `<a href="pdf/${id}/reading${itemID}.pdf"><h2>${item.title}<span class="author"> (${item.author})</span></h2></a><br>\n`;
+function readingMarkup (id, item) {
+    return `<a href="pdf/${id}/${item.id}.pdf" target="_blank" rel="noreferrer"><h2>${item.title}<span class="author"> (${item.author})</span></h2></a><br>\n`;
 }
 
 
 // show one module and hide all others
-function showModule(index) {
+function showModule(selected) {
     // items in the module list div which are module links
-    var  x = [1, 2, 3, 6, 7];
+    var links = [1, 2, 3, 6, 7];
 
     // hide all modules' content
     for (var i = 0; i < 5; i++) {
-        modules.children[x[i]].classList = "";
+        modules.children[links[i]].classList = "";
         content.children[i].style.display = "none";
     }
 
     // show relevant module's content
-    modules.children[x[index]].classList = "selected";
-    content.children[index].style.display = "block";
+    modules.children[links[selected]].classList = "selected";
+    content.children[selected].style.display = "block";
 
     // store this module in local storage
-    localStorage.setItem('lastViewed', index);
+    localStorage.setItem('lastViewed', selected);
 }
 
 

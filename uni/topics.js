@@ -6,11 +6,13 @@ json = `
         "topics": [],
         "reading": [
             {
+                "id": "skiena-tdsdm",
                 "title": "The Data Science Design Manual",
                 "author": "Skiena"
             },
             {
-                "title": "Data Science & Big Data Analytics: Discovering, Analyzing, Visualizing, and Presenting Data",
+                "id": "emc-dsabda",
+                "title": "Data Science and Big Data Analytics",
                 "author": "EMC Education Services"
             }
         ]
@@ -30,7 +32,8 @@ json = `
         "topics": [],
         "reading": [
             {
-                "title": "The VR Book: human-centered design for virtual reality",
+                "id": "jerald-tvrb",
+                "title": "The VR Book",
                 "author": "Jerald"
             }
         ]
@@ -42,19 +45,23 @@ json = `
         "topics": [],
         "reading": [
             {
-                "title": "Structured parallel programming: patterns for efficient computation",
+                "id": "mcool-spp",
+                "title": "Structured Parallel Programming",
                 "author": "McCool, Robison, and Reinders"
             },
             {
-                "title": "An introduction to parallel programming",
+                "id": "pacheco-aitpp",
+                "title": "An Introduction to Parallel Programming",
                 "author": "Pacheco"
             },
             {
-                "title": "OpenCL in action: how to accelerate graphics and computation",
+                "id": "scarpino-oia",
+                "title": "OpenCL in Action",
                 "author": "Scarpino"
             },
             {
-                "title": "Heterogeneous computing with OpenCL 2.0",
+                "id": "kaeli-hcwo2",
+                "title": "Heterogeneous Computing with OpenCL 2.0",
                 "author": "Kaeli, Mistry, Schaa, and Zhang"
             }
         ]
