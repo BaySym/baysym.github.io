@@ -13,70 +13,52 @@
 
 <body>
     <!-- navigation -->
-    <div id="nav">
-        <a href="https://bsym.dev/" id="this-page">bsym.dev</a>
-        <div id="social">
-            <a href="https://www.linkedin.com/in/bsym" target="_blank" rel="noreferrer"><img src="../images/linkedin.jpg" alt="My LinkedIn profile"></a>
-            <a href="https://www.github.com/baysym" target="_blank" rel="noreferrer"><img src="../images/github.jpg" alt="My GitHub profile"></a>
-            <a href="https://www.instagram.com/baysym" target="_blank" rel="noreferrer"><img src="../images/instagram.jpg" alt="My Instagram profile"></a>
+    <div id="nav-container">
+        <div id="nav">
+            <p><a href="https://bsym.dev/">bsym.dev</a></p>
+            <div id="social">
+                <a href="https://www.linkedin.com/in/bsym" target="_blank" rel="noreferrer"><img src="../images/linkedin.jpg" alt="My LinkedIn profile"></a>
+                <a href="https://www.github.com/baysym" target="_blank" rel="noreferrer"><img src="../images/github.jpg" alt="My GitHub profile"></a>
+                <a href="https://www.instagram.com/baysym" target="_blank" rel="noreferrer"><img src="../images/instagram.jpg" alt="My Instagram profile"></a>
+            </div>
         </div>
     </div>
 
     <div class="banner"><img src="banner.jpg"></div>
 
-    <div id="about-me" style="margin-bottom: 0px;"><h1>Third Year Resources</h1></div>
-
-    <div id="module-list">
-        <div class="module-card">
-            <p>CMP3749M</p>
-            <h1>Big Data</h1>
-            <h2><span class="date">1</span>Maths for data science</h2><br>
-            <h2><span class="date">2</span>Introduction to MATLAB</h2><br>
-            <h2><span class="date">3</span>Data preprocessing</h2><br>
-            <h2><span class="date">4</span>Data visualisation</h2><br>
-            <h2><span class="date">5</span>Regression</h2><br>
-            <h2><span class="date">6</span>Statistical analysis</h2><br>
-            <h2><span class="date">7</span>Classification</h2><br>
-            <h2><span class="date">8</span>Clustering</h2><br>
-            <h2><span class="date">9</span>Hadoop & MapReduce</h2><br>
-            <h2><span class="date">10</span>Parallel computing</h2><br>
-        </div>
-        <div class="module-card">
-            <p>CMP3751M</p>
-            <h1>Machine Learning</h1>
-            <h2><span class="date">1</span>Intro to Module</h2><br>
-            <h2><span class="date">2</span>User-Centred Design</h2><br>
-            <h2><span class="date">3</span>Mobile User Experience</h2><br>
-            <h2><span class="date">4</span>Mobile Usability</h2><br>
-            <h2><span class="date">5</span>Intro to React Native</h2><br>
-            <h2><span class="date">6</span>Styling and Using the CLI</h2><br>
-            <h2><span class="date">7</span>Camera and Interaction</h2><br>
-            <h2><span class="date">8</span>Geolocation</h2><br>
-            <h2><span class="date">9</span>Ajax API</h2><br>
-            <h2><span class="date">10</span>Evaluation Methods</h2><br>
-            <h2><span class="date">11</span>Dark Patterns</h2><br>
-            <h2><span class="date">12</span>Module Wrap-Up</h2><br>
-        </div>
-        <div class="module-card">
-            <p>CMP3754M</p>
-            <h1>Vir. and Aug. Reality</h1>
-            <h2><span class="date">1</span>Week 1 topic</h2><br>
-            <h2><span class="date">2</span>Week 2 topic</h2><br>
-            <h2><span class="date">3</span>Week 3 topic</h2><br>
-            <h2><span class="date">4</span>Week 4 topic</h2><br>
-            <h2><span class="date">5</span>Week 5 topic</h2><br>
-            <h2><span class="date">6</span>Week 6 topic</h2><br>
-            <h2><span class="date">7</span>Week 7 topic</h2><br>
-            <h2><span class="date">8</span>Week 8 topic</h2><br>
-            <h2><span class="date">9</span>Week 9 topic</h2><br>
-            <h2><span class="date">10</span>Week 10 topic</h2><br>
-            <h2><span class="date">11</span>Week 11 topic</h2><br>
-            <h2><span class="date">12</span>Week 12 topic</h2><br>
-        </div>
+    <div id="page-head">
+        <h1>Third Year Resources</h1>
     </div>
 
+    <div id="modules-grid">
+        <!-- module list -->
+        <div id="modules-list">
+            <h3>semester a modules</h3>
+            <h1 onclick="showModule(0)">Big Data</h1>
+            <h1 onclick="showModule(1)">Machine Learning</h1>
+            <h1 onclick="showModule(2)">Virtual and Augmented Reality</h1>
+            <br>
+            <h3>semester b modules</h3>
+            <h1 onclick="showModule(3)">Parallel Programming</h1>
+            <h1 onclick="showModule(4)">Cross-Platform Development</h1>
+            <br>
+            <h3>other</h3>
+            <a href="https://docs.google.com/spreadsheets/d/1dm_rgx6yAHT6I8VeDimqSyQPqqAcsjw99Ex6BevOFpQ/edit?usp=sharing" target="_blank" rel="noreferrer"><h1>Grade calculator</h1></a>
+            <a href="Referencing Handbook.pdf" target="_blank" rel="noreferrer"><h1>Referencing handbook</h1></a>
+        </div>
+        
+        <!-- content -->
+        <div id="content">
+            <div class="module"></div>
+            <div class="module"></div>
+            <div class="module"></div>
+            <div class="module"></div>
+            <div class="module"></div>
+        </div>
+    </div>
 </body>
 
-<script type="text/javascript" src="../script.js"></script>
+<script src="topics.js"></script>
+<script src="script.js"></script>
 
 </html>

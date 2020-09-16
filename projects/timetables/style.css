@@ -18,15 +18,24 @@ h1 {
 button {
     color: var(--primary-text);
     padding: 6px 8px;
-    font-size: 0.8rem;
+    font-size: 1.2rem;
     font-weight: 500;
     border: none;
-    background-color: transparent;
+    background-color: #fff;
+    border: 1px solid #ddd;
     border-radius: 5px;
     cursor: pointer;
 }
-    button:disabled { cursor: default; }
-    button:hover:enabled { text-decoration: underline; }
+    button:disabled {
+        padding: 6px 9px;
+        cursor: default;
+        border: none;
+        background-color: transparent;
+    }
+    button:hover:enabled {
+        text-decoration: underline;
+        border-color: #aaa;
+    }
     button+button { margin-left: 10px; }
 
 
@@ -67,9 +76,9 @@ button {
                 border-radius: 3px 3px 0 0;
                 color: var(--primary-text);
                 margin: 0 5px;
-                width: 5rem;
+                width: 6rem;
                 border: none;
-                font-size: 0.75rem;
+                font-size: 1.2rem;
                 border-bottom: 1px solid #aaaaaa55;
                 background-color: transparent;
             }
@@ -89,7 +98,7 @@ button {
         #output-wrapper { margin-top: 0; }
         /* table titles */
         #user-wrapper h1, #output-wrapper h1 {
-            font-size: 1rem;
+            font-size: 1.6rem;
             border-bottom: 1px solid transparent;
         }
             #user-wrapper h1 {
@@ -113,7 +122,8 @@ button {
         /* initially hide user tables */
         .user { display: none; }
         #user-caption, #comparison-caption {
-            font-size: 0.75rem;
+            margin: 20px 0 10px 0;
+            font-size: 1.25rem;
             color: var(--secondary-text);
             text-align: center;
         }
@@ -133,9 +143,11 @@ button {
             cursor: pointer;
             user-select: none;
             border: 1px solid #fff;
+            font-size: 1.25rem;
         }
             .free, .busy, .allFree, .mostFree, .mostBusy {
                 color: var(--primary-text);
+                font-size: 1.5rem !important;
             }
             .allFree, .mostFree, .mostBusy { cursor: initial; }
                 .allFree  { background-color: var(--free-cell) !important; }
@@ -147,7 +159,7 @@ button {
             vertical-align: top !important;
             font-weight: 400 !important;
             color: var(--primary-text);
-            font-size: 0.6rem !important;
+            font-size: 1rem !important;
         }
             /* left time column */
             .time-cell-l {
@@ -162,11 +174,12 @@ button {
         /* day label */
         .day {
             text-align: center;
+            padding-top: 10px;
             vertical-align: bottom;
         }
         /* table lables */
         .day, .time-cell-l, .time-cell-r {
-            font-size: 0.7rem;
+            font-size: 1rem !important;
             font-weight: 500;
             font-variant: small-caps;
             border: none !important;
