@@ -3,72 +3,86 @@
 <html lang="en">
 
 <head>
-    <link rel="shortcut icon" href=""/>
-    <link rel="stylesheet" type="text/css" href="style-main.css">
     <title>Bailey Symonds</title>
+
+    <link rel="shortcut icon" href=""/>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="Hello, I'm Bailey, a computer science student at the University of Lincoln interested in user experience design and human-computer interaction.">
 </head>
 
 <body>
-    <!-- navigation -->
-    <div id="nav-container">
+
+    <div id="body-wrapper">
+
         <div id="nav">
-            <p><a href="https://bsym.dev/">bsym.dev</a></p>
-            <div id="social">
-                <a href="https://www.linkedin.com/in/bsym" target="_blank" rel="noreferrer"><img src="images/linkedin.jpg" alt="My LinkedIn profile"></a>
-                <a href="https://www.github.com/baysym" target="_blank" rel="noreferrer"><img src="images/github.jpg" alt="My GitHub profile"></a>
-                <a href="https://www.instagram.com/baysym" target="_blank" rel="noreferrer"><img src="images/instagram.jpg" alt="My Instagram profile"></a>
+            <h1>bailey symonds</h1><br>
+            <p>third-year CS undergrad, hoping to postgrad in UXD</p>
+
+            <h2 id="this-site" class="maximised-title" onclick="minMax('this-site')">on this site</h2><br>
+            <div id="this-site-links" class="maximised">
+                <a id="this-page" href="">portfolio</a>
+                <a href="https:/bsym.dev/about">about me</a><br>
+                <a href="https:/bsym.dev/cv">my CV</a>
             </div>
+
+            <h2 id="contact-me" class="maximised-title" onclick="minMax('contact-me')">contact me</h2><br>
+            <div id="contact-me-links" class="maximised">
+                <a href="mailto:bsym307@gmail.com" rel="noreferrer noopener">bsym307@gmail.com</a>
+                <a href="https://linkedin.com/in/bsym" rel="noreferrer noopener">linkedin.com/in/bsym</a><br>
+            </div>
+            
         </div>
+
+        <div id="content">
+
+            <a href="" class="card">
+                <div class="card-img">
+                    <img src="img/poetry.png">
+                </div>
+                <div class="card-text-container">
+                    <div class="card-text">
+                        <h1>poetry machine</h1>
+                        <h2>part of a research project exploring use cases for AI-generated media</h2>
+                        <p>case study</p> <!-- these next -->
+                    </div>
+                </div>
+            </a>
+
+            <a href="" class="card">
+                <div class="card-img">
+                    <img src="img/remy.png">
+                </div>
+                <div class="card-text-container">
+                    <div class="card-text">
+                        <h1>remy</h1>
+                        <h2>a collaborative summer project producing a dedicated recipe management app</h2>
+                        <p>case study</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="" class="card">
+                <div class="card-img">
+                    <img src="img/timetables.png">
+                </div>
+                <div class="card-text-container">
+                    <div class="card-text">
+                        <h1>timetable comparison</h1>
+                        <h2>compare multiple timetables to find the ebst time for your group to meet</h2>
+                        <p>project page</p>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+
     </div>
 
-    <div class="banner"><img src="images/banner.jpg"></div>
-
-    <div id="about-me">
-        <h1>Hi, I'm Bailey!</h1>
-        <p>
-            I'm a third year computer science student at the University of Lincoln, interested in user experience design and human-computer interaction. In my free time, I enjoy photography, playing guitar and listening to audiobooks and podcasts.
-        </p>
-        <p>
-            You can <a href="https://bsym.dev/CV.pdf">read my CV</a> and get in touch through the social links above or <a href="mailto:bsym307@gmail.com">email me</a>.
-        </p>
-    </div>
-
-    <!--
-    <div id="projects">
-        <a class="project">
-            <img src="images/poetry.jpg">
-            <div class="text-container">
-                <div class="text">
-                    <h1>Poetry Machine</h1>
-                    <p>Part of a research project exploring use cases for AI-generated media.</p>
-                    <h2>read my case study</h2>
-                </div>
-            </div>
-        </a>
-        <a class="project">
-            <img src="images/remy.jpg">
-            <div class="text-container">
-                <div class="text">
-                    <h1>Remy</h1>
-                    <p>A collaborative summer project producing a dedicated recipe management app.</p>
-                    <h2>read my case study</h2>
-                </div>
-            </div>
-        </a>
-        <a href="projects/timetables/index.html" class="project">
-            <img src="images/timetables.jpg">
-            <div class="text-container">
-                <div class="text">
-                    <h1>Timetable Comparison</h1>
-                    <p>Compare multiple timetables to find the best time for a group to meet.</p>
-                    <h2>use this tool</h2>
-                </div>
-            </div>
-        </a>
-    </div>
-    -->
 </body>
+
+<script src="script.js"></script>
 
 </html>
