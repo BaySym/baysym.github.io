@@ -38,34 +38,6 @@ const json = `
     },
 
     {
-        "id": "parallel-programming",
-        "name": "parallel programming",
-        "lectures": [],
-        "reading": [
-            {
-                "title": "structured parallel programming",
-                "author": "McCool, et al.",
-                "link": ""
-            },
-            {
-                "title": "an introduction to parallel programming",
-                "author": "Pacheco",
-                "link": ""
-            },
-            {
-                "title": "OpenCL in action",
-                "author": "Scarpino", 
-                "link": ""
-            },
-            {
-                "title": "heterogeneous computing with OpenCL 2.0",
-                "author": "Kaeli, et al.",
-                "link": ""
-            }
-        ]
-    },
-
-    {
         "id": "virtual-reality",
         "name": "virtual and augmented reality",
         "lectures": [],
@@ -89,6 +61,34 @@ const json = `
                 "title": "the VR book",
                 "author": "Jerald",
                 "link": "https://library.lincoln.ac.uk/items/eds/cat04851a/uln.199845?query=title%3A%28The+VR+book%3A+human-centered+design+for+virtual+reality%29&resultsUri=items%3Fquery%3Dtitle%253A%2528The%2BVR%2Bbook%253A%2Bhuman-centered%2Bdesign%2Bfor%2Bvirtual%2Breality%2529%26target%3Deds%26facet%255B0%255D%3Dfulltext%253Ayes&facet%5B0%5D=fulltext%3Ayes&target=eds"
+            }
+        ]
+    },
+
+    {
+        "id": "parallel-programming",
+        "name": "parallel programming",
+        "lectures": [],
+        "reading": [
+            {
+                "title": "structured parallel programming",
+                "author": "McCool, et al.",
+                "link": ""
+            },
+            {
+                "title": "an introduction to parallel programming",
+                "author": "Pacheco",
+                "link": ""
+            },
+            {
+                "title": "OpenCL in action",
+                "author": "Scarpino", 
+                "link": ""
+            },
+            {
+                "title": "heterogeneous computing with OpenCL 2.0",
+                "author": "Kaeli, et al.",
+                "link": ""
             }
         ]
     },
