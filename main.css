@@ -171,15 +171,15 @@ a {
             .card:hover .card-img img { filter: drop-shadow(0 20px 16px #0000001a); }
 
         /* content */
-            #cv a {
+            a {
                 font-size: 0.9rem;
                 color: var(--link1);
                 cursor: pointer;
                 padding: 1ch;
                 margin-left: -1ch;
             }
-                #cv a:hover { color: var(--link2); }
-                #cv a:hover:before {
+                a:hover { color: var(--link2); }
+                a:hover:before {
                     color: var(--link2);
                     content: "> ";
                     margin-left: -2ch;
@@ -265,6 +265,33 @@ a {
             margin-bottom: 20px;
         }
         .module h2 { margin: 10px 0; }
+
+    
+    /* grades */
+    #grades h1 #grade { opacity: 0.66; }
+        #grades h1 #grade:after { content: "%"; }
+        h1 {
+            font-size: 1.2rem;
+            margin-bottom: 2ch;
+        }
+
+        #grades h2 * { margin: 0; }
+
+        .assessments * {
+            display: inline;
+            margin-right: 20px;
+        }
+        .assessments h2 { cursor: initial; }
+        .assessments input {
+            font-family: 'Roboto Mono', monospace;
+            background-color: var(--base2);
+            border: none;
+            border-radius: 5px;
+            box-sizing: border-box;
+            padding: 1ch;
+            width: 6ch;
+        }
+
 
 @media only screen and (max-width: 700px) {
     #body-wrapper { grid-template-columns: 1fr; }
