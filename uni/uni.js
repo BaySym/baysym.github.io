@@ -1,12 +1,6 @@
 const data = JSON.parse(json);
 const mod = document.getElementsByClassName('module');
 
-//mM('big-data');
-mM('machine-learning');
-mM('parallel-programming');
-mM('virtual-reality');
-mM('cross-platform');
-
 for (let i = 0; i < 5; i++) {
     let out = "";
 
