@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html lang="en">
+
+<head>
+    <title>Grades - Bailey Symonds</title>
+
+    <link rel="shortcut icon" href=""/>
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Hello, I'm Bailey, a computer science student at the University of Lincoln interested in user experience design and human-computer interaction.">
+</head>
+
+<body>
+
+    <div id="body-wrapper">
+
+        <div id="nav">
+            <h1>bailey symonds</h1><br>
+            <p>third-year CS undergrad, hoping to postgrad in UXD</p>
+
+            <h2 id="this-site" class="max-t" onclick="mM('this-site')">on this site</h2><br>
+            <div id="this-site-links" class="max">
+                <a href="https://bsym.dev">portfolio</a>
+                <a href="https://bsym.dev/about">about me</a><br>
+                <a href="https://bsym.dev/cv">my CV</a><br>
+            </div>
+
+            <h2 id="contact-me" class="max-t" onclick="mM('contact-me')">contact me</h2><br>
+            <div id="contact-me-links" class="max">
+                <a href="mailto:bsym307@gmail.com" rel="noreferrer noopener">bsym307@gmail.com</a>
+                <a href="https://linkedin.com/in/bsym" rel="noreferrer noopener" target="_blank">linkedin.com/in/bsym</a><br>
+            </div>
+            
+        </div>
+
+        <div id="content">
+
+            <div id="grades">
+
+                <h1 id="third-year">third year: <span id="grade">0</span></h1>
+
+                <div class="module">
+                    <h1 id="big-data" class="max-t min-t" onclick="mM('big-data')">big data: <span id="grade">0</span></h1>
+                    <div id="big-data-links" class="min assessments">
+                        <div><h2>1<span style="opacity: 0.66"> (50%)</span>: </h2><input id="bd1"></div>
+                        <div><h2>2<span style="opacity: 0.66"> (50%)</span>: </h2><input id="bd2"></div>
+                    </div>
+                </div>
+
+                <div class="module">
+                    <h1 id="machine-learning" class="max-t min-t" onclick="mM('machine-learning')">machine learning: <span id="grade">0</span></h1>
+                    <div id="machine-learning-links" class="min assessments">
+                        <div><h2>1<span style="opacity: 0.66"> (50%)</span>: </h2><input id="ml1"></div>
+                        <div><h2>2<span style="opacity: 0.66"> (50%)</span>: </h2><input id="ml2"></div>
+                    </div>
+                </div>
+
+                <div class="module">
+                    <h1 id="parallel-programming" class="max-t min-t" onclick="mM('parallel-programming')">parallel programming: <span id="grade">0</span></h1>
+                    <div id="parallel-programming-links" class="min assessments">
+                        <div><h2>1<span style="opacity: 0.66"> (40%)</span>: </h2><input id="pp1"></div>
+                        <div><h2>2<span style="opacity: 0.66"> (60%)</span>: </h2><input id="pp2"></div>
+                    </div>
+                </div>
+
+                <div class="module">
+                    <h1 id="project" class="max-t min-t" onclick="mM('project')">project: <span id="grade">0</span></h1>
+                    <div id="project-links" class="min assessments">
+                        <div><h2>1<span style="opacity: 0.66"> (20%)</span>: </h2><input id="p1"></div>
+                        <div><h2>2<span style="opacity: 0.66"> (60%)</span>: </h2><input id="p2"></div>
+                        <div><h2>3<span style="opacity: 0.66"> (20%)</span>: </h2><input id="p3"></div>
+                    </div>
+                </div>
+
+                <div class="module">
+                    <h1 id="cloud-computing" class="max-t min-t" onclick="mM('cloud-computing')">cloud computing: <span id="grade">0</span></h1>
+                    <div id="cloud-computing-links" class="min assessments">
+                        <div><h2>1<span style="opacity: 0.66"> (50%)</span>: </h2><input id="cc1"></div>
+                        <div><h2>2<span style="opacity: 0.66"> (50%)</span>: </h2><input id="cc2"></div>
+                    </div>
+                </div>
+
+                <div class="module">
+                    <h1 id="image-processing" class="max-t min-t" onclick="mM('image-processing')">image processing: <span id="grade">0</span></h1>
+                    <div id="image-processing-links" class="min assessments">
+                        <div><h2>1<span style="opacity: 0.66"> (100%)</span>: </h2><input id="ip1"></div>
+                    </div>
+                </div>
+
+                <div class="module">
+                    <h1 id="virtual-reality" class="max-t min-t" onclick="mM('virtual-reality')">virtual and augmented reality: <span id="grade">0</span></h1>
+                    <div id="virtual-reality-links" class="min assessments">
+                        <div><h2>1<span style="opacity: 0.66"> (100%)</span>: </h2><input id="vr1"></div>
+                    </div>
+                </div>
+
+                <div class="module">
+                    <h1 id="cross-platform" class="max-t min-t" onclick="mM('cross-platform')">cross-platform development: <span id="grade">0</span></h1>
+                    <div id="cross-platform-links" class="min assessments">
+                        <div><h2>1<span style="opacity: 0.66"> (100%)</span>: </h2><input id="cp1"></div>
+                    </div>
+                </div>
+
+                <div class="module">
+                    <h1 id="cyber-security" class="max-t min-t" onclick="mM('cyber-security')">cyber security: <span id="grade">0</span></h1>
+                    <div id="cyber-security-links" class="min assessments">
+                        <div><h2>1<span style="opacity: 0.66"> (40%)</span>: </h2><input id="cs1"></div>
+                        <div><h2>2<span style="opacity: 0.66"> (60%)</span>: </h2><input id="cs2"></div>
+                    </div>
+                </div>
+
+                <div class="module">
+                    <h1 id="physics-simulation" class="max-t min-t" onclick="mM('physics-simulation')">physics simulation: <span id="grade">0</span></h1>
+                    <div id="physics-simulation-links" class="min assessments">
+                        <div><h2>1<span style="opacity: 0.66"> (40%)</span>: </h2><input id="ps1"></div>
+                        <div><h2>2<span style="opacity: 0.66"> (60%)</span>: </h2><input id="ps2"></div>
+                    </div>
+                </div>
+
+            </div>
+        
+        </div>
+
+    </div>
+
+</body>
+
+<script src="../script.js"></script>
+<script src="grades.js"></script>
+
+</html>
