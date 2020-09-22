@@ -1,4 +1,4 @@
-function minMax(id) {
-    document.getElementById(id).classList.toggle('minimised-title');
-    document.getElementById(id + '-links').classList.toggle('minimised');
+function mM(id) {
+    document.getElementById(id).classList.toggle('min-t');
+    document.getElementById(id + '-links').classList.toggle('min');
 }
