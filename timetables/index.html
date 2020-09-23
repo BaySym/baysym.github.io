@@ -23,34 +23,43 @@
         </div>
 
         <h1>Timetable Comparison</h1>
-        <p>Compare <span id="idCount"></span> timetables to find the best time for your group to meet.</p>
+        <p>Select your group members' busy time slots to see the best times for you to meet.</p>
 
-        <div class="timetable-wrapper">
+        <div class="section-wrapper">
             <div class="top-bar">
-                <div id="user-drop" class="drop btn" onclick="mMDrop('this-user-drop-arrow', 'user-drop-list')">
-                    <div class="drop-selected-cn">
-                        <p id="this-user-name" class="closed-drop user-name">username</p>
-                        <div id="this-user-drop-arrow" class="closed-drop"></div>
+                
+                <div id="buttons">
+                    <div id="user-drop" class="drop btn" onmouseover="openDrop('this-user-drop-arrow', 'user-drop-list')" onmouseout="closeDrop('this-user-drop-arrow', 'user-drop-list')">
+                        <div class="drop-selected-cn">
+                            <p id="this-user-name" class="closed-drop user-name">username</p>
+                            <div id="this-user-drop-arrow" class="closed-drop"></div>
+                        </div>
+                        <div id="user-drop-list" class="drop-list"></div>
                     </div>
-                    <div id="user-drop-list" class="drop-list"></div>
+
+                    <button onclick="rename()" class="btn">
+                        <p>Rename user</p>
+                    </button>
+                    <button onclick="add()" class="btn">
+                        <p>New user</p>
+                    </button>
+                    <button onclick="remove()" class="del btn">
+                        <p>Delete user</p>
+                    </button>
                 </div>
 
-                <button onclick="rename()" class="btn">
-                    <p>Rename user</p>
+                <button id="show-comp-btn" onclick="showComparison()" class="comparison btn">
+                    <p>Show comparison</p>
                 </button>
-                <button onclick="add()" class="btn">
-                    <p>New user</p>
-                </button>
-                <button onclick="remove()" class="del btn" style="border-color: #e44; color: #c00">
-                    <p>Delete user</p>
-                </button>
-            </div>
-        </div>
 
-        <div class="timetable-wrapper">
-            <div class="top-bar">
-                <h2>comparison</h2>
+                <button id="hide-comp-btn" onclick="hideComparison()" class="comparison btn hidden">
+                    <p>Hide comparison</p>
+                </button>
             </div>
+
+            <div id="user-timetables"></div>
+
+            <div id="comparison" class="hidden"></div>
         </div>
 
     </div>
