@@ -5,8 +5,8 @@
     /* colours */
     --text1: #002b36;
     --text2: #586e75;
-    --base2: #eee8d5;
-    --base3: #fdf6e3;
+    --base2: #eee;
+    --base3: #fafafa;
     --link0: #a1cbe4;
     --link1: #268bd2;
     --link2: #1d689e;
@@ -30,7 +30,7 @@
 
 /* ensures a scrollbar on all pages */
 html {
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Segoe UI', monospace;
     
     overflow-y: scroll;
     background-color: var(--base3);
@@ -41,6 +41,27 @@ html * {
     padding: 0;
     margin: 0;
 }
+
+/* buttons */
+.btn {
+    display: inline-block;
+
+    height: 100%;
+    
+    box-sizing: border-box;
+    border: 1px solid #bbb;
+    border-radius: 3px;
+
+    background-color: #fff;
+
+    cursor: pointer;
+    user-select: none;
+}
+    button:hover { background-color: #f7f7f7; }
+    button:focus { outline: none; }
+
+    .btn p { padding: 3px 10px 5px 10px; }
+    
 
 /* main page layout */
 #body-wrapper {
@@ -165,6 +186,14 @@ p {
             align-items: center;
             padding: 20px 0;
         }
+            .card p {
+                color: var(--text2);
+                font-variant: small-caps;
+
+                margin-bottom: -5px;
+
+                display: block;
+            }
 
             .card h1 {
                 font-size: 1.2rem;
@@ -179,16 +208,6 @@ p {
 
                 padding: 10px 0;
             }
-
-            .card p { color: var(--link1); }
-
-                .card:hover p { color: var(--link2); }
-
-                .card:hover p:before {
-                    content: "> ";
-
-                    margin-left: -2ch;
-                }*
 
 /* cv */
     #cv h1 {
