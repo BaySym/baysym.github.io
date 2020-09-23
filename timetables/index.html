@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html lang="en">
+
+<head>
+    <title>Timetables - Bailey Symonds</title>
+
+    <link rel="shortcut icon" href=""/>
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    <link rel="stylesheet" type="text/css" href="timetables.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Hello, I'm Bailey, a computer science student at the University of Lincoln interested in user experience design and human-computer interaction.">
+</head>
+
+<body>
+
+    <div id="timetables">
+
+        <div id="back">
+            <a href="https://bsym.dev/">bsym.dev</a>
+        </div>
+
+        <h1>Timetable Comparison</h1>
+        <p>Compare <span id="idCount"></span> timetables to find the best time for your group to meet.</p>
+
+        <div class="timetable-wrapper">
+            <div class="top-bar">
+                <div id="user-drop" class="drop btn" onclick="mMDrop('this-user-drop-arrow', 'user-drop-list')">
+                    <div class="drop-selected-cn">
+                        <p id="this-user-name" class="closed-drop user-name">username</p>
+                        <div id="this-user-drop-arrow" class="closed-drop"></div>
+                    </div>
+                    <div id="user-drop-list" class="drop-list"></div>
+                </div>
+
+                <button onclick="rename()" class="btn">
+                    <p>Rename user</p>
+                </button>
+                <button onclick="add()" class="btn">
+                    <p>New user</p>
+                </button>
+                <button onclick="remove()" class="del btn" style="border-color: #e44; color: #c00">
+                    <p>Delete user</p>
+                </button>
+            </div>
+        </div>
+
+        <div class="timetable-wrapper">
+            <div class="top-bar">
+                <h2>comparison</h2>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+<script src="../script.js"></script>
+<script src="timetables.js"></script>
+
+</html>

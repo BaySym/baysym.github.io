@@ -1,7 +1,6 @@
 /* universal */
 :root {
     font-size: 16px;
-    font-family: 'Roboto Mono', monospace;
 
     /* colours */
     --text1: #002b36;
@@ -11,7 +10,6 @@
     --link0: #a1cbe4;
     --link1: #268bd2;
     --link2: #1d689e;
-    background-color: var(--base3);
 }
 
 /* highlighted */
@@ -31,7 +29,12 @@
     ::-webkit-scrollbar-thumb:hover { background-color: #c4bfae; }
 
 /* ensures a scrollbar on all pages */
-html { overflow-y: scroll; }
+html {
+    font-family: 'Roboto Mono', monospace;
+    
+    overflow-y: scroll;
+    background-color: var(--base3);
+}
 
 /* clean slate */
 html * {

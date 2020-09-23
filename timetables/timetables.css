@@ -1,0 +1,156 @@
+html { background-color: #fff; }
+    html * { font-family: 'Segoe UI', sans-serif; }
+
+/* scroll bar */
+::-webkit-scrollbar, ::-webkit-scrollbar-track {
+    background-color: transparent;
+
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    border: 1px solid #f4f4f4;
+    background-color: #ccc;
+    
+    border-radius: 4px;
+}
+
+#timetables {
+    width: 800px;
+    max-width: calc(100% - 50px);
+    margin: auto;
+}
+
+/* back to bsym.dev */
+#back { padding: 20px 0; }
+
+    #back a {
+        color: var(--link1);
+        font-size: 0.8rem;
+        font-family: 'Roboto Mono', monospace;
+        text-decoration: none;
+    }
+        #back a:hover {
+            color: var(--link2);
+        }
+
+        #back a:before {
+            content: "";
+            margin-left: 0;
+        }
+        #back a:hover:before {
+            content: "< ";
+            margin-left: -2ch;
+        }
+
+h1 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #444;
+
+    padding-top: 10px;
+}
+
+h2 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #222;
+}
+
+.timetable-wrapper {
+    width: 100%;
+    height: 300px;
+
+    background-color: #f4f4f4;
+
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    margin: 40px 0;
+
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+    .top-bar {
+        display: flex;
+        vertical-align: top;
+    }
+        .btn {
+            display: inline-block;
+
+            height: 100%;
+            
+            box-sizing: border-box;
+            border: 1px solid #bbb;
+            border-radius: 3px;
+
+            background-color: #fff;
+
+            cursor: pointer;
+            user-select: none;
+        }
+            button:hover { filter: drop-shadow(0 2px 2px #0000001a); }
+                .del:active { background-color: #fee !important; }
+            button:focus { outline: none; }
+
+            .btn:not(.drop):active {
+                background-color: #eee;
+                filter: none;
+            }
+            .btn + .btn { margin-left: 20px; }
+
+            .btn p { padding: 3px 10px 5px 10px; }
+
+            .drop {
+                background-color: #fff;
+
+                width: 130px;
+                text-overflow: ellipsis; 
+            }
+                .drop-selected-cn {
+                    display: flex;
+                    justify-content: space-between;
+                }
+                .drop-selected-cn * { display: inline; }
+                #this-user-drop-arrow.closed-drop:after {
+                    content: "";
+                    border: 4px solid transparent;
+                    border-top: 4px solid #444;
+                    margin-right: 10px;
+                    margin-top: 15px;
+                    display: inline-block;
+                    vertical-align: bottom;
+                }
+                #this-user-drop-arrow.open-drop:after {
+                    content: "";
+                    border: 4px solid transparent;
+                    border-bottom: 4px solid #444;
+                    margin-right: 10px;
+                    margin-bottom: 2px;
+                    display: inline-block;
+                    vertical-align: bottom;
+                }
+
+                #this-user-name {
+                    font-weight: 500;
+                    margin: 0 !important;
+                }
+                
+                .hidden { display: none; }
+                .drop-list {
+
+                    border-radius: 3px;
+
+                    overflow-y: scroll;
+                    max-height: 150px;
+                }
+                    .drop-list p:hover { background-color: #f4f4f4; }
+
+                    #user-drop-list { height: 0px; }
+
+                    .user-name {
+                        margin: 4px 0;
+                        border-left: 3px solid;
+                    }
