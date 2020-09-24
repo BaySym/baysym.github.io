@@ -51,7 +51,7 @@ function rename() {
 function add() {
     let id = generateID();
     let name = userNames[usedIDs.indexOf(id)];
-    drop.innerHTML += `<p style="border-color: #${id}aa" id="user-${id}" class="user-name" onclick="dropSelect('${id}')">${name}</p>`;
+    drop.innerHTML += `<p style="border-color: #${id}" id="user-${id}" class="user-name" onclick="dropSelect('${id}')">${name}</p>`;
 
     document.getElementById('user-timetables').innerHTML += `
         <div id="table-${id}" class="timetable-wrapper hidden">
