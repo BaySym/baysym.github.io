@@ -21,7 +21,8 @@
     .module:hover {
         border-color: #e6e6e6;
         filter: drop-shadow(0 4px 4px #00000011);
-        transition: 0.1s ease-in-out;}
+        transition: 0.1s ease-in-out;
+    }
     .module h1 {
         color: var(--text1);
         font-size: 1rem;
