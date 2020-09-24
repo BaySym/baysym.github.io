@@ -7,6 +7,7 @@
 
     <link rel="shortcut icon" href=""/>
     <link rel="stylesheet" type="text/css" href="../main.css">
+    <link rel="stylesheet" type="text/css" href="uni.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
     <meta name="viewport" content="width=device-width">
@@ -18,100 +19,85 @@
     <div id="body-wrapper">
 
         <div id="nav">
-            <h1>bailey symonds</h1><br>
-            <p>third-year CS undergrad, hoping to postgrad in UXD</p>
 
-            <h2 id="this-site" class="max-t" onclick="mM('this-site')">on this site</h2><br>
-            <div id="this-site-links" class="max">
-                <a href="https://bsym.dev">portfolio</a>
-                <a href="https://bsym.dev/about">about me</a><br>
-                <a href="https://bsym.dev/cv">my CV</a><br>
-            </div>
+            <img src="../img/square.jpg">
 
-            <h2 id="contact-me" class="max-t" onclick="mM('contact-me')">contact me</h2><br>
-            <div id="contact-me-links" class="max">
-                <a href="mailto:bsym307@gmail.com" rel="noreferrer noopener">bsym307@gmail.com</a>
-                <a href="https://linkedin.com/in/bsym" rel="noreferrer noopener" target="_blank">linkedin.com/in/bsym</a><br>
-            </div>
+            <h1>Bailey Symonds</h1><br>
+            <h2>Hello! I'm a third-year CS undergrad, interested in HCI and UXD.</h2>
+
+            <p>Contact me:</p>
+            <a href="mailto:bsym307@gmail.com" rel="noreferrer noopener">bsym307@gmail.com</a>
+            <a href="https://linkedin.com/in/bsym" rel="noreferrer noopener" target="_blank">LinkedIn</a><br>
+
+            <p>Other links:</p>
+            <a href="" target="_blank">My CV</a>
+            <a href="" id="this-page">Third year resources</a>
+            <a href="" target="_blank">Grade calculator</a>
+            <a href="" target="_blank">Timetable comparison</a>
             
         </div>
 
         <div id="content">
 
-            <img class="banner" src="uni.jpg">
+            <div class="content-column">
 
-            <!-- big data -->
-            <div class="module">
-                <h1 id="big-data" class="max-t" onclick="mM('big-data')">big data</h1>
-                <div id="big-data-links">
-                    <div>
-                        <h2 id="bd-l" class="max-t min-t" onclick="mM('bd-l')">lecture notes</h2>
-                        <div id="bd-l-links" class="min grid"></div>
-                    </div>
-                    <div>
-                        <h2 id="bd-r" class="max-t min-t" onclick="mM('bd-r')">reading list</h2>
-                        <div id="bd-r-links" class="min"></div>
-                    </div>
+                <!-- big data -->
+                <div class="module">
+                    <h1>Big Data</h1>
+
+                    <h2>Lecture notes</h2>
+                    <div id="bd-lectures"></div>
+
+                    <h2>Reading material</h2>
+                    <div id="bd-reading"></div>
                 </div>
+
+                <!-- machine learning -->
+                <div class="module">
+                    <h1>Machine Learning</h1>
+
+                    <h2>Lecture notes</h2>
+                    <div id="ml-lectures"></div>
+
+                    <h2>Reading material</h2>
+                    <div id="ml-reading"></div>
+                </div>
+                
+                <!-- virtual and augmented reality -->
+                <div class="module">
+                    <h1>Virtual and Augmented Reality</h1>
+
+                    <h2>Lecture notes</h2>
+                    <div id="vr-lectures"></div>
+
+                    <h2>Reading material</h2>
+                    <div id="vr-reading"></div>
+                </div>
+
             </div>
 
-            <!-- machine learning -->
-            <div class="module">
-                <h1 id="machine-learning" class="max-t" onclick="mM('machine-learning')">machine learning</h1>
-                <div id="machine-learning-links">
-                    <div>
-                        <h2 id="ml-l" class="max-t min-t" onclick="mM('ml-l')">lecture notes</h2>
-                        <div id="ml-l-links" class="min grid"></div>
-                    </div>
-                    <div>
-                        <h2 id="ml-r" class="max-t min-t" onclick="mM('ml-r')">reading list</h2>
-                        <div id="ml-r-links" class="min"></div>
-                    </div>
+            <div class="content-column">
+                
+                <!-- parallel programming -->
+                <div class="module">
+                    <h1>Parallel Programming</h1>
+
+                    <h2>Lecture notes</h2>
+                    <div id="pp-lectures"></div>
+
+                    <h2>Reading material</h2>
+                    <div id="pp-reading"></div>
                 </div>
-            </div>
-            
-            <!-- virtual and augmented reality -->
-            <div class="module">
-                <h1 id="virtual-reality" class="max-t" onclick="mM('virtual-reality')">virtual and augmented reality</h1>
-                <div id="virtual-reality-links">
-                    <div>
-                        <h2 id="vr-l" class="max-t min-t" onclick="mM('vr-l')">lecture notes</h2>
-                        <div id="vr-l-links" class="min grid"></div>
-                    </div>
-                    <div>
-                        <h2 id="vr-r" class="max-t min-t" onclick="mM('vr-r')">reading list</h2>
-                        <div id="vr-r-links" class="min"></div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- parallel programming -->
-            <div class="module">
-                <h1 id="parallel-programming" class="max-t" onclick="mM('parallel-programming')">parallel programming</h1>
-                <div id="parallel-programming-links">
-                    <div>
-                        <h2 id="pp-l" class="max-t min-t" onclick="mM('pp-l')">lecture notes</h2>
-                        <div id="pp-l-links" class="min grid"></div>
-                    </div>
-                    <div>
-                        <h2 id="pp-r" class="max-t min-t" onclick="mM('pp-r')">reading list</h2>
-                        <div id="pp-r-links" class="min"></div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- cross-platform development -->
-            <div class="module">
-                <h1 id="cross-platform" class="max-t" onclick="mM('cross-platform')">cross-platform development</h1>
-                <div id="cross-platform-links">
-                    <div>
-                        <h2 id="cp-l" class="max-t min-t" onclick="mM('cp-l')">lecture notes</h2>
-                        <div id="cp-l-links" class="min grid"></div>
-                    </div>
-                    <div>
-                        <h2 id="cp-r" class="max-t min-t" onclick="mM('cp-r')">reading list</h2>
-                        <div id="cp-r-links" class="min"></div>
-                    </div>
+                
+                <!-- cross-platform development -->
+                <div class="module">
+                    <h1>Cross-Platform Development</h1>
+
+                    <h2>Lecture notes</h2>
+                    <div id="cp-lectures"></div>
+
+                    <h2>Reading material</h2>
+                    <div id="cp-reading"></div>
                 </div>
             </div>
             
@@ -119,10 +105,14 @@
 
     </div>
 
+    <div id="footer">
+        <p>This site's <a href="https://github.com/baysym/baysym.github.io" rel="noreferrer noopener" target="_blank">source code</a> is available on <a href="https://github.com/baysym" rel="noreferrer noopener" target="_blank">my GitHub page</a>.</p>
+    </div>
+
 </body>
 
 <script src="../script.js"></script>
-<script src="json.js"></script>
+<script src="uni-json.js"></script>
 <script src="uni.js"></script>
 
 </html>

@@ -1,26 +1,29 @@
 const data = JSON.parse(json);
 const mod = document.getElementsByClassName('module');
 
-for (let i = 0; i < 5; i++) {
-    let out = "";
+// populate module cards
+for (let i = 0; i < data.length; i++) {
 
-    // add lecture notes
-    for (let j = 0; j < data[i].lectures.length; j++)
-        out += `<a href="${data[i].lectures[j].link}" target="_blank">${data[i].lectures[j].title}</a>`;
+    let modID = data[i].id;
+    
+    // populate lecture notes
+    let modL = data[i].lectures;
+    let modLElement = document.getElementById(`${modID}-lectures`);
 
-    if (data[i].lectures.length == 0) out = "<p>nothing here yet</p>";
+    if (modL.length > 0)
+        for (let j = 0; j < modL.length; j++)
+            modLElement.innerHTML += `<a href="${modL[j].link}" target="_blank">${modL[j].title}</a>`;
+        else
+            modLElement.innerHTML = '<p>No lecture notes yet.</p>';
 
-    mod[i].children[1].children[0].children[1].innerHTML = out;
+    // populate reading list
+    let modR = data[i].reading;
+    let modRElement = document.getElementById(`${modID}-reading`);
 
-    out = "";
+    if (modR.length > 0)
+        for (let j = 0; j < modR.length; j++)
+            modRElement.innerHTML += `<a href="${modR[j].link}" rel="noreferrer noopener" target="_blank">${modR[j].title}</a>`;
+        else
+            modRElement.innerHTML = '<p>No reading material yet.</p>';
 
-    // add reading list
-    for (let j = 0; j < data[i].reading.length; j++) {
-        out += `<a href="${data[i].reading[j].link}" target="_blank">${data[i].reading[j].title}`;
-        out += `<span style="opacity: 0.66"> (${data[i].reading[j].author})</span></a>`;
-    }
-
-    if (data[i].reading.length == 0) out = "<p>nothing here yet</p>";
-
-    mod[i].children[1].children[1].children[1].innerHTML = out;
 }
