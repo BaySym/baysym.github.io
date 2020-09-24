@@ -22,28 +22,6 @@ html { background-color: #fafafa; }
     margin: auto;
 }
 
-/* back to bsym.dev */
-#back { padding: 20px 0; }
-
-    #back a {
-        color: var(--link1);
-        font-size: 0.8rem;
-        font-family: 'Roboto Mono', monospace;
-        text-decoration: none;
-    }
-        #back a:hover {
-            color: var(--link2);
-        }
-
-        #back a:before {
-            content: "";
-            margin-left: 0;
-        }
-        #back a:hover:before {
-            content: "< ";
-            margin-left: -2ch;
-        }
-
 h1 {
     font-size: 1.4rem;
     font-weight: 500;
@@ -80,7 +58,23 @@ h2 {
 
         z-index: 2;
     }
-        /* buttons */
+        .btn {
+            display: inline-block;
+
+            height: 100%;
+            
+            box-sizing: border-box;
+            border: 1px solid #bbb;
+            border-radius: 3px;
+
+            background-color: #fff;
+
+            cursor: pointer;
+            user-select: none;
+        }
+            button:hover { background-color: #f7f7f7; }
+            button:focus { outline: none; }
+
             .btn:not(.drop):active { background-color: #ddd; }
             .del:active { background-color: #fdd !important; }
 
