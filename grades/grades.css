@@ -18,7 +18,7 @@ h1 {
     box-sizing: border-box;
     border-radius: 5px;
     border: 1px solid #eee;
-    border-left: 5px solid #d73e41;
+    border-left: 5px solid #d73e41 !important;
 
     transition: filter 0.2s ease-in-out;
 }
