@@ -7,6 +7,7 @@
 
     <link rel="shortcut icon" href=""/>
     <link rel="stylesheet" type="text/css" href="../main.css">
+    <link rel="stylesheet" type="text/css" href="grades.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
     <meta name="viewport" content="width=device-width">
@@ -18,117 +19,120 @@
     <div id="body-wrapper">
 
         <div id="nav">
-            <h1>bailey symonds</h1><br>
-            <p>third-year CS undergrad, hoping to postgrad in UXD</p>
 
-            <h2 id="this-site" class="max-t" onclick="mM('this-site')">on this site</h2><br>
-            <div id="this-site-links" class="max">
-                <a href="https://bsym.dev">portfolio</a>
-                <a href="https://bsym.dev/about">about me</a><br>
-                <a href="https://bsym.dev/cv">my CV</a><br>
-            </div>
+            <img src="../img/square.jpg">
 
-            <h2 id="contact-me" class="max-t" onclick="mM('contact-me')">contact me</h2><br>
-            <div id="contact-me-links" class="max">
-                <a href="mailto:bsym307@gmail.com" rel="noreferrer noopener">bsym307@gmail.com</a>
-                <a href="https://linkedin.com/in/bsym" rel="noreferrer noopener" target="_blank">linkedin.com/in/bsym</a><br>
-            </div>
+            <h1>Bailey Symonds</h1><br>
+            <h2>Hello! I'm a third-year CS undergrad, interested in HCI and UXD.</h2>
+
+            <p>Contact me:</p>
+            <a href="mailto:bsym307@gmail.com" rel="noreferrer noopener">bsym307@gmail.com</a>
+            <a href="https://linkedin.com/in/bsym" rel="noreferrer noopener" target="_blank">LinkedIn</a><br>
+
+            <p>Other links:</p>
+            <a href="" target="_blank">My CV</a>
+            <a href="" target="_blank">Third year resources</a>
+            <a href="" id="this-page">Grade calculator</a>
+            <a href="" target="_blank">Timetable comparison</a>
             
         </div>
 
         <div id="content">
 
-            <div id="grades">
+            <h1>Third year total: <span id="tyt-percent">0</span>% (<span id="tyt-grade">0:0</span>)</h1><br>
 
-                <h1 id="third-year">third year: <span id="grade">0</span></h1>
-
-                <div class="module">
-                    <h1 id="big-data" class="max-t min-t" onclick="mM('big-data')">big data: <span id="grade">0</span></h1>
-                    <div id="big-data-links" class="min assessments">
-                        <div><h2>1<span style="opacity: 0.66"> (50%)</span>: </h2><input id="bd1"></div>
-                        <div><h2>2<span style="opacity: 0.66"> (50%)</span>: </h2><input id="bd2"></div>
-                    </div>
+            <div id="bd" class="module">
+                <div class="module-header">
+                    <h1>Big Data <span style="color: #888">%</span></h1>
+                    <p onclick="toggleModule('bd')">Hide module</p>
                 </div>
+                <div class="assessments"></div>
+            </div>
 
-                <div class="module">
-                    <h1 id="machine-learning" class="max-t min-t" onclick="mM('machine-learning')">machine learning: <span id="grade">0</span></h1>
-                    <div id="machine-learning-links" class="min assessments">
-                        <div><h2>1<span style="opacity: 0.66"> (50%)</span>: </h2><input id="ml1"></div>
-                        <div><h2>2<span style="opacity: 0.66"> (50%)</span>: </h2><input id="ml2"></div>
-                    </div>
+            <div id="ml" class="module">
+                <div class="module-header">
+                    <h1>Machine Learning <span style="color: #888">%</span></h1>
+                    <p onclick="toggleModule('ml')">Hide module</p>
                 </div>
+                <div class="assessments"></div>
+            </div>
 
-                <div class="module">
-                    <h1 id="parallel-programming" class="max-t min-t" onclick="mM('parallel-programming')">parallel programming: <span id="grade">0</span></h1>
-                    <div id="parallel-programming-links" class="min assessments">
-                        <div><h2>1<span style="opacity: 0.66"> (40%)</span>: </h2><input id="pp1"></div>
-                        <div><h2>2<span style="opacity: 0.66"> (60%)</span>: </h2><input id="pp2"></div>
-                    </div>
+            <div id="pp" class="module">
+                <div class="module-header">
+                    <h1>Parallel Programming <span style="color: #888">%</span></h1>
+                    <p onclick="toggleModule('pp')">Hide module</p>
                 </div>
+                <div class="assessments"></div>
+            </div>
 
-                <div class="module">
-                    <h1 id="project" class="max-t min-t" onclick="mM('project')">project: <span id="grade">0</span></h1>
-                    <div id="project-links" class="min assessments">
-                        <div><h2>1<span style="opacity: 0.66"> (20%)</span>: </h2><input id="p1"></div>
-                        <div><h2>2<span style="opacity: 0.66"> (60%)</span>: </h2><input id="p2"></div>
-                        <div><h2>3<span style="opacity: 0.66"> (20%)</span>: </h2><input id="p3"></div>
-                    </div>
+            <div id="p" class="module">
+                <div class="module-header">
+                    <h1>Project <span style="color: #888">%</span></h1>
+                    <p onclick="toggleModule('p')">Hide module</p>
                 </div>
+                <div class="assessments"></div>
+            </div>
 
-                <div class="module">
-                    <h1 id="cloud-computing" class="max-t min-t" onclick="mM('cloud-computing')">cloud computing: <span id="grade">0</span></h1>
-                    <div id="cloud-computing-links" class="min assessments">
-                        <div><h2>1<span style="opacity: 0.66"> (50%)</span>: </h2><input id="cc1"></div>
-                        <div><h2>2<span style="opacity: 0.66"> (50%)</span>: </h2><input id="cc2"></div>
-                    </div>
+            <div id="cc" class="module hidden-module">
+                <div class="module-header">
+                    <h1>Cloud Computing <span style="color: #888">%</span></h1>
+                    <p onclick="toggleModule('cc')">Show module</p>
                 </div>
+                <div class="assessments"></div>
+            </div>
 
-                <div class="module">
-                    <h1 id="image-processing" class="max-t min-t" onclick="mM('image-processing')">image processing: <span id="grade">0</span></h1>
-                    <div id="image-processing-links" class="min assessments">
-                        <div><h2>1<span style="opacity: 0.66"> (100%)</span>: </h2><input id="ip1"></div>
-                    </div>
+            <div id="ip" class="module hidden-module">
+                <div class="module-header">
+                    <h1>Image Processing <span style="color: #888">%</span></h1>
+                    <p onclick="toggleModule('ip')">Show module</p>
                 </div>
+                <div class="assessments"></div>
+            </div>
 
-                <div class="module">
-                    <h1 id="virtual-reality" class="max-t min-t" onclick="mM('virtual-reality')">virtual and augmented reality: <span id="grade">0</span></h1>
-                    <div id="virtual-reality-links" class="min assessments">
-                        <div><h2>1<span style="opacity: 0.66"> (100%)</span>: </h2><input id="vr1"></div>
-                    </div>
+            <div id="vr" class="module hidden-module">
+                <div class="module-header">
+                    <h1>Virtual and Augmented Reality <span style="color: #888">%</span></h1>
+                        <p onclick="toggleModule('vr')">Show module</p>
                 </div>
+                <div class="assessments"></div>
+            </div>
 
-                <div class="module">
-                    <h1 id="cross-platform" class="max-t min-t" onclick="mM('cross-platform')">cross-platform development: <span id="grade">0</span></h1>
-                    <div id="cross-platform-links" class="min assessments">
-                        <div><h2>1<span style="opacity: 0.66"> (100%)</span>: </h2><input id="cp1"></div>
-                    </div>
+            <div id="cp" class="module hidden-module">
+                <div class="module-header">
+                    <h1>Cross-Platform Development <span style="color: #888">%</span></h1>
+                    <p onclick="toggleModule('cp')">Show module</p>
                 </div>
+                <div class="assessments"></div>
+            </div>
 
-                <div class="module">
-                    <h1 id="cyber-security" class="max-t min-t" onclick="mM('cyber-security')">cyber security: <span id="grade">0</span></h1>
-                    <div id="cyber-security-links" class="min assessments">
-                        <div><h2>1<span style="opacity: 0.66"> (40%)</span>: </h2><input id="cs1"></div>
-                        <div><h2>2<span style="opacity: 0.66"> (60%)</span>: </h2><input id="cs2"></div>
-                    </div>
+            <div id="cs" class="module hidden-module">
+                <div class="module-header">
+                    <h1>Cyber Security <span style="color: #888">%</span></h1>
+                    <p onclick="toggleModule('cs')">Show module</p>
                 </div>
+                <div class="assessments"></div>
+            </div>
 
-                <div class="module">
-                    <h1 id="physics-simulation" class="max-t min-t" onclick="mM('physics-simulation')">physics simulation: <span id="grade">0</span></h1>
-                    <div id="physics-simulation-links" class="min assessments">
-                        <div><h2>1<span style="opacity: 0.66"> (40%)</span>: </h2><input id="ps1"></div>
-                        <div><h2>2<span style="opacity: 0.66"> (60%)</span>: </h2><input id="ps2"></div>
-                    </div>
+            <div id="ps" class="module hidden-module">
+                <div class="module-header">
+                    <h1>Physics Simulation <span style="color: #888">%</span></h1>
+                    <p onclick="toggleModule('ps')">Show module</p>
                 </div>
-
+                <div class="assessments"></div>
             </div>
         
         </div>
 
     </div>
 
+    <!--<div id="footer">
+        <p>This site's <a href="https://github.com/baysym/baysym.github.io" rel="noreferrer noopener" target="_blank">source code</a> is available on <a href="https://github.com/baysym" rel="noreferrer noopener" target="_blank">my GitHub page</a>.</p>
+    </div>-->
+
 </body>
 
 <script src="../script.js"></script>
+<script src="grades-json.js"></script>
 <script src="grades.js"></script>
 
 </html>

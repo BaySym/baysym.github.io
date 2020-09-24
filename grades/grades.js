@@ -1,98 +1,85 @@
-function out () {
-    // all weights
-    let wgt = [0.5, 0.5, 0.5, 0.5, 0.4, 0.6, 0.6, 1.8, 0.6, 0.5, 0.5, 1, 1, 1, 0.4, 0.6, 0.4, 0.6];
-    let grade = 0;
+const data = JSON.parse(json);
+const mod = document.getElementsByClassName('module');
 
-    // big data grades
-    let bd1 = document.getElementById('bd1').value ? document.getElementById('bd1').value : 0;
-    let bd2 = document.getElementById('bd2').value ? document.getElementById('bd2').value : 0;
-    grade = Math.round(bd1 * wgt[0] + bd2 * wgt[1]);
-    document.getElementById('big-data').children[0].innerHTML = grade;
-    colorise('big-data', grade);
+// collate all weights into an array
+let absWeights = [];
+for (let i = 0; i < data.length; i++)
+    for (let j = 0; j < data[i].assessments.length; j++)
+        absWeights.push(data[i].weight * data[i].assessments[j].weight);
 
-    // machine learning grades
-    let ml1 = document.getElementById('ml1').value ? document.getElementById('ml1').value : 0;
-    let ml2 = document.getElementById('ml2').value ? document.getElementById('ml2').value : 0;
-    grade = Math.round(ml1 * wgt[2] + ml2 * wgt[3]);
-    document.getElementById('machine-learning').children[0].innerHTML = grade;
-    colorise('machine-learning', grade);
 
-    // parallel programming grades
-    let pp1 = document.getElementById('pp1').value ? document.getElementById('pp1').value : 0;
-    let pp2 = document.getElementById('pp2').value ? document.getElementById('pp2').value : 0;
-    grade = Math.round(pp1 * wgt[4] + pp2 * wgt[5]);
-    document.getElementById('parallel-programming').children[0].innerHTML = grade;
-    colorise('parallel-programming', grade);
+// populate module cards
+for (let i = 0; i < data.length; i++) {
 
-    // project grades
-    let p1 = document.getElementById('p1').value ? document.getElementById('p1').value : 0;
-    let p2 = document.getElementById('p2').value ? document.getElementById('p2').value : 0;
-    let p3 = document.getElementById('p3').value ? document.getElementById('p3').value : 0;
-    grade = Math.round((p1 * wgt[6] + p2 * wgt[7] + p3 * wgt[8]) / 3);
-    document.getElementById('project').children[0].innerHTML = grade;
-    colorise('project', grade);
+    let modID = data[i].id;
+    let thisMod = data[i];
 
-    // cloud computing grades
-    let cc1 = document.getElementById('cc1').value ? document.getElementById('cc1').value : 0;
-    let cc2 = document.getElementById('cc2').value ? document.getElementById('cc2').value : 0;
-    grade = Math.round(cc1 * wgt[9] + cc2 * wgt[10]);
-    document.getElementById('cloud-computing').children[0].innerHTML = grade;
-    colorise('cloud-computing', grade);
+    for (let j = 0; j < thisMod.assessments.length; j++) {
+        let a = thisMod.assessments[j];
+        mod[i].children[0].children[0].children[0].innerHTML = `0%`;
+        mod[i].children[1].innerHTML += `<div id="${modID}-${j+1}"><p class="eyebrow">worth ${a.weight*100}%</p><h2>${a.title}</h2><input placeholder="No grade yet.""></div>`;
+    }
+}
 
-    // image processing grades
-    let ip1 = document.getElementById('ip1').value ? document.getElementById('ip1').value : 0;
-    grade = Math.round(ip1);
-    document.getElementById('image-processing').children[0].innerHTML = grade;
-    colorise('image-processing', grade);
 
-    // virtual and augmented reality grades
-    let vr1 = document.getElementById('vr1').value ? document.getElementById('vr1').value : 0;
-    grade = Math.round(vr1);
-    document.getElementById('virtual-reality').children[0].innerHTML = grade;
-    colorise('virtual-reality', grade);
+// toggle module
+function toggleModule(id) {
+    let module = document.getElementById(id);
+    module.classList.toggle('hidden-module');
 
-    // cross-platform development grades
-    let cp1 = document.getElementById('cp1').value ? document.getElementById('cp1').value : 0;
-    grade = Math.round(cp1);
-    document.getElementById('cross-platform').children[0].innerHTML = grade;
-    colorise('cross-platform', grade);
+    if (module.classList.contains('hidden-module'))
+        module.children[0].children[1].innerHTML = 'Show module';
+    else
+        module.children[0].children[1].innerHTML = 'Hide module';
+}
 
-    // cyber security grades
-    let cs1 = document.getElementById('cs1').value ? document.getElementById('cs1').value : 0;
-    let cs2 = document.getElementById('cs2').value ? document.getElementById('cs2').value : 0;
-    grade = Math.round(cs1 * wgt[14] + cs2 * wgt[15]);
-    document.getElementById('cyber-security').children[0].innerHTML = grade;
-    colorise('cyber-security', grade);
 
-    // physics simulation grades
-    let ps1 = document.getElementById('ps1').value ? document.getElementById('ps1').value : 0;
-    let ps2 = document.getElementById('ps2').value ? document.getElementById('ps2').value : 0;
-    grade = Math.round(ps1 * wgt[16] + ps2 * wgt[17]);
-    document.getElementById('physics-simulation').children[0].innerHTML = grade;
-    colorise('physics-simulation', grade);
+// set module card's left border color
+function borderCol(percentage) {
+    if (Math.round(percentage) >= 70) return '#46bccb';
+    else if (Math.round(percentage) >= 60) return '#a3b666';
+    else if (Math.round(percentage) >= 50) return '#ffb000';
+    else if (Math.round(percentage) >= 40) return '#eb7721';    
+    return '#d73e41';
+}
 
-    // all grades
-    let all = [bd1, bd2, ml1, ml2, pp1, pp2, p1, p2, p3, cc1, cc2, ip1, vr1, cp1, cs1, cs2, ps1, ps2];
 
-    // final grade
+// update module's color and overall grade
+function updateModule(x) {
     let total = 0;
-    for (let i = 0; i < all.length; i++) total += parseFloat(all[i]) * wgt[i] / 8;
-    total = Math.round(total);
-    document.getElementById('third-year').children[0].innerHTML = total;
-    colorise('third-year', total);
+
+    for (let i = 0; i < data[x].assessments.length; i++)
+        total += data[x].assessments[i].weight * document.getElementById(`${data[x].id}-${i+1}`).children[2].value;
+
+    document.getElementById(data[x].id).children[0].children[0].children[0].innerHTML = `${Math.round(total)}%`;
+
+    document.getElementById(data[x].id).style.borderLeftColor = borderCol(total);
 }
 
 
-function colorise (id, grade) {
-    if (grade >= 70) document.getElementById(id).children[0].style.color = '#268bd2';
-    else if (grade >= 60) document.getElementById(id).children[0].style.color = '#2aa198';
-    else if (grade >= 50) document.getElementById(id).children[0].style.color = '#859900';
-    else if (grade >= 40) document.getElementById(id).children[0].style.color = '#b58900';
-    else document.getElementById(id).children[0].style.color = '#dc322f';
+// calculate overall grade
+function overall() {
+    for (let i = 0; i < data.length; i++) updateModule(i);
+
+    let assessmentGrades = []
+    for (let i = 0; i < data.length; i++)
+        for (let j = 0; j < data[i].assessments.length; j++)
+            assessmentGrades.push(document.getElementById(`${data[i].id}-${j+1}`).children[2].value);
+
+    // calculate percentage
+    let percentage = 0;
+    for (let i = 0; i < absWeights.length; i++)
+        percentage += absWeights[i] * assessmentGrades[i];
+
+    document.getElementById('tyt-percent').innerHTML = Math.round(percentage);
+
+    // update grade text
+    let grade = "Fail";
+    if (Math.round(percentage) >= 70) grade = 'First';
+    else if (Math.round(percentage) >= 60) grade = '2:1';
+    else if (Math.round(percentage) >= 50) grade = '2:2';
+    else if (Math.round(percentage) >= 40) grade = 'Pass';
+    document.getElementById('tyt-grade').innerHTML = grade;
 }
 
-
-document.onkeyup = function (e) { out(); }
-
-
-out();
+document.addEventListener('keyup', overall);
