@@ -126,67 +126,66 @@ p {
 
 
 /* portfolio */
-    .card {
-        text-decoration: none;
-
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 4ch;
+.card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4ch;
+}
+    .card * {
+        display: inline-block;
+        text-decoration: none !important;
     }
-        .card * { display: inline-block; }
 
-        .card-img {
-            background-color: var(--base2);
+    .card-img {
+        background-color: var(--base2);
+    
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        border-radius: 10px;
         
-            box-sizing: border-box;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            
-            overflow: hidden;
+        overflow: hidden;
 
-            image-rendering: optimizeQuality;
-        }
-            .card img {
-                width: 100%;
-                display: block;
-            
-                filter: drop-shadow(0 5px 5px #00000022);
-
-                transition: 0.2s ease-in-out;
-            }
-                .card:hover img {
-                    filter: drop-shadow(0 20px 20px #0000001a);
-                    transform: scale(1.0125);
-                }
+        image-rendering: optimizeQuality;
+    }
+        .card img {
+            width: 100%;
+            display: block;
         
-        .card-text {
-            display: flex;
-            align-items: center;
-            padding: 20px 0;
+            filter: drop-shadow(0 5px 5px #00000022);
+
+            transition: 0.2s ease-in-out;
         }
-            .card p {
-                color: var(--text2);
-                font-variant: small-caps;
-
-                margin-bottom: -3px;
-
-                display: block;
+            .card:hover img {
+                filter: drop-shadow(0 20px 20px #0000001a);
+                transform: scale(1.0125);
             }
 
-            .card h1 {
-                font-size: 1.2rem;
-                font-weight: 500;
-                color: var(--text1);
-            }
+    .card-text {
+        display: flex;
+        align-items: center;
+        padding: 20px 0;
+    }
+        .card p {
+            color: var(--text2);
+            font-variant: small-caps;
 
-            .card h2 {
-                color: var(--text2);
-                font-size: 0.8rem;
-                font-weight: 400;
-                line-height: 1.5;
+            margin-bottom: -3px;
+        }
 
-                padding: 10px 0;
-            }
+        .card h1 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--text1);
+        }
+
+        .card h2 {
+            color: var(--text2);
+            font-size: 0.8rem;
+            font-weight: 400;
+            line-height: 1.5;
+
+            padding: 10px 0;
+        }
 
 
 #footer {
@@ -195,6 +194,8 @@ p {
     text-align: center;
 
     background-color: var(--base2);
+
+    border-top: 1px solid #ddd;
 
     padding: 10px 0;
 
