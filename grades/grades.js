@@ -61,6 +61,7 @@ function updateModule(x) {
 function overall() {
     for (let i = 0; i < data.length; i++) updateModule(i);
 
+    // get all grades
     let assessmentGrades = []
     for (let i = 0; i < data.length; i++)
         for (let j = 0; j < data[i].assessments.length; j++)
