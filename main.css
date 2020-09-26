@@ -104,8 +104,8 @@ a {
 }
 
 #projects-cn, #hero {
-    width: 600px;
-    max-width: calc(100% - 50px);
+    max-width: 600px;
+    width: calc(100% - 50px);
     margin: auto;
 }
 
@@ -132,7 +132,7 @@ a {
 
     .project .img-cn {
         overflow: hidden;
-        height: 200px;
+        max-height: 200px;
         border-radius: 5px;
     }
         .project .img-cn img {
