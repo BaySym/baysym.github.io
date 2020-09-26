@@ -1,9 +1,21 @@
-html { overflow-y: scroll }
+html {
+    background-color: #fafafa;
+    overflow-y: scroll;
+}
 
 h1 {
     font-size: 1.4rem;
     font-weight: 500;
     color: #444;
+}
+
+#content-title { padding: 40px 0; }
+
+#content {
+    width: 600px;
+    max-width: calc(100% - 50px);
+    padding-bottom: 40px;
+    margin: auto;
 }
 
 .module {

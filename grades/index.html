@@ -8,7 +8,6 @@
     <link rel="shortcut icon" href=""/>
     <link rel="stylesheet" type="text/css" href="../main.css">
     <link rel="stylesheet" type="text/css" href="grades.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="Hello, I'm Bailey, a computer science student at the University of Lincoln interested in user experience design and human-computer interaction.">
@@ -16,119 +15,91 @@
 
 <body>
 
-    <div id="body-wrapper">
+    <div id="content">
 
-        <div id="nav">
+        <h1 id="content-title">Third year total: <span id="tyt-percent">0</span>% (<span id="tyt-grade">0:0</span>)</h1><br>
 
-            <img src="../img/square.jpg">
-
-            <h1>Bailey Symonds</h1><br>
-            <h2>Hello! I'm a third-year CS undergrad, interested in HCI and UXD.</h2>
-
-            <p>On this site:</p>
-            <a href="https://bsym.dev/">My portfolio</a>
-            <a href="https://bsym.dev/cv.pdf" target="_blank">My CV</a>
-            <a href="https://bsym.dev/uni/">Third year resources</a>
-            <a href="https://bsym.dev/grades/" id="this-page">Grade calculator</a>
-            <a href="https://bsym.dev/timetables/">Timetable comparison</a>
-
-            <p>Contact me:</p>
-            <a href="mailto:bsym307@gmail.com" rel="noreferrer noopener">bsym307@gmail.com</a>
-            <a href="https://linkedin.com/in/bsym" rel="noreferrer noopener" target="_blank">LinkedIn</a><br>
-            
+        <div id="bd" class="module">
+            <div class="module-header">
+                <h1>Big Data <span style="color: #888">%</span></h1>
+                <p onclick="toggleModule('bd')">Hide module</p>
+            </div>
+            <div class="assessments"></div>
         </div>
 
-        <div id="content">
-
-            <h1>Third year total: <span id="tyt-percent">0</span>% (<span id="tyt-grade">0:0</span>)</h1><br>
-
-            <div id="bd" class="module">
-                <div class="module-header">
-                    <h1>Big Data <span style="color: #888">%</span></h1>
-                    <p onclick="toggleModule('bd')">Hide module</p>
-                </div>
-                <div class="assessments"></div>
+        <div id="ml" class="module">
+            <div class="module-header">
+                <h1>Machine Learning <span style="color: #888">%</span></h1>
+                <p onclick="toggleModule('ml')">Hide module</p>
             </div>
-
-            <div id="ml" class="module">
-                <div class="module-header">
-                    <h1>Machine Learning <span style="color: #888">%</span></h1>
-                    <p onclick="toggleModule('ml')">Hide module</p>
-                </div>
-                <div class="assessments"></div>
-            </div>
-
-            <div id="pp" class="module">
-                <div class="module-header">
-                    <h1>Parallel Programming <span style="color: #888">%</span></h1>
-                    <p onclick="toggleModule('pp')">Hide module</p>
-                </div>
-                <div class="assessments"></div>
-            </div>
-
-            <div id="p" class="module">
-                <div class="module-header">
-                    <h1>Project <span style="color: #888">%</span></h1>
-                    <p onclick="toggleModule('p')">Hide module</p>
-                </div>
-                <div class="assessments"></div>
-            </div>
-
-            <div id="cc" class="module hidden-module">
-                <div class="module-header">
-                    <h1>Cloud Computing <span style="color: #888">%</span></h1>
-                    <p onclick="toggleModule('cc')">Show module</p>
-                </div>
-                <div class="assessments"></div>
-            </div>
-
-            <div id="ip" class="module hidden-module">
-                <div class="module-header">
-                    <h1>Image Processing <span style="color: #888">%</span></h1>
-                    <p onclick="toggleModule('ip')">Show module</p>
-                </div>
-                <div class="assessments"></div>
-            </div>
-
-            <div id="vr" class="module hidden-module">
-                <div class="module-header">
-                    <h1>Virtual and Augmented Reality <span style="color: #888">%</span></h1>
-                        <p onclick="toggleModule('vr')">Show module</p>
-                </div>
-                <div class="assessments"></div>
-            </div>
-
-            <div id="cp" class="module hidden-module">
-                <div class="module-header">
-                    <h1>Cross-Platform Development <span style="color: #888">%</span></h1>
-                    <p onclick="toggleModule('cp')">Show module</p>
-                </div>
-                <div class="assessments"></div>
-            </div>
-
-            <div id="cs" class="module hidden-module">
-                <div class="module-header">
-                    <h1>Cyber Security <span style="color: #888">%</span></h1>
-                    <p onclick="toggleModule('cs')">Show module</p>
-                </div>
-                <div class="assessments"></div>
-            </div>
-
-            <div id="ps" class="module hidden-module">
-                <div class="module-header">
-                    <h1>Physics Simulation <span style="color: #888">%</span></h1>
-                    <p onclick="toggleModule('ps')">Show module</p>
-                </div>
-                <div class="assessments"></div>
-            </div>
-        
+            <div class="assessments"></div>
         </div>
 
+        <div id="pp" class="module">
+            <div class="module-header">
+                <h1>Parallel Programming <span style="color: #888">%</span></h1>
+                <p onclick="toggleModule('pp')">Hide module</p>
+            </div>
+            <div class="assessments"></div>
+        </div>
+
+        <div id="p" class="module">
+            <div class="module-header">
+                <h1>Project <span style="color: #888">%</span></h1>
+                <p onclick="toggleModule('p')">Hide module</p>
+            </div>
+            <div class="assessments"></div>
+        </div>
+
+        <div id="cc" class="module hidden-module">
+            <div class="module-header">
+                <h1>Cloud Computing <span style="color: #888">%</span></h1>
+                <p onclick="toggleModule('cc')">Show module</p>
+            </div>
+            <div class="assessments"></div>
+        </div>
+
+        <div id="ip" class="module hidden-module">
+            <div class="module-header">
+                <h1>Image Processing <span style="color: #888">%</span></h1>
+                <p onclick="toggleModule('ip')">Show module</p>
+            </div>
+            <div class="assessments"></div>
+        </div>
+
+        <div id="vr" class="module hidden-module">
+            <div class="module-header">
+                <h1>Virtual and Augmented Reality <span style="color: #888">%</span></h1>
+                    <p onclick="toggleModule('vr')">Show module</p>
+            </div>
+            <div class="assessments"></div>
+        </div>
+
+        <div id="cp" class="module hidden-module">
+            <div class="module-header">
+                <h1>Cross-Platform Development <span style="color: #888">%</span></h1>
+                <p onclick="toggleModule('cp')">Show module</p>
+            </div>
+            <div class="assessments"></div>
+        </div>
+
+        <div id="cs" class="module hidden-module">
+            <div class="module-header">
+                <h1>Cyber Security <span style="color: #888">%</span></h1>
+                <p onclick="toggleModule('cs')">Show module</p>
+            </div>
+            <div class="assessments"></div>
+        </div>
+
+        <div id="ps" class="module hidden-module">
+            <div class="module-header">
+                <h1>Physics Simulation <span style="color: #888">%</span></h1>
+                <p onclick="toggleModule('ps')">Show module</p>
+            </div>
+            <div class="assessments"></div>
+        </div>
+    
     </div>
-
-    <!--<div id="footer">
-        <p>This site's <a href="https://github.com/baysym/baysym.github.io" rel="noreferrer noopener" target="_blank">source code</a> is available on <a href="https://github.com/baysym" rel="noreferrer noopener" target="_blank">my GitHub page</a>.</p>
-    </div>-->
 
 </body>
 
