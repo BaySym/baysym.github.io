@@ -50,7 +50,6 @@ a {
     width: calc(100% - 50px);
     margin: 0 auto;
 }
-    #main-cn { min-height: calc(100vh - 131px); }
 
 
 /* navigation header */
@@ -98,7 +97,7 @@ a {
     margin: 40px 0;
 }
     .project, .project * { text-decoration: none !important; }
-    
+
     /* image container */
     .project .img-cn {
         overflow: hidden;
@@ -202,13 +201,4 @@ a {
     .cs img {
         height: 300px;
         margin: 1.5em auto 3em auto;
-    }
-
-    .pi {
-        margin: 0 0 2em 0;
-        padding: 2ch;
-        width: 30%;
-        background-color: #ffdc00aa;
-        border: 1px solid #0000000a;
-        border-top: 10px solid #0000000a;
     }
