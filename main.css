@@ -15,33 +15,6 @@ html * {
     margin: 0;
 }
 
-body {
-    min-height: 100vh;    
-    display: grid;
-}
-
-header, footer {
-    box-sizing: border-box;
-}
-    header {
-        width: 600px;
-        max-width: calc(100% - 50px);
-        margin: auto;
-
-        padding: 30px 0;
-        display: flex;
-        justify-content: space-between;
-    }
-    footer {
-        font-size: 14px;
-        text-align: center;
-        color: var(--text2);
-        
-        height: 50px;
-        background-color: #f4f4f4;
-        padding: 15px 0;
-    }
-
 h1 {
     font-weight: 600;
     font-size: 16px;
@@ -72,33 +45,37 @@ a {
 
 
 /* responsive widths */
-#projects-cn, #intro {
+#main-cn {
     max-width: 600px;
     width: calc(100% - 50px);
-    margin: auto;
+    margin: 0 auto;
 }
+    #main-cn { min-height: calc(100vh - 131px); }
 
 
-/* intro section */
-#intro-nav {
+/* navigation header */
+#nav {
     display: flex;
     justify-content: space-between;
 }
-    #intro-nav * {
+    #nav * {
         display: inline;
         margin: 10px 0;
         padding: 20px 0;
     }
-    #intro-nav a { text-decoration: none; }
-        #intro-nav a + a { margin-left: 40px; }
-        #intro-nav h2:hover { opacity: 0.5; }
+    #nav a { text-decoration: none; }
+        #nav a + a { margin-left: 40px; }
+        #nav h2:hover { opacity: 0.5; }
 
-#intro img {
+/* banner images */
+#banner {
     width: 100%;
     border-radius: 5px;
     margin-bottom: 30px;
 }
 
+
+/* intro section */
 #intro-txt {
     display: grid;
     grid-template-columns: 37px 1fr;
@@ -120,6 +97,8 @@ a {
     cursor: pointer;
     margin: 40px 0;
 }
+    .project, .project * { text-decoration: none !important; }
+    
     /* image container */
     .project .img-cn {
         overflow: hidden;
@@ -162,3 +141,74 @@ a {
             color: var(--text2);
             margin-top: 5px;
         }
+
+
+/* project page text */
+.project-content { margin-bottom: 60px; }
+    .project-content h1 {
+        font-size: 24px;
+        margin-bottom: 5px;
+    }
+    .project-content h2 {
+        font-weight: 400;
+        font-size: 14px;
+        color: var(--text2);
+        display: block;
+    }
+    .project-content h2, .project-content p {
+        line-height: 1.75;
+        margin-bottom: 24px;
+    }
+
+
+/* case study */
+.cs { margin-bottom: 4em; }
+    .cs * { display: block; }
+    
+    .cs h1, .cs h2, .cs h3 {
+        font-weight: 600;
+        color: var(--text1);
+        font-variant: normal;
+        margin-bottom: 1em;
+        cursor: initial;
+    }
+        .cs h1 {
+            font-size: 24px;
+            margin: 1em 0 0.2em 0;
+        }
+            .cs h4 {
+                font-size: 16px;
+                font-weight: 400;
+                color: var(--text2);
+            }
+
+        .cs h2 {
+            font-size: 18px;
+            margin-top: 3em;
+        }
+
+        .cs h3 { font-size: 16px; }
+
+    .cs p {
+        line-height: 1.5;
+        margin-bottom: 1.5em;
+    }
+
+    .cs li {
+        text-indent: 2ch;
+        margin-bottom: 1em;
+    }
+
+    .cs img {
+        height: 300px;
+        margin: 1.5em auto 3em auto;
+    }
+
+    .pi {
+        margin: 0 0 2em 0;
+        padding: 2ch;
+        width: 30%;
+        background-color: #ffdc00aa;
+        border: 1px solid #0000000a;
+        border-top: 10px solid #0000000a;
+    }
