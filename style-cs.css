@@ -1,0 +1,14 @@
+.cs { padding: 40px 0; }
+    #back {
+        text-decoration: none;
+        color: var(--btn);
+        font-weight: 600;
+    }
+        #back:hover { text-decoration: underline; }
+
+    .cs h1, .cs h2 { margin: 40px 0 20px 0; }
+    .cs p { margin: 10px 0; }
+    .cs img { border-radius: 5px; }
+
+    .cs-img-cn { display: flex; }
+        .cs-img-cn img { margin: 10px auto 20px auto; }
