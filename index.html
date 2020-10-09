@@ -2,81 +2,75 @@
 <meta charset="utf-8">
 <html lang="en">
 
+<!-- page title and css link-->
 <head>
-    <title>Bailey Symonds' portfolio</title>
-
-    <link rel="shortcut icon" href=""/>
-    <link rel="stylesheet" type="text/css" href="main.css">
-
-    <meta name="viewport" content="width=device-width">
-    <meta name="description" content="Hello, I'm Bailey, a computer science student at the University of Lincoln interested in user experience design and human-computer interaction.">
+    <title>Sandbox</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
+<!-- page content -->
 <body>
 
-    <div id="main-cn">
-    
-        <div id="nav">
-            <h1>Bailey Symonds</h1>
-            <div>
-                <a href="mailto:bsym307@gmail.com"><h2>Email</h2></a>
-                <a href="https://https://www.linkedin.com/in/bsym/"><h2>LinkedIn</h2></a>
-                <a href="https://bsym.dev/CV.pdf"><h2>CV</h2></a>
-            </div>
+    <div id="hero" class="col-wide">
+        <img id="hero-img" src="img/me.png">
+        <div id="hero-txt">
+            <h1>Hi, I'm Bailey! 👋</h1>
+            <p>I'm currently working towards a BSc Computer Science at the University of Lincoln, hoping to continue my studies in user experience design next year.</p><br>
+            <div><a class="btn" href="mailto:bsym307@gmail.com">Get in touch!</a></div>
         </div>
-
-        <img id="banner" src="img/banner.jpg">
-
-        <div id="intro-txt">
-            <div class="emoji"><p>👋</p></div><p>Hi, I'm Bailey! I'm third-year CS undergrad, interested in HCI and UXD.</p>
-            <div class="emoji"><p>🎓</p></div><p>I'm currently working towards a BSc (Hons) Computer Science at the University of Lincoln, hoping to start an MA User Experience Design next year.</p>
-            <div class="emoji"><p>💻</p></div><p>I prototype using Figma and code mainly in JavaScript (with HTML and CSS).</p>
-        </div>
-
-        <a class="project">
-            <div class="img-cn" style="background-color: #ffdc00">
-                <img src="img/poetry-top.png" class="top-img">
-                <img src="img/poetry-btm.png" class="btm-img">
-            </div>
-            <div class="txt-cn">
-                <div>
-                    <h3>case study</h3>
-                    <h1>Poetry Machine</h1>
-                    <p>Part of a research project exploring use cases for AI-generated media.</p>
-                </div>
-            </div>
-        </a>
-
-        <a class="project">
-            <div class="img-cn" style="background-color: #39cccc">
-                <img src="img/remy-top.png" class="top-img">
-                <img src="img/remy-btm.png" class="btm-img">
-            </div>
-            <div class="txt-cn">
-                <div>
-                    <h3>case study</h3>
-                    <h1>Remy</h1>
-                    <p>A collaborative summer project producing a dedicated recipe management app.</p>
-                </div>
-            </div>
-        </a>
-
-        <a href="https://bsym.dev/timetables/" class="project">
-            <div class="img-cn" style="background-color: #f012be">
-                <img src="img/timetable-top.png" class="top-img">
-                <img src="img/timetable-top.png" class="btm-img" style="opacity: 0;">
-            </div>
-            <div class="txt-cn">
-                <div>
-                    <h3>project page</h3>
-                    <h1>Timetable Comparison</h1>
-                    <p>Compare multiple timetables to find the best time for a group to meet.</p>
-                </div>
-            </div>
-        </a>
-
     </div>
 
+    <div class="col-wide">
+
+        <!-- Poetry Machine -->
+        <div class="card">
+            <div class="c-img">
+                <img src="img/poetry.png">
+            </div>
+
+            <div class="c-txt-cn">
+                <div class="c-txt">
+                    <h1>Poetry Machine</h1>
+                    <p>A mobile app to help a user reflect on their daily activities; part of a research project exploring use cases for AI-generated media.</p>
+                    <a class="btn" href="https://bsym.dev/poetry/">Read the case study</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Remy -->
+        <div class="card">
+            <div class="c-img">
+                <img src="img/remy.png">
+            </div>
+
+            <div class="c-txt-cn">
+                <div class="c-txt">
+                    <h1>Remy</h1>
+                    <p>A dedicated recipe management mobile app.</p>
+                    <a class="btn" href="https://bsym.dev/remy/">Read the case study</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timetables -->
+        <div class="card">
+            <div class="c-img">
+                <img src="img/times.png">
+            </div>
+
+            <div class="c-txt-cn">
+                <div class="c-txt">
+                    <h1>Timetable Comparison</h1>
+                    <p>Compare a group's timetables to find the best time to meet.</p>
+                    <a class="btn" href="https://bsym.dev/timetables/">Go to the project</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
 </body>
+
+<script src="script.js"></script>
 
 </html>
