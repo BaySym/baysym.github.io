@@ -108,7 +108,10 @@ img { max-width: 30vw;}
         display: flex;
         align-items: center;
     }
-        .c-img img { border-radius: 5px; }
+        .c-img img {
+            width: min(30vw, 250px);
+            border-radius: 5px;
+        }
 
     .c-txt-cn {
         position: relative;
