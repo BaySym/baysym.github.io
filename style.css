@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 
 :root {
@@ -109,6 +109,7 @@ img { max-width: 30vw;}
         }
             .c-txt h1 {
                 font-size: 18px;
+                font-weight: 600;
                 margin-bottom: 8px;
             }
             .c-txt p {
