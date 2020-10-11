@@ -149,5 +149,5 @@ img { border-radius: 10px; }
         }
 
 @media only screen and (max-width: 600px) {
-    #projects > div { flex: 0 0 47.5%; }
+    #projects a { flex: 0 0 47.5%; }
 }
