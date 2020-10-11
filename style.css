@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
 
 :root {
@@ -9,9 +9,8 @@
     /* text */
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
-    line-height: 1.5;
+    line-height: 1.75;
 }
-
 
 html * {
     padding: 0;
@@ -23,46 +22,19 @@ html * {
 body { padding-bottom: 40px; }
 
 
-img { max-width: 30vw;}
+img { border-radius: 10px; }
+
 
 
 .col-wide {
     margin: auto;
-    width: calc(100vw - 40px);
-    max-width: 700px;
+    width: calc(100vw - 80px);
+    max-width: 900px;
 }
-
-
-#hero {
-    margin: 40px auto;
-    padding: 40px 0;
-    display: grid;
-    grid-template-columns: min(30vw, 250px) 1fr;
-    display: flex;
-    align-items: center;
-}
-    #hero-img {
-        width: 250px;
-        border-radius: 5px;
-        display: flex;
-        align-items: center;
-    }
-
-    #hero-txt {
-        line-height: 1.75;
-        font-size: 16px;
-        margin-left: 40px;
-    }
-        #hero-txt h1 {
-            font-size: 24px;
-            margin-top: -16px;
-            margin-bottom: 12px;
-        }
-        #hero-txt > div { display: inline; }
-        #hero-txt > div + div { margin-left: 16px; }
 
 
 .btn {
+    margin-right: 16px;
     cursor: pointer;
     font-size: 14px;
     font-weight: 600;
@@ -72,49 +44,110 @@ img { max-width: 30vw;}
     padding: 7px 10px;
     border-radius: 3px;
     height: 35px;
-    transition: 0.1s ease-in-out;
+    transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
 }
     .btn:hover {
         color: #fff;
         background-color: var(--btn);
     }
-    .btn:active { opacity: 0.6; }
-    
+    .btn:active { opacity: 0.5; }
+
+    .greyed {
+        filter: grayscale(100%);
+        opacity: 0.75;
+        pointer-events: none;
+    }
+
 
 .card {
     display: grid;
-    grid-template-columns: min(30vw, 250px) 1fr;
+    grid-template-columns: 30% 70%;
     margin-bottom: 40px;
 }
-    .c-img {
-        border-radius: 5px;
+    .card img {
         overflow: hidden;
         display: flex;
         align-items: center;
+        width: 100%;
     }
-        .c-img img {
-            width: min(30vw, 250px);
-            border-radius: 5px;
-        }
 
-    .c-txt-cn {
+    .c-txt {
         position: relative;
-        height: 200px;
+        margin-top: -11px;
     }
-        .c-txt {
-            padding: 10px 20px 20px 35px;
+        .c-txt > div {
+            padding-left: 35px;
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
         }
             .c-txt h1 {
                 font-size: 18px;
-                font-weight: 600;
-                margin-bottom: 8px;
+                font-weight: 700;
+                line-height: 36px;
             }
             .c-txt p {
                 font-size: 14px;
-                margin-bottom: 22px;
+                line-height: 28px;
+                margin-bottom: 14px;
             }
-    
 
+
+#hero { margin: 80px auto 40px auto; }
+    #hero h1 {
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+    #hero p { font-size: 16px; }
+
+
+#projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 80px 0;
+}
+    #projects a {
+        flex: 0 0 30%;
+        width: 30%;
+        cursor: pointer;
+        margin-bottom: 40px;
+        text-decoration: none !important;
+    }
+        
+    #projects .txt * {
+        padding: 0 5px;
+        margin-top: 7px;
+        border-radius: 5px;
+    }
+    
+    #projects a img {
+        width: 100%;
+        transition: 0.15s ease-in-out;
+    }
+        #projects a:hover img {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px #0002;
+        }
+
+    #projects a:hover .txt { color: var(--btn); }
+        
+    #projects .txt h1 { font-size: 18px; }
+        #projects .txt h1 > span { opacity: 0.5; }
+
+    #projects .txt p { font-size: 14px; }
+    #projects .txt h2 {
+        font-size: 14px;
+        margin-top: -3px;
+        opacity: 0.5;
+    }
+
+    .coming-soon { pointer-events: none; }
+        .coming-soon h1:after {
+            content: " (coming soon)";
+            opacity: 0.5;
+        }
+
+@media only screen and (max-width: 600px) {
+    #projects > div { flex: 0 0 47.5%; }
+}

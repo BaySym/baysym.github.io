@@ -13,65 +13,54 @@
 
 <!-- page content -->
 <body>
-
-    <div id="hero" class="col-wide">
-        <img id="hero-img" src="img/me.jpg" alt="A photo of Bailey Symonds">
-        <div id="hero-txt">
-            <h1>Hi, I'm Bailey! 👋</h1>
-            <p>I'm working towards a BSc Computer Science at the University of Lincoln and hoping to continue my studies into user experience design next year.</p><br>
-            <div><a class="btn" href="mailto:bsym307@gmail.com">Get in touch!</a></div>
-        </div>
-    </div>
-
     <div class="col-wide">
 
-        <!-- Poetry Machine -->
-        <div class="card">
+        <!-- hero card -->
+        <div id="hero" class="card">
             <div class="c-img">
-                <img src="img/poetry.jpg" alt="An image of the app's main page with secondary pages in the background">
+                <img src="img/me.jpg" alt="A photo of Bailey Symonds">
             </div>
 
-            <div class="c-txt-cn">
-                <div class="c-txt">
-                    <h1>Poetry Machine</h1>
-                    <p>A mobile app to help a user reflect on their daily activities; part of a research project exploring use cases for AI-generated media.</p>
-                    <a class="btn" href="https://bsym.dev/poetry/">Read the case study</a>
-                </div>
-            </div>
+            <div class="c-txt"><div>
+                <h1>Hi, I'm Bailey! 👋</h1>
+                <p>I'm working towards a BSc Computer Science at the University of Lincoln and hoping to continue my studies into user experience design next year.</p>
+                <a class="btn" href="mailto:bsym307@gmail.com">Send me an email</a>
+            </div></div>
         </div>
 
-        <!-- Remy -->
-        <div class="card">
-            <div class="c-img">
-                <img src="img/remy.jpg" alt="An image of the app's main page with secondary pages in the background">
-            </div>
+        <!-- project cards -->
+        <div id="projects">
+            <a class="coming-soon">
+                <img src="img/poetry.jpg">
+                <div class="txt">
+                    <h1>Reflect</h1>
+                    <h2>Case study</h2>
+                    <p>An app using AI-generated poetry to help a user reflect on their daily activities.</p>
+                </div>
+            </a>
 
-            <div class="c-txt-cn">
-                <div class="c-txt">
+            <a class="coming-soon">
+                <img src="img/remy.jpg">
+                <div class="txt">
                     <h1>Remy</h1>
-                    <p>A dedicated recipe management mobile app.</p>
-                    <a class="btn" href="https://bsym.dev/remy/">Read the case study</a>
+                    <h2>Design overview</h2>
+                    <p>A mobile app dedicated to improving recipe storage and creation.</p>
                 </div>
-            </div>
-        </div>
-
-        <!-- Timetables -->
-        <div class="card">
-            <div class="c-img">
+            </a>
+            
+            <a href="https://bsym.dev/timetables/">
                 <img src="img/times.jpg" alt="An image of a partly filled in timetable">
-            </div>
-
-            <div class="c-txt-cn">
-                <div class="c-txt">
-                    <h1>Timetable Comparison</h1>
-                    <p>Compare a group's timetables to find the best time to meet.</p>
-                    <a class="btn" href="https://bsym.dev/timetables/">Use the tool</a>
+                <div class="txt">
+                    <h1>Timetables</h1>
+                    <h2>Web tool</h2>
+                    <p>Compare a group's busy timeslots to find the best time for everyone to meet.</p>
                 </div>
-            </div>
+            </a>
         </div>
-
     </div>
     
 </body>
+
+<script src="script.js"></script>
 
 </html>
