@@ -1,0 +1,83 @@
+html * {
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+}
+
+
+#info { margin: 80px auto; }
+    h1 { font-size: 20px; }
+    #info p { font-size: 16px; }
+        #info #sub {
+            font-size: 14px;
+            color: #0007;
+        }
+
+
+#chart-title {
+    padding: 10px;
+    margin: 0 0 -20px -10px;
+    width: fit-content;
+    border-radius: 3px;
+    border-bottom: 3px solid transparent;
+}
+    #chart-title:hover {
+        background-color: #fafafa;
+        border-color: #eee;
+    }
+    #chart-title:focus {
+        background-color: #fafafa;
+        border-color: #1bb;
+    }
+
+
+#gantt {
+    display: grid;
+    row-gap: 10px;
+
+    width: 100%;
+
+    position: relative;
+    margin: 40px 0;
+}
+    .row {
+        display: flex;
+        height: 64px;
+    }
+    .week {
+        display: inline;
+        flex: 1 1 0px;
+        border-left: 1px solid #ddd;
+        cursor: pointer;
+
+        font-size: 12px;
+        font-weight: 500;
+        color: #0006;
+
+        position: relative;
+    }
+        .week:hover { color: #000; }
+        .week p, .assigned:before { padding-left: 3px; }
+        
+        .assigned:before {
+            position: absolute;
+            color: #fff;
+            font-weight: 500;
+            content: var(--stage-name);
+            display: block;
+
+            background-color: var(--stage-col);
+            border-radius: 3px;
+            border-left: 3px solid #0005;
+
+            width: calc(100% - 6px);
+            height: calc(100% - 24px);
+
+            margin: 20px 0 0 0;
+        }
+
+        .assigned + .assigned:before {
+            content: "";
+            border-color: transparent;
+            width: calc(100%);
+            margin-left: -6px;
+        }

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html lang="en">
+
+<head>
+    <title>Gantt Creator by Bailey Symonds</title>
+
+    <link rel="shortcut icon" href="../img/fav.png"/>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="stylesheet" type="text/css" href="gantt.css">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hello, I'm Bailey, a computer science student at the University of Lincoln interested in user experience design and human-computer interaction.">
+</head>
+
+<body oncontextmenu="return false;">
+
+    <!-- wrapper -->
+    <div class="col-wide">
+
+        <div id="info">
+            <h1>Gantt Creator <span style="opacity: 0.5; font-weight: 400">v0.1</span></h1>
+            <p>A minimal Gantt chart editor for quick and easy diagrams.</p>
+            <p id="sub">Left click to assign or unassign a stage to a certain week.</p>
+        </div>
+
+        <!-- gantt chart -->
+        <h1 id="chart-title" contenteditable>Chart Title</h1>
+        <div id="gantt"></div>
+
+    </div>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="gantt.js"></script>
+
+</html>

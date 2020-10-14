@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 
 
 :root {
     /* colours */
     --btn: #007bff;
-    color: #212529;
+    --txt: #212529;
+    color: var(--txt);
 
     /* text */
     font-family: 'Inter', sans-serif;
@@ -33,7 +34,8 @@ img { border-radius: 10px; }
 }
 
 
-.btn {
+.btn, button {
+    background-color: #fff;
     margin-right: 16px;
     cursor: pointer;
     font-size: 14px;
@@ -46,11 +48,11 @@ img { border-radius: 10px; }
     height: 35px;
     transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
 }
-    .btn:hover {
+    .btn:hover, button:hover {
         color: #fff;
         background-color: var(--btn);
     }
-    .btn:active { opacity: 0.5; }
+    .btn:active, button:active { opacity: 0.5; }
 
     .greyed {
         filter: grayscale(100%);
@@ -60,20 +62,23 @@ img { border-radius: 10px; }
 
 
 .card {
-    display: grid;
-    grid-template-columns: 30% 70%;
-    margin-bottom: 40px;
+    display: flex;
+    margin-bottom: 80px;
 }
     .card img {
         overflow: hidden;
         display: flex;
         align-items: center;
-        width: 100%;
+        width: calc((100vw - 80px) * 0.3);
+        max-width: 270px;
     }
 
     .c-txt {
+        width: 100%;
+        max-width: 630px;
         position: relative;
         margin-top: -11px;
+        transition: 0.15s ease-in-out;
     }
         .c-txt > div {
             padding-left: 35px;
@@ -108,12 +113,14 @@ img { border-radius: 10px; }
     margin: 80px 0;
 }
     #projects a {
+        color: var(--txt);
         flex: 0 0 30%;
         width: 30%;
         cursor: pointer;
         margin-bottom: 40px;
         text-decoration: none !important;
     }
+        #projects a:vistited { color: var(--txt); }
         
     #projects .txt * {
         padding: 0 5px;
@@ -145,9 +152,37 @@ img { border-radius: 10px; }
     .coming-soon { pointer-events: none; }
         .coming-soon h1:after {
             content: " (coming soon)";
+            font-size: 16px;
+            font-weight: 400;
             opacity: 0.5;
         }
 
-@media only screen and (max-width: 600px) {
+
+@media only screen and (max-width: 620px) {
     #projects a { flex: 0 0 47.5%; }
+    .c-txt { height: 100px; }
+}
+
+
+@media only screen and (max-width: 520px) {
+    #projects a { flex: 0 0 100%; }
+
+    .card img { display: none; }
+    .c-txt { height: 150px; }
+        .c-txt > div { padding: 0; }
+}
+
+
+@media only screen and (max-width: 400px) {
+    .c-txt { height: 200px; }
+}
+
+
+#warning {
+    display: none;  /* show or hide this bad boy */
+    padding: 10px 0;
+    width: 100%;
+    background-color: #fdc000;
+    font-size: 14px;
+    text-align: center;
 }
