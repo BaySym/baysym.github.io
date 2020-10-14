@@ -38,4 +38,5 @@ a {
 
 
 .section p { margin: 1em 0; }
-    .section p span { color: #767676; }
+    .section p span, .eg { color: #767676; }
+    .eg { margin-top: -0.5rem !important; }
