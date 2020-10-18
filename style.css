@@ -162,3 +162,23 @@ html * {
         text-decoration-color: #07c5;
     }
         #foot a:hover { text-decoration-color: var(--link); }
+
+
+@media only screen and (max-width: 600px) {
+    #head h1 { margin-top: 18px; }
+    #head p { display: none; }
+}
+
+
+@media only screen and (max-width: 450px) {
+    #head {
+        display: block;
+        margin-bottom: 48px;
+    }
+    #left { margin-bottom: 24px; }
+}
+
+
+@media only screen and (max-width: 320px) {
+    #head img { display: none; }
+}
