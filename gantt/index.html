@@ -19,15 +19,40 @@
     <div class="col-wide">
 
         <div id="info">
-            <h1>Gantt Creator <span style="opacity: 0.5; font-weight: 400">v0.1</span></h1>
-            <p>A minimal Gantt chart editor for quick and easy diagrams.</p>
-            <p id="sub">Left click to assign or unassign a stage to a certain week.</p>
+            <h1>Gantt Creator <span style="opacity: 0.5; font-weight: 400">beta</span></h1>
+            <p>A minimal Gantt chart editor for quick and easy diagrams spanning 16 weeks.</p>
+            <p id="sub">Left click to assign or unassign a stage to a certain week, right click to change a stage's name.</p>
         </div>
 
         <!-- gantt chart -->
-        <h1 id="chart-title" contenteditable>Chart Title</h1>
-        <div id="gantt"></div>
+        <div id="inputs">
+            <!-- stage colours -->
+            <span>
+                <div class="col" id="0-83-60"></div>
+                <div class="col" id="32-81-53"></div>
+                <div class="col" id="111-75-46"></div>
+                <div class="col" id="180-83-40"></div>
+                <div class="col" id="279-80-61"></div>
+                <div class="col" id="0-0-75"></div>
+                <div class="col" id="0-0-50"></div>
+                <div class="col" id="0-0-25"></div>
 
+            </span>
+            <!-- start date -->
+            <span>
+
+            </span>
+            <!-- start date -->
+            <span>
+                <button onclick="addStage()">Add stage</button>
+                <button onclick="removeStage()" id="remBtn">Remove stage</button>
+            </span>
+        </div>
+
+        <h1 id="chart-title" contenteditable>Untitled Chart</h1>
+        <div id="gantt"></div>
+        
+        
     </div>
 
 </body>

@@ -13,12 +13,33 @@ html * {
         }
 
 
+#inputs {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+    .col {
+        background-color: #eee;
+        padding: 8px;
+        margin-right: 4px;
+        border-radius: 50%;
+        display: inline-block;
+        border: 1px solid transparent;
+        cursor: pointer;
+    }
+        .col:hover { border-color: #000; }
+
+    button { padding: 3px 5px; }
+        #remBtn { filter: hue-rotate(160deg); }
+
+
 #chart-title {
     padding: 10px;
     margin: 0 0 -20px -10px;
     width: fit-content;
-    border-radius: 3px;
-    border-bottom: 3px solid transparent;
+    border-radius: 8px;
+    border: 2px solid transparent;
 }
     #chart-title:hover {
         background-color: #fafafa;
@@ -26,36 +47,49 @@ html * {
     }
     #chart-title:focus {
         background-color: #fafafa;
-        border-color: #1bb;
-    }
+        border-color: var(--link);
+    }            
 
 
 #gantt {
     display: grid;
-    row-gap: 10px;
-
     width: 100%;
-
     position: relative;
     margin: 40px 0;
 }
-    .row {
+    .row, .label {
         display: flex;
-        height: 64px;
+        height: 49px;
     }
+
     .week {
         display: inline;
         flex: 1 1 0px;
-        border-left: 1px solid #ddd;
+        border-left: 1px solid #ccc;
         cursor: pointer;
 
         font-size: 12px;
         font-weight: 500;
-        color: #0006;
 
         position: relative;
     }
-        .week:hover { color: #000; }
+        .week:not(.assigned):not(.label):before {
+            content: "";
+            position: absolute;
+            display: block;
+            height: 40px;
+            width: 100%;
+            margin-top: 4px;
+            background-color: var(--stage-col);
+            opacity: 0.05;
+        }
+
+        .label { color: #aaa; }
+            .label p {
+                height: 49px;
+                transform: rotate(-90deg);
+            }
+
         .week p, .assigned:before { padding-left: 3px; }
         
         .assigned:before {
@@ -69,10 +103,9 @@ html * {
             border-radius: 3px;
             border-left: 3px solid #0005;
 
-            width: calc(100% - 6px);
-            height: calc(100% - 24px);
-
-            margin: 20px 0 0 0;
+            width: calc(100% - 5px);
+            height: 40px;
+            margin-top: 4px;
         }
 
         .assigned + .assigned:before {
