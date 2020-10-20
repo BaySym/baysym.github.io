@@ -20,6 +20,8 @@ html * {
     box-sizing: border-box;
 }
 
+img { border-radius: 5px; }
+
 
 /* main responsive width */
 .col-wide {
@@ -59,7 +61,6 @@ html * {
         #head img {
             width: 60px;
             margin-right: 24px;
-            border-radius: 5px;
         }
         #head h1 {
             height: 24px;
@@ -82,21 +83,23 @@ html * {
     min-height: calc(100vh - 320px);
 }
     /* project card */
-    .card, .link {
+    .card, .link, .wip {
         text-decoration: none;
         color: var(--text);
         display: block;
         margin: 40px 0;
         width: 100%;
     }
-        .card:hover {
-            color: #007bff;
-        }
+        .card:hover { color: #007bff; }
+        
+        #head-card { margin: 80px auto; }
+            #head-card:hover { color: var(--text); }
+            #head-card h2:after { content: "" !important; }
 
-        .cs { margin: 80px 0; }
+        .cs-card { margin: 80px 0; }
 
         .card-txt { padding-top: 3px; }
-            .card h2, .link h2 {
+            .card h2, .link h2, .wip h2 {
                 font-size: 20px;
                 line-height: 20px;
                 margin-bottom: 10px;
@@ -122,11 +125,11 @@ html * {
             }
                 .card:hover img { transform: scale(1.05); }
 
-        .card h2 span, .link h2 span, h2:after {
+        .card h2 span, .link h2 span, .wip h2 span, h2:after {
             font-size: 16px;
             font-weight: 400;
-            opacity: 0.5;
         }
+            .card h2 span, .link h2 span, h2:after { opacity: 0.5; }
 
         .link { cursor: pointer; }
             .link:hover { color: var(--link); }
@@ -142,6 +145,19 @@ html * {
                     margin-left: 10px;
                     opacity: 1;
                 }
+                
+        .wip { opacity: 0.5; }
+
+    .cs h2 {
+        font-size: 20px;
+        margin-top: 80px;
+        margin-bottom: 18px;
+    }
+    .cs p {
+        line-height: 36px;
+        margin-bottom: 18px;
+    }
+    .cs .banner { width: 100%; }
 
 
 /* page header */
