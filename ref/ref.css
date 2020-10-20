@@ -10,7 +10,6 @@ h1 { font-size: 20px; }
 h2 {
     font-size: 18px; 
     display: inline-block;
-    color: #000;
 }
     .expand {
         padding: 0 10px;
@@ -35,8 +34,7 @@ a {
 
 
 #info, .section { margin: 80px auto; }
-
-
-.section p { margin: 1em 0; }
-    .section p span, .eg { color: #767676; }
-    .eg { margin-top: -0.5rem !important; }
+    .section { border-radius: 5px; }
+        .section p { margin: 1em 0; }
+            .section p span, .eg { color: #0008; }
+            .eg { margin-top: -0.5rem !important; }
