@@ -1,0 +1,38 @@
+html * {
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+}
+
+
+h1 { font-size: 20px; }
+
+
+h2 {
+    font-size: 18px; 
+    display: inline-block;
+}
+
+
+p { font-size: 16px; }
+
+
+a, .section p a {
+    color: #007bff;
+    text-decoration: underline;
+    text-decoration-color: #007bff55;
+}
+    a:hover, .section p a:hover { text-decoration-color: #007bff; }
+    .section a {
+        display: block;
+        margin: 0.5em 0;
+    }
+
+
+#info, .section { margin: 80px auto; }
+
+
+.section p { margin: 1em 0; }
+    .section p span, .eg { color: #767676; }
+    .eg { margin-top: -0.5rem !important; }
+
+    .section p a { display: inline; }
