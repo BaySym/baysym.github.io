@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html lang="en">
+
+<head>
+    <title>Big Data 1 Brief</title>
+
+    <link rel="shortcut icon" href="../../img/fav.png"/>
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+    <link rel="stylesheet" type="text/css" href="../a.css">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hello, I'm Bailey, a computer science student at the University of Lincoln interested in user experience design and human-computer interaction.">
+</head>
+
+<body>
+
+    <!-- wrapper -->
+    <div class="col-wide">
+
+        <div id="info">
+            <h1>CMP3749 Assessment 1</h1>
+            <p>Big Data first assessment brief</p>
+        </div>
+
+
+
+        <div class="section">
+            <h2>Section 1: Data Loading and Pre-Processing (30%)</h2>
+            <p>Download the data file 'car_data.xls' from Blackboard and save it anywhere in your computer.</p>
+            <p><b>Task 1:</b> Write a MATLAB script that reads the data from the dataset and loads them into the MATLAB workspace. Report the size of the dataset (rows by columns). IS the number of the data loaded into MATLAB equal to the rows and columns of the original data file?</p>
+            <p><b>Task 2:</b> Before performing any analysis, it is required to know if there are missing values in the table. Are there any missing values in the table? Discuss how you will deal with missing values, even if there are no missing values in this dataset.</p>
+        </div>
+
+
+
+        <div class="section">
+            <h2>Section 2: Statistical Analysis and Data Visualisation (30%)</h2>
+            <p><b>Task 3:</b> Write a MATLAB script tthat estimates the following statistics of the 'mpg', 'acceleration', 'horsepower', and 'weight' variables from the 'data_train2.txt' dataset. Report your findings in a tabular form with the columns 'varaiable', 'mean', 'median', 'min', 'max', and 'standard deviation'.</p>
+            <p><b>Task 4:</b> Write a MATLAB script that creates the following plots (provide a screenshot for each):</p>
+            <ol class="indented">
+                <li><b>a.</b> A box plot of 'mpg'.</li>
+                <br><li><b>b.</b> A box plot of 'acceleration'.</li>
+                <br><li><b>c.</b> A box plot of 'horsepower'.</li>
+                <br><li><b>d.</b> A box plot of 'weight'.</li>
+                <br><li><b>e.</b> A scatter plot of 'acceleration' vs 'mpg'. Explain how 'mpg' changes as a function of 'acceleration'. Is 'mpg' positively or negatively correlated with 'acceleration'?</li>
+                <br><li><b>f.</b> A scatter plot of 'horsepower' vs 'mpg'. Explain how 'mpg' changes as a function of 'horsepower'. Is 'mpg' positively or negatively correlated with 'horsepower'?</li>
+                <br><li><b>g.</b> A scatter plot of 'horsepower' vs 'weight'. Explain how 'weight' changes as a function of 'horsepower'. Is 'weight' positively or negatively correlated with 'horsepower'?</li>
+                <br><li><b>h.</b> A density plot of 'mpg'.</li>
+                <br><li><b>i.</b> A density plot of 'acceleration'.</li>
+                <br><li><b>j.</b> A density plot of 'horsepower'.</li>
+                <br><li><b>k.</b> A density plot of 'weight'.</li>
+            </ol>
+            <p><b>Task 5:</b> Show in a table the correlation matrix of the features, where each element in the matrix shows the correlation coefficient of two features. Discuss your observations on the correlation matrix. Are there any features which are highly correlated? In any case, we will use all the features in the following tasks</p>
+        </div>
+
+
+
+        <div class="section">
+            <h2>Section 3: Regression Analysis (40%)</h2>
+            <p><b>Task 6:</b> Shuffle the data samples and split it into a 70% training set and a 30% test set. How many examples in each group for the two data sets, respectively?</p>
+            <p><b>Task 7:</b> Write a MATLAB script to perform linear regression between 'acceleration' and 'mpg'. Describe in detail the process how you perform each linear regression. Report the average training least-square error.</p>
+            <p><b>Task 8:</b> Apply each trained linear regression model to the test data set. Write a MATLAB script that computes the predicted ‘mpg’ values and, report the average least-square error for the test data. Create in MATLAB a scatter plot between the ground truth and predicted value for ‘mpg’. Provide a screenshot. Are the average training and test least-square errors different? Explain why. </p>
+            <p><b>Task 9:</b> Write a MATLAB script to perform linear regression between 'horsepower' and 'mpg'. Describe in detail the process how you perform each linear regression. Report the average training least-square error.</p>
+            <p><b>Task 10:</b> Apply each trained linear regression model to the test data set. Write a MATLAB script that computes the predicted ‘mpg’ values and, report the average least-square error for the test data. Create in MATLAB a scatter plot between the ground truth and predicted values for ‘mpg’. Provide a screenshot. Are the average training and test least-square errors different? Explain why</p>
+            <p><b>Task 11:</b> Write a MATLAB script to perform linear regression between 'weight' and 'horsepowe'. Describe in detail the process how you perform each linear regression. Report the average training least-square error.</p>
+            <p><b>Task 12:</b> Apply each trained linear regression model to the test data set. Write a MATLAB script that computes the predicted ‘mpg’ values and, report the average least-square error for the test data. Create in MATLAB a scatter plot between the ground truth and predicted values for ‘mpg’. Provide a screenshot. Are the average training and test least-square errors different? Explain why</p>
+        </div>
+
+
+
+        <div class="section">
+            <h2>First class criteria</h2>
+            <p>Perform all data loading and pre-processing tasks, answer all questions, and provide all required cleaned .txt files.</p>
+            <p>Perform the statistics of all four variables in tabular form. Correctly create and report, with screenshots, at least five visualisations and answer the corresponding questions.</p>
+            <p>Perform all tasaks of all three regression analyses. Provide in-depth discussions of the regression analysis of each case and answer all questions.</p>
+        </div>
+        
+    </div>
+
+</body>
+
+</html>

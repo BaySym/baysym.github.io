@@ -2,62 +2,9 @@
 <meta charset="utf-8">
 <html lang="en">
 
-<head>
-    <title>Timetable Comparison by Bailey Symonds</title>
-
-    <link rel="shortcut icon" href="../img/fav.png"/>
-    <link rel="stylesheet" type="text/css" href="timetables.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Hello, I'm Bailey, a computer science student at the University of Lincoln interested in user experience design and human-computer interaction.">
-</head>
-
 <body>
 
-    <div id="timetables">
-
-        <h1>Timetable Comparison</h1>
-        <p>Select your group members' busy time slots to see the best times for you to meet.</p>
-
-        <div class="section-wrapper">
-            <div class="top-bar">
-                
-                <div id="buttons">
-                    <div id="user-drop" class="drop btn" onmouseover="openDrop('this-user-drop-arrow', 'user-drop-list')" onmouseout="closeDrop('this-user-drop-arrow', 'user-drop-list')">
-                        <div class="drop-selected-cn">
-                            <p id="this-user-name" class="closed-drop user-name">username</p>
-                            <div id="this-user-drop-arrow" class="closed-drop"></div>
-                        </div>
-                        <div id="user-drop-list" class="drop-list"></div>
-                    </div>
-
-                    <button onclick="rename()" class="btn">
-                        <p>Rename user</p>
-                    </button>
-                    <button onclick="add()" class="btn">
-                        <p>New user</p>
-                    </button>
-                    <button onclick="remove()" class="del btn">
-                        <p>Delete user</p>
-                    </button>
-                </div>
-
-                <button id="show-comp-btn" onclick="showComparison()" class="comparison btn">
-                    <p>Show comparison</p>
-                </button>
-
-                <button id="hide-comp-btn" onclick="hideComparison()" class="comparison btn hidden">
-                    <p>Hide comparison</p>
-                </button>
-            </div>
-
-            <div id="user-timetables"></div>
-
-            <div id="comparison" class="hidden"></div>
-        </div>
-
-    </div>
+    
 
 </body>
 

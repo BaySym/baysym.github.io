@@ -1,10 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 
-/* whole page style */
 :root {
     /* colours */
     --link: #007bff;
-    --text: #212529;
+    --text: #222;
     color: var(--text);
 
     /* text */
@@ -12,8 +11,6 @@
     line-height: 1.75;
 }
 
-
-/* each element */
 html * {
     padding: 0;
     margin: 0;
@@ -21,6 +18,17 @@ html * {
 }
 
 img { border-radius: 5px; }
+
+
+
+/* links */
+a {
+    font-weight: 500;
+    color: var(--link);
+    text-decoration-color: #0000;
+}
+    a:hover { text-decoration-color: #07ca; }
+
 
 
 /* main responsive width */
@@ -31,122 +39,102 @@ img { border-radius: 5px; }
 }
 
 
-/* call to action button */
-.cta {
-    text-decoration: none;
-    font-weight: 500;
-
-    color: #fff;
-    background-color: var(--link);
-    
-    border-radius: 5px;
-    padding: 6px 12px;
-
-    transition: 0.15s ease-in-out;
-}
-    .cta:hover { background-color: #006cdf; }
-    .cta:focus { background-color: #449fff; }
-
 
 /* page header */
 #head {
     margin: 80px auto;
-    height: 80px;
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
 }
-    #left { display: flex; }
-        #head img {
-            width: 60px;
-            margin-right: 24px;
-        }
-        #head h1 {
-            height: 24px;
-            line-height: 24px;
-            font-size: 24px;
+    #head img {
+        width: 120px;
+        margin-right: 24px;
+    }
 
-            display: inline-block;
-            margin-top: 5px;
-            margin-bottom: 12px;
-        }
-        #head p {
-            line-height: 12px;
-            opacity: 0.8;
-        }
+    #head h1 {
+        height: 24px;
+        line-height: 24px;
+        font-size: 24px;
+
+        display: inline-block;
+        margin-top: 5px;
+        margin-bottom: 12px;
+    }
+
+    #head p { opacity: 0.8; }
+        #bio:after { content: " I'm a third-year CS student interested in UXD and XR"; }
+    
+    #head a { margin-top: 5px; }
+    
 
 
 /* page content container */
 #pg-cn {
     height: fit-content;
-    min-height: calc(100vh - 320px);
+    min-height: calc(100vh - 360px);
 }
-    /* project card */
-    .card, .link, .wip {
-        text-decoration: none;
-        color: var(--text);
-        display: block;
-        margin: 40px 0;
-        width: 100%;
+    #projects {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
     }
-        .card:hover { color: #007bff; }
-        
-        #head-card { margin: 80px auto; }
-            #head-card:hover { color: var(--text); }
-            #head-card h2:after { content: "" !important; }
-
-        .cs-card { margin: 80px 0; }
-
-        .card-txt { padding-top: 3px; }
-            .card h2, .link h2, .wip h2 {
-                font-size: 20px;
-                line-height: 20px;
-                margin-bottom: 10px;
-            }
-            .card p {
-                line-height: 28px;
-                opacity: 0.8;
-            }
-
-        .card-img {
-            width: 100%;
-            height: 250px;
-            margin-top: 20px;
+        .card {
+            background-color: #eee;
+            padding: 50%;
+            height: 240px;
+            position: relative;
             border-radius: 5px;
             overflow: hidden;
-            display: flex;
-            justify-content: center;
         }
-            .card-img img {
-                display: block;
+            .card * {
+                opacity: 1;
+                transition: 0.15s ease-in-out;
+            }
+            
+            .card:hover img { transform: scale(1.05); }
+            .card:hover .overlay, .card:hover h1, .card:hover h2 { opacity: 0; }
+
+            .card img {
+                position: absolute;
+                top: 0;
+                left: 0;
                 height: 100%;
-                transition: 0.2s ease-in-out;
+                margin: auto;
             }
-                .card:hover img { transform: scale(1.05); }
 
-        .card h2 span, .link h2 span, .wip h2 span, h2:after {
-            font-size: 16px;
-            font-weight: 400;
-        }
-            .card h2 span, .link h2 span, h2:after { opacity: 0.5; }
-
-        .link { cursor: pointer; }
-            .link:hover { color: var(--link); }
-            .card h2:after, .link h2:after {
-                content: "→";
-                font-size: 1em;
-                opacity: 0;
-                margin-left: 2px;
-                transition: opacity 0.2s ease-in-out,
-                            margin-left 0.2s ease-in-out;
+            .card .overlay {
+                background: linear-gradient(transparent 50%, var(--card-bg) 100%);
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
             }
-                .card:hover h2:after, .link:hover h2:after {
-                    margin-left: 10px;
-                    opacity: 1;
-                }
-                
-        .wip { opacity: 0.5; }
+
+            .card h1 {
+                position: absolute;
+                left: 12px;
+                bottom: 4px;
+                font-size: 20px;
+                color: #fff;
+            }
+            .card h2 {
+                position: absolute;
+                left: 12px;
+                bottom: 28px;
+                font-size: 16px;
+                font-weight: 500;
+                font-variant: small-caps;
+                color: #fffd;
+            }
+
+            .wip {
+                filter: saturate(0%);
+                opacity: 0.5;
+                pointer-events: none;
+            }
+            
 
     .cs h2 {
         font-size: 20px;
@@ -158,6 +146,7 @@ img { border-radius: 5px; }
         margin-bottom: 18px;
     }
     .cs .banner { width: 100%; }
+
 
 
 /* page header */
@@ -172,29 +161,24 @@ img { border-radius: 5px; }
         color: #767676;
         text-align: center;
     }
-    #foot a {
-        font-weight: 500;
-        color: var(--link);
-        text-decoration-color: #07c5;
-    }
-        #foot a:hover { text-decoration-color: var(--link); }
 
 
-@media only screen and (max-width: 600px) {
-    #head h1 { margin-top: 18px; }
-    #head p { display: none; }
+
+/* responsivity */
+@media only screen and (max-width: 620px) {
+    #bio:after { content: " I'm a CS student interested in UXD and XR"; }
+}
+
+@media only screen and (max-width: 550px) {
+    #bio:after { content: " CS student interested in UXD and XR"; }
+}
+
+@media only screen and (max-width: 540px) {
+    #projects { grid-template-columns: 1fr 1fr; }
 }
 
 
-@media only screen and (max-width: 450px) {
-    #head {
-        display: block;
-        margin-bottom: 48px;
-    }
-    #left { margin-bottom: 24px; }
-}
-
-
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 490px) {
+    #bio:after { content: " 🎨 🥽"; }
     #head img { display: none; }
 }
