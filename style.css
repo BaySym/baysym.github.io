@@ -1,33 +1,64 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 
 :root {
-    /* colours */
-    --link: #007bff;
-    --text: #222;
-    color: var(--text);
-
     /* text */
     font-family: 'Inter', sans-serif;
     line-height: 1.75;
 }
+    .light {
+        /* colours */
+        --bg: #fff;
+        --link: #007bff;
+        --linka: #007bffaa;
+        --link1: #007bff11;
+        --text: #222;
+        --text2: #444;
+        --text3: #767676;
+        color: var(--text);
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, filter 0.15s ease-in-out;
+    
+        /* images */
+        --img-brightness: 1;
+    }
+    .dark {
+        /* colours */
+        --bg: #111;
+        --link: #00ccff;
+        --linka: #00ccffaa;
+        --link1: #00ccff11;
+        --text: #fff;
+        --text2: #ddd;
+        --text3: #bbb;
+        color: var(--text);
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, filter 0.15s ease-in-out;
 
-html * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+        /* images */
+        --img-brightness: 0.5;
+    }
+
+    
+
+/* main tags */
+html {
+    margin-bottom: 80px;
+    overflow-y: scroll;
 }
+    html * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
 
-img { border-radius: 5px; }
+    body { background-color: var(--bg); }
+        .light img, .light .overlay { filter: brightness(1) !important; }
+        .dark img, .dark .overlay { filter: brightness(0.9) !important; }
 
-
-
-/* links */
-a {
-    font-weight: 500;
-    color: var(--link);
-    text-decoration-color: #0000;
-}
-    a:hover { text-decoration-color: #07ca; }
+    a {
+        font-weight: 500;
+        color: var(--link);
+        text-decoration-color: #0000;
+    }
+        a:hover { text-decoration-color: var(--linka); }
 
 
 
@@ -35,150 +66,110 @@ a {
 .col-wide {
     margin: auto;
     width: calc(100vw - 40px);
-    max-width: 750px;
+    max-width: 350px;
+}
+
+
+
+/* theme toggle */
+#theme-toggle {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }
 
 
 
 /* page header */
-#head {
-    margin: 80px auto;
-
-    display: flex;
-    align-items: center;
+#intro {
+    margin: 120px auto 60px auto;
 }
-    #head img {
-        width: 120px;
-        margin-right: 24px;
-    }
-
-    #head h1 {
-        height: 24px;
+    #intro h1 {
         line-height: 24px;
         font-size: 24px;
-
-        display: inline-block;
-        margin-top: 5px;
-        margin-bottom: 12px;
+        margin-bottom: 20px;
+        display: block;
     }
 
-    #head p { opacity: 0.8; }
-        #bio:after { content: " I'm a third-year CS student interested in UXD and XR"; }
-    
-    #head a { margin-top: 5px; }
-    
-
-
-/* page content container */
-#pg-cn {
-    height: fit-content;
-    min-height: calc(100vh - 360px);
-}
-    #projects {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 20px;
-    }
-        .card {
-            background-color: #eee;
-            padding: 50%;
-            height: 240px;
-            position: relative;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-            .card * {
-                opacity: 1;
-                transition: 0.15s ease-in-out;
-            }
-            
-            .card:hover img { transform: scale(1.05); }
-            .card:hover .overlay, .card:hover h1, .card:hover h2 { opacity: 0; }
-
-            .card img {
-                position: absolute;
-                top: 0;
-                left: 0;
-                height: 100%;
-                margin: auto;
-            }
-
-            .card .overlay {
-                background: linear-gradient(transparent 50%, var(--card-bg) 100%);
-                position: absolute;
-                top: 0;
-                left: 0;
-                height: 100%;
-                width: 100%;
-            }
-
-            .card h1 {
-                position: absolute;
-                left: 12px;
-                bottom: 4px;
-                font-size: 20px;
-                color: #fff;
-            }
-            .card h2 {
-                position: absolute;
-                left: 12px;
-                bottom: 28px;
-                font-size: 16px;
-                font-weight: 500;
-                font-variant: small-caps;
-                color: #fffd;
-            }
-
-            .wip {
-                filter: saturate(0%);
-                opacity: 0.5;
-                pointer-events: none;
-            }
-            
-
-    .cs h2 {
-        font-size: 20px;
-        margin-top: 80px;
-        margin-bottom: 18px;
-    }
-    .cs p {
-        line-height: 36px;
-        margin-bottom: 18px;
-    }
-    .cs .banner { width: 100%; }
-
-
-
-/* page header */
-#foot {
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-    #foot p {
+    #intro a, #intro h2 {
         font-size: 14px;
-        color: #767676;
-        text-align: center;
+        display: inline;
+    }
+        #intro h2 { color: var(--text); }
+        #intro p a { font-size: 16px; }
+            #intro a + a, #intro h2 + a, #intro a + h2 { margin-left: 14px; }
+                #intro p a + a { margin: 0; }
+
+    #intro h3 {
+        font-size: 16px;
+        margin: 20px 0 -20px 0;
+    }
+
+    #intro p, .project p {
+        font-weight: 400;
+        color: var(--text2);
+        margin: 20px 0;
     }
 
 
 
-/* responsivity */
-@media only screen and (max-width: 620px) {
-    #bio:after { content: " I'm a CS student interested in UXD and XR"; }
+/* projects */
+.project {
+    text-decoration: none !important;
+    display: block;
 }
+    .project .img-cn {
+        background-color: var(--bg);
+        border-radius: 5px;
+        margin-bottom: 10px;
+        overflow: hidden;
+    }
+        .project img {
+            width: 100%;
+            display: block;            
+            opacity: 1;
+            filter: drop-shadow(0 0px 0px #0000) !important;
+            transition: 0.2s ease-in-out;
+        }
+            .project .foreground { margin-top: -225px; }
+                .project:hover .foreground {
+                    transform: scale(1.07);
+                    filter: drop-shadow(0 10px 10px #0002) !important;
+                }
+                .project:hover .background {
+                    opacity: 0.5;
+                }
 
-@media only screen and (max-width: 550px) {
-    #bio:after { content: " CS student interested in UXD and XR"; }
+    .project h1, .blog-post h1 {
+        line-height: 20px;
+        font-size: 16px;
+        display: inline;
+        text-decoration: underline;
+        text-decoration-color: transparent;
+    }
+        .project:hover h1, .blog-post:hover h1 { text-decoration-color: var(--linka); }
+
+    .project p { display: inline; }
+
+
+
+.blog-post {
+    width: 100%;
+    display: block;
+    margin-bottom: 40px;
+    text-decoration: none !important;
 }
+    .blog-post h2 {
+        color: var(--text3);
+        font-weight: 400;
+        font-variant: small-caps;
+        font-size: 12px;
+        display: inline;
+        margin-left: 7px;
+    }
 
-@media only screen and (max-width: 540px) {
-    #projects { grid-template-columns: 1fr 1fr; }
-}
-
-
-@media only screen and (max-width: 490px) {
-    #bio:after { content: " 🎨 🥽"; }
-    #head img { display: none; }
-}
+    .blog-post p {
+        color: var(--text2);
+        font-weight: 400;
+        font-size: 14px;
+    }
