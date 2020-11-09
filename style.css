@@ -83,6 +83,7 @@ html {
 /* page header */
 #intro {
     margin: 120px auto 60px auto;
+    transition: margin 0.5s ease-in-out;
 }
     #intro h1 {
         line-height: 24px;
@@ -173,3 +174,12 @@ html {
         font-weight: 400;
         font-size: 14px;
     }
+
+
+
+/* responsivity */
+@media only screen and (max-width: 600px) {
+    #intro {
+        margin-top: 40px;
+    }
+  }
