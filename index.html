@@ -2,74 +2,97 @@
 <meta charset="utf-8">
 <html lang="en">
 
+
+
 <head>
     <title>Bailey Symonds</title>
 
-    <link rel="shortcut icon" href="img/icon.png"/>
+    <link rel="shortcut icon" href="icon.png"/>
     <link rel="stylesheet" type="text/css" href="style.css">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Hello, I'm Bailey, a computer science student at the University of Lincoln interested in user experience design and human-computer interaction.">
 </head>
 
-<body class="light">
 
-    <!-- header -->
-    <div id="intro" class="col-wide">
-        <h1>Hi, I'm Bailey! 👋</h1>
 
-        <h2>Portfolio</h2>
-        <a href="about/index.html">About</a>
-        <a href="blog/index.html">Blog</a>
-        <a href="contact/index.html">Contact</a>
+<body>
 
-        <p>I'm a final year computer science undergrad, interested in human-computer interaction, user experience design, and cross reality.</p>
-        <br>
+    <!-- introduction -->
+    <div id="intro" class="main-width">
 
-        <a class="project" href="">
-            <div style="--bg: #f2c617; --bg-h: #f2c617" class="img-cn">
-                <img class="background" src="img/reflect-b.png">
-                <img class="foreground" src="img/reflect-f.png">
+        <!-- introduction text and links -->
+        <div id="intro-txt">
+            <div id="intro-txt-inner">
+                <!-- introduction text -->
+                <h1>bailey symonds</h1>
+                <p>
+                    <span>👨‍💻</span> computer science undergrad<br>
+                    <span>🎓</span> university of lincoln<br>
+                    <span>😍</span> human-computer interaction</p>
+                
+                <!-- introduction links -->
+                <div id="intro-links">
+                    <a href="mailto:bsym307@gmail.com">email</a>
+                    <a href="https://www.linkedin.com/in/bsym/">linkedin</a>
+                </div>
             </div>
-            <h1>Reflect</h1>
-            <p>is a conceptual mobile app to help a user reflect on their day by providing bespoke AI-generated poetry based on their activities.</p>
-        </a>
+        </div>
 
-        <br><br>
-        
-        <a class="project" href="">
-            <div style="--bg: #2eca70; --bg-h: #2eca70" class="img-cn">
-                <img class="background" src="img/remy-b.png">
-                <img class="foreground" src="img/remy-f.png">
-            </div>
-            <h1>Remy</h1>
-            <p>is a conceptual mobile app dedicated to make recipe creation and management easier and more informative.</p>
-        </a>
+        <!-- introduction image -->
+        <div id="intro-img">
+            <img src="intro-img.jpg">
+        </div>
 
     </div>
 
-<!--    <div id="projects">
-            
-            <a href="https://bsym.dev/reflect" class="card">
-                <img src="../img/reflect.jpg">
-                <div class="overlay" style="--card-bg: #dba100dd;"></div>
-                <h2>case study</h2>
-                <h1>Reflect</h1>
-            </a>
+    <!-- content columns -->
+    <div id="content" class="main-width">
 
-            <a href="https://bsym.dev/remy" class="card">
-                <img src="../img/remy.jpg">
-                <div class="overlay" style="--card-bg: #10974ddd;"></div>
-                <h2>case study</h2>
-                <h1>Remy</h1>
+        <!-- left column -->
+        <div>
+            <a href="https://kontrol.software" target="_blank" class="blue content-card">
+                <h2>kontrol</h2>
+                <p>control kodi with your body</p>
             </a>
-
+            <a href="ref.html" class="purple content-card">
+                <h2>referencing</h2>
+                <p>a simplified version of common UoL reference styles</p>
+            </a>
+        </div>
+        
+        <!-- middle column -->
+        <div>
+            <a href="reflect.pdf" class="red content-card">
+                <h2>reflect</h2>
+                <p>ai-generated poetry to help you reflect</p>
+            </a>
         </div>
 
-    </div> -->
+        <!-- right column -->
+        <div>
+            <a href="https://www.youracclaim.com/users/bailey-symonds/badges" target="_blank" class="green content-card">
+                <h2>mta awards</h2>
+                <p>microsoft-certified in python, java, javascript, and c#</p>
+            </a>
+        </div>
+        
+        
+        
+        <!--<a href="" class="green content-card">
+            <h2>remy</h2>
+            <p>informative recipe organisation</p>
+        </a>-->
+
+        <!--<a href="" class="teal content-card">
+            <h2>lorem ipsum</h2>
+            <p>dolor sit amet consectetur adipiscing elit</p>
+        </a>-->
+
+    </div>
 
 </body>
 
-<script src="script.js"></script>
+
 
 </html>
