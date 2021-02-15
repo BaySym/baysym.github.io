@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 
 :root {
@@ -8,6 +8,7 @@
 }
 
 
+/* main tags */
 html {
     margin-bottom: 80px;
     overflow-y: scroll;
@@ -19,11 +20,11 @@ html {
     }
 
 h1 {
-    font-size: 1.5rem;
-    margin-bottom: 1.2rem;
+    font-size: 2rem;
+    font-weight: 700;
 }
 
-h2 { font-size: 1.25rem; }
+h2 { font-size: 1.1rem; }
 
 p {
     line-height: 1.5;
@@ -31,107 +32,61 @@ p {
 }
 
 
-
 /* main responsive width */
 .main-width {
-    margin: 80px auto;
+    margin: 60px auto;
     width: calc(100% - 40px);
     max-width: 550px;
 }
 
-/* two-column intro div*/
-#intro {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    padding: 0 2px;
-}
-    #intro-txt p span { font-size: 0.9rem; }
-    
-    #intro-img img {
-        border-radius: 5px;
-        width: 166px;
-        display: block;
-    }
-    
+
+/* intro div*/
+#intro { margin-top: 80px; }
     #intro-links {
         margin-top: 20px;
+        display: flex;
+        gap: 20px;
     }
         #intro-links a {
+            /* size and position */
             display: inline-block;
+            /* text */
             text-decoration: none;
             font-size: 0.9rem;
             font-weight: 600;
-            padding: 5px 8px;
-            border-radius: 5px;
-            margin-left: -2px;
-            margin-right: 3px;
-            background-color: #06b1;
-            color: #06b;
-            border: 2px solid #fff;
+            color: #07c;
+            /* decor */
+            border-bottom: 2px solid #06c3;
         }
             #intro-links a:hover {
-                border-color: inherit;
+                color: #000;
+                border-color: #06ca;
             }
 
-/* content columns*/
-#content {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 20px;
+    #intro p { margin-top: 20px; }
+
+
+/* portfolio */
+.card {
+    /* size and position */
+    width: 100%;
+    margin-bottom: 40px;
+    display: block;
+    /* text */
+    text-decoration: none !important;
+    color: #000;
 }
-    #content > div {
-        flex: calc( (100% - 40px) / 3 );
+    .card h2 {
+        color: #07c;
+        width: fit-content;
+        border-bottom: 2px solid #06c3;
     }
-        .content-card {
-            width: 100%;
-            display: inline-block;
-            text-decoration: none;
-            color: #000c;
-            background-color: #eee;
-            border-radius: 5px;
-            padding: 10px 13px;
-            font-size: 0.9rem;
-            border: 2px solid #fff;
-            height: fit-content;
-            margin-bottom: 20px;
+        .card:hover h2 {
+            color: #000;
+            border-color: #06ca;
         }
-            .content-card:hover {
-                border-color: inherit;
-            }
-
-
-/* div colours */
-.red {
-    background-color: #c311;
-    color: #c31;
-}
-.green {
-    background-color: #0841;
-    color: #084;
-}
-.blue {
-    background-color: #06b1;
-    color: #06b;
-}
-.purple {
-    background-color: #a291;
-    color: #a29;
-}
-.gold {
-    background-color: #c701;
-    color: #c70;
-}
-.teal {
-    background-color: #09a1;
-    color: #09a;
-}
 
 
 /* responsivity */
-@media only screen and (max-width: 600px) {
-    .main-width { margin: 40px auto; }
-    .content-card { flex: 50%; } 
-}
+@media only screen and (max-width: 700px) { #intro { margin-top: 60px; } }
+@media only screen and (max-width: 600px) { #intro { margin-top: 40px; } }
