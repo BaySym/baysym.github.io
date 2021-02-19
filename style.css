@@ -28,7 +28,7 @@ h2 { font-size: 1.1rem; }
 
 p {
     line-height: 1.5;
-    margin-top: 3px;
+    margin-top: 6px;
 }
 
 
@@ -52,7 +52,7 @@ p {
             display: inline-block;
             /* text */
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 1rem;
             font-weight: 600;
             color: #07c;
             /* decor */
@@ -63,20 +63,32 @@ p {
                 border-color: #06ca;
             }
 
-    #intro p { margin-top: 20px; }
+    #intro p {
+        margin-top: 20px;
+    }
 
 
 /* portfolio */
 .card {
     /* size and position */
     width: 100%;
-    margin-bottom: 40px;
     display: block;
+    margin-bottom: 40px;
     /* text */
     text-decoration: none !important;
     color: #000;
 }
+    .card img {
+        width: 100%;
+        border-radius: 5px;
+        background-color: #ddd;
+    }
+        .card img {
+            background-color: rgb(var(--bg));
+        }
+    
     .card h2 {
+        display: inline;
         color: #07c;
         width: fit-content;
         border-bottom: 2px solid #06c3;
@@ -85,6 +97,30 @@ p {
             color: #000;
             border-color: #06ca;
         }
+
+    .card h3 {
+        display: inline-block;
+        font-size: 0.8rem;
+        margin-left: 5px;
+        color: #fff;
+    }
+        .card:hover h3 {
+            color: #07c;
+        }
+    
+    .half {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 60px;
+    }
+        .half img {
+            width: calc(40% - 15px);
+        }
+        .half div {
+            width: calc(60% - 15px);
+        }
+
 
 
 /* responsivity */
