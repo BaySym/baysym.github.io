@@ -8,7 +8,10 @@
     <title>Bailey Symonds</title>
 
     <link rel="shortcut icon" href="icon.png"/>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">    
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Hello, I'm Bailey, a computer science student at the University of Lincoln interested in user experience design and human-computer interaction.">
@@ -18,48 +21,60 @@
 
 <body>
 
-    <!-- introduction -->
-    <div id="intro" class="main-width">
+    <div class="wrapper">
+
         <h1>Bailey Symonds</h1>
         
-        <div id="intro-links">
-            <a href="mailto:bsym307@gmail.com">Email</a>
-            <a href="https://www.linkedin.com/in/bsym/" target="_blank" rel="noopener">LinkedIn</a>
+        <p>
+            Hello! I'm Bailey, a computer science undergrad based in Lincoln.<br>
+            Get in touch by <a href="">email</a> or <a href="">LinkedIn</a></a>!
+        </p>
+
+        <div id="cards">
+            <a href="https://github.com/baysym/ada" class="card">
+                <img class="c-img" src="blue.jpg" alt="a girl looking out of a window">
+                <div class="c-txt">
+                    <b>Ada</b>
+                    <p>Mitigate panic attacks and log them to find patterns.</p>
+                    <i>JavaScript with React Native</i>
+                </div>
+            </a>
+
+            <a href="https://github.com/baysym/fyp" class="card">
+                <img class="c-img" src="fyp.jpg" alt="a girl looking out of a window">
+                <div class="c-txt">
+                    <b>Dissertation prototype</b>
+                    <p>Computationally generated poetry about guided and prompted walks.</p>
+                    <i>JavaScript with React Native</i>
+                </div>
+            </a>
+
+            <a href="https://kontrol.joepitts.co.uk/" class="card">
+                <img class="c-img" src="kontrol.jpg" alt="the app's logo over a photo of a man in a T-pose using the system">
+                <div class="c-txt">
+                    <b>Kontrol</b>
+                    <p>Control Kodi using a webcam and upper-body movements.</p>
+                    <i>Group project using my design</i>
+                </div>
+            </a>
+            
+            <a href="reflect.pdf" class="card">
+                <img class="c-img" src="reflect.jpg" alt="a screenshot of the app over a user interaciton diagram">
+                <div class="c-txt">
+                    <b>Reflect</b>
+                    <p>An exploration into use cases for computationally generated poetry.</p>
+                    <i>Design project</i>
+                </div>
+            </a>
         </div>
-
-        <p>Hello! I'm a computer science undergrad at the University of Lincoln, interested in human-computer interaction and cross reality.</p>
-    </div>
-
-
-    <!-- content -->
-    <div id="cards" class="main-width">
-
-        <a href="https://kontrol.software" target="_blank" rel="noopener" class="wide half card" style="--bg: 240, 245, 255">
-            <img src="kontrol.png">
-            <div>
-                <h2>Kontrol</h2>
-                <h3>Project website ↗</h3>
-                <p>Control Kodi using your webcam and upper-body poses.</p>
-            </div>
-        </a>
-        
-        <a href="reflect.pdf" class="half card" style="--bg: 252, 239, 210">
-            <img src="reflect.png">
-            <div>
-                <h2>Reflect</h2>
-                <h3>PDF document ↗</h3>
-                <p>An exploration of use cases for AI-generated poetry.</p>
-            </div>
-        </a>
-
-        <a href="ref.html" class="wide card">
-            <h2>Referencing</h2>
-            <p>Templates for commonly used UoL-Harvard-style citations.</p>
-        </a>
 
     </div>
 
 </body>
+
+
+
+<script src="script.js"></script>
 
 
 
