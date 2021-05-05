@@ -36,13 +36,11 @@ h1 {
 p { margin: 40px 0; }
 
 a:not(.card) {
-    color: #000;
+    color: #0078d4;
     font-weight: bold;
-    border-bottom: 1px solid #ccc;
 }
     a:not(.card):hover {
-        color: #0078d4;
-        border-bottom: 1px solid #0078d4aa;
+        border-bottom: 1px solid #0078d4;
     }
 
 
@@ -64,7 +62,7 @@ a:not(.card) {
 }
     .card {
         width: 100%;
-        border-left: 5px solid #ddd;
+        border-left: 5px solid #0078d444;
         padding: 5px 0 10px 15px;
     }
 
@@ -81,8 +79,5 @@ a:not(.card) {
 
         .c-txt b { color: #000; }
 
-        .card:hover {
-            cursor: pointer;
-            border-left: 5px solid #0078d444;
-        }
+        .card:hover { cursor: pointer; }
             .card:hover .c-txt b { color: #0078d4; }
