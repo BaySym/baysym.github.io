@@ -10,15 +10,15 @@
 }
 
 
-/* don't forget alt text! */
-img:not([alt]) { outline: 10px solid red; }
+/* don't forget alt text! 
+img:not([alt]) { outline: 10px solid red; }*/
 
 
 /* main tags */
 html {
     margin-bottom: 80px;
     overflow-y: scroll;
-    background-color: #fff;
+    background-color: #f7faff;
     color: #222;
 }
     html * {
@@ -28,56 +28,101 @@ html {
         text-decoration: none !important;
     }
 
-h1 {
-    margin: 100px 0 40px 0;
-    font-size: 24px;
-}
+h1 { font-size: 24px; }
 
-p { margin: 40px 0; }
-
-a:not(.card) {
+a:not(.project) {
     color: #0078d4;
     font-weight: bold;
 }
-    a:not(.card):hover {
-        border-bottom: 1px solid #0078d4;
-    }
+    a:not(.project):hover { text-decoration: underline !important; }
 
 
 
-/* content container */
-.wrapper {
-    line-height: 1.75;
-    margin: 0 auto;
-    width: 550px;
-}
-    .wrapper img { width: 100%; }
-
-
-
-#cards {
+#top-container, #bottom-container {
+    width: 100%;
     display: flex;
-    gap: 40px;
-    flex-wrap: wrap;
+    justify-content: center;
 }
-    .card {
-        width: 100%;
-        border-left: 5px solid #0078d444;
-        padding: 5px 0 10px 15px;
+
+
+#top-content, #bottom-content {
+    width: min(800px, calc(100% - 20px));
+}
+    #top-content {
+        padding: 100px 0 50px 0;
     }
-
-        .c-img { display: none; }
-        .c-img img { width: 100%; }
-
-        .c-txt p, .c-txt i {
-            font-size: 0.9rem;
-            margin: 0;
-            line-height: 1.5;
+        #top-content h1 {
+            margin-bottom: 40px;
         }
-            .c-txt p { color: #000; }
-            .c-txt i { color: #767676; }
 
-        .c-txt b { color: #000; }
+    #bottom-content {
+        padding: 50px 0 100px 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+        .project, .project #img, .project #txt,
+        .project #txt p, .project:hover, .project:hover #img,
+        .project:hover #txt, .project:hover #txt p {
+            transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+        }
 
-        .card:hover { cursor: pointer; }
-            .card:hover .c-txt b { color: #0078d4; }
+        .project {
+            background-color: #fff;
+            flex-grow: 1;
+            width: 30%;
+            height: fit-content;
+            max-width: calc((100% - 40px) / 3);
+            border-radius: 3px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.12);
+        }
+            .project #img {
+                width: 100%;
+                height: 140px;
+                overflow: hidden;
+            }
+                .project #img img {
+                    width: 100%;
+                    display: block;
+                }
+
+            .project #txt {
+                padding: 0 10px 10px 10px;
+            }
+                .project #txt h2 {
+                    font-size: 1rem;
+                    margin: 10px 0 0 0;
+                }
+                .project #txt p {
+                    font-size: 0.9rem;
+                    color: #333;
+                    margin: 0;
+                    height: 0px;
+                    opacity: 0;
+                    overflow: hidden;
+                }
+                .project #txt h3 {
+                    font-weight: normal;
+                    font-size: 0.8rem;
+                    color: #777;
+                }
+
+            .project:hover {
+                cursor: pointer;
+                box-shadow: 0 14px 28px rgba(0,0,0,0.125), 0 10px 10px rgba(0,0,0,0.11);
+            }
+                .project:hover #img {
+                    opacity: 0.75;
+                    height: 88px;
+                }
+
+                .project:hover #txt h2 {
+                    color: #0078d4;
+                }
+                .project:hover #txt p {
+                    display: block;
+                    margin: 5px 0;
+                    height: 42px;
+                    opacity: 1;
+                }
