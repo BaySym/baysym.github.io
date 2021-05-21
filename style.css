@@ -94,7 +94,10 @@ small { color: var(--text-3); }
     }
         .project:hover { cursor: pointer; }
 
-        .project img { height: 140px; }
+        .project img {
+            width: 250px;
+            height: 140px;
+        }
             .project:hover img { opacity: 0.8; }
 
         .project div {
