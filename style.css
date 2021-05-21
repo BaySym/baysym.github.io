@@ -6,7 +6,6 @@
     --text-2: #444;
     --text-3: #666;
     --accent: #07d;
-    --accent-1: #07d1;
 }
 
 
@@ -33,20 +32,42 @@ body {
     color: var(--text-1);
 }
 
-h1 { font-size: 20px; }
-h2 { font-size: 16px; }
+h1 {
+    font-size: 20px;
+}
+
+h2 {
+    font-size: 16px;
+}
 
 a, p {
-    line-height: 1.5;
     font-size: 15px;
     color: var(--text-2);
 }
-    a { color: var(--text-1) !important; }
-        a:hover { cursor: pointer; }
+    a:hover {
+        cursor: pointer;
+    }
 
-    p a:hover { color: var(--accent) !important; }
+    a:not(.project) {
+        border-bottom: 1px solid #0004;
+        width: fit-content;
+        color: var(--text-1) !important;
+    }
+        a:not(.project):hover {
+            border-bottom: 2px solid var(--accent);
+        }
 
-small { color: var(--text-3); }
+    p {
+        line-height: 1.5;
+    }
+    
+    p a:hover {
+        color: var(--accent) !important;
+    }
+
+small {
+    color: var(--text-3);
+}
 
 
 /* all content */
@@ -67,24 +88,32 @@ small { color: var(--text-3); }
     gap: 20px;
 }
 
-    #side h1 { font-size: 20px; }
+    #side h1 {
+        font-size: 20px;
+    }
     
     #side a {
         font-weight: 600;
         color: var(--text);
     }
-        #side a:hover { color: var(--accent); }
+        #side a:hover {
+            color: var(--accent) !important;
+        }
 
     #contact {
         display: flex;
         gap: 20px;
         margin-top: 10px;
     }
-        #contact img { height: 20px; }
+        #contact img {
+            height: 20px;
+        }
 
 
 /* main content */
-#main { width: fit-content; }
+#main {
+    width: fit-content;
+}
 
     /* project card */
     .project {
@@ -92,13 +121,17 @@ small { color: var(--text-3); }
         gap: 20px;
         margin-bottom: 20px;
     }
-        .project:hover { cursor: pointer; }
+        .project:hover {
+            cursor: pointer;
+        }
 
         .project img {
             width: 250px;
             height: 140px;
         }
-            .project:hover img { opacity: 0.8; }
+            .project:hover img {
+                opacity: 0.8;
+            }
 
         .project div {
             display: flex;
@@ -114,7 +147,9 @@ small { color: var(--text-3); }
                     text-decoration: underline;
                 }
             
-                .project p { margin: 5px 0 8px 0; }
+                .project p {
+                    margin: 5px 0 8px 0;
+                }
 
 
 /* responsive sizing */
@@ -132,12 +167,24 @@ small { color: var(--text-3); }
 }
 
 @media only screen and (max-width: 600px) {
-    #page-wrapper {
-        flex-direction: column;
+    #page-wrapper,
+    #main,
+    #side,
+    .project img,
+    .project {
+        width: calc(100% - 20px);
     }
-
-    #side {
-        min-width: 249px;
-        max-width: 249px;
-    }
+        .project img {
+            height: auto;
+        }
+        
+        #page-wrapper {
+            flex-direction: column;
+            margin: 20px auto;
+        }
+        
+        #side {
+            min-width: none;
+            max-width: 100%;
+        }
 }
