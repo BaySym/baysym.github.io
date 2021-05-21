@@ -7,86 +7,64 @@
 <head>
     <title>Bailey Symonds</title>
 
-    <link rel="shortcut icon" href="icon.png"/>
+    <link rel="shortcut icon" href="img/icon.png"/>
     <link rel="stylesheet" type="text/css" href="style.css">    
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Hello, I'm Bailey, a computer science student at the University of Lincoln interested in user experience design and human-computer interaction.">
+    <meta name="description" content="I'm a computer science undergrad at the University of Lincoln, focusing on human-computer interaction.">
 </head>
 
 
 
 <body>
 
-    <div id="top-container">
-        <div id="top-content">
-            
+    <!-- all content -->
+    <div id="page-wrapper">
+
+        <!-- static sidebar with my info and links -->
+        <div id="side">
             <h1>Bailey Symonds</h1>
-            <p>Hello! I'm Bailey, a computer science undergrad based in Lincoln.</p>
-            <p>Get in touch by <a href="mailto:bsym307@gmail.com">email</a> or <a href="https://linkedin.com/in/bsym/" target="_blank">LinkedIn</a></a>!</p>
-
+            <p>I'm a computer science undergrad at the University of Lincoln, focusing on human-computer interaction.</p>
+            <p>Get in touch by <a href="">email</a> or on <a href="">LinkedIn</a>.</p>
         </div>
-    </div>
-    
-    <div id="bottom-container">
-        <div id="bottom-content">
 
-            <a href="https://kontrol.joepitts.co.uk/" target="_blank" class="project">
-                <div id="img">
-                    <img src="k.png" alt="a man sat in a chair with his arms outstretched">
+        <!-- portfolio, etc -->
+        <div id="main">
+
+            <a class="project" href="https://github.com/baysym/fyp">
+                <img src="img/diss.png">
+                <div>
+                    <h2>BSc Dissertation</h2>
+                    <p>Exploring a potential use case for computationally generated poetry.</p>
+                    <small>React Native</small>
                 </div>
-                <div id="txt">
+            </a>
+
+            <a class="project" href="https://github.com/baysym/ada">
+                <img src="img/ada.png">
+                <div>
+                    <h2>Ada</h2>
+                    <p>Mitigate panic attacks and log them to find patterns in their locations.</p>
+                    <small>React Native</small>
+                </div>
+            </a>
+
+            <a class="project" href="https://kontrol.joepitts.co.uk/">
+                <img src="img/kontrol.png">
+                <div>
                     <h2>Kontrol</h2>
-                    <p>Control Kodi with a webcam and upper-body movements.</p>
-                    <h3>Design</h3>
-                </div>
-            </a>
-
-            <a href="https://github.com/baysym/ada" target="_blank" class="project">
-                <div id="img">
-                    <img src="ada.png" alt="a pink pinboard with the words don't panic">
-                </div>
-                <div id="txt">
-                    <h2>Ada prototype</h2>
-                    <p>Mitigate panic attacks and log them to find patterns.</p>
-                    <h3>JavaScript and React Native</h3>
-                </div>
-            </a>
-
-            <a href="https://github.com/baysym/fyp" target="_blank" class="project">
-                <div id="img">
-                    <img src="diss.png" alt="two women using their phones on a university campus">
-                </div>
-                <div id="txt">
-                    <h2>Dissertation prototype</h2>
-                    <p>Computationally generated poetry for guided walks.</p>
-                    <h3>JavaScript and React Native</h3>
-                </div>
-            </a>
-
-            <a href="reflect.pdf" target="_blank" class="project">
-                <div id="img">
-                    <img src="reflect.png" alt="a man on a beach looking toward the horizon">
-                </div>
-                <div id="txt">
-                    <h2>Reflect</h2>
-                    <p>Exploring uses of computationally generated poetry.</p>
-                    <h3>Design</h3>
+                    <p>Control Kodi with your webcam and upper-body movements.</p>
+                    <small>Design</small>
                 </div>
             </a>
 
         </div>
+
     </div>
 
 </body>
-
-
-
-<script src="script.js"></script>
-
-
 
 </html>
