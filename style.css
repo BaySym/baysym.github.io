@@ -85,7 +85,6 @@ small {
     max-width: 180px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
 }
 
     #side h1 {
@@ -112,7 +111,7 @@ small {
 
 /* main content */
 #main {
-    width: fit-content;
+    width: 100%;
 }
 
     /* project card */
